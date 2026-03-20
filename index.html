@@ -1,0 +1,1854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMAN & Associates — E-2 Visa Business Law Firm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ─── Reset & Base ─── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1a2638;
+            --navy-deep: #0f1923;
+            --sage: #6b9e85;
+            --sage-light: #7db495;
+            --cream: #faf8f5;
+            --warm-gray: #f3f0ec;
+            --text-primary: #1a2638;
+            --text-secondary: #5a6672;
+            --text-light: #8a939c;
+            --border: #e4e0db;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ─── Typography ─── */
+        .heading-xl {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.8rem, 4.5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+        }
+
+        .heading-lg {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.2rem, 4vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.12;
+            letter-spacing: -0.015em;
+        }
+
+        .heading-md {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .heading-sm {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-light);
+        }
+
+        .label--sage { color: var(--sage); }
+
+        .body-lg {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .body-md {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+        }
+
+        .body-sm {
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* ─── Layout ─── */
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 4vw, 4rem);
+        }
+
+        .container--narrow {
+            max-width: 900px;
+        }
+
+        .section-space {
+            padding: clamp(2rem, 4vw, 3rem) 0;
+        }
+
+        .section-space--lg {
+            padding: clamp(2.5rem, 4.5vw, 3.5rem) 0;
+        }
+
+        /* ─── Decorative line ─── */
+        .rule {
+            display: inline-block;
+            width: 48px;
+            height: 1px;
+            background: var(--sage);
+            vertical-align: middle;
+            margin-left: 12px;
+        }
+
+        /* ─── Navigation ─── */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: var(--white);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            box-shadow: 0 1px 0 var(--border);
+        }
+
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--navy);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav.scrolled .nav__logo { color: var(--navy); }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav__link {
+            font-size: 0.825rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.3s;
+        }
+
+        .nav.scrolled .nav__link { color: var(--text-secondary); }
+        .nav__link:hover { color: var(--navy); }
+        .nav.scrolled .nav__link:hover { color: var(--navy); }
+
+        .nav__cta {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--white) !important;
+            background: var(--sage);
+            padding: 0.65rem 1.6rem;
+            border-radius: 100px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: all 0.3s;
+        }
+
+        .nav__cta:hover { background: var(--sage-light); transform: translateY(-1px); }
+
+        /* Mobile menu */
+        .nav__toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .nav__toggle span {
+            width: 22px;
+            height: 1.5px;
+            background: var(--navy);
+            transition: background 0.3s;
+        }
+
+        .nav.scrolled .nav__toggle span { background: var(--navy); }
+
+        /* ─── Hero ─── */
+        .hero {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 50% at 80% 20%, rgba(107, 158, 133, 0.04) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 80% at 10% 80%, rgba(107, 158, 133, 0.03) 0%, transparent 60%);
+        }
+
+        .hero__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(3rem, 6vw, 6rem);
+            align-items: center;
+            position: relative;
+        }
+
+        .hero__content {
+            padding: clamp(4.5rem, 6vw, 5rem) 0 clamp(2rem, 3vw, 2.5rem);
+        }
+
+        .hero__eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero__eyebrow .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--sage);
+        }
+
+        .hero__eyebrow span {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--sage);
+        }
+
+        .hero .heading-xl {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero__promises {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .hero__promises li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            padding: 0.55rem 0;
+        }
+
+        .hero__promises li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 20px;
+            height: 1px;
+            background: var(--sage);
+            margin-top: 0.75em;
+        }
+
+        .hero__visual {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero__image-frame {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            background: var(--warm-gray);
+            border-radius: 4px;
+            overflow: hidden;
+            max-height: 75vh;
+        }
+
+        .hero__image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+        }
+
+        .hero__image-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        .hero__image-accent {
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(107, 158, 133, 0.15);
+            border-radius: 50%;
+        }
+
+        /* ─── CTA Buttons ─── */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn--primary {
+            background: var(--sage);
+            color: var(--white);
+            padding: 1rem 2.2rem;
+            border-radius: 100px;
+        }
+
+        .btn--primary:hover {
+            background: var(--sage-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(107, 158, 133, 0.25);
+        }
+
+        .btn--outline {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 1rem 2.2rem;
+            border-radius: 100px;
+            border: 1px solid var(--border);
+        }
+
+        .btn--outline:hover {
+            border-color: var(--navy);
+            background: var(--cream);
+        }
+
+        .btn--dark {
+            background: var(--navy);
+            color: var(--white);
+            padding: 1rem 2.2rem;
+            border-radius: 100px;
+        }
+
+        .btn--dark:hover {
+            background: var(--navy-deep);
+            transform: translateY(-2px);
+        }
+
+        .btn__arrow {
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .btn:hover .btn__arrow { transform: translateX(3px); }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* ─── Stats Bar ─── */
+        .stats {
+            background: var(--navy);
+            padding: clamp(3.5rem, 6vw, 5rem) 0;
+            position: relative;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--sage), transparent);
+            top: -40px;
+        }
+
+        .stats__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            position: relative;
+        }
+
+        .stat:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stat__value {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: 0.6rem;
+        }
+
+        .stat__label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.5;
+        }
+
+        .stats__source {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.25);
+            letter-spacing: 0.05em;
+        }
+
+        /* ─── What Sets Us Apart ─── */
+        .apart {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .apart::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 40%;
+            height: 100%;
+            background: radial-gradient(ellipse at 100% 50%, rgba(107, 158, 133, 0.03), transparent 70%);
+        }
+
+        .apart__grid {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: clamp(4rem, 8vw, 8rem);
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .apart__headline {
+            position: sticky;
+            top: 8rem;
+        }
+
+        .apart__headline .label {
+            margin-bottom: 1.5rem;
+            display: block;
+            color: var(--text-light);
+        }
+
+        .apart__headline .heading-lg {
+            color: var(--text-primary);
+        }
+
+        .apart__headline .heading-lg em {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--sage);
+            font-style: italic;
+        }
+
+        .apart__body {
+            padding-top: 0.5rem;
+        }
+
+        .apart__text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .apart__text strong {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Services */
+        .apart__services-label {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--sage);
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--sage);
+        }
+
+        .apart__services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+        }
+
+        .apart__service {
+            padding: 1.35rem 1.5rem;
+            font-size: 0.925rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .apart__service:nth-child(odd) {
+            border-right: 1px solid var(--border);
+        }
+
+        .apart__service:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        .apart__service::before {
+            content: '';
+            flex-shrink: 0;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--sage);
+            margin-top: 0.5em;
+            opacity: 0.6;
+        }
+
+        .apart__callout {
+            background: var(--cream);
+            border-left: 2px solid var(--sage);
+            padding: 1.5rem 2rem;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .apart__callout-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.15rem;
+            color: var(--sage);
+            margin-bottom: 0.75rem;
+        }
+
+        .apart__callout-text {
+            font-size: 0.925rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        /* ─── Commitment ─── */
+        .commitment {
+            background: var(--warm-gray);
+        }
+
+        .commitment__grid {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: clamp(4rem, 8vw, 8rem);
+            align-items: start;
+        }
+
+        .commitment__headline .label {
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .commitment__body p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .commitment__body p:last-of-type {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* ─── Who We Work With ─── */
+        .audience {
+            background: var(--white);
+        }
+
+        .audience__header {
+            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        .audience__header .label {
+            display: block;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .audience__header .heading-lg {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .audience__header .body-lg {
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        .audience__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+        }
+
+        .audience__item {
+            background: var(--white);
+            padding: clamp(1.5rem, 3vw, 2.2rem);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .audience__item::before {
+            content: '';
+            flex-shrink: 0;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--sage);
+            margin-top: 0.55em;
+            opacity: 0.5;
+        }
+
+        .audience__note {
+            background: var(--cream);
+            border-radius: 6px;
+            padding: 1.5rem 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: -0.5rem;
+        }
+
+        .audience__note strong {
+            color: var(--sage);
+            font-weight: 500;
+        }
+
+        /* ─── Case Studies ─── */
+        .cases {
+            background: var(--white);
+        }
+
+        .cases__header {
+            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        .cases__header .label {
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .cases__header .body-md {
+            margin-top: 1rem;
+            max-width: 640px;
+            font-style: italic;
+        }
+
+        .cases__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 3rem;
+        }
+
+        .case-card {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .case-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+        }
+
+        .case-card__header {
+            background: var(--navy);
+            padding: 1.5rem 1.8rem;
+        }
+
+        .case-card__title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .case-card__details {
+            padding: 1.5rem 1.8rem;
+        }
+
+        .case-card__row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.875rem;
+        }
+
+        .case-card__row:last-child { border-bottom: none; }
+
+        .case-card__key {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .case-card__val {
+            color: var(--text-primary);
+            text-align: right;
+        }
+
+        .case-card__outcome {
+            padding: 1.2rem 1.8rem;
+            background: var(--cream);
+            border-top: 1px solid var(--border);
+        }
+
+        .case-card__outcome-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 0.5rem;
+        }
+
+        .case-card__outcome-text {
+            font-size: 0.875rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .cases__note {
+            border-left: 3px solid var(--sage);
+            padding: 1.2rem 2rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            background: var(--cream);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .cases__note strong {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* ─── Four Things ─── */
+        .four {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .four::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--sage);
+            opacity: 0.15;
+        }
+
+        .four__header {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: clamp(3rem, 6vw, 6rem);
+            margin-bottom: clamp(3rem, 6vw, 5rem);
+        }
+
+        .four__header .heading-lg {
+            color: var(--text-primary);
+        }
+
+        .four__header .body-lg {
+            color: var(--text-secondary);
+            padding-top: 0.5rem;
+        }
+
+        .four__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .four__card {
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: clamp(2rem, 3vw, 2.8rem);
+            position: relative;
+        }
+
+        .four__card:hover {
+            border-color: var(--sage);
+        }
+
+        .four__number {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(107, 158, 133, 0.15);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .four__card-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .four__card-text {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        /* ─── About ─── */
+        .about {
+            background: var(--white);
+        }
+
+        .about__grid {
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            gap: clamp(4rem, 8vw, 8rem);
+            align-items: start;
+        }
+
+        .about__photo-area {
+            position: relative;
+        }
+
+        .about__photo {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            background: var(--warm-gray);
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about__photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .about__photo-placeholder {
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .about__photo-placeholder svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.75rem;
+            opacity: 0.3;
+        }
+
+        .about__photo-placeholder span {
+            display: block;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        .about__tags {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 1.2rem;
+        }
+
+        .about__tag {
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            padding: 0.45rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            color: var(--text-secondary);
+        }
+
+        .about__content .heading-lg {
+            margin-bottom: 2rem;
+        }
+
+        .about__content p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about__credentials {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .about__credential {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--text-light);
+            padding: 0.5rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+        }
+
+        /* ─── Testimonials ─── */
+        .testimonials {
+            background: var(--warm-gray);
+        }
+        .testimonials__header {
+            margin-bottom: clamp(2.5rem, 4vw, 4rem);
+        }
+        .testimonials__header .heading-lg {
+            color: var(--text-primary);
+        }
+        .testimonials__grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .testimonials__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        .testimonials__row--single {
+            grid-template-columns: 1fr;
+            max-width: 680px;
+        }
+        .review-screenshot {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--white);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            transition: box-shadow 0.3s ease;
+        }
+        .review-screenshot:hover {
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+        }
+
+        @media (max-width: 768px) {
+            .testimonials__row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── Ready to Talk (mid-page CTA) ─── */
+        .cta-bar {
+            background: var(--navy);
+            padding: clamp(2.5rem, 4vw, 3.5rem) 0;
+        }
+
+        .cta-bar__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .cta-bar__text .heading-sm {
+            color: var(--white);
+            margin-bottom: 0.3rem;
+        }
+
+        .cta-bar__text p {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.9rem;
+        }
+
+        /* ─── FAQ ─── */
+        .faq {
+            background: var(--warm-gray);
+        }
+
+        .faq__grid {
+            display: grid;
+            grid-template-columns: 4fr 8fr;
+            gap: clamp(4rem, 8vw, 8rem);
+            align-items: start;
+        }
+
+        .faq__header .label {
+            display: block;
+            margin-bottom: 1.5rem;
+        }
+
+        .faq__list {
+            border-top: 1px solid var(--border);
+        }
+
+        .faq__item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq__question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-primary);
+            text-align: left;
+            line-height: 1.5;
+            gap: 2rem;
+        }
+
+        .faq__question:hover { color: var(--sage); }
+
+        .faq__icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            transition: all 0.3s;
+        }
+
+        .faq__item.active .faq__icon {
+            background: var(--sage);
+            border-color: var(--sage);
+            color: var(--white);
+            transform: rotate(45deg);
+        }
+
+        .faq__answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .faq__answer-inner {
+            padding-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* ─── Final CTA ─── */
+        .final-cta {
+            background: var(--navy-deep);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(107, 158, 133, 0.06), transparent 70%);
+        }
+
+        .final-cta__content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta .label {
+            display: block;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .final-cta .heading-xl {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .final-cta .heading-xl em {
+            font-family: 'Playfair Display', Georgia, serif;
+            color: var(--sage);
+            font-style: italic;
+        }
+
+        .final-cta__body {
+            max-width: 680px;
+            margin: 2rem auto 3rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .final-cta__sub {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.3);
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* ─── Footer ─── */
+        .footer {
+            background: var(--navy-deep);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 0;
+        }
+
+        .footer__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer__logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+        }
+
+        .footer__legal {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ─── Animations ─── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 1024px) {
+            .hero__grid { grid-template-columns: 1fr; }
+            .hero__visual { display: none; }
+            .apart__grid { grid-template-columns: 1fr; }
+            .apart__headline { position: static; }
+            .commitment__grid { grid-template-columns: 1fr; }
+            .four__header { grid-template-columns: 1fr; }
+            .about__grid { grid-template-columns: 1fr; }
+            .faq__grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav__links { display: none; }
+            .nav__toggle { display: flex; }
+
+            .nav__links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav__links.open .nav__link { color: var(--text-primary); }
+
+            .stats__grid { grid-template-columns: 1fr 1fr; gap: 2rem 1rem; }
+            .stat:not(:last-child)::after { display: none; }
+
+            .apart__services { grid-template-columns: 1fr; }
+            .apart__service:nth-child(odd) { border-right: none; }
+            .apart__service:nth-last-child(2) { border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+
+            .audience__grid { grid-template-columns: 1fr; }
+            .cases__grid { grid-template-columns: 1fr; }
+            .four__grid { grid-template-columns: 1fr; }
+
+            .cta-bar__inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero__content { padding: clamp(5.5rem, 10vw, 7rem) 0 clamp(2.5rem, 5vw, 4rem); }
+            .hero .heading-xl { margin-bottom: 1.25rem; }
+            .hero__eyebrow { margin-bottom: 1.25rem; }
+            .hero__promises { margin-bottom: 1.75rem; }
+            .hero__promises li { padding: 0.35rem 0; }
+        }
+
+        @media (max-width: 480px) {
+            .stats__grid { grid-template-columns: 1fr 1fr; }
+            .btn-group { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── Navigation ─── -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav__inner">
+                <a href="#" class="nav__logo">Eman & Associates</a>
+                <ul class="nav__links" id="navLinks">
+                    <li><a href="#about" class="nav__link">About Us</a></li>
+                    <li><a href="#process" class="nav__link">Our Process</a></li>
+                    <li><a href="#cases" class="nav__link">Case Studies</a></li>
+                    <li><a href="#faq" class="nav__link">FAQ</a></li>
+                    <li><a href="#contact" class="nav__cta">Book a Call</a></li>
+                </ul>
+                <button class="nav__toggle" id="navToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ─── Hero ─── -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__grid">
+                <div class="hero__content">
+                    <div class="hero__eyebrow">
+                        <span class="dot"></span>
+                        <span>E-2 Visa Business Law Firm</span>
+                    </div>
+                    <h1 class="heading-xl">Move Your Family<br>To The U.S.<br>Without Fear<br>Of Rejection</h1>
+                    <ul class="hero__promises">
+                        <li>Visa approved or money back</li>
+                        <li>Visa, entity, and transaction handled under one roof</li>
+                        <li>Personalized portal to track visa process</li>
+                    </ul>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn btn--primary">See If You Qualify <span class="btn__arrow">&rarr;</span></a>
+                        <a href="#process" class="btn btn--outline">Our Process</a>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__image-frame"><img src="hero.jpg" alt="Attorney consulting with a client in a professional setting"></div>
+                    <div class="hero__image-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Stats Bar ─── -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stat reveal">
+                    <div class="stat__value">95%+</div>
+                    <div class="stat__label">E-2 approval rate<br>well-prepared applications</div>
+                </div>
+                <div class="stat reveal reveal-delay-1">
+                    <div class="stat__value">4&ndash;6 wks</div>
+                    <div class="stat__label">Toronto consulate wait<br>fastest window in years</div>
+                </div>
+                <div class="stat reveal reveal-delay-2">
+                    <div class="stat__value">$80K&ndash;200K</div>
+                    <div class="stat__label">Typical investment range<br>USD</div>
+                </div>
+                <div class="stat reveal reveal-delay-3">
+                    <div class="stat__value">6,803</div>
+                    <div class="stat__label">Canadian E-2 approvals<br>2024</div>
+                </div>
+            </div>
+            <p class="stats__source">E-2 program statistics &mdash; U.S. Department of State, 2024</p>
+        </div>
+    </section>
+
+    <!-- ─── What Sets Us Apart ─── -->
+    <section class="apart section-space--lg" id="process">
+        <div class="container">
+            <div class="apart__grid">
+                <div class="apart__headline reveal">
+                    <span class="label">What Sets Us Apart <span class="rule"></span></span>
+                    <h2 class="heading-lg">One Firm.<br>Every Step.<br><em>No Handoffs.</em></h2>
+                </div>
+                <div class="apart__body">
+                    <p class="apart__text reveal">
+                        Most Canadian investors pursuing the E-2 discover midway through that their immigration attorney doesn't handle business law. They're referred elsewhere for entity formation. Another firm for the purchase agreement. A third party for the escrow structure.
+                    </p>
+                    <p class="apart__text reveal">
+                        <strong>The result is a fragmented application at exactly the moment coherence matters most.</strong> A consular officer sees your business structure, investment documentation, and visa filing as one integrated picture. If different teams assembled the pieces, it shows.
+                    </p>
+
+                    <div class="apart__services-label reveal">We handle all of it.</div>
+
+                    <div class="apart__services reveal">
+                        <div class="apart__service">Visa strategy and application preparation</div>
+                        <div class="apart__service">U.S. entity formation (LLC, C-Corp)</div>
+                        <div class="apart__service">Franchise and acquisition agreements</div>
+                        <div class="apart__service">Investment escrow structuring</div>
+                        <div class="apart__service">Source-of-funds documentation</div>
+                        <div class="apart__service">Cross-border tax planning</div>
+                        <div class="apart__service">Business plan with financial projections</div>
+                        <div class="apart__service">Toronto consulate interview preparation</div>
+                    </div>
+
+                    <div class="apart__callout reveal">
+                        <div class="apart__callout-title">Why this matters for your approval</div>
+                        <p class="apart__callout-text">
+                            The E-2 requires your business structure, your investment, and your visa application to tell one coherent story. When one attorney oversees all three, that story holds. When three firms each handle a piece, the gaps between them become the vulnerabilities in your application.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Our Commitment ─── -->
+    <section class="commitment section-space">
+        <div class="container">
+            <div class="commitment__grid">
+                <div class="commitment__headline reveal">
+                    <span class="label">Our Commitment <span class="rule"></span></span>
+                    <h2 class="heading-lg">We Stand Behind Every Application We File.</h2>
+                </div>
+                <div class="commitment__body reveal">
+                    <p>
+                        Spending $100,000&ndash;$200,000 &mdash; often home equity &mdash; and then receiving a denial is the risk every E-2 investor carries. Most firms move on after filing. We don't.
+                    </p>
+                    <p>
+                        We assess every case rigorously before we file. If we don't believe you have a strong application, we will tell you in the first call &mdash; before you incur any filing costs.
+                    </p>
+                    <p>
+                        No attorney can promise outcomes &mdash; the consular officer has final authority. What we commit to is standing behind our work if something goes wrong.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Who We Work With ─── -->
+    <section class="audience section-space--lg">
+        <div class="container">
+            <div class="audience__header reveal">
+                <span class="label">Is This Right For You? <span class="rule"></span></span>
+                <h2 class="heading-lg">Who We Work With</h2>
+                <p class="body-lg">The E-2 is a strong fit for some situations and not others. Here is what our engagements typically look like.</p>
+            </div>
+            <div class="audience__grid reveal">
+                <div class="audience__item">Canadian citizens with $80,000&ndash;$200,000 available to invest in a qualifying U.S. business</div>
+                <div class="audience__item">Investors who want a single firm handling the visa, entity formation, and business transaction</div>
+                <div class="audience__item">Entrepreneurs buying a franchise, acquiring a U.S. business, or expanding a Canadian company into the U.S.</div>
+                <div class="audience__item">Clients who want cross-border tax implications addressed as part of their engagement</div>
+                <div class="audience__item">Those who value honest case assessment over confident-sounding assurances</div>
+                <div class="audience__item">Investors with a target move date who need a firm that plans backward from it</div>
+            </div>
+            <div class="audience__note reveal">
+                <strong>Not sure yet?</strong> If you're still exploring whether the E-2 is the right pathway for your situation, our consultation is a good place to start &mdash; we'll give you a straight answer.
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Case Studies ─── -->
+    <section class="cases section-space--lg" id="cases">
+        <div class="container">
+            <div class="cases__header reveal">
+                <span class="label">Documented Examples <span class="rule"></span></span>
+                <h2 class="heading-lg">What Canadian E-2 Investors Have Done</h2>
+                <p class="body-md">These are documented examples from across the E-2 program &mdash; not cases handled by this firm. We share them to illustrate what a well-structured application looks like in practice, and specifically how business structuring drove each outcome.</p>
+            </div>
+
+            <div class="cases__grid">
+                <div class="case-card reveal">
+                    <div class="case-card__header">
+                        <div class="case-card__title">Toronto Accountant &rarr; U.S. Tax Preparation Franchise</div>
+                    </div>
+                    <div class="case-card__details">
+                        <div class="case-card__row">
+                            <span class="case-card__key">Province</span>
+                            <span class="case-card__val">Ontario</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Investment</span>
+                            <span class="case-card__val">~$120,000 USD</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Entity</span>
+                            <span class="case-card__val">U.S. LLC formed prior to filing</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Funding</span>
+                            <span class="case-card__val">Home equity line of credit</span>
+                        </div>
+                    </div>
+                    <div class="case-card__outcome">
+                        <div class="case-card__outcome-label">Outcome</div>
+                        <p class="case-card__outcome-text">Approved Toronto consulate. Within two years: three franchise locations, 14 employees, $1.2M+ revenue. Entity and franchise agreement documented as part of the visa package.</p>
+                    </div>
+                </div>
+
+                <div class="case-card reveal reveal-delay-1">
+                    <div class="case-card__header">
+                        <div class="case-card__title">Mississauga Contractor &rarr; U.S. Home Services Franchise</div>
+                    </div>
+                    <div class="case-card__details">
+                        <div class="case-card__row">
+                            <span class="case-card__key">Province</span>
+                            <span class="case-card__val">Ontario</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Investment</span>
+                            <span class="case-card__val">~$130,000 USD</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Entity</span>
+                            <span class="case-card__val">U.S. LLC</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Funding</span>
+                            <span class="case-card__val">Canadian investment property sale proceeds</span>
+                        </div>
+                    </div>
+                    <div class="case-card__outcome">
+                        <div class="case-card__outcome-label">Outcome</div>
+                        <p class="case-card__outcome-text">Approved. Purchase agreement and operating documentation were central to demonstrating the investment was at risk and the enterprise commercially viable.</p>
+                    </div>
+                </div>
+
+                <div class="case-card reveal">
+                    <div class="case-card__header">
+                        <div class="case-card__title">Vancouver Tech Founder &rarr; U.S. Expansion of Canadian SaaS Co.</div>
+                    </div>
+                    <div class="case-card__details">
+                        <div class="case-card__row">
+                            <span class="case-card__key">Province</span>
+                            <span class="case-card__val">British Columbia</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Investment</span>
+                            <span class="case-card__val">~$140,000 USD</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Entity</span>
+                            <span class="case-card__val">U.S. C-Corp (Canadian parent subsidiary)</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Funding</span>
+                            <span class="case-card__val">Retained business earnings</span>
+                        </div>
+                    </div>
+                    <div class="case-card__outcome">
+                        <div class="case-card__outcome-label">Outcome</div>
+                        <p class="case-card__outcome-text">Approved as investor directing U.S. enterprise. Cross-border structure established prior to filing. Spouse received work authorization concurrent with approval.</p>
+                    </div>
+                </div>
+
+                <div class="case-card reveal reveal-delay-1">
+                    <div class="case-card__header">
+                        <div class="case-card__title">GTA Investor &rarr; U.S. Property Management Franchise, Florida</div>
+                    </div>
+                    <div class="case-card__details">
+                        <div class="case-card__row">
+                            <span class="case-card__key">Province</span>
+                            <span class="case-card__val">Ontario</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Investment</span>
+                            <span class="case-card__val">~$110,000 USD</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Entity</span>
+                            <span class="case-card__val">U.S. LLC</span>
+                        </div>
+                        <div class="case-card__row">
+                            <span class="case-card__key">Key structure</span>
+                            <span class="case-card__val">Attorney-controlled escrow</span>
+                        </div>
+                    </div>
+                    <div class="case-card__outcome">
+                        <div class="case-card__outcome-label">Outcome</div>
+                        <p class="case-card__outcome-text">Approved. Investment placed in escrow prior to filing, contingent on visa approval &mdash; satisfying the 'at-risk' requirement while protecting capital. Escrow structuring was the pivotal element.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cases__note reveal">
+                In each case, the business structure and transaction documentation were built <strong>before</strong> the visa application was filed. The visa was the final step, not the first. This is the sequence we follow in every engagement.
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── The Four Things ─── -->
+    <section class="four section-space--lg">
+        <div class="container">
+            <div class="four__header">
+                <h2 class="heading-lg reveal">The Four Things That Determine Whether Your E-2 Gets Approved</h2>
+                <p class="body-lg reveal">Most denials come down to the same issues. Here is what we scrutinize before we file anything.</p>
+            </div>
+            <div class="four__grid">
+                <div class="four__card reveal">
+                    <div class="four__number">01</div>
+                    <div class="four__card-title">The investment is genuinely 'at risk'</div>
+                    <p class="four__card-text">Funds in a bank account don't qualify. The investment must be irrevocably committed to the enterprise &mdash; through a purchase agreement, escrow, or documented expenditures. We structure this correctly from day one.</p>
+                </div>
+                <div class="four__card reveal reveal-delay-1">
+                    <div class="four__number">02</div>
+                    <div class="four__card-title">The business is not marginal</div>
+                    <p class="four__card-text">The enterprise must have genuine economic capacity beyond supporting the investor. We assess this honestly before advising you to proceed &mdash; and will tell you if a business doesn't meet the bar.</p>
+                </div>
+                <div class="four__card reveal reveal-delay-2">
+                    <div class="four__number">03</div>
+                    <div class="four__card-title">Source of funds is clean and documented</div>
+                    <p class="four__card-text">Canadian investors most commonly use home equity, business proceeds, or RRSP drawdown. Each requires specific documentation. The Toronto consulate enforces a strict 50-page application limit &mdash; preparation discipline matters.</p>
+                </div>
+                <div class="four__card reveal reveal-delay-3">
+                    <div class="four__number">04</div>
+                    <div class="four__card-title">The business plan is credible, not just compliant</div>
+                    <p class="four__card-text">A consular officer is asking one question: will this business actually work? We prepare plans with financial projections, market analysis, and operational specificity &mdash; not boilerplate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── About Us ─── -->
+    <section class="about section-space--lg" id="about">
+        <div class="container">
+            <div class="about__grid">
+                <div class="about__photo-area reveal">
+                    <div class="about__photo">
+                        <img src="attorney.jpg" alt="Attorney at EMAN & Associates" />
+                    </div>
+                    <div class="about__tags">
+                        <span class="about__tag">E-2 Visa</span>
+                        <span class="about__tag">Business Immigration</span>
+                        <span class="about__tag">Cross-Border</span>
+                    </div>
+                </div>
+                <div class="about__content reveal">
+                    <h2 class="heading-lg">About Us</h2>
+                    <p>
+                        I didn't just study immigration law &mdash; I lived the immigrant experience. My father came to the United States and built a business from the ground up, and I had a front row seat to everything it takes to launch and grow a company in a new country.
+                    </p>
+                    <p>
+                        That early exposure shaped my career. For over a decade, I've worked with immigrant founders and business owners who hired me to help create, structure, or scale their businesses. From trucking and hospitality to software, retail, childcare, and real estate &mdash; I've been involved in building real companies across a wide range of industries.
+                    </p>
+                    <p>
+                        That business-first experience is what I now bring into my immigration practice. I help foreign entrepreneurs and investors pursue the E-2 Treaty Investor Visa with a clear focus on both the legal process and the business behind it.
+                    </p>
+                    <p>
+                        What makes EMAN &amp; Associates different? We don't just prepare and file your visa petition. We handle the full business side of the process. Whether you are acquiring an existing company, launching a new venture, or structuring an investment, we guide you through each step &mdash; from entity formation and asset transfers to operational setup and compliance.
+                    </p>
+                    <p>
+                        When you work with us, you get more than legal support. You get an attorney who understands how businesses are actually built and grown.
+                    </p>
+                    <p>
+                        I also bring a global perspective to my work. I've lived in France, played club soccer in Romania and Belgium, and I speak fluent French. I've seen firsthand how immigrants contribute to this country, and I respect the drive it takes to build something new in an unfamiliar place.
+                    </p>
+                    <p>
+                        If you are ready to invest in your future in the United States, I'd be glad to help you move forward.
+                    </p>
+                    <div class="about__credentials">
+                        <span class="about__credential">New England Law Boston, JD</span>
+                        <span class="about__credential">Licensed in Massachusetts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Testimonials ─── -->
+    <section class="testimonials section-space--lg">
+        <div class="container">
+            <div class="testimonials__header reveal">
+                <span class="label">Google Reviews <span class="rule"></span></span>
+                <h2 class="heading-lg">What Our Clients &amp; Colleagues Say</h2>
+            </div>
+            <div class="testimonials__grid">
+                <div class="testimonials__row reveal">
+                    <img src="review-villalobos.jpeg" alt="Google review by Michael Villalobos" class="review-screenshot">
+                    <img src="review-hsing.jpeg" alt="Google review by Julien Hsing" class="review-screenshot">
+                </div>
+                <div class="testimonials__row reveal reveal-delay-1">
+                    <img src="review-anderson.jpeg" alt="Google review by C Anderson" class="review-screenshot">
+                    <img src="review-aduralere.jpeg" alt="Google review by Timothy Aduralere" class="review-screenshot">
+                </div>
+                <div class="testimonials__row testimonials__row--single reveal reveal-delay-2">
+                    <img src="review-masunga.jpeg" alt="Google review by Gakii Masunga" class="review-screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Ready to Talk ─── -->
+    <section class="cta-bar">
+        <div class="container">
+            <div class="cta-bar__inner">
+                <div class="cta-bar__text">
+                    <h3 class="heading-sm">Ready to Talk?</h3>
+                    <p>No pitch. No pressure. A clear picture of your path forward.</p>
+                </div>
+                <a href="#contact" class="btn btn--primary">Request a Free Consultation <span class="btn__arrow">&rarr;</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FAQ ─── -->
+    <section class="faq section-space--lg" id="faq">
+        <div class="container">
+            <div class="faq__grid">
+                <div class="faq__header reveal">
+                    <span class="label">Common Questions <span class="rule"></span></span>
+                    <h2 class="heading-lg">Frequently Asked Questions</h2>
+                </div>
+                <div class="faq__list reveal">
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            Do I need separate attorneys for the visa and the business side?
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">No. That's exactly the problem we solve. We handle the visa application, entity formation, business transaction, and all supporting documentation under one roof. This ensures your application tells a coherent story to the consular officer.</div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            Do I have to close my Canadian business to qualify?
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">No. Many E-2 applicants maintain their Canadian operations while establishing a U.S. enterprise. The key requirement is that you're directing and developing a real U.S. business &mdash; not just passively investing.</div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            What happens if my application is denied?
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">We stand behind every application we file. If your case is denied, we work with you to understand the reason and determine the best path forward &mdash; whether that's a refiling, restructuring, or a different approach entirely.</div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            Can I use my home equity as the investment capital?
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">Yes. Home equity lines of credit are one of the most common funding sources for Canadian E-2 applicants. The key is proper documentation showing the source and trail of funds, which we prepare as part of your application package.</div>
+                        </div>
+                    </div>
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            Why does it matter that the interview is only in Toronto?
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer-inner">The Toronto consulate is the only U.S. consulate in Canada that processes E-2 visas. This means the consular officers there see a high volume of E-2 applications and apply consistent, well-known standards. We prepare specifically for the Toronto consulate's expectations and current processing patterns.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Final CTA ─── -->
+    <section class="final-cta section-space--lg" id="contact">
+        <div class="container">
+            <div class="final-cta__content">
+                <span class="label">Ready To Move Forward?</span>
+                <h2 class="heading-xl">Some Firms File.<br><em>We Finish.</em></h2>
+                <p class="final-cta__body">
+                    The E-2 process takes 4 to 8 months from engagement to U.S. entry. Entity formation, business acquisition, and visa filing all happen in sequence &mdash; each step has a timeline. If you have a target date, the time to start is now.
+                </p>
+                <a href="#" class="btn btn--primary" style="font-size: 1rem; padding: 1.15rem 2.8rem;">Request a Free Consultation <span class="btn__arrow">&rarr;</span></a>
+                <p class="final-cta__sub">
+                    We'll assess your case, map out the legal steps, and give you a clear picture of what a full-service engagement involves. If we're not the right fit, we'll tell you that too.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <a href="#" class="footer__logo">Eman & Associates</a>
+                <span class="footer__legal">Licensed in Massachusetts &nbsp;&bull;&nbsp; EMAN &amp; Associates P.C.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ─── Scroll-based nav ───
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // ─── Mobile menu ───
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        toggle.addEventListener('click', () => links.classList.toggle('open'));
+
+        // ─── Scroll reveal ───
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ─── FAQ accordion ───
+        document.querySelectorAll('.faq__question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const answer = item.querySelector('.faq__answer');
+                const isActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq__item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.faq__answer').style.maxHeight = null;
+                    i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+                });
+
+                // Open clicked (if wasn't already open)
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    btn.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+
+        // ─── Smooth scroll for anchor links ───
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    links.classList.remove('open');
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
