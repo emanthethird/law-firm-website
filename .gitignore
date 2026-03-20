@@ -1,0 +1,11 @@
+# Large source files
+Full body profile V3.png
+hero.png
+*.docx
+.DS_Store
+.claude/
+
+# Root-level images (source copies, not for deploy)
+/attorney.jpg
+/pricing.html
+/review-*.jpeg
