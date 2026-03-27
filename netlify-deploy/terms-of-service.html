@@ -235,6 +235,19 @@
             width: 100%;
         }
 
+        .footer__contact {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.25);
+            line-height: 1.7;
+        }
+
+        .footer__contact a {
+            color: rgba(255,255,255,0.25);
+            text-decoration: none;
+        }
+
+        .footer__contact a:hover { color: rgba(255,255,255,0.5); }
+
         @media (max-width: 600px) {
             .footer__inner { flex-direction: column; align-items: flex-start; }
         }
@@ -343,7 +356,11 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
-                <a href="index.html" class="footer__logo">Eman &amp; Associates</a>
+                <a href="index.html" class="footer__logo">Eman &amp; Associates P.C.</a>
+                <div class="footer__contact">
+                    1 Washington St. #1362, Boston, MA 02108 &nbsp;&bull;&nbsp;
+                    <a href="tel:+16175069260">617-506-9260</a>
+                </div>
                 <div class="footer__links">
                     <a href="privacy-policy.html">Privacy Policy</a>
                     <a href="terms-of-service.html">Terms of Service</a>
