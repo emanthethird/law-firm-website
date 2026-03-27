@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | EMAN & Associates P.C.</title>
+    <meta name="description" content="Privacy Policy for EMAN & Associates P.C. — how we collect, use, and protect your personal information.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1a2638;
+            --navy-deep: #0f1923;
+            --sage: #6b9e85;
+            --sage-light: #7db495;
+            --cream: #faf8f5;
+            --warm-gray: #f3f0ec;
+            --text-primary: #1a2638;
+            --text-secondary: #5a6672;
+            --text-light: #8a939c;
+            --border: #e4e0db;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ─── Nav ─── */
+        .nav {
+            background: var(--navy-deep);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+        }
+
+        .nav__back {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav__back:hover { color: var(--sage-light); }
+
+        /* ─── Page Header ─── */
+        .page-header {
+            background: var(--cream);
+            border-bottom: 1px solid var(--border);
+            padding: 4rem 0 3rem;
+        }
+
+        .page-header__label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.12;
+            margin-bottom: 1rem;
+        }
+
+        .page-header__meta {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* ─── Content ─── */
+        .content {
+            padding: 4rem 0 6rem;
+        }
+
+        .content h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 3rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .content h2:first-child { margin-top: 0; }
+
+        .content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin: 1.75rem 0 0.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .content p {
+            font-size: 0.9375rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .content ul, .content ol {
+            margin: 0.75rem 0 1rem 1.5rem;
+        }
+
+        .content li {
+            font-size: 0.9375rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .content a {
+            color: var(--sage);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .content a:hover { border-bottom-color: var(--sage); }
+
+        .highlight-box {
+            background: var(--cream);
+            border-left: 3px solid var(--sage);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            font-size: 0.875rem;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.25rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.875rem;
+        }
+
+        th {
+            background: var(--navy);
+            color: rgba(255,255,255,0.9);
+            font-weight: 500;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.04em;
+        }
+
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        tr:last-child td { border-bottom: none; }
+        tr:nth-child(even) td { background: var(--cream); }
+
+        /* ─── Footer ─── */
+        .footer {
+            background: var(--navy-deep);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem 0;
+        }
+
+        .footer__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer__logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+        }
+
+        .footer__links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer__links a {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer__links a:hover { color: rgba(255,255,255,0.6); }
+
+        .footer__legal {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.2);
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .footer__inner { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="container">
+            <div class="nav__inner">
+                <a href="index.html" class="nav__logo">Eman &amp; Associates</a>
+                <a href="index.html" class="nav__back">← Back to Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <span class="page-header__label">Legal</span>
+            <h1>Privacy Policy</h1>
+            <p class="page-header__meta">Last updated: March 27, 2026</p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+
+            <div class="highlight-box">
+                <p><strong>Summary:</strong> EMAN &amp; Associates P.C. collects your name, email address, and phone number when you contact us or submit a lead form. We use this information to respond to your inquiry and, where you have consented, to follow up about our services. We do not sell your personal information.</p>
+            </div>
+
+            <h2>1. Who We Are</h2>
+            <p>EMAN &amp; Associates P.C. ("we," "us," or "our") is a Massachusetts-licensed business immigration law firm. Our principal place of business is 1 Washington St. #1362, Boston, MA 02108.</p>
+            <p><strong>Data Controller (GDPR) / Organization Responsible for Personal Information (PIPEDA):</strong><br>
+            EMAN &amp; Associates P.C.<br>
+            1 Washington St. #1362, Boston, MA 02108<br>
+            Email: <a href="mailto:e@emanlegal.com">e@emanlegal.com</a><br>
+            Website: <a href="https://emanlegal.com">https://emanlegal.com</a></p>
+
+            <h2>2. Information We Collect</h2>
+            <p>We collect only the information necessary to respond to your inquiry and provide our legal services.</p>
+            <h3>Information You Provide Directly</h3>
+            <ul>
+                <li><strong>Name</strong> — to address you properly and identify your inquiry</li>
+                <li><strong>Email address</strong> — to communicate with you about our services</li>
+                <li><strong>Phone number</strong> — to schedule consultations and follow up on inquiries</li>
+                <li>Any additional information you voluntarily include in a message or form submission</li>
+            </ul>
+            <h3>Information Collected Automatically</h3>
+            <ul>
+                <li><strong>Usage data</strong> — pages visited, time on site, referring URLs, browser type, and device information, collected via Google Analytics</li>
+                <li><strong>Advertising data</strong> — interactions with our ads and website, collected via Meta Pixel, used to measure ad performance and serve relevant ads</li>
+                <li><strong>Cookies and similar technologies</strong> — see Section 7 below</li>
+            </ul>
+
+            <h2>3. How We Collect Your Information</h2>
+            <p>We collect personal information through the following channels:</p>
+            <ul>
+                <li><strong>Contact and inquiry forms</strong> on our website (emanlegal.com)</li>
+                <li><strong>Meta lead ads</strong> — when you submit a lead form through Facebook or Instagram advertising</li>
+                <li><strong>Direct communications</strong> — when you email or call us</li>
+                <li><strong>Automated tracking technologies</strong> — Google Analytics and Meta Pixel as described in Section 7</li>
+            </ul>
+
+            <h2>4. How We Use Your Information</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Purpose</th>
+                            <th>Legal Basis (GDPR)</th>
+                            <th>PIPEDA Basis</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Respond to your inquiry or consultation request</td>
+                            <td>Pre-contractual steps (Art. 6(1)(b)) / Legitimate interests (Art. 6(1)(f))</td>
+                            <td>Implied consent; necessary to fulfill stated purpose</td>
+                        </tr>
+                        <tr>
+                            <td>Follow up on your inquiry about our services</td>
+                            <td>Legitimate interests (Art. 6(1)(f))</td>
+                            <td>Implied consent at time of collection</td>
+                        </tr>
+                        <tr>
+                            <td>Maintain records of client communications</td>
+                            <td>Legal obligation / Legitimate interests (Art. 6(1)(c)/(f))</td>
+                            <td>Necessary for accountability and professional obligations</td>
+                        </tr>
+                        <tr>
+                            <td>Measure and improve our advertising campaigns</td>
+                            <td>Consent (Art. 6(1)(a)) for cookies/tracking; Legitimate interests for aggregate analytics</td>
+                            <td>Consent where required; otherwise legitimate business purpose</td>
+                        </tr>
+                        <tr>
+                            <td>Serve relevant ads on Meta platforms to similar audiences</td>
+                            <td>Consent (Art. 6(1)(a))</td>
+                            <td>Consent</td>
+                        </tr>
+                        <tr>
+                            <td>Comply with legal and professional obligations</td>
+                            <td>Legal obligation (Art. 6(1)(c))</td>
+                            <td>Legal obligation</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>We do not use your personal information for automated decision-making or profiling that produces legal or similarly significant effects.</p>
+
+            <h2>5. How We Share Your Information</h2>
+            <p>We do not sell your personal information. We share your information only with the following categories of recipients, and only to the extent necessary for the stated purpose.</p>
+            <h3>Service Providers (Data Processors)</h3>
+            <ul>
+                <li><strong>HighLevel, Inc.</strong> — our CRM and marketing automation platform, which stores contact information and facilitates follow-up communications. HighLevel processes data on our behalf under a data processing agreement. <a href="https://www.gohighlevel.com/privacy-policy" target="_blank" rel="noopener noreferrer">HighLevel Privacy Policy</a></li>
+                <li><strong>Google LLC</strong> — we use Google Analytics to understand how visitors use our website. Google may process data in the United States. You can opt out at <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">tools.google.com/dlpage/gaoptout</a>. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+                <li><strong>Meta Platforms, Inc.</strong> — we use Meta Pixel to measure the effectiveness of our advertising and, where permitted, to create Custom Audiences for ad targeting. Meta may process data in the United States. <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a></li>
+            </ul>
+            <h3>Professional and Legal Disclosures</h3>
+            <p>We may disclose your information where required by law, court order, or applicable professional regulations governing attorneys, or to protect our legal rights.</p>
+            <p>We do not share your personal information with any other third parties for their own marketing purposes.</p>
+
+            <h2>6. Data Retention</h2>
+            <p>We retain your personal information for as long as necessary to fulfill the purposes described in this Policy, and in accordance with our professional obligations as a law firm.</p>
+            <ul>
+                <li><strong>Inquiry and contact records:</strong> up to <strong>3 years</strong> from the date of our last interaction, unless a client relationship is established</li>
+                <li><strong>Client matter records:</strong> retained in accordance with Massachusetts Rules of Professional Conduct and applicable state law, typically a minimum of 7 years after matter closure</li>
+                <li><strong>Analytics data:</strong> retained according to our Google Analytics data retention settings (default 26 months)</li>
+                <li><strong>Marketing/advertising data:</strong> retained per Meta's data retention policies</li>
+            </ul>
+            <p>After the applicable retention period, we securely delete or anonymize your personal information.</p>
+
+            <h2>7. Cookies and Tracking Technologies</h2>
+            <p>Our website uses the following tracking technologies:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Technology</th>
+                            <th>Provider</th>
+                            <th>Purpose</th>
+                            <th>How to Opt Out</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Google Analytics</td>
+                            <td>Google LLC</td>
+                            <td>Website traffic and usage analytics</td>
+                            <td><a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">GA Opt-Out Add-on</a></td>
+                        </tr>
+                        <tr>
+                            <td>Meta Pixel</td>
+                            <td>Meta Platforms, Inc.</td>
+                            <td>Ad performance measurement and audience targeting</td>
+                            <td><a href="https://www.facebook.com/help/568137493302217" target="_blank" rel="noopener noreferrer">Meta Ad Preferences</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>You can also control cookies through your browser settings. Note that disabling certain cookies may affect website functionality. For more information on managing cookies, visit <a href="https://www.allaboutcookies.org" target="_blank" rel="noopener noreferrer">allaboutcookies.org</a>.</p>
+            <p><strong>Do Not Track:</strong> Our website does not currently respond to "Do Not Track" browser signals.</p>
+
+            <h2>8. International Data Transfers</h2>
+            <p>We are based in the United States. If you are located in the European Economic Area (EEA), the United Kingdom, or Canada, your personal information may be transferred to and processed in the United States, which may not provide the same level of data protection as your home jurisdiction.</p>
+            <p>Where required by applicable law, we rely on the following safeguards for international transfers:</p>
+            <ul>
+                <li><strong>European Economic Area / UK:</strong> Transfers to our US-based service providers are conducted under Standard Contractual Clauses (SCCs) approved by the European Commission, or under the service provider's applicable data transfer framework.</li>
+                <li><strong>Canada:</strong> Transfers are conducted in accordance with PIPEDA and with contractual protections requiring service providers to maintain comparable levels of protection.</li>
+            </ul>
+
+            <h2>9. Your Privacy Rights</h2>
+            <h3>Rights Under GDPR (EEA and UK Residents)</h3>
+            <p>If you are located in the EEA or United Kingdom, you have the following rights under the General Data Protection Regulation (GDPR) and UK GDPR:</p>
+            <ul>
+                <li><strong>Right of access</strong> — request a copy of the personal data we hold about you</li>
+                <li><strong>Right to rectification</strong> — request correction of inaccurate or incomplete data</li>
+                <li><strong>Right to erasure</strong> ("right to be forgotten") — request deletion of your personal data, subject to our legal retention obligations</li>
+                <li><strong>Right to restriction</strong> — request that we limit how we use your data</li>
+                <li><strong>Right to data portability</strong> — receive your data in a structured, machine-readable format</li>
+                <li><strong>Right to object</strong> — object to processing based on legitimate interests, including for direct marketing</li>
+                <li><strong>Right to withdraw consent</strong> — where processing is based on consent, you may withdraw it at any time without affecting prior processing</li>
+                <li><strong>Right to lodge a complaint</strong> — you have the right to file a complaint with your local supervisory authority (e.g., your national data protection authority in the EEA, or the ICO in the UK)</li>
+            </ul>
+            <h3>Rights Under PIPEDA (Canadian Residents)</h3>
+            <p>If you are a resident of Canada, you have the following rights under the Personal Information Protection and Electronic Documents Act (PIPEDA):</p>
+            <ul>
+                <li><strong>Right of access</strong> — request access to the personal information we hold about you</li>
+                <li><strong>Right to correction</strong> — challenge the accuracy and completeness of your information and request amendment</li>
+                <li><strong>Right to withdraw consent</strong> — subject to legal or contractual restrictions and reasonable notice</li>
+                <li><strong>Right to complain</strong> — if you believe we have not complied with PIPEDA, you may file a complaint with the Office of the Privacy Commissioner of Canada at <a href="https://www.priv.gc.ca" target="_blank" rel="noopener noreferrer">www.priv.gc.ca</a></li>
+            </ul>
+            <h3>Canadian Anti-Spam Law (CASL)</h3>
+            <p>We will not send you commercial electronic messages (CEMs) without your express or implied consent under CASL. Every CEM we send will identify EMAN &amp; Associates P.C. as the sender and provide a functioning unsubscribe mechanism. You can opt out of commercial messages at any time by replying "UNSUBSCRIBE" or following the unsubscribe link in any message.</p>
+            <h3>All Users</h3>
+            <p>To exercise any of your privacy rights, contact us at <a href="mailto:e@emanlegal.com">e@emanlegal.com</a>. We will respond within the timeframe required by applicable law (generally 30 days under GDPR; 30 business days under PIPEDA).</p>
+
+            <h2>10. Data Security</h2>
+            <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, disclosure, alteration, and destruction. These measures include access controls, encrypted communications, and vendor due diligence. However, no method of transmission over the internet or electronic storage is completely secure.</p>
+            <p>As a Massachusetts-licensed law firm, we maintain a Written Information Security Program (WISP) in accordance with 201 CMR 17.00.</p>
+            <p>In the event of a data breach that triggers notification obligations under applicable law, we will notify affected individuals and relevant authorities as required.</p>
+
+            <h2>11. Children's Privacy</h2>
+            <p>Our website and services are directed to adults. We do not knowingly collect personal information from children under the age of 13 (or 16 in the EEA). If we become aware that we have inadvertently collected such information, we will delete it promptly. If you believe we have collected information from a child, please contact us at <a href="mailto:e@emanlegal.com">e@emanlegal.com</a>.</p>
+
+            <h2>12. Third-Party Links</h2>
+            <p>Our website may contain links to third-party websites. This Privacy Policy applies solely to information collected on emanlegal.com. We are not responsible for the privacy practices of third-party sites and encourage you to review their privacy policies.</p>
+
+            <h2>13. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. We will post the updated Policy on this page with a revised "Last updated" date. Where changes are material, we will provide additional notice. Your continued use of our website after any update constitutes acceptance of the revised Policy.</p>
+
+            <h2>14. Contact Us</h2>
+            <p>For questions, requests, or concerns about this Privacy Policy or our data practices, please contact:</p>
+            <p>
+                <strong>EMAN &amp; Associates P.C.</strong><br>
+                1 Washington St. #1362<br>
+                Boston, MA 02108<br>
+                Email: <a href="mailto:e@emanlegal.com">e@emanlegal.com</a><br>
+                Website: <a href="https://emanlegal.com">https://emanlegal.com</a>
+            </p>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <a href="index.html" class="footer__logo">Eman &amp; Associates</a>
+                <div class="footer__links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+                <span class="footer__legal">Licensed in Massachusetts &nbsp;&bull;&nbsp; EMAN &amp; Associates P.C.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
