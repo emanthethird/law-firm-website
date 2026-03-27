@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Consultation Is Booked — EMAN & Associates</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1a2638;
+            --navy-deep: #0f1923;
+            --navy-mid: #243345;
+            --sage: #6b9e85;
+            --sage-light: #7db495;
+            --sage-faint: rgba(107, 158, 133, 0.08);
+            --sage-glow: rgba(107, 158, 133, 0.15);
+            --cream: #faf8f5;
+            --warm-gray: #f3f0ec;
+            --warm-gray-dark: #e8e4de;
+            --text-primary: #1a2638;
+            --text-secondary: #5a6672;
+            --text-light: #8a939c;
+            --border: #e4e0db;
+            --white: #ffffff;
+            --red-muted: #c0392b;
+            --red-faint: rgba(192, 57, 43, 0.06);
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-primary);
+            background: var(--cream);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── NAV ─── */
+        .nav {
+            background: var(--navy-deep);
+            padding: 0 clamp(1.25rem, 4vw, 4rem);
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .nav-logo span { color: var(--sage); }
+
+        .nav-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--sage-light);
+            letter-spacing: 0.03em;
+        }
+
+        .nav-status::before {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--sage);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* ─── HERO ─── */
+        .hero {
+            background: var(--navy);
+            padding: clamp(3.5rem, 7vw, 6rem) clamp(1.25rem, 4vw, 4rem) clamp(4rem, 8vw, 7rem);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 0%, rgba(107,158,133,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 60% at 80% 100%, rgba(107,158,133,0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(107,158,133,0.12);
+            border: 1px solid rgba(107,158,133,0.2);
+            border-radius: 100px;
+            padding: 0.4rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badge svg { width: 14px; height: 14px; }
+
+        .hero-badge span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--sage-light);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.12;
+            color: #fff;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--sage-light);
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.55);
+            max-width: 560px;
+            margin: 0 auto 3rem;
+        }
+
+        .hero-sub strong {
+            color: rgba(255,255,255,0.85);
+            font-weight: 500;
+        }
+
+        /* ─── VIDEO ─── */
+        .video-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16 / 9;
+            background: linear-gradient(135deg, #0f1923 0%, #1a3040 50%, #0f1923 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1.25rem;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .video-placeholder:hover { filter: brightness(1.08); }
+        .video-placeholder:hover .play-btn { transform: scale(1.08); }
+
+        .video-grain {
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .play-btn {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--sage);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 24px rgba(107,158,133,0.35);
+        }
+
+        .play-btn svg {
+            width: 22px;
+            height: 22px;
+            margin-left: 3px;
+        }
+
+        .video-label {
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.04em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 14px;
+            right: 16px;
+            background: rgba(0,0,0,0.6);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 3px 8px;
+            border-radius: 4px;
+            z-index: 1;
+        }
+
+        /* ─── SECTIONS SHARED ─── */
+        .section {
+            padding: clamp(4rem, 8vw, 7rem) clamp(1.25rem, 4vw, 4rem);
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: clamp(2.5rem, 5vw, 4rem);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.25rem;
+        }
+
+        .eyebrow .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--sage);
+        }
+
+        .eyebrow span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--sage);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 3.8vw, 3rem);
+            font-weight: 700;
+            line-height: 1.12;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.015em;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--sage);
+        }
+
+        .section-subtitle {
+            font-size: 1.02rem;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ─── OFFER STACK — VALUE COMPARISON ─── */
+        .value-section {
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .value-section .section {
+            max-width: 960px;
+        }
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            margin-bottom: 3rem;
+        }
+
+        .stack-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.1rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+
+        .stack-item:last-child { border-bottom: none; }
+        .stack-item:hover { background: var(--sage-faint); }
+
+        .stack-item-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex: 1;
+        }
+
+        .stack-check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--sage-faint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .stack-check svg {
+            width: 11px;
+            height: 9px;
+        }
+
+        .stack-service {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .stack-service-note {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+
+        .stack-price-other {
+            font-size: 0.95rem;
+            color: var(--red-muted);
+            text-decoration: line-through;
+            font-weight: 400;
+            text-align: right;
+            min-width: 120px;
+        }
+
+        /* Stack total row */
+        .stack-total {
+            background: var(--warm-gray);
+            border-radius: 8px;
+            padding: 1.5rem 1.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .stack-total-label {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .stack-total-price {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--red-muted);
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+        }
+
+        /* Your price card */
+        .your-price {
+            background: var(--navy);
+            border-radius: 10px;
+            padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .your-price::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(107,158,133,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .your-price-eyebrow {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--sage-light);
+            margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .your-price-headline {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.15;
+        }
+
+        .your-price-amount {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(3rem, 5vw, 4.2rem);
+            font-weight: 800;
+            color: var(--sage-light);
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0.35rem;
+        }
+
+        .your-price-note {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .your-price-tagline {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.7;
+            max-width: 480px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .your-price-tagline strong {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* ─── PRICING TIERS ─── */
+        .pricing-bg {
+            background: var(--cream);
+        }
+
+        .tiers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1.25rem, 2.5vw, 2rem);
+            margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+        }
+
+        .tier {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .tier:hover {
+            border-color: var(--sage);
+            box-shadow: 0 12px 48px rgba(26, 38, 56, 0.06);
+        }
+
+        .tier--featured {
+            border-color: var(--sage);
+            box-shadow: 0 4px 24px rgba(107, 158, 133, 0.1);
+        }
+
+        .tier--featured::before {
+            content: 'MOST COMMON';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            background: var(--sage);
+            color: var(--white);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 0.5rem;
+        }
+
+        .tier__top {
+            padding: clamp(2rem, 3.5vw, 2.8rem) clamp(1.5rem, 3vw, 2.5rem) 0;
+        }
+
+        .tier--featured .tier__top {
+            padding-top: clamp(3rem, 4.5vw, 3.8rem);
+        }
+
+        .tier__name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+            line-height: 1.2;
+        }
+
+        .tier__audience {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .tier__price {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.8rem, 4vw, 3.5rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1;
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.02em;
+        }
+
+        .tier__price-note {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            margin-bottom: 1.75rem;
+        }
+
+        .tier__cta {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            padding: 0.9rem 1.5rem;
+            border-radius: 100px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .tier__cta--primary {
+            background: var(--sage);
+            color: var(--white);
+        }
+
+        .tier__cta--primary:hover {
+            background: var(--sage-light);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(107, 158, 133, 0.25);
+        }
+
+        .tier__cta--outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .tier__cta--outline:hover {
+            border-color: var(--navy);
+            background: var(--cream);
+        }
+
+        .tier__divider {
+            height: 1px;
+            background: var(--border);
+            margin: 1.75rem clamp(1.5rem, 3vw, 2.5rem) 0;
+        }
+
+        .tier__body {
+            padding: 1.5rem clamp(1.5rem, 3vw, 2.5rem) 0;
+            flex: 1;
+        }
+
+        .tier__includes-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .tier__list {
+            list-style: none;
+        }
+
+        .tier__list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            padding: 0.45rem 0;
+        }
+
+        .tier__list li::before {
+            content: '';
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            margin-top: 1px;
+            border-radius: 50%;
+            background: var(--sage-faint);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%236b9e85' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .tier__footer {
+            padding: 1.5rem clamp(1.5rem, 3vw, 2.5rem) clamp(1.75rem, 3vw, 2.5rem);
+            margin-top: auto;
+        }
+
+        .tier__bestfor {
+            background: var(--cream);
+            border-radius: 6px;
+            padding: 1.15rem 1.35rem;
+        }
+
+        .tier__bestfor-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 0.5rem;
+        }
+
+        .tier__bestfor-text {
+            font-size: 0.875rem;
+            line-height: 1.65;
+            color: var(--text-secondary);
+        }
+
+        /* ─── GUARANTEE ─── */
+        .guarantee {
+            background: var(--navy);
+            border-radius: 8px;
+            padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3.5rem);
+            display: flex;
+            align-items: flex-start;
+            gap: clamp(1.25rem, 3vw, 2.5rem);
+            margin-bottom: clamp(1.25rem, 2.5vw, 2rem);
+        }
+
+        .guarantee__icon {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(107, 158, 133, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .guarantee__icon svg { width: 22px; height: 22px; }
+
+        .guarantee__content { flex: 1; }
+
+        .guarantee__title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+
+        .guarantee__text {
+            font-size: 0.925rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .guarantee__text strong {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+        }
+
+        /* ─── WHAT TO EXPECT ─── */
+        .expect-bg {
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .expect-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+        }
+
+        .expect-card {
+            text-align: center;
+            padding: 2rem 1.25rem;
+        }
+
+        .expect-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--sage-faint);
+            border: 1px solid rgba(107,158,133,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .expect-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--sage);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .expect-card h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.6rem;
+        }
+
+        .expect-card p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ─── TECH REQUIREMENTS ─── */
+        .tech-section {
+            background: var(--navy);
+            color: #fff;
+        }
+
+        .tech-section .section {
+            max-width: 780px;
+            text-align: center;
+        }
+
+        .tech-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .tech-title em {
+            font-style: italic;
+            color: var(--sage-light);
+        }
+
+        .tech-desc {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.8;
+            max-width: 560px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .tech-items {
+            display: flex;
+            justify-content: center;
+            gap: clamp(2rem, 5vw, 4rem);
+            flex-wrap: wrap;
+        }
+
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .tech-item-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: rgba(107,158,133,0.12);
+            border: 1px solid rgba(107,158,133,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tech-item-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--sage-light);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .tech-item-label {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 0.02em;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--navy-deep);
+            padding: 2.5rem clamp(1.25rem, 4vw, 4rem);
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .footer-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-text {
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.2);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ─── ANIMATIONS ─── */
+        .r { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+        .r.v { opacity: 1; transform: translateY(0); }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .fd1 { animation-delay: 0.1s; }
+        .fd2 { animation-delay: 0.2s; }
+        .fd3 { animation-delay: 0.3s; }
+        .fd4 { animation-delay: 0.4s; }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .tiers { grid-template-columns: 1fr; }
+            .expect-grid { grid-template-columns: 1fr; gap: 0; }
+            .guarantee { flex-direction: column; }
+            .tech-items { flex-direction: column; align-items: center; }
+        }
+
+        @media (max-width: 600px) {
+            .stack-item { flex-direction: column; align-items: flex-start; gap: 4px; padding: 1rem 1rem; }
+            .stack-price-other { text-align: left; min-width: auto; }
+            .stack-total { flex-direction: column; gap: 0.5rem; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav class="nav">
+        <a href="#" class="nav-logo">EMAN <span>&</span> ASSOCIATES</a>
+        <span class="nav-status">Consultation Confirmed</span>
+    </nav>
+
+    <!-- HERO + VIDEO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-badge fade-in">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#7db495" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                <span>You're Booked</span>
+            </div>
+            <h1 class="hero-title fade-in fd1">Watch This Before <em>Your Call</em></h1>
+            <p class="hero-sub fade-in fd2">This <strong>8-minute video</strong> covers who we are, how we work, and what to expect — so we can skip the basics and get straight to your situation.</p>
+
+            <div class="video-wrap fade-in fd3">
+                <script src="https://fast.wistia.com/player.js" async></script>
+                <script src="https://fast.wistia.com/embed/iv9sq04knz.js" async type="module"></script>
+                <style>wistia-player[media-id='iv9sq04knz']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/iv9sq04knz/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+                <wistia-player media-id="iv9sq04knz" aspect="1.7777777777777777"></wistia-player>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFER STACK / VALUE COMPARISON -->
+    <div class="value-section">
+        <section class="section">
+            <div class="section-header r">
+                <div class="eyebrow">
+                    <span class="dot"></span>
+                    <span>The Real Cost of Piecemeal</span>
+                </div>
+                <h2 class="section-title">What Most Investors Pay<br><em>Hiring Separately</em></h2>
+                <p class="section-subtitle">Most firms quote you "just the visa." Then you discover you need five other professionals — none of whom are talking to each other.</p>
+            </div>
+
+            <div class="stack-grid r">
+                <div class="stack-item">
+                    <div class="stack-item-left">
+                        <div class="stack-check"><svg viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#6b9e85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div>
+                            <div class="stack-service">Immigration Attorney — Visa Petition & Filing</div>
+                            <div class="stack-service-note">Most firms stop here</div>
+                        </div>
+                    </div>
+                    <div class="stack-price-other">$5,000 – $8,000</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-left">
+                        <div class="stack-check"><svg viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#6b9e85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div>
+                            <div class="stack-service">Business Attorney — Entity Formation (LLC / C-Corp)</div>
+                            <div class="stack-service-note">Separate engagement, separate billing</div>
+                        </div>
+                    </div>
+                    <div class="stack-price-other">$1,500 – $3,000</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-left">
+                        <div class="stack-check"><svg viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#6b9e85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div>
+                            <div class="stack-service">Transaction Attorney — Purchase Agreement & Negotiation</div>
+                            <div class="stack-service-note">Franchise or acquisition deal docs</div>
+                        </div>
+                    </div>
+                    <div class="stack-price-other">$3,000 – $7,000</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-left">
+                        <div class="stack-check"><svg viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#6b9e85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div>
+                            <div class="stack-service">Escrow Structuring & Investment Documentation</div>
+                            <div class="stack-service-note">Proving funds are irrevocably committed</div>
+                        </div>
+                    </div>
+                    <div class="stack-price-other">$1,500 – $3,000</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-left">
+                        <div class="stack-check"><svg viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#6b9e85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div>
+                            <div class="stack-service">Business Plan Writer — Projections & Market Analysis</div>
+                            <div class="stack-service-note">Needs to be credible, not boilerplate</div>
+                        </div>
+                    </div>
+                    <div class="stack-price-other">$3,000 – $5,000</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-left">
+                        <div class="stack-check"><svg viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#6b9e85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div>
+                            <div class="stack-service">Cross-Border Tax Advisor — U.S. / Canada Structuring</div>
+                            <div class="stack-service-note">Critical for avoiding double taxation</div>
+                        </div>
+                    </div>
+                    <div class="stack-price-other">$2,000 – $5,000</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-left">
+                        <div class="stack-check"><svg viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#6b9e85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div>
+                            <div class="stack-service">Source-of-Funds Documentation & Financial Trail</div>
+                            <div class="stack-service-note">Often overlooked — a top denial reason</div>
+                        </div>
+                    </div>
+                    <div class="stack-price-other">$1,500 – $3,000</div>
+                </div>
+                <div class="stack-item">
+                    <div class="stack-item-left">
+                        <div class="stack-check"><svg viewBox="0 0 10 8" fill="none"><path d="M1 4l2.5 2.5L9 1" stroke="#6b9e85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        <div>
+                            <div class="stack-service">Consulate Interview Prep Coach</div>
+                            <div class="stack-service-note">Mock interview and strategy session</div>
+                        </div>
+                    </div>
+                    <div class="stack-price-other">$500 – $1,500</div>
+                </div>
+            </div>
+
+            <div class="stack-total r">
+                <div class="stack-total-label">Total if you hire separately</div>
+                <div class="stack-total-price">$18,000 – $35,500</div>
+            </div>
+
+            <div class="your-price r">
+                <div class="your-price-eyebrow">With EMAN & Associates — Everything Included</div>
+                <div class="your-price-headline">One Firm. One Fee.</div>
+                <div class="your-price-amount">$9,950</div>
+                <div class="your-price-note">Starting price · Fixed fee · No hourly billing</div>
+                <p class="your-price-tagline"><strong>Every service listed above is included.</strong> One attorney. One team. No handoffs, no surprise invoices, no coordination headaches. The reason our applications hold up is that every piece tells the same story.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- PRICING TIERS -->
+    <div class="pricing-bg">
+        <section class="section">
+            <div class="section-header r">
+                <div class="eyebrow">
+                    <span class="dot"></span>
+                    <span>Investment</span>
+                </div>
+                <h2 class="section-title">Choose <em>Your Path</em></h2>
+                <p class="section-subtitle">Both plans include our money-back guarantee. Every engagement starts with a free consultation to confirm you're a fit.</p>
+            </div>
+
+            <div class="tiers r">
+                <!-- Tier 1 -->
+                <div class="tier tier--featured">
+                    <div class="tier__top">
+                        <div class="tier__name">Start a U.S. Business</div>
+                        <div class="tier__audience">For investors launching a franchise or new venture</div>
+                        <div class="tier__price">$9,950</div>
+                        <div class="tier__price-note">Fixed fee · No hourly billing</div>
+                        <a href="#" class="tier__cta tier__cta--primary">See If You Qualify →</a>
+                    </div>
+                    <div class="tier__divider"></div>
+                    <div class="tier__body">
+                        <div class="tier__includes-label">What's included</div>
+                        <ul class="tier__list">
+                            <li>E-2 visa strategy session and qualification assessment</li>
+                            <li>U.S. LLC formation in your target state</li>
+                            <li>Franchise agreement review and negotiation support</li>
+                            <li>Investment escrow structuring</li>
+                            <li>Source-of-funds documentation and financial trail</li>
+                            <li>Business plan with financial projections</li>
+                            <li>Complete visa application preparation and filing</li>
+                            <li>Toronto consulate interview prep (mock interview included)</li>
+                            <li>Client portal access for real-time case tracking</li>
+                        </ul>
+                    </div>
+                    <div class="tier__footer">
+                        <div class="tier__bestfor">
+                            <div class="tier__bestfor-label">Best for</div>
+                            <div class="tier__bestfor-text">You're starting fresh in the U.S. — buying a franchise or launching a new business — and need the visa, entity, and transaction handled start to finish.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="tier">
+                    <div class="tier__top">
+                        <div class="tier__name">Acquire or Expand<br>Into the U.S.</div>
+                        <div class="tier__audience">For investors buying a business or expanding a Canadian company south</div>
+                        <div class="tier__price">$16,500</div>
+                        <div class="tier__price-note">Fixed fee · No hourly billing</div>
+                        <a href="#" class="tier__cta tier__cta--outline">See If You Qualify →</a>
+                    </div>
+                    <div class="tier__divider"></div>
+                    <div class="tier__body">
+                        <div class="tier__includes-label">Everything in Start a U.S. Business, plus</div>
+                        <ul class="tier__list">
+                            <li>Asset or stock purchase agreement drafting and negotiation</li>
+                            <li>Seller due diligence coordination (financial, legal, operational)</li>
+                            <li>Business valuation review and investment structuring</li>
+                            <li>Transfer of licenses, permits, and existing contracts</li>
+                            <li>Post-acquisition or subsidiary entity structuring (C-Corp or LLC)</li>
+                            <li>Cross-border tax planning and structure optimization</li>
+                            <li>Parent-subsidiary intercompany agreements (if expanding)</li>
+                            <li>Spouse work authorization filing included</li>
+                        </ul>
+                    </div>
+                    <div class="tier__footer">
+                        <div class="tier__bestfor">
+                            <div class="tier__bestfor-label">Best for</div>
+                            <div class="tier__bestfor-text">You're buying an operating business or bringing your Canadian company into the U.S. — and need the transaction, cross-border structure, and visa handled as one engagement.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guarantee -->
+            <div class="guarantee r">
+                <div class="guarantee__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#6b9e85" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <polyline points="9 12 11 14 15 10"/>
+                    </svg>
+                </div>
+                <div class="guarantee__content">
+                    <div class="guarantee__title">Denied? We refile at no additional legal fee — or refund your attorney fees.</div>
+                    <p class="guarantee__text">Every package includes our commitment. We assess every case rigorously before we take it on. <strong>If we don't believe you have a strong application, we'll tell you on the first call.</strong> Guarantee subject to the terms of your engagement letter.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- WHAT TO EXPECT -->
+    <div class="expect-bg">
+        <section class="section">
+            <div class="section-header r">
+                <div class="eyebrow">
+                    <span class="dot"></span>
+                    <span>Your Consultation</span>
+                </div>
+                <h2 class="section-title">What to Expect <em>On Our Call</em></h2>
+                <p class="section-subtitle">A free, no-obligation conversation. Our goal is clarity — whether that means moving forward together or not.</p>
+            </div>
+
+            <div class="expect-grid r">
+                <div class="expect-card">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    </div>
+                    <h3>Free &amp; No Pressure</h3>
+                    <p>No obligation, no hard sell. We'll assess your situation and give you an honest answer about whether the E-2 is the right path for you.</p>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Your Situation, Assessed</h3>
+                    <p>We'll discuss your timeline, investment capacity, and business type — then walk you through exactly what the engagement looks like if we're a fit.</p>
+                </div>
+                <div class="expect-card">
+                    <div class="expect-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3>Straight Answers</h3>
+                    <p>If it's not the right fit — because of your situation or because we're not the right firm — we'll tell you directly. You'll leave with clarity either way.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- TECH REQUIREMENTS -->
+    <div class="tech-section">
+        <section class="section">
+            <h2 class="tech-title r">One Last Thing — <em>Please Read This</em></h2>
+            <p class="tech-desc r">This call is about your family's future and a six-figure investment. Give it the focus it deserves.</p>
+
+            <div class="tech-items r">
+                <div class="tech-item">
+                    <div class="tech-item-icon">
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <span class="tech-item-label">Laptop or Desktop</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-icon">
+                        <svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+                    </div>
+                    <span class="tech-item-label">Stable Internet</span>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-item-icon">
+                        <svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+                    </div>
+                    <span class="tech-item-label">Quiet Space</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">EMAN & ASSOCIATES</div>
+        <p class="footer-text">This page is for informational purposes only and does not create an attorney-client relationship. All fees are in USD. Government filing fees are not included. Guarantee subject to the terms of your engagement agreement. Market pricing ranges are based on industry averages and may vary by region and provider.</p>
+    </footer>
+
+    <script>
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('v');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.r').forEach(el => obs.observe(el));
+    </script>
+
+</body>
+</html>
