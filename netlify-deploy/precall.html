@@ -874,6 +874,84 @@
             margin: 0 auto;
         }
 
+        /* ─── REVIEWS ─── */
+        .reviews-bg {
+            background: var(--warm-gray);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(1rem, 2vw, 1.5rem);
+        }
+
+        .reviews-grid .review-img-wrap:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+            max-width: 50%;
+            justify-self: center;
+        }
+
+        .review-img-wrap {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(26, 38, 56, 0.06);
+            border: 1px solid var(--border);
+            background: var(--white);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .review-img-wrap:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(26, 38, 56, 0.1);
+        }
+
+        .review-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .reviews-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 2.5rem;
+        }
+
+        .reviews-badge svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .reviews-badge span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+        }
+
+        .reviews-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .reviews-stars svg {
+            width: 16px;
+            height: 16px;
+            fill: #f5b731;
+            stroke: none;
+        }
+
+        @media (max-width: 600px) {
+            .reviews-grid { grid-template-columns: 1fr; }
+            .reviews-grid .review-img-wrap:last-child:nth-child(odd) {
+                max-width: 100%;
+            }
+        }
+
         /* ─── ANIMATIONS ─── */
         .r { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
         .r.v { opacity: 1; transform: translateY(0); }
@@ -1133,6 +1211,49 @@
                 <div class="guarantee__content">
                     <div class="guarantee__title">Denied? We refile at no additional legal fee — or refund your attorney fees.</div>
                     <p class="guarantee__text">Every package includes our commitment. We assess every case rigorously before we take it on. <strong>If we don't believe you have a strong application, we'll tell you on the first call.</strong> Guarantee subject to the terms of your engagement letter.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- REVIEWS -->
+    <div class="reviews-bg">
+        <section class="section">
+            <div class="section-header r">
+                <div class="eyebrow">
+                    <span class="dot"></span>
+                    <span>Google Reviews</span>
+                </div>
+                <h2 class="section-title">What Our Clients <em>& Colleagues Say</em></h2>
+            </div>
+
+            <div class="reviews-badge r">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                <div class="reviews-stars">
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <span>5.0 on Google</span>
+            </div>
+
+            <div class="reviews-grid r">
+                <div class="review-img-wrap">
+                    <img src="review-villalobos.jpeg" alt="Google review by Michael Villalobos" loading="lazy">
+                </div>
+                <div class="review-img-wrap">
+                    <img src="review-hsing.jpeg" alt="Google review by Julien Hsing" loading="lazy">
+                </div>
+                <div class="review-img-wrap">
+                    <img src="review-anderson.jpeg" alt="Google review by C Anderson" loading="lazy">
+                </div>
+                <div class="review-img-wrap">
+                    <img src="review-aduralere.jpeg" alt="Google review by Timothy Aduralere" loading="lazy">
+                </div>
+                <div class="review-img-wrap">
+                    <img src="review-masunga.jpeg" alt="Google review by Gakii Masunga" loading="lazy">
                 </div>
             </div>
         </section>
