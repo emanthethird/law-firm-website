@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | EMAN & Associates P.C. — E-2 Visa Lawyers</title>
+    <meta name="description" content="Contact EMAN & Associates P.C. to start your E-2 visa assessment. Based in Boston, MA. Call 617-506-9260 or submit our inquiry form.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1a2638;
+            --navy-deep: #0f1923;
+            --sage: #6b9e85;
+            --sage-light: #7db495;
+            --cream: #faf8f5;
+            --warm-gray: #f3f0ec;
+            --text-primary: #1a2638;
+            --text-secondary: #5a6672;
+            --text-light: #8a939c;
+            --border: #e4e0db;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ─── Nav ─── */
+        .nav {
+            background: var(--navy-deep);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav__logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+        }
+
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav__link {
+            font-size: 0.825rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+        }
+
+        .nav__link:hover { color: rgba(255,255,255,0.95); }
+
+        .nav__cta {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--white);
+            background: var(--sage);
+            padding: 0.6rem 1.4rem;
+            border-radius: 3px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .nav__cta:hover { background: var(--sage-light); transform: translateY(-1px); }
+
+        .nav__toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .nav__toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        /* ─── Hero ─── */
+        .hero {
+            background: var(--navy-deep);
+            padding: 5rem 0 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 60% 50%, rgba(107, 158, 133, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero__inner {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero__label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 1.25rem;
+            display: block;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--sage-light);
+        }
+
+        .hero__sub {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.55);
+            max-width: 520px;
+            line-height: 1.75;
+        }
+
+        /* ─── Main Content ─── */
+        .contact-section {
+            padding: 5rem 0 6rem;
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        /* ─── Left Column ─── */
+        .contact-info__label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-info h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.6rem, 2.5vw, 2rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-info__intro {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .contact-detail__icon {
+            width: 40px;
+            height: 40px;
+            background: var(--cream);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-detail__icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--sage);
+            fill: none;
+            stroke-width: 1.75;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .contact-detail__label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-detail__value {
+            font-size: 0.9375rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            line-height: 1.5;
+        }
+
+        .contact-detail__value a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-detail__value a:hover { color: var(--sage); }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 2.5rem 0;
+        }
+
+        .what-to-expect h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .expect-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .expect-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .expect-list li::before {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--sage);
+            flex-shrink: 0;
+            margin-top: 0.55rem;
+        }
+
+        .disclaimer {
+            margin-top: 2rem;
+            padding: 1rem 1.25rem;
+            background: var(--cream);
+            border-left: 3px solid var(--border);
+            border-radius: 0 3px 3px 0;
+        }
+
+        .disclaimer p {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ─── Right Column (Form) ─── */
+        .contact-form-wrap {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 32px rgba(26, 38, 56, 0.07);
+        }
+
+        .contact-form-wrap iframe {
+            width: 100%;
+            min-height: 713px;
+            border: none;
+            display: block;
+        }
+
+        /* ─── Footer ─── */
+        .footer {
+            background: var(--navy-deep);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 3rem 0;
+        }
+
+        .footer__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer__logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+        }
+
+        .footer__contact {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.25);
+            line-height: 1.7;
+        }
+
+        .footer__contact a {
+            color: rgba(255,255,255,0.25);
+            text-decoration: none;
+        }
+
+        .footer__contact a:hover { color: rgba(255,255,255,0.5); }
+
+        .footer__links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer__links a {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.3);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer__links a:hover { color: rgba(255,255,255,0.6); }
+
+        .footer__legal {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.2);
+            width: 100%;
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-info { order: 2; }
+            .contact-form-wrap { order: 1; }
+        }
+
+        @media (max-width: 640px) {
+            .nav__links { display: none; }
+            .nav__toggle { display: flex; }
+
+            .nav__links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--navy-deep);
+                padding: 1.5rem 2rem;
+                gap: 1.25rem;
+                border-top: 1px solid rgba(255,255,255,0.05);
+                z-index: 99;
+            }
+
+            .hero { padding: 3.5rem 0 3rem; }
+            .contact-section { padding: 3rem 0 4rem; }
+            .footer__inner { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ─── Nav ─── -->
+    <nav class="nav" id="nav">
+        <div class="container">
+            <div class="nav__inner">
+                <a href="index.html" class="nav__logo">Eman &amp; Associates</a>
+                <ul class="nav__links" id="navLinks">
+                    <li><a href="index.html#about" class="nav__link">About Us</a></li>
+                    <li><a href="index.html#process" class="nav__link">Our Process</a></li>
+                    <li><a href="index.html#cases" class="nav__link">Case Studies</a></li>
+                    <li><a href="index.html#faq" class="nav__link">FAQ</a></li>
+                    <li><a href="https://api.leadconnectorhq.com/widget/bookings/e-2-visa-assessment" class="nav__cta" target="_blank" rel="noopener noreferrer">Book a Call</a></li>
+                </ul>
+                <button class="nav__toggle" id="navToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ─── Hero ─── -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__inner">
+                <span class="hero__label">Get in Touch</span>
+                <h1>Start Your <em>E-2 Assessment</em><br>Today</h1>
+                <p class="hero__sub">Tell us about your situation. We'll review your inquiry and reach out within one business day.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Contact Section ─── -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+
+                <!-- Left: Info -->
+                <div class="contact-info">
+                    <span class="contact-info__label">Our Office</span>
+                    <h2>Let's See If We're a Good Fit</h2>
+                    <p class="contact-info__intro">We work with foreign entrepreneurs and investors pursuing E-2 Treaty Investor Visas. If you have a target date, the time to act is now — the E-2 process typically takes 4 to 8 months.</p>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail__icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-detail__label">Address</span>
+                            <span class="contact-detail__value">1 Washington St. #1362<br>Boston, MA 02108</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail__icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-detail__label">Phone</span>
+                            <span class="contact-detail__value"><a href="tel:+16175069260">617-506-9260</a></span>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <div class="contact-detail__icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <span class="contact-detail__label">Email</span>
+                            <span class="contact-detail__value"><a href="mailto:e@emanlegal.com">e@emanlegal.com</a></span>
+                        </div>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="what-to-expect">
+                        <h3>What to Expect</h3>
+                        <ul class="expect-list">
+                            <li>We'll review your inquiry and respond within one business day</li>
+                            <li>A brief introductory call to understand your investment and timeline</li>
+                            <li>A clear assessment of your E-2 eligibility and next steps</li>
+                            <li>No pressure — if we're not the right fit, we'll tell you</li>
+                        </ul>
+                    </div>
+
+                    <div class="disclaimer">
+                        <p>Submitting this form does not create an attorney-client relationship. Do not submit confidential information until a formal engagement agreement is in place.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="contact-form-wrap">
+                    <iframe
+                        src="https://app.emanlegal.com/widget/form/nwXqFcflVpaAgcvuPAAb"
+                        style="width:100%;height:100%;border:none;border-radius:3px"
+                        id="inline-nwXqFcflVpaAgcvuPAAb"
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Contact Form"
+                        data-height="713"
+                        data-layout-iframe-id="inline-nwXqFcflVpaAgcvuPAAb"
+                        data-form-id="nwXqFcflVpaAgcvuPAAb"
+                        title="Contact Form"
+                    ></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <a href="index.html" class="footer__logo">Eman &amp; Associates P.C.</a>
+                <div class="footer__contact">
+                    1 Washington St. #1362, Boston, MA 02108 &nbsp;&bull;&nbsp;
+                    <a href="tel:+16175069260">617-506-9260</a>
+                </div>
+                <div class="footer__links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
+                <span class="footer__legal">Licensed in Massachusetts &nbsp;&bull;&nbsp; EMAN &amp; Associates P.C.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://app.emanlegal.com/js/form_embed.js"></script>
+    <script>
+        const toggle = document.getElementById('navToggle');
+        const links = document.getElementById('navLinks');
+        if (toggle && links) {
+            toggle.addEventListener('click', () => links.classList.toggle('open'));
+        }
+    </script>
+
+</body>
+</html>
