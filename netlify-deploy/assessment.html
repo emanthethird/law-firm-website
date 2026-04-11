@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Prep | Eman and Associates P.C.</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #1a2638; --navy-deep: #0f1923; --sage: #6b9e85; --sage-light: #7db495;
+            --cream: #faf8f5; --warm-gray: #f3f0ec; --text-primary: #1a2638;
+            --text-secondary: #5a6672; --text-light: #8a939c; --border: #e4e0db; --white: #ffffff;
+        }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text-primary); background: var(--cream); line-height: 1.7; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+
+        /* ─── Header ─── */
+        .header { background: var(--navy-deep); padding: 1.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .header__inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
+        .header__logo { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.5); text-decoration: none; }
+
+        /* ─── Intro ─── */
+        .intro { background: var(--navy-deep); padding: 3.5rem 0 4rem; position: relative; overflow: hidden; }
+        .intro::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 50%, rgba(107,158,133,0.08) 0%, transparent 70%); pointer-events: none; }
+        .intro__inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; position: relative; }
+        .intro__tag { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+        .intro h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 1rem; }
+        .intro p { font-size: 1rem; color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 540px; }
+
+        /* ─── Form Wrap ─── */
+        .form-wrap { max-width: 680px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+
+        .form-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(26,38,56,0.06); }
+
+        /* ─── Form Fields ─── */
+        .field { margin-bottom: 2rem; }
+        .field:last-of-type { margin-bottom: 0; }
+
+        .field__number { display: inline-block; width: 24px; height: 24px; background: var(--navy); color: var(--white); font-size: 0.7rem; font-weight: 600; border-radius: 50%; text-align: center; line-height: 24px; margin-right: 0.5rem; flex-shrink: 0; }
+
+        .field__label { display: flex; align-items: center; font-size: 0.9375rem; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem; line-height: 1.4; }
+
+        .field__hint { font-size: 0.8rem; color: var(--text-light); margin-bottom: 0.75rem; margin-left: 2rem; }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            color: var(--text-primary);
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            appearance: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--sage);
+            box-shadow: 0 0 0 3px rgba(107,158,133,0.12);
+        }
+
+        textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+
+        /* Radio options */
+        .radio-group { display: flex; flex-direction: column; gap: 0.6rem; margin-left: 2rem; }
+        .radio-option { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 4px; transition: border-color 0.2s, background 0.2s; }
+        .radio-option:hover { border-color: var(--sage); background: rgba(107,158,133,0.04); }
+        .radio-option input[type="radio"] { margin-top: 2px; accent-color: var(--sage); flex-shrink: 0; width: 16px; height: 16px; cursor: pointer; }
+        .radio-option input[type="radio"]:checked + .radio-option__label { color: var(--navy); font-weight: 500; }
+        .radio-option:has(input:checked) { border-color: var(--sage); background: rgba(107,158,133,0.06); }
+        .radio-option__label { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; cursor: pointer; }
+
+        .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+        /* ─── Submit ─── */
+        .submit-wrap { margin-top: 2rem; }
+        .btn-submit { width: 100%; background: var(--navy); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.9375rem; font-weight: 600; padding: 1rem 2rem; border: none; border-radius: 4px; cursor: pointer; transition: background 0.2s; letter-spacing: 0.01em; }
+        .btn-submit:hover { background: var(--sage); }
+        .submit-note { font-size: 0.8rem; color: var(--text-light); text-align: center; margin-top: 0.75rem; line-height: 1.6; }
+
+        /* ─── Success State ─── */
+        .success-screen { display: none; text-align: center; padding: 3rem 2rem; }
+        .success-screen__icon { width: 56px; height: 56px; background: rgba(107,158,133,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; }
+        .success-screen__icon svg { width: 24px; height: 24px; stroke: var(--sage); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+        .success-screen h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin-bottom: 0.75rem; }
+        .success-screen p { font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.8; max-width: 420px; margin: 0 auto; }
+
+        /* ─── Footer ─── */
+        .footer { background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.05); padding: 2rem 0; }
+        .footer__inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .footer__legal { font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+        .footer__links { display: flex; gap: 1.5rem; }
+        .footer__links a { font-size: 0.75rem; color: rgba(255,255,255,0.25); text-decoration: none; }
+        .footer__links a:hover { color: rgba(255,255,255,0.5); }
+
+        @media (max-width: 500px) {
+            .form-card { padding: 1.75rem 1.25rem; }
+            .footer__inner { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">Eman &amp; Associates P.C.</a>
+        </div>
+    </header>
+
+    <div class="intro">
+        <div class="intro__inner">
+            <span class="intro__tag">You're Booked</span>
+            <h1>A Few Quick Questions Before We Talk</h1>
+            <p>Your answers help us review your situation ahead of time so we can spend the assessment focused on your case, not on background questions.</p>
+        </div>
+    </div>
+
+    <div class="form-wrap">
+        <div class="form-card">
+
+            <!-- Success screen (hidden until submit) -->
+            <div class="success-screen" id="successScreen">
+                <div class="success-screen__icon">
+                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h2>We've Got Your Answers</h2>
+                <p>We'll review everything before your assessment. You're all set. We'll be in touch to confirm the next steps.</p>
+            </div>
+
+            <!-- Form -->
+            <form id="assessmentForm" netlify name="assessment-prep" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="assessment-prep">
+
+                <div class="field">
+                    <label class="field__label" for="fullName">
+                        <span class="field__number">1</span>
+                        What's your full name?
+                    </label>
+                    <input type="text" id="fullName" name="fullName" placeholder="First and last name" required>
+                </div>
+
+                <hr class="divider">
+
+                <div class="field">
+                    <label class="field__label">
+                        <span class="field__number">2</span>
+                        Which best describes your situation?
+                    </label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="situation" value="Start a new business in the U.S." required>
+                            <span class="radio-option__label">I want to start a new business in the U.S.</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="situation" value="Buy an existing U.S. business">
+                            <span class="radio-option__label">I want to buy an existing U.S. business</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="situation" value="Already own or operate a U.S. business">
+                            <span class="radio-option__label">I already own or operate a U.S. business</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="situation" value="Exploring options, not sure yet">
+                            <span class="radio-option__label">I'm exploring my options and not sure yet</span>
+                        </label>
+                    </div>
+                </div>
+
+                <hr class="divider">
+
+                <div class="field">
+                    <label class="field__label" for="businessType">
+                        <span class="field__number">3</span>
+                        What type of business are you interested in or already running?
+                    </label>
+                    <div class="field__hint">e.g., restaurant, e-commerce, consulting, franchise, home services</div>
+                    <input type="text" id="businessType" name="businessType" placeholder="Describe the business">
+                </div>
+
+                <hr class="divider">
+
+                <div class="field">
+                    <label class="field__label" for="location">
+                        <span class="field__number">4</span>
+                        Where are you currently located?
+                    </label>
+                    <div class="field__hint">City and country</div>
+                    <input type="text" id="location" name="location" placeholder="e.g., Toronto, Canada">
+                </div>
+
+                <hr class="divider">
+
+                <div class="field">
+                    <label class="field__label" for="visaHistory">
+                        <span class="field__number">5</span>
+                        Have you ever applied for a U.S. visa before?
+                    </label>
+                    <div class="field__hint">If yes, which type(s)?</div>
+                    <input type="text" id="visaHistory" name="visaHistory" placeholder="e.g., No / Yes — B-1/B-2 tourist visa">
+                </div>
+
+                <hr class="divider">
+
+                <div class="field">
+                    <label class="field__label" for="focus">
+                        <span class="field__number">6</span>
+                        Is there anything specific you'd like us to focus on during the assessment?
+                    </label>
+                    <textarea id="focus" name="focus" placeholder="Any questions, concerns, or areas you want us to address..."></textarea>
+                </div>
+
+                <div class="submit-wrap">
+                    <button type="submit" class="btn-submit">Submit My Answers &rarr;</button>
+                    <p class="submit-note">We'll review your answers before the call. We'll reach out to confirm next steps.</p>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <span class="footer__legal">Eman and Associates P.C. &nbsp;&bull;&nbsp; Licensed in Massachusetts</span>
+            <div class="footer__links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('assessmentForm');
+        const successScreen = document.getElementById('successScreen');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const data = new FormData(form);
+
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(data).toString()
+            })
+            .then(() => {
+                form.style.display = 'none';
+                successScreen.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            })
+            .catch(() => {
+                form.style.display = 'none';
+                successScreen.style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>
