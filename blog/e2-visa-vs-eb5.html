@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-2 Visa vs. EB-5 Visa: What's the Difference and Can You Transition? | Eman and Associates P.C.</title>
+    <meta name="description" content="The E-2 gets you here. The EB-5 gets you a green card. Here is how the two programs compare and how entrepreneurs use the E-2 as a stepping stone to permanent residence.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #1a2638; --navy-deep: #0f1923; --sage: #6b9e85; --sage-light: #7db495;
+            --cream: #faf8f5; --warm-gray: #f3f0ec; --text-primary: #1a2638;
+            --text-secondary: #5a6672; --text-light: #8a939c; --border: #e4e0db; --white: #ffffff;
+        }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text-primary); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        .nav { background: var(--navy-deep); padding: 1.5rem 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+        .nav__logo { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.9); text-decoration: none; }
+        .nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav__link { font-size: 0.825rem; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+        .nav__link:hover, .nav__link--active { color: rgba(255,255,255,0.95); }
+        .nav__toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .nav__toggle span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.8); border-radius: 2px; }
+
+        .article-header { background: var(--navy-deep); padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .article-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(107,158,133,0.07) 0%, transparent 70%); pointer-events: none; }
+        .article-header__inner { position: relative; max-width: 800px; }
+        .article-category { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+        .article-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+        .article-meta { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .article-meta span { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+        .article-meta__dot { color: rgba(255,255,255,0.15); }
+
+        .article-body { padding: 4rem 0 2rem; }
+        .article-body__inner { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+        .article-body h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 3rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+        .article-body h2:first-child { margin-top: 0; }
+        .article-body h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin: 1.75rem 0 0.5rem; }
+        .article-body p { font-size: 1rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 1.1rem; }
+        .article-body ul, .article-body ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        .article-body li { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 0.35rem; }
+        .article-body strong { color: var(--text-primary); font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--sage); text-decoration: none; border-bottom: 1px solid rgba(107,158,133,0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-bottom-color: var(--sage); }
+
+        .callout { background: var(--cream); border-left: 3px solid var(--sage); padding: 1.25rem 1.5rem; margin: 2rem 0; border-radius: 0 4px 4px 0; }
+        .callout p { margin-bottom: 0; }
+        .callout p:not(:last-child) { margin-bottom: 0.5rem; }
+        .callout--warning { background: #fff9f5; border-left-color: #c8845a; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.9375rem; }
+        .compare-table th { background: var(--navy); color: var(--white); padding: 0.75rem 1rem; text-align: left; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; }
+        .compare-table th:first-child { border-radius: 4px 0 0 0; }
+        .compare-table th:last-child { border-radius: 0 4px 0 0; }
+        .compare-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; line-height: 1.6; }
+        .compare-table tr:nth-child(even) td { background: var(--cream); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table td:first-child { font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+
+        .pathway { counter-reset: step; margin: 1.5rem 0 2rem; }
+        .pathway__step { display: flex; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+        .pathway__step:last-child { border-bottom: none; }
+        .pathway__num { flex-shrink: 0; width: 32px; height: 32px; background: var(--sage); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; margin-top: 2px; }
+        .pathway__content h3 { margin: 0 0 0.4rem; font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+        .pathway__content p { margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+
+        .related { background: var(--warm-gray); padding: 4rem 0; border-top: 1px solid var(--border); }
+        .related__header { margin-bottom: 2rem; }
+        .related__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; display: block; }
+        .related h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); }
+        .related__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .related-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem; text-decoration: none; display: block; transition: border-color 0.2s, transform 0.2s; }
+        .related-card:hover { border-color: var(--sage); transform: translateY(-2px); }
+        .related-card__tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; display: block; }
+        .related-card__title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 600; color: var(--navy); line-height: 1.3; margin-bottom: 0.5rem; }
+        .related-card__desc { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; }
+
+        .article-cta { background: var(--navy); padding: 4rem 0; text-align: center; }
+        .article-cta__inner { max-width: 580px; margin: 0 auto; padding: 0 2rem; }
+        .article-cta__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+        .article-cta h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; color: var(--white); margin-bottom: 1rem; line-height: 1.2; }
+        .article-cta p { color: rgba(255,255,255,0.55); margin-bottom: 2rem; font-size: 0.9375rem; line-height: 1.7; }
+        .btn-primary { display: inline-block; background: var(--sage); color: var(--white); font-size: 0.875rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 3px; text-decoration: none; border: none; transition: background 0.2s; }
+        .btn-primary:hover { background: var(--sage-light); }
+
+        .footer { background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.05); padding: 3rem 0; }
+        .footer__inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+        .footer__logo { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; }
+        .footer__contact { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+        .footer__contact a { color: rgba(255,255,255,0.25); text-decoration: none; }
+        .footer__links { display: flex; gap: 1.5rem; }
+        .footer__links a { font-size: 0.75rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+        .footer__links a:hover { color: rgba(255,255,255,0.6); }
+        .footer__legal { font-size: 0.75rem; color: rgba(255,255,255,0.2); width: 100%; }
+
+        @media (max-width: 640px) {
+            .nav__links { display: none; }
+            .nav__toggle { display: flex; }
+            .nav__links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy-deep); padding: 1.5rem 2rem; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.05); z-index: 99; }
+            .related__grid { grid-template-columns: 1fr; }
+            .footer__inner { flex-direction: column; align-items: flex-start; }
+            .compare-table { font-size: 0.85rem; }
+            .compare-table td:first-child { white-space: normal; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+    <div class="container">
+        <div class="nav__inner">
+            <a href="../index.html" class="nav__logo">Eman &amp; Associates</a>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="../index.html#about" class="nav__link">About Us</a></li>
+                <li><a href="../index.html#process" class="nav__link">Our Process</a></li>
+                <li><a href="../index.html#cases" class="nav__link">Case Studies</a></li>
+                <li><a href="../blog/" class="nav__link nav__link--active">Blog</a></li>
+                <li><a href="../contact.html" class="nav__link">Contact</a></li>
+            </ul>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</nav>
+
+<div class="article-header">
+    <div class="container">
+        <div class="article-header__inner">
+            <span class="article-category">Comparisons</span>
+            <h1>E-2 Visa vs. EB-5 Visa: What Is the Difference and Can You Transition?</h1>
+            <div class="article-meta">
+                <span>By Emmanuel Okharedia</span>
+                <span class="article-meta__dot">&bull;</span>
+                <span>April 2026</span>
+                <span class="article-meta__dot">&bull;</span>
+                <span>9 min read</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article-body">
+    <div class="article-body__inner">
+
+        <p>If you have been researching investor visas for the United States, you have probably come across both the E-2 and the EB-5. They both involve investing in a U.S. business. They both require putting real capital at risk. And from a distance, they can look like they are solving the same problem.</p>
+
+        <p>They are not. They are designed for very different goals, and understanding the difference matters a lot before you decide which path to pursue. This article breaks down how the two programs compare and, importantly, how some investors use the E-2 as a first step toward eventually getting a green card through the EB-5.</p>
+
+        <h2>The Most Important Difference: Temporary vs. Permanent</h2>
+
+        <p>The E-2 is a nonimmigrant visa. It lets you live and work in the United States to run your business, but it does not lead to a green card on its own. You renew it, sometimes for many years, but your status is always temporary in the legal sense. You cannot get naturalized based on E-2 status alone.</p>
+
+        <p>The EB-5 is an immigrant visa. It leads directly to lawful permanent residence, which is a green card. If you and your application are approved, you become a permanent resident of the United States. That is a categorically different outcome.</p>
+
+        <div class="callout">
+            <p><strong>The short version:</strong> the E-2 gets you here and lets you build. The EB-5 gets you a green card. Those are not the same thing, and the requirements reflect that difference.</p>
+        </div>
+
+        <h2>Side-by-Side Comparison</h2>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>E-2 Visa</th>
+                    <th>EB-5 Visa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Visa type</td>
+                    <td>Nonimmigrant (temporary)</td>
+                    <td>Immigrant (permanent residence)</td>
+                </tr>
+                <tr>
+                    <td>Treaty country required?</td>
+                    <td>Yes. Your nationality must be from a treaty country.</td>
+                    <td>No. Open to investors of any nationality.</td>
+                </tr>
+                <tr>
+                    <td>Minimum investment</td>
+                    <td>No fixed amount. Must be "substantial" relative to the business.</td>
+                    <td>$1,050,000 standard. $800,000 in a Targeted Employment Area (TEA).</td>
+                </tr>
+                <tr>
+                    <td>Job creation</td>
+                    <td>Business must be non-marginal (able to support more than the investor's family), but no specific job number required.</td>
+                    <td>Must create at least 10 full-time jobs for U.S. workers.</td>
+                </tr>
+                <tr>
+                    <td>Business involvement</td>
+                    <td>Investor must be actively involved in directing the enterprise.</td>
+                    <td>Active involvement not required for Regional Center investments. Direct investment requires management role.</td>
+                </tr>
+                <tr>
+                    <td>Processing</td>
+                    <td>Consular processing or change of status. Can be relatively fast.</td>
+                    <td>USCIS adjudication plus consular processing or adjustment of status. Can take several years.</td>
+                </tr>
+                <tr>
+                    <td>Path to citizenship</td>
+                    <td>None directly. E-2 does not lead to a green card.</td>
+                    <td>Yes. Green card holders can apply for naturalization after 5 years.</td>
+                </tr>
+                <tr>
+                    <td>Who it works for</td>
+                    <td>Entrepreneurs who want to live and run a business in the U.S. on a renewable basis.</td>
+                    <td>Investors who want permanent residence and can meet the capital and job requirements.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>What the EB-5 Actually Requires</h2>
+
+        <p>The EB-5 program was created by Congress in 1990 to attract foreign capital and stimulate job creation. The core requirements have not changed much since then, though the investment thresholds were updated significantly in 2022.</p>
+
+        <h3>The investment amount</h3>
+        <p>The standard minimum is $1,050,000. If you are investing in a Targeted Employment Area, which is a rural area or one with high unemployment, the minimum drops to $800,000. These thresholds are adjusted periodically. The full amount must be deployed into a qualifying business and must be at risk of loss.</p>
+
+        <h3>The job creation requirement</h3>
+        <p>This is where the EB-5 gets strict. Your investment must create or preserve at least 10 full-time jobs for U.S. workers. "U.S. workers" means citizens, permanent residents, and other authorized workers. It does not include you or your family members. For direct investments, these typically need to be direct employees of the business. For Regional Center investments, jobs can be counted indirectly using economic models.</p>
+
+        <h3>The two paths: direct investment vs. Regional Center</h3>
+        <p>Direct EB-5 means you invest directly into a new commercial enterprise that you help operate. Regional Center EB-5 means you invest into a USCIS-designated pooled fund that deploys capital into larger development projects. Most EB-5 investors use the Regional Center path because it allows indirect job counting and does not require active management. However, Regional Centers require careful due diligence and the minimum investment still applies.</p>
+
+        <h2>Why People Start with the E-2</h2>
+
+        <p>The E-2-to-EB-5 pathway is more common than most people realize. Here is the typical story: an entrepreneur from a treaty country wants to run a business in the United States. The E-2 has a lower investment bar, faster processing, and gets them here quickly. They build the business for a few years. At some point they want to stop renewing and get permanent status instead. That is when the EB-5 enters the picture.</p>
+
+        <p>There are a few specific reasons this sequence makes sense for a lot of people:</p>
+
+        <h3>The E-2 does not require a minimum investment amount</h3>
+        <p>For a business that is in its early stages, meeting the EB-5 capital threshold of $800,000 to $1,050,000 on day one is a real hurdle. The E-2 allows you to start with a realistic investment for the size of your business and scale from there.</p>
+
+        <h3>The E-2 processes faster</h3>
+        <p>EB-5 cases can take several years from filing to green card issuance, depending on your country of birth. For nationals of countries like India and China, there have historically been long backlogs due to per-country annual limits. The E-2 gets you working in months, not years.</p>
+
+        <h3>The E-2 proves the business</h3>
+        <p>By the time you are ready to pursue EB-5, you already have years of operating history, documented job creation, and a track record. That is genuinely useful in a direct EB-5 application. You are not projecting what the business will do. You are showing what it has done.</p>
+
+        <h2>How the Transition from E-2 to EB-5 Works</h2>
+
+        <p>This is not an automatic process. The E-2 does not convert to EB-5 status. They are separate visa programs with separate applications and separate eligibility requirements. What you are doing is using the time on E-2 to build toward the point where you qualify for EB-5.</p>
+
+        <div class="pathway">
+            <div class="pathway__step">
+                <div class="pathway__num">1</div>
+                <div class="pathway__content">
+                    <h3>Enter and build on E-2 status</h3>
+                    <p>You arrive in the U.S. on E-2 status and run the business. You renew your visa as needed. You are building operational history, revenue, and job creation that will matter later.</p>
+                </div>
+            </div>
+            <div class="pathway__step">
+                <div class="pathway__num">2</div>
+                <div class="pathway__content">
+                    <h3>Accumulate the capital</h3>
+                    <p>Whether through business proceeds, personal savings, or a combination, you work toward meeting the EB-5 investment threshold. If you are using a Regional Center, you are finding a qualifying project to invest in. If you are doing a direct EB-5, you are building a business that can meet the job creation requirement.</p>
+                </div>
+            </div>
+            <div class="pathway__step">
+                <div class="pathway__num">3</div>
+                <div class="pathway__content">
+                    <h3>File Form I-526E (Regional Center) or I-526 (Direct)</h3>
+                    <p>This is the immigrant petition that establishes your eligibility for EB-5. You file this with USCIS while still on E-2 status. It can take anywhere from a year to several years to be adjudicated depending on USCIS processing times and your country of birth.</p>
+                </div>
+            </div>
+            <div class="pathway__step">
+                <div class="pathway__num">4</div>
+                <div class="pathway__content">
+                    <h3>Maintain E-2 status while waiting</h3>
+                    <p>This is one of the practical advantages of the E-2. You can keep renewing your E-2 visa while your EB-5 petition is pending. You do not have to leave the country or stop operating your business while you wait for the immigrant process to move forward.</p>
+                </div>
+            </div>
+            <div class="pathway__step">
+                <div class="pathway__num">5</div>
+                <div class="pathway__content">
+                    <h3>Adjust status or apply at consulate</h3>
+                    <p>Once your I-526 or I-526E is approved and a visa number is available, you either file for adjustment of status in the U.S. or go through consular processing abroad. At the end of this step, you receive a conditional green card valid for two years.</p>
+                </div>
+            </div>
+            <div class="pathway__step">
+                <div class="pathway__num">6</div>
+                <div class="pathway__content">
+                    <h3>Remove conditions with Form I-829</h3>
+                    <p>Within 90 days before your conditional green card expires, you file Form I-829 to remove the conditions. You need to show that you fulfilled the investment and job creation requirements. Once approved, you receive a permanent green card.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>One Important Catch: Country of Birth Matters</h2>
+
+        <p>The E-2 is limited to treaty country nationals. The EB-5 has no such nationality restriction, but it does have per-country limits on how many green cards can be issued each year. If you were born in a high-demand country like India or China, you may face a significant wait even after your petition is approved. That backlog does not affect the E-2 at all.</p>
+
+        <div class="callout callout--warning">
+            <p><strong>This is worth planning around:</strong> if you are from a country with an EB-5 backlog, the E-2 is not just a stepping stone. It may need to be a longer-term strategy while you wait for your priority date to become current. An immigration attorney can give you a realistic read on what the timeline looks like for your specific nationality.</p>
+        </div>
+
+        <h2>Can You Use Your E-2 Business as the EB-5 Business?</h2>
+
+        <p>Sometimes, yes. If you have built a business on E-2 status that meets the EB-5 requirements, meaning you have invested the qualifying capital amount and the business has created at least 10 full-time jobs for U.S. workers, then in theory the same enterprise could serve as the basis for a direct EB-5 petition.</p>
+
+        <p>In practice this requires careful documentation. The capital investment has to be clearly traceable and at-risk. The jobs need to be properly counted and verified. And the business has to qualify as a new commercial enterprise under EB-5 rules, which has its own definition.</p>
+
+        <p>Many people doing the E-2-to-EB-5 transition end up investing separately into a Regional Center project rather than trying to use their existing E-2 business. This is often simpler because the job counting and compliance structure is already built into the Regional Center. But both paths are possible, and the right one depends on your business, your capital, and your goals.</p>
+
+        <h2>Which One Is Right for You?</h2>
+
+        <p>There is no universal answer. But here is a rough way to think about it:</p>
+
+        <ul>
+            <li>If you are from a treaty country, want to run a business in the U.S., and are not focused on getting a green card right now, the E-2 is almost certainly the right starting point.</li>
+            <li>If you have significant capital and want a direct path to permanent residence without needing to actively run a business, the EB-5 Regional Center route is worth evaluating.</li>
+            <li>If you are from a treaty country, want to build a business first, and eventually want permanent status, the E-2-to-EB-5 sequence is a well-traveled path with real logic behind it.</li>
+            <li>If you are not from a treaty country, the E-2 is not available to you, and EB-5 is likely the investor visa to focus on.</li>
+        </ul>
+
+        <p>These decisions have long-term consequences. The investment amounts, the timelines, the documentation requirements, and the immigration outcomes are all different. It is the kind of planning that benefits from talking through with someone who has seen how these cases actually play out, not just how they look on paper.</p>
+
+    </div>
+</div>
+
+<section class="related">
+    <div class="container">
+        <div class="related__header">
+            <span class="related__label">Keep Reading</span>
+            <h2>Related Articles</h2>
+        </div>
+        <div class="related__grid">
+            <a href="e2-visa-requirements.html" class="related-card">
+                <span class="related-card__tag">Eligibility</span>
+                <div class="related-card__title">E-2 Visa Requirements: The Five Things You Need to Qualify</div>
+                <div class="related-card__desc">A clear breakdown of every requirement and what consular officers are actually looking for.</div>
+            </a>
+            <a href="e2-visa-treaty-countries.html" class="related-card">
+                <span class="related-card__tag">Eligibility</span>
+                <div class="related-card__title">Which Countries Have an E-2 Visa Treaty with the U.S.?</div>
+                <div class="related-card__desc">Not every country qualifies. Here is the full list and what to do if your country is not on it.</div>
+            </a>
+            <a href="e2-visa-green-card.html" class="related-card">
+                <span class="related-card__tag">After Approval</span>
+                <div class="related-card__title">Can an E-2 Visa Lead to a Green Card?</div>
+                <div class="related-card__desc">The E-2 does not lead to a green card on its own. Here are the actual paths investors use to make that transition.</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="article-cta">
+    <div class="article-cta__inner">
+        <span class="article-cta__label">Plan Ahead</span>
+        <h2>Figuring Out E-2, EB-5, or the Path Between Them?</h2>
+        <p>These are long-term decisions. We help investors understand their options and build a strategy that fits both their business goals and their immigration goals.</p>
+        <a href="../contact.html" class="btn-primary">Talk to Us</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <a href="../index.html" class="footer__logo">Eman and Associates P.C.</a>
+            <div class="footer__contact">1 Washington St. #1362, Boston, MA 02108 &nbsp;&bull;&nbsp; <a href="tel:+16175069260">617-506-9260</a></div>
+            <div class="footer__links">
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms-of-service.html">Terms of Service</a>
+            </div>
+            <span class="footer__legal">Licensed in Massachusetts &nbsp;&bull;&nbsp; Eman and Associates P.C.</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
+
+</body>
+</html>
