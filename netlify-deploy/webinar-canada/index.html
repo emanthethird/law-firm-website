@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Webinar: How Canadians Get E-2 Approved at Toronto, First Try | Eman &amp; Associates P.C.</title>
+    <meta name="description" content="Join immigration attorney Emmanuel Okharedia for a free live webinar on how Canadian investors get their E-2 visa approved at the Toronto consulate on the first try.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1a2638;
+            --navy-deep: #0f1923;
+            --sage: #6b9e85;
+            --sage-light: #7db495;
+            --sage-dark: #5a8a72;
+            --cream: #faf8f5;
+            --warm-gray: #f3f0ec;
+            --text-primary: #1a2638;
+            --text-secondary: #5a6672;
+            --text-light: #8a939c;
+            --border: #e4e0db;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-primary);
+            background: var(--white);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* ─── Hero ─── */
+        .hero {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+            color: var(--white);
+            padding: 3rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 30% 50%, rgba(107, 158, 133, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero__inner {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero__label {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--sage-light);
+            margin-bottom: 1.25rem;
+            background: rgba(107, 158, 133, 0.15);
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+        }
+
+        .hero__title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero__title em {
+            color: var(--sage-light);
+            font-style: italic;
+        }
+
+        .hero__subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero__date {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.85rem 1.75rem;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero__date-icon {
+            font-size: 1.3rem;
+        }
+
+        /* ─── Video Placeholder ─── */
+        .video-placeholder {
+            max-width: 640px;
+            margin: 0 auto 2.5rem;
+            aspect-ratio: 16 / 9;
+            background: rgba(255, 255, 255, 0.06);
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .video-placeholder:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .video-placeholder__play {
+            width: 70px;
+            height: 70px;
+            background: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--white);
+            padding-left: 5px;
+            box-shadow: 0 8px 30px rgba(107, 158, 133, 0.4);
+        }
+
+        .video-placeholder__text {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 500;
+        }
+
+        /* ─── CTA Button ─── */
+        .cta-btn {
+            display: inline-block;
+            background: var(--sage);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 1.1rem 2.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.01em;
+        }
+
+        .cta-btn:hover {
+            background: var(--sage-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(107, 158, 133, 0.35);
+        }
+
+        .cta-btn--lg {
+            font-size: 1.2rem;
+            padding: 1.25rem 3.2rem;
+        }
+
+        .cta-sub {
+            display: block;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.75rem;
+            font-weight: 400;
+        }
+
+        /* ─── Section spacing ─── */
+        .section {
+            padding: 5rem 1.5rem;
+        }
+
+        .section--cream {
+            background: var(--cream);
+        }
+
+        .section--navy {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .section__inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section__label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section__title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.15;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* ─── What You'll Learn ─── */
+        .learn-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .learn-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2.25rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .learn-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(26, 38, 56, 0.08);
+        }
+
+        .learn-card__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(107, 158, 133, 0.12);
+            color: var(--sage);
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.25rem;
+        }
+
+        .learn-card__title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .learn-card__text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ─── Presenter ─── */
+        .presenter {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .presenter__photo {
+            flex-shrink: 0;
+            width: 280px;
+            height: 340px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(26, 38, 56, 0.15);
+        }
+
+        .presenter__photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .presenter__info {
+            flex: 1;
+        }
+
+        .presenter__name {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .presenter__role {
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--sage);
+            margin-bottom: 1.25rem;
+        }
+
+        .presenter__bio {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .presenter__stats {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .presenter__stat {
+            text-align: center;
+        }
+
+        .presenter__stat-num {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--sage);
+        }
+
+        .presenter__stat-label {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.2rem;
+        }
+
+        /* ─── Bullet list ─── */
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .check-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .check-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--sage);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* ─── Mid CTA ─── */
+        .mid-cta {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .mid-cta__title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+
+        .mid-cta__sub {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        /* ─── Who This Is For ─── */
+        .audience-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .audience-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1.25rem;
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .audience-item__icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            background: rgba(107, 158, 133, 0.12);
+            color: var(--sage);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        /* ─── Final CTA ─── */
+        .final-cta {
+            text-align: center;
+            padding: 5rem 1.5rem;
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+            color: var(--white);
+        }
+
+        .final-cta__title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .final-cta__sub {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ─── Footer ─── */
+        .footer {
+            background: var(--navy-deep);
+            color: rgba(255, 255, 255, 0.35);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.8rem;
+            line-height: 1.8;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.45);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* ─── Responsive ─── */
+        @media (min-width: 768px) {
+            .learn-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .hero {
+                padding: 5rem 2rem 6rem;
+            }
+
+            .section {
+                padding: 6rem 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .presenter {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .presenter__photo {
+                width: 200px;
+                height: 250px;
+                margin: 0 auto;
+            }
+
+            .presenter__stats {
+                justify-content: center;
+            }
+
+            .audience-list {
+                grid-template-columns: 1fr;
+            }
+
+            .hero__date {
+                font-size: 0.9rem;
+                padding: 0.7rem 1.25rem;
+            }
+        }
+        /* ─── Top Bar ─── */
+        .top-bar {
+            background: var(--sage);
+            color: var(--white);
+            text-align: center;
+            padding: 0.4rem 1.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            white-space: nowrap;
+        }
+
+        .top-bar__inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .top-bar__dot {
+            width: 8px;
+            height: 8px;
+            background: #e53e3e;
+            border-radius: 50%;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .top-bar__cta {
+            display: inline-block;
+            background: var(--white);
+            color: var(--sage-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.9rem;
+            border-radius: 100px;
+            text-decoration: none;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            transition: all 0.2s ease;
+        }
+
+        .top-bar__cta:hover {
+            background: var(--cream);
+            transform: scale(1.03);
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- ─── Top Bar ─── -->
+    <div class="top-bar">
+        <div class="top-bar__inner">
+            <span class="top-bar__dot"></span>
+            <span>LIVE THIS TUESDAY AT 6:00 PM EST · FREE WEBINAR</span>
+        </div>
+    </div>
+
+    <!-- ─── Hero ─── -->
+    <section class="hero">
+        <div class="hero__inner">
+            <h1 class="hero__title">How Canadians Get E-2 Approved at Toronto, <em>First Try</em></h1>
+            <p class="hero__subtitle">Learn the exact strategy our firm uses to get Canadian investors approved for E-2 visas at the Toronto consulate, without delays, denials, or second attempts.</p>
+            <!-- Video Placeholder -->
+            <div class="video-placeholder">
+                <div class="video-placeholder__play">&#9654;</div>
+                <p class="video-placeholder__text">Watch the Preview</p>
+            </div>
+
+            <a href="#register" class="cta-btn cta-btn--lg">Reserve My Seat Now →</a>
+            <span class="cta-sub">Limited spots available · Free to attend</span>
+        </div>
+    </section>
+
+    <!-- ─── What You'll Learn ─── -->
+    <section class="section section--cream">
+        <div class="section__inner">
+            <p class="section__label">What You'll Learn</p>
+            <h2 class="section__title">Everything You Need to Get Approved the First Time</h2>
+            <div class="learn-grid">
+                <div class="learn-card">
+                    <div class="learn-card__number">1</div>
+                    <h3 class="learn-card__title">What Makes Toronto Different</h3>
+                    <p class="learn-card__text">The Toronto consulate has its own patterns and expectations. Learn what consular officers actually look for, and the common mistakes that lead to denials.</p>
+                </div>
+                <div class="learn-card">
+                    <div class="learn-card__number">2</div>
+                    <h3 class="learn-card__title">Building a Bulletproof Application</h3>
+                    <p class="learn-card__text">From source-of-funds documentation to business plans with real financial projections, the exact components that make officers say "approved."</p>
+                </div>
+                <div class="learn-card">
+                    <div class="learn-card__number">3</div>
+                    <h3 class="learn-card__title">Staying in America After Approval</h3>
+                    <p class="learn-card__text">Getting approved is only step one. Learn how to maintain your E-2 status, renew your visa, and build a long-term path to staying in the U.S. with your family.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Mid CTA ─── -->
+    <section class="mid-cta">
+        <h2 class="mid-cta__title">Don't Leave Your E-2 Approval to Chance</h2>
+        <p class="mid-cta__sub">Join the webinar and learn how to get it right the first time.</p>
+        <a href="#register" class="cta-btn">Save My Spot →</a>
+    </section>
+
+    <!-- ─── Who This Is For ─── -->
+    <section class="section">
+        <div class="section__inner">
+            <p class="section__label">Is This For You?</p>
+            <h2 class="section__title">This Webinar Is For Canadians Who…</h2>
+            <div class="audience-list">
+                <div class="audience-item">
+                    <div class="audience-item__icon">→</div>
+                    <span>Have $80K–$200K+ to invest in a qualifying U.S. business</span>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-item__icon">→</div>
+                    <span>Are considering buying a franchise or acquiring a U.S. company</span>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-item__icon">→</div>
+                    <span>Want to expand their Canadian business into the U.S. market</span>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-item__icon">→</div>
+                    <span>Need to understand the full E-2 process before committing</span>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-item__icon">→</div>
+                    <span>Have a target move date and want a clear timeline</span>
+                </div>
+                <div class="audience-item">
+                    <div class="audience-item__icon">→</div>
+                    <span>Want honest answers, not sales pitches, about their chances</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Presenter ─── -->
+    <section class="section section--cream">
+        <div class="section__inner">
+            <p class="section__label">Your Presenter</p>
+            <h2 class="section__title">Meet Attorney Emmanuel Okharedia</h2>
+            <div class="presenter">
+                <div class="presenter__photo">
+                    <img src="attorney.jpg" alt="Emmanuel Okharedia, E-2 Visa Attorney">
+                </div>
+                <div class="presenter__info">
+                    <h3 class="presenter__name">Emmanuel Okharedia</h3>
+                    <p class="presenter__role">Founding Attorney · Eman &amp; Associates P.C.</p>
+                    <p class="presenter__bio">Emmanuel is a Boston-based business immigration attorney who focuses exclusively on E-2 Treaty Investor Visas for Canadian entrepreneurs and investors. His firm handles everything under one roof: visa filing, U.S. entity formation, and business structuring, so clients get a single point of accountability from start to finish.</p>
+                    <div class="presenter__stats">
+                        <div class="presenter__stat">
+                            <div class="presenter__stat-num">100%</div>
+                            <div class="presenter__stat-label">E-2 Focus</div>
+                        </div>
+                        <div class="presenter__stat">
+                            <div class="presenter__stat-num">Full-Service</div>
+                            <div class="presenter__stat-label">Visa + Business</div>
+                        </div>
+                        <div class="presenter__stat">
+                            <div class="presenter__stat-num">Boston</div>
+                            <div class="presenter__stat-label">Based</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── You'll Walk Away With ─── -->
+    <section class="section">
+        <div class="section__inner">
+            <p class="section__label">By The End Of This Webinar</p>
+            <h2 class="section__title">You'll Walk Away Knowing…</h2>
+            <ul class="check-list">
+                <li>Exactly what the Toronto consulate looks for in an E-2 application</li>
+                <li>The #1 reason Canadian E-2 applicants get denied, and how to avoid it</li>
+                <li>How much you actually need to invest (and how to document your source of funds)</li>
+                <li>The step-by-step E-2 timeline from engagement to U.S. entry</li>
+                <li>What questions to expect at your consular interview, and how to answer them</li>
+                <li>Whether the E-2 visa is the right path for your specific situation</li>
+            </ul>
+            <div style="text-align:center; margin-top:3rem;">
+                <a href="#register" class="cta-btn cta-btn--lg">Register for the Webinar →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Final CTA / Registration ─── -->
+    <section class="final-cta" id="register">
+        <h2 class="final-cta__title">Secure Your Spot Now</h2>
+        <p class="final-cta__sub">Tuesday at 6:00 PM EST · Free · Live &amp; Interactive</p>
+        <a href="#" class="cta-btn cta-btn--lg" onclick="return false;" style="pointer-events:none;opacity:0.5;">Registration Opening Soon</a>
+    </section>
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer">
+        <p>&copy; 2026 Eman &amp; Associates P.C. · Licensed in Massachusetts</p>
+        <p>1 Washington St. #1362, Boston, MA 02108 · <a href="tel:+16175069260">617-506-9260</a> · <a href="mailto:e@emanlegal.com">e@emanlegal.com</a></p>
+        <p style="margin-top:0.75rem;"><a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms-of-service.html">Terms of Service</a></p>
+        <p style="margin-top:1rem; font-size:0.7rem;">This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+    </footer>
+
+<!-- ─── Registration Widget (activate when ready) ─── -->
+    <!--
+    REGISTRATION WIDGET: Replace the "Registration Opening Soon" button above with your
+    WebinarKit registration widget when ready. Paste the widget HTML in place of the
+    placeholder button in the #register section.
+    -->
+
+</body>
+</html>
