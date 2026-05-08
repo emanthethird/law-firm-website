@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Received | EMAN &amp; Associates P.C.</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1a2638;
+            --navy-deep: #0f1923;
+            --sage: #6b9e85;
+            --sage-light: #7db495;
+            --cream: #faf8f5;
+            --warm-gray: #f3f0ec;
+            --text-primary: #1a2638;
+            --text-secondary: #5a6672;
+            --text-light: #8a939c;
+            --border: #e4e0db;
+            --white: #ffffff;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-primary);
+            background: var(--cream);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            background: var(--navy-deep);
+            padding: 18px 24px;
+            text-align: center;
+        }
+        .site-header a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .site-header a:hover { color: var(--sage-light); }
+
+        /* ── Main Container ── */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 20px 120px;
+        }
+
+        /* ── Confirmation Header ── */
+        .conf-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+        .conf-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .conf-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .conf-subheading {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+
+        .conf-name {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* ── Video Section ── */
+        .video-intro {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: var(--navy-deep);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        .video-placeholder:hover { opacity: 0.92; }
+
+        .play-btn {
+            width: 72px;
+            height: 72px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 2px solid rgba(255,255,255,0.25);
+            transition: background 0.2s;
+        }
+        .video-placeholder:hover .play-btn {
+            background: rgba(255,255,255,0.25);
+        }
+        .play-btn svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+            margin-left: 3px;
+        }
+
+        /* ── Key Points (fallback for video) ── */
+        .key-points {
+            background: var(--warm-gray);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 40px;
+        }
+        .key-points-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+        .key-points ul {
+            list-style: none;
+            padding: 0;
+        }
+        .key-points li {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.6;
+        }
+        .key-points li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 13px;
+            width: 8px;
+            height: 8px;
+            background: var(--sage);
+            border-radius: 50%;
+        }
+
+        /* ── What Happens Next ── */
+        .next-section {
+            margin-bottom: 40px;
+        }
+        .next-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .step {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 28px;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--sage);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ── Calendar Note ── */
+        .calendar-note {
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ── Contact Line ── */
+        .contact-line {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .contact-line a {
+            color: var(--sage);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-line a:hover {
+            color: var(--sage-light);
+            text-decoration: underline;
+        }
+
+        /* ── Footer Disclaimer ── */
+        .disclaimer {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .container { padding: 28px 16px 48px; }
+            .step { gap: 14px; }
+            .key-points { padding: 16px 18px; }
+            .calendar-note { padding: 16px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="https://emanlegal.com">EMAN &amp; Associates P.C.</a>
+    </header>
+
+    <div class="container">
+
+        <!-- Confirmation -->
+        <div class="conf-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h1 class="conf-heading">Assessment received.</h1>
+        <p class="conf-subheading">Thank you. Your case is now in my queue for personal review.</p>
+
+        <!-- Key Points -->
+        <div class="key-points">
+            <p class="key-points-label">Here's what you can expect:</p>
+            <ul>
+                <li>I'll personally review your assessment within 48 hours</li>
+                <li>If anything in your responses raises concerns, I'll reach out before our call</li>
+                <li>On the call, I'll walk you through the specific structure for your case, the timeline, and engagement terms</li>
+            </ul>
+        </div>
+
+        <!-- What Happens Next -->
+        <div class="next-section">
+            <h2 class="next-heading">What happens next</h2>
+
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <p class="step-title">Personal review (next 48 hours)</p>
+                    <p class="step-desc">I'll review your assessment in detail before our call. If I identify anything that requires attention before we meet, I'll contact you directly.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <p class="step-title">Your strategy call</p>
+                    <p class="step-desc">45 minutes. By the end, you'll have a specific recommendation for your case, a realistic timeline, and clear engagement terms.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar Note -->
+        <div class="calendar-note">
+            Your call is on the calendar invite I sent you after our last conversation. If you need to reschedule, please use that invite or contact my team directly.
+        </div>
+
+        <!-- Contact -->
+        <p class="contact-line">If something urgent comes up before our call, contact my team at <a href="mailto:e@emanlegal.com">e@emanlegal.com</a>.</p>
+
+        <!-- Disclaimer -->
+        <p class="disclaimer">Your assessment is confidential. It will be reviewed only by attorneys at EMAN &amp; Associates P.C. Submitting this form does not create an attorney-client relationship.</p>
+
+    </div>
+
+</body>
+</html>

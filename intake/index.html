@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-2 Visa Strategy Call Intake | EMAN &amp; Associates P.C.</title>
+    <meta name="description" content="Complete your E-2 visa strategy call intake assessment for EMAN & Associates P.C.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1a2638;
+            --navy-deep: #0f1923;
+            --sage: #6b9e85;
+            --sage-light: #7db495;
+            --cream: #faf8f5;
+            --warm-gray: #f3f0ec;
+            --text-primary: #1a2638;
+            --text-secondary: #5a6672;
+            --text-light: #8a939c;
+            --border: #e4e0db;
+            --white: #ffffff;
+            --error: #c0392b;
+            --error-bg: #fdf0ef;
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-primary);
+            background: var(--cream);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        /* ── Header ── */
+        .site-header {
+            background: var(--navy-deep);
+            padding: 18px 24px;
+            text-align: center;
+        }
+        .site-header a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .site-header a:hover { color: var(--sage-light); }
+
+        /* ── Progress ── */
+        .progress-container {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .progress-inner {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .progress-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .progress-bar-track {
+            width: 100%;
+            height: 4px;
+            background: var(--warm-gray);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .progress-bar-fill {
+            height: 100%;
+            background: var(--sage);
+            border-radius: 2px;
+            transition: width 0.4s ease;
+        }
+
+        /* ── Form Container ── */
+        .form-container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 32px 20px 80px;
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+        .form-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* ── Section ── */
+        .form-section {
+            display: none;
+        }
+        .form-section.active {
+            display: block;
+        }
+        .section-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        /* ── Field Groups ── */
+        .field-group {
+            margin-bottom: 28px;
+        }
+        .field-group label,
+        .field-group .field-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+        .field-group .field-helper {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .field-group .field-error {
+            font-size: 0.78rem;
+            color: var(--error);
+            margin-top: 5px;
+            display: none;
+        }
+        .field-group.has-error .field-error {
+            display: block;
+        }
+        .field-group.has-error input[type="text"],
+        .field-group.has-error textarea {
+            border-color: var(--error);
+            background: var(--error-bg);
+        }
+
+        /* ── Inputs ── */
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 12px 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--sage);
+            box-shadow: 0 0 0 3px rgba(107, 158, 133, 0.15);
+        }
+        textarea {
+            resize: vertical;
+            line-height: 1.6;
+        }
+        input::placeholder,
+        textarea::placeholder {
+            color: var(--text-light);
+        }
+
+        /* ── Radio & Checkbox ── */
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .radio-option,
+        .checkbox-option {
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 14px;
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .radio-option:hover,
+        .checkbox-option:hover {
+            border-color: var(--sage);
+            background: rgba(107, 158, 133, 0.03);
+        }
+        .radio-option.selected,
+        .checkbox-option.selected {
+            border-color: var(--sage);
+            background: rgba(107, 158, 133, 0.06);
+        }
+        .radio-option input,
+        .checkbox-option input {
+            margin-top: 2px;
+            accent-color: var(--sage);
+            flex-shrink: 0;
+        }
+        .radio-option span,
+        .checkbox-option span {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        /* ── Affirmation Box ── */
+        .affirmation-box {
+            background: var(--warm-gray);
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+        .affirmation-box p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+        .affirmation-box ul {
+            margin: 10px 0 18px 18px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .affirmation-box li {
+            margin-bottom: 4px;
+        }
+
+        /* ── Buttons ── */
+        .button-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-top: 36px;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: var(--sage);
+            color: var(--white);
+        }
+        .btn-primary:hover:not(:disabled) {
+            background: var(--sage-light);
+        }
+        .btn-primary:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1.5px solid var(--border);
+        }
+        .btn-secondary:hover {
+            border-color: var(--text-light);
+            color: var(--text-primary);
+        }
+        .btn-ghost {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            padding: 14px 8px;
+            font-weight: 500;
+        }
+        .btn-ghost:hover {
+            color: var(--text-primary);
+        }
+
+        /* ── Spinner ── */
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* ── Confirmation ── */
+        .confirmation-screen {
+            display: none;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .confirmation-screen.active {
+            display: block;
+        }
+        .confirmation-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+        .confirmation-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: #fff;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .confirmation-screen h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 18px;
+        }
+        .confirmation-screen .conf-message {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin: 0 auto 8px;
+            line-height: 1.7;
+        }
+        .confirmation-screen .conf-signature {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 32px;
+        }
+
+        /* ── Error Toast ── */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--error);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 999;
+            display: none;
+            max-width: calc(100vw - 40px);
+            text-align: center;
+        }
+        .toast.visible { display: block; }
+
+        /* ── Conditional Hide ── */
+        .conditional-field {
+            display: none;
+        }
+        .conditional-field.visible {
+            display: block;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 480px) {
+            .form-container { padding: 24px 16px 80px; }
+            .btn { padding: 13px 20px; font-size: 0.85rem; }
+            .button-row { flex-direction: column-reverse; }
+            .button-row .btn { width: 100%; }
+            .affirmation-box { padding: 18px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="https://emanlegal.com">EMAN &amp; Associates P.C.</a>
+    </header>
+
+    <!-- Progress -->
+    <div class="progress-container">
+        <div class="progress-inner">
+            <div class="progress-label">
+                <span id="progress-text">Step 1 of 5</span>
+                <span id="progress-pct">20%</span>
+            </div>
+            <div class="progress-bar-track">
+                <div class="progress-bar-fill" id="progress-fill" style="width:20%"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form -->
+    <div class="form-container">
+        <h1 class="form-title">E-2 Strategy Call Assessment</h1>
+        <p class="form-subtitle">Please complete each section carefully. Your responses allow the attorney to prepare meaningfully for your call. All information is kept strictly confidential.</p>
+
+        <form id="intake-form" novalidate autocomplete="off">
+
+            <!-- ========== SECTION 1 ========== -->
+            <div class="form-section active" data-step="1">
+                <h2 class="section-heading">Confirm the Basics</h2>
+
+                <!-- Q1 -->
+                <div class="field-group" data-field="legal_name">
+                    <label for="legal_name">Full legal name <span aria-hidden="true">*</span></label>
+                    <p class="field-helper">As it appears on your passport.</p>
+                    <input type="text" id="legal_name" name="legal_name" required autocomplete="name">
+                    <p class="field-error" role="alert">Please enter your full legal name.</p>
+                </div>
+
+                <!-- Q2: Spouse -->
+                <div class="field-group" data-field="has_spouse">
+                    <p class="field-label">Do you have a spouse who will be included in this application? <span aria-hidden="true">*</span></p>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="has_spouse" value="Yes"><span>Yes</span></label>
+                        <label class="radio-option"><input type="radio" name="has_spouse" value="No"><span>No</span></label>
+                    </div>
+                    <p class="field-error" role="alert">Please select an option.</p>
+                </div>
+
+                <!-- Q2b: Kids -->
+                <div class="field-group" data-field="has_children">
+                    <p class="field-label">Do you have dependent children (under 21) who will be included? <span aria-hidden="true">*</span></p>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="has_children" value="Yes"><span>Yes</span></label>
+                        <label class="radio-option"><input type="radio" name="has_children" value="No"><span>No</span></label>
+                    </div>
+                    <p class="field-error" role="alert">Please select an option.</p>
+                </div>
+
+                <!-- Q2c: Number of kids (conditional) -->
+                <div class="field-group conditional-field" data-field="number_of_children" id="children-count-group">
+                    <label for="number_of_children">How many dependent children? <span aria-hidden="true">*</span></label>
+                    <input type="number" id="number_of_children" name="number_of_children" min="1" max="20" placeholder="e.g., 2" style="width:120px;">
+                    <p class="field-error" role="alert">Please enter the number of children.</p>
+                </div>
+
+                <!-- Q3 -->
+                <div class="field-group" data-field="relocation_target">
+                    <label for="relocation_target">Relocation target <span aria-hidden="true">*</span></label>
+                    <p class="field-helper">Target US city and state for relocation, and your target move date.</p>
+                    <input type="text" id="relocation_target" name="relocation_target" required placeholder="e.g., Houston, TX - within 6 months">
+                    <p class="field-error" role="alert">Please enter your relocation target.</p>
+                </div>
+            </div>
+
+            <!-- ========== SECTION 2 ========== -->
+            <div class="form-section" data-step="2">
+                <h2 class="section-heading">Capital and Source of Funds</h2>
+
+                <!-- Q4 -->
+                <div class="field-group" data-field="capital_range">
+                    <p class="field-label">Total investment capital available <span aria-hidden="true">*</span></p>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="capital_range" value="$100K-$150K"><span>$100K &ndash; $150K</span></label>
+                        <label class="radio-option"><input type="radio" name="capital_range" value="$150K-$200K"><span>$150K &ndash; $200K</span></label>
+                        <label class="radio-option"><input type="radio" name="capital_range" value="$200K-$300K"><span>$200K &ndash; $300K</span></label>
+                        <label class="radio-option"><input type="radio" name="capital_range" value="$300K-$500K"><span>$300K &ndash; $500K</span></label>
+                        <label class="radio-option"><input type="radio" name="capital_range" value="$500K+"><span>$500K+</span></label>
+                    </div>
+                    <p class="field-error" role="alert">Please select a capital range.</p>
+                </div>
+
+                <!-- Q5 -->
+                <div class="field-group" data-field="source_breakdown">
+                    <label for="source_breakdown">Source of funds breakdown <span aria-hidden="true">*</span></label>
+                    <p class="field-helper">Example: $80K from sale of Toronto property in 2023, $50K accumulated business savings 2018-2024, $70K inheritance from father in 2019.</p>
+                    <textarea id="source_breakdown" name="source_breakdown" rows="6" required></textarea>
+                    <p class="field-error" role="alert">Please describe your source of funds.</p>
+                </div>
+
+                <!-- Q6 -->
+                <div class="field-group" data-field="documentation_available">
+                    <p class="field-label">Documentation available <span aria-hidden="true">*</span></p>
+                    <p class="field-helper">Select all that apply. At least one required.</p>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option"><input type="checkbox" name="documentation_available" value="Bank statements"><span>Bank statements</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="documentation_available" value="Tax returns"><span>Tax returns</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="documentation_available" value="Property sale documents"><span>Property sale documents</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="documentation_available" value="Business financials"><span>Business financials</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="documentation_available" value="Inheritance documents"><span>Inheritance documents</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="documentation_available" value="Gift or loan agreements"><span>Gift or loan agreements</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="documentation_available" value="Other"><span>Other</span></label>
+                        <label class="checkbox-option"><input type="checkbox" name="documentation_available" value="I'm not sure what's available"><span>I'm not sure what's available</span></label>
+                    </div>
+                    <p class="field-error" role="alert">Please select at least one option.</p>
+                </div>
+
+                <!-- Q7 -->
+                <div class="field-group" data-field="external_capital">
+                    <label for="external_capital">External capital or financing <span aria-hidden="true">*</span></label>
+                    <p class="field-helper">Are you planning to use any external financing, SBA loans, or funds from a business partner? Type "No" if not applicable.</p>
+                    <textarea id="external_capital" name="external_capital" rows="3" required></textarea>
+                    <p class="field-error" role="alert">Please answer this question.</p>
+                </div>
+            </div>
+
+            <!-- ========== SECTION 3 ========== -->
+            <div class="form-section" data-step="3">
+                <h2 class="section-heading">Business Target</h2>
+
+                <!-- Q8 -->
+                <div class="field-group" data-field="business_target_status">
+                    <p class="field-label">Where are you in identifying a business to acquire? <span aria-hidden="true">*</span></p>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="business_target_status" value="Specific business identified, in negotiations or LOI signed"><span>Specific business identified, in negotiations or LOI signed</span></label>
+                        <label class="radio-option"><input type="radio" name="business_target_status" value="Specific business identified, no formal discussions yet"><span>Specific business identified, no formal discussions yet</span></label>
+                        <label class="radio-option"><input type="radio" name="business_target_status" value="Industry and location identified, no specific business"><span>Industry and location identified, no specific business</span></label>
+                        <label class="radio-option"><input type="radio" name="business_target_status" value="Still researching what type of business to pursue"><span>Still researching what type of business to pursue</span></label>
+                    </div>
+                    <p class="field-error" role="alert">Please select your current status.</p>
+                </div>
+
+                <!-- Q9 (conditional) -->
+                <div class="field-group conditional-field" data-field="target_business_details" id="target-details-group">
+                    <label for="target_business_details">Target business details <span aria-hidden="true" id="target-details-req">*</span></label>
+                    <p class="field-helper">If you have a target business: business name, location, asking price, and what the business does in one sentence.</p>
+                    <textarea id="target_business_details" name="target_business_details" rows="4"></textarea>
+                    <p class="field-error" role="alert">Please provide details about your target business.</p>
+                </div>
+
+                <!-- Q10a -->
+                <div class="field-group" data-field="business_revenue">
+                    <label for="business_revenue">Approximate annual revenue <span aria-hidden="true">*</span></label>
+                    <input type="text" id="business_revenue" name="business_revenue" required placeholder="e.g., $1.2M">
+                    <p class="field-error" role="alert">Please enter approximate revenue.</p>
+                </div>
+
+                <!-- Q10b -->
+                <div class="field-group" data-field="business_net_income">
+                    <label for="business_net_income">Approximate net income <span aria-hidden="true">*</span></label>
+                    <input type="text" id="business_net_income" name="business_net_income" required placeholder="e.g., $180K">
+                    <p class="field-error" role="alert">Please enter approximate net income.</p>
+                </div>
+
+                <!-- Q10c -->
+                <div class="field-group" data-field="business_employees">
+                    <label for="business_employees">Number of employees <span aria-hidden="true">*</span></label>
+                    <input type="text" id="business_employees" name="business_employees" required placeholder="e.g., 8">
+                    <p class="field-error" role="alert">Please enter employee count.</p>
+                </div>
+
+                <!-- Q11 -->
+                <div class="field-group" data-field="relevant_experience">
+                    <label for="relevant_experience">Relevant experience <span aria-hidden="true">*</span></label>
+                    <p class="field-helper">Describe your professional background and any experience relevant to managing or owning a business in the US.</p>
+                    <textarea id="relevant_experience" name="relevant_experience" rows="4" required></textarea>
+                    <p class="field-error" role="alert">Please describe your relevant experience.</p>
+                </div>
+            </div>
+
+            <!-- ========== SECTION 4 ========== -->
+            <div class="form-section" data-step="4">
+                <h2 class="section-heading">Disqualifier Gates</h2>
+
+                <!-- Q12 -->
+                <div class="field-group" data-field="prior_immigration_issues">
+                    <p class="field-label">Have you ever been denied a visa, deported, or had any immigration issues with any country? <span aria-hidden="true">*</span></p>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="prior_immigration_issues" value="No"><span>No</span></label>
+                        <label class="radio-option"><input type="radio" name="prior_immigration_issues" value="Yes - I'll explain on the call"><span>Yes &mdash; I'll explain on the call</span></label>
+                    </div>
+                    <p class="field-error" role="alert">Please select an option.</p>
+                </div>
+
+                <!-- Q13 -->
+                <div class="field-group" data-field="criminal_history">
+                    <p class="field-label">Have you ever been arrested, charged, or convicted of a criminal offense in any country? <span aria-hidden="true">*</span></p>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="criminal_history" value="No"><span>No</span></label>
+                        <label class="radio-option"><input type="radio" name="criminal_history" value="Yes - I'll explain on the call"><span>Yes &mdash; I'll explain on the call</span></label>
+                    </div>
+                    <p class="field-error" role="alert">Please select an option.</p>
+                </div>
+
+                <!-- Q14 -->
+                <div class="field-group" data-field="prior_us_visa">
+                    <p class="field-label">Have you previously held or applied for a US visa of any type? <span aria-hidden="true">*</span></p>
+                    <div class="radio-group">
+                        <label class="radio-option"><input type="radio" name="prior_us_visa" value="No"><span>No</span></label>
+                        <label class="radio-option"><input type="radio" name="prior_us_visa" value="Yes - I'll provide details on the call"><span>Yes &mdash; I'll provide details on the call</span></label>
+                    </div>
+                    <p class="field-error" role="alert">Please select an option.</p>
+                </div>
+            </div>
+
+            <!-- ========== SECTION 5 ========== -->
+            <div class="form-section" data-step="5">
+                <h2 class="section-heading">Logistics</h2>
+
+                <!-- Q17 -->
+                <div class="field-group" data-field="additional_disclosures">
+                    <label for="additional_disclosures">Additional disclosures <span aria-hidden="true">*</span></label>
+                    <p class="field-helper">Is there anything else relevant to your case that you'd like the attorney to know before the call? Type "Nothing comes to mind" if not applicable.</p>
+                    <textarea id="additional_disclosures" name="additional_disclosures" rows="5" required></textarea>
+                    <p class="field-error" role="alert">Please provide a response.</p>
+                </div>
+
+                <!-- Affirmation -->
+                <div class="affirmation-box">
+                    <p><strong>By submitting this assessment, I confirm:</strong></p>
+                    <ul>
+                        <li>The information I've provided is accurate to the best of my knowledge</li>
+                        <li>I understand E-2 is a non-immigrant visa, not a green card</li>
+                        <li>I understand submitting this form does not create an attorney-client relationship and does not guarantee the firm will accept my case</li>
+                        <li>I understand the attorney will personally review this assessment and may identify issues that change the scope of our strategy call</li>
+                    </ul>
+                    <label class="checkbox-option" style="background:var(--white);">
+                        <input type="checkbox" name="affirmation_confirmed" id="affirmation_confirmed" value="true">
+                        <span>I confirm and agree to the above.</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="button-row" id="button-row">
+                <button type="button" class="btn btn-ghost" id="btn-back" style="display:none;">Back</button>
+                <div></div>
+                <button type="button" class="btn btn-primary" id="btn-next" disabled>Next</button>
+                <button type="submit" class="btn btn-primary" id="btn-submit" style="display:none;" disabled>Submit Assessment</button>
+            </div>
+        </form>
+
+        <!-- Confirmation -->
+        <div class="confirmation-screen" id="confirmation">
+            <div class="confirmation-icon">
+                <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </div>
+            <h2>Assessment Received. Thank You.</h2>
+            <p class="conf-message">I'll personally review your intake before our scheduled strategy call. If anything in your responses raises questions or concerns, I'll reach out before the call so we can address it.</p>
+            <p class="conf-message">Looking forward to speaking with you.</p>
+            <p class="conf-signature">&mdash; Emmanuel Okharedia III, Esq.<br>EMAN &amp; Associates P.C.</p>
+            <a href="https://emanlegal.com" class="btn btn-primary">Return to emanlegal.com</a>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast" role="alert"></div>
+
+    <script>
+    (function() {
+        'use strict';
+
+        var STORAGE_KEY = 'eman_intake_draft';
+        var currentStep = 1;
+        var totalSteps = 5;
+        var submitting = false;
+
+        // Elements
+        var form = document.getElementById('intake-form');
+        var sections = document.querySelectorAll('.form-section');
+        var btnNext = document.getElementById('btn-next');
+        var btnBack = document.getElementById('btn-back');
+        var btnSubmit = document.getElementById('btn-submit');
+        var buttonRow = document.getElementById('button-row');
+        var progressText = document.getElementById('progress-text');
+        var progressPct = document.getElementById('progress-pct');
+        var progressFill = document.getElementById('progress-fill');
+        var confirmation = document.getElementById('confirmation');
+        var toast = document.getElementById('toast');
+        var targetDetailsGroup = document.getElementById('target-details-group');
+        var childrenCountGroup = document.getElementById('children-count-group');
+
+        // ── Utility ──
+        function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+        function $$(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
+
+        // ── Progress ──
+        function updateProgress() {
+            var pct = Math.round((currentStep / totalSteps) * 100);
+            progressText.textContent = 'Step ' + currentStep + ' of ' + totalSteps;
+            progressPct.textContent = pct + '%';
+            progressFill.style.width = pct + '%';
+        }
+
+        // ── Show/hide sections ──
+        function showStep(step) {
+            sections.forEach(function(s) { s.classList.remove('active'); });
+            var target = document.querySelector('[data-step="' + step + '"]');
+            if (target) target.classList.add('active');
+
+            btnBack.style.display = step === 1 ? 'none' : '';
+            if (step === totalSteps) {
+                btnNext.style.display = 'none';
+                btnSubmit.style.display = '';
+            } else {
+                btnNext.style.display = '';
+                btnSubmit.style.display = 'none';
+            }
+
+            currentStep = step;
+            updateProgress();
+            validateCurrentStep();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ── Get field value ──
+        function getFieldValue(name) {
+            var el = form.querySelector('[name="' + name + '"]');
+            if (!el) return '';
+            if (el.type === 'radio') {
+                var checked = form.querySelector('[name="' + name + '"]:checked');
+                return checked ? checked.value : '';
+            }
+            if (el.type === 'checkbox' && el.name === 'affirmation_confirmed') {
+                return el.checked;
+            }
+            return el.value.trim();
+        }
+
+        function getCheckboxValues(name) {
+            return $$('[name="' + name + '"]:checked', form).map(function(cb) { return cb.value; });
+        }
+
+        // ── Collect all data ──
+        function collectData() {
+            return {
+                legal_name: getFieldValue('legal_name'),
+                has_spouse: getFieldValue('has_spouse'),
+                has_children: getFieldValue('has_children'),
+                number_of_children: document.getElementById('number_of_children').value || '',
+                relocation_target: getFieldValue('relocation_target'),
+                capital_range: getFieldValue('capital_range'),
+                source_breakdown: getFieldValue('source_breakdown'),
+                documentation_available: getCheckboxValues('documentation_available'),
+                external_capital: getFieldValue('external_capital'),
+                business_target_status: getFieldValue('business_target_status'),
+                target_business_details: getFieldValue('target_business_details'),
+                business_revenue: getFieldValue('business_revenue'),
+                business_net_income: getFieldValue('business_net_income'),
+                business_employees: getFieldValue('business_employees'),
+                relevant_experience: getFieldValue('relevant_experience'),
+                prior_immigration_issues: getFieldValue('prior_immigration_issues'),
+                criminal_history: getFieldValue('criminal_history'),
+                prior_us_visa: getFieldValue('prior_us_visa'),
+                additional_disclosures: getFieldValue('additional_disclosures'),
+                affirmation_confirmed: getFieldValue('affirmation_confirmed')
+            };
+        }
+
+        // ── Validation per step ──
+        var stepFields = {
+            1: ['legal_name', 'has_spouse', 'has_children', 'relocation_target'],
+            2: ['capital_range', 'source_breakdown', 'documentation_available', 'external_capital'],
+            3: ['business_target_status', 'business_revenue', 'business_net_income', 'business_employees', 'relevant_experience'],
+            4: ['prior_immigration_issues', 'criminal_history', 'prior_us_visa'],
+            5: ['additional_disclosures', 'affirmation_confirmed']
+        };
+
+        function isFieldValid(name) {
+            if (name === 'documentation_available') {
+                return getCheckboxValues(name).length > 0;
+            }
+            if (name === 'affirmation_confirmed') {
+                return document.getElementById('affirmation_confirmed').checked;
+            }
+            if (name === 'target_business_details') {
+                var status = getFieldValue('business_target_status');
+                var isRequired = status === 'Specific business identified, in negotiations or LOI signed' ||
+                                 status === 'Specific business identified, no formal discussions yet';
+                if (!isRequired) return true;
+                return getFieldValue('target_business_details') !== '';
+            }
+            if (name === 'number_of_children') {
+                var hasKids = getFieldValue('has_children');
+                if (hasKids !== 'Yes') return true;
+                var val = document.getElementById('number_of_children').value;
+                return val !== '' && parseInt(val) >= 1;
+            }
+            return getFieldValue(name) !== '';
+        }
+
+        function validateCurrentStep() {
+            var fields = stepFields[currentStep] || [];
+            // Include conditional children count on step 1
+            if (currentStep === 1) {
+                var hasKids = getFieldValue('has_children');
+                if (hasKids === 'Yes' && fields.indexOf('number_of_children') === -1) {
+                    fields = fields.slice();
+                    fields.push('number_of_children');
+                }
+            }
+            // Include conditional field on step 3
+            if (currentStep === 3) {
+                var status = getFieldValue('business_target_status');
+                var needsDetails = status === 'Specific business identified, in negotiations or LOI signed' ||
+                                   status === 'Specific business identified, no formal discussions yet';
+                if (needsDetails && fields.indexOf('target_business_details') === -1) {
+                    fields = fields.slice();
+                    fields.splice(1, 0, 'target_business_details');
+                }
+            }
+            var allValid = fields.every(isFieldValid);
+            if (currentStep === totalSteps) {
+                btnSubmit.disabled = !allValid;
+            } else {
+                btnNext.disabled = !allValid;
+            }
+            return allValid;
+        }
+
+        function showFieldError(name, show) {
+            var group = form.querySelector('[data-field="' + name + '"]');
+            if (!group) return;
+            if (show) {
+                group.classList.add('has-error');
+            } else {
+                group.classList.remove('has-error');
+            }
+        }
+
+        // ── Conditional field (children count) ──
+        function updateChildrenField() {
+            var hasKids = getFieldValue('has_children');
+            if (hasKids === 'Yes') {
+                childrenCountGroup.classList.add('visible');
+            } else {
+                childrenCountGroup.classList.remove('visible');
+            }
+        }
+
+        // ── Conditional field (Q9) ──
+        function updateConditionalField() {
+            var status = getFieldValue('business_target_status');
+            var needsDetails = status === 'Specific business identified, in negotiations or LOI signed' ||
+                               status === 'Specific business identified, no formal discussions yet';
+            if (status !== '') {
+                targetDetailsGroup.classList.add('visible');
+            } else {
+                targetDetailsGroup.classList.remove('visible');
+            }
+            var reqStar = document.getElementById('target-details-req');
+            reqStar.style.display = needsDetails ? '' : 'none';
+        }
+
+        // ── Radio/checkbox selection styling ──
+        function setupOptionStyling() {
+            $$('.radio-option input, .checkbox-option input', form).forEach(function(input) {
+                input.addEventListener('change', function() {
+                    if (input.type === 'radio') {
+                        $$('.radio-option', input.closest('.radio-group')).forEach(function(opt) {
+                            opt.classList.remove('selected');
+                        });
+                        input.closest('.radio-option').classList.add('selected');
+                    } else {
+                        var opt = input.closest('.checkbox-option');
+                        if (input.checked) {
+                            opt.classList.add('selected');
+                        } else {
+                            opt.classList.remove('selected');
+                        }
+                    }
+                });
+            });
+        }
+
+        // ── localStorage auto-save ──
+        function saveToStorage() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(collectData()));
+            } catch (e) { /* quota exceeded, silent fail */ }
+        }
+
+        function loadFromStorage() {
+            try {
+                var saved = localStorage.getItem(STORAGE_KEY);
+                if (!saved) return;
+                var data = JSON.parse(saved);
+
+                // Text & textarea fields
+                ['legal_name', 'relocation_target', 'source_breakdown',
+                 'external_capital', 'target_business_details', 'business_revenue',
+                 'business_net_income', 'business_employees',
+                 'relevant_experience', 'additional_disclosures'].forEach(function(name) {
+                    var el = form.querySelector('#' + name);
+                    if (el && data[name]) el.value = data[name];
+                });
+
+                // Number field
+                if (data.number_of_children) {
+                    document.getElementById('number_of_children').value = data.number_of_children;
+                }
+
+                // Radio fields
+                ['has_spouse', 'has_children', 'capital_range', 'business_target_status', 'prior_immigration_issues',
+                 'criminal_history', 'prior_us_visa'].forEach(function(name) {
+                    if (data[name]) {
+                        var radio = form.querySelector('[name="' + name + '"][value="' + CSS.escape(data[name]) + '"]');
+                        if (radio) {
+                            radio.checked = true;
+                            radio.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                    }
+                });
+
+                // Checkboxes
+                if (Array.isArray(data.documentation_available)) {
+                    data.documentation_available.forEach(function(val) {
+                        var cb = form.querySelector('[name="documentation_available"][value="' + CSS.escape(val) + '"]');
+                        if (cb) {
+                            cb.checked = true;
+                            cb.dispatchEvent(new Event('change', { bubbles: true }));
+                        }
+                    });
+                }
+
+                // Affirmation
+                if (data.affirmation_confirmed === true || data.affirmation_confirmed === 'true') {
+                    document.getElementById('affirmation_confirmed').checked = true;
+                }
+
+                updateConditionalField();
+            } catch (e) { /* corrupt data, ignore */ }
+        }
+
+        function clearStorage() {
+            try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
+        }
+
+        // ── Toast ──
+        function showToast(msg, duration) {
+            toast.textContent = msg;
+            toast.classList.add('visible');
+            setTimeout(function() {
+                toast.classList.remove('visible');
+            }, duration || 5000);
+        }
+
+        // ── Blur validation ──
+        function setupBlurValidation() {
+            $$('input[type="text"], input[type="number"], textarea', form).forEach(function(input) {
+                input.addEventListener('blur', function() {
+                    var name = input.name;
+                    if (!name) return;
+                    var touched = input.value !== '';
+                    if (touched || input.dataset.touched) {
+                        input.dataset.touched = '1';
+                        showFieldError(name, !isFieldValid(name));
+                    }
+                });
+                input.addEventListener('input', function() {
+                    if (input.dataset.touched) {
+                        showFieldError(input.name, !isFieldValid(input.name));
+                    }
+                    validateCurrentStep();
+                    saveToStorage();
+                });
+            });
+
+            $$('input[type="radio"], input[type="checkbox"]', form).forEach(function(input) {
+                input.addEventListener('change', function() {
+                    var name = input.name;
+                    showFieldError(name, !isFieldValid(name));
+                    if (name === 'business_target_status') {
+                        updateConditionalField();
+                    }
+                    if (name === 'has_children') {
+                        updateChildrenField();
+                    }
+                    validateCurrentStep();
+                    saveToStorage();
+                });
+            });
+        }
+
+        // ── Submit ──
+        function submitForm(e) {
+            e.preventDefault();
+            if (submitting) return;
+
+            // Validate all steps
+            var allValid = true;
+            for (var s = 1; s <= totalSteps; s++) {
+                var fields = stepFields[s];
+                fields.forEach(function(name) {
+                    if (!isFieldValid(name)) {
+                        allValid = false;
+                        showFieldError(name, true);
+                    }
+                });
+            }
+            // Check conditional
+            if (!isFieldValid('target_business_details')) {
+                allValid = false;
+                showFieldError('target_business_details', true);
+            }
+
+            if (!allValid) {
+                showToast('Please complete all required fields before submitting.');
+                return;
+            }
+
+            submitting = true;
+            btnSubmit.disabled = true;
+            btnSubmit.innerHTML = '<span class="spinner"></span> Submitting...';
+
+            var data = collectData();
+
+            fetch('/.netlify/functions/submit-intake', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(function(res) {
+                if (!res.ok) {
+                    return res.json().then(function(body) {
+                        throw new Error(body.error || 'Submission failed.');
+                    });
+                }
+                return res.json();
+            })
+            .then(function() {
+                clearStorage();
+                window.location.href = '/intake/thank-you/';
+            })
+            .catch(function(err) {
+                submitting = false;
+                btnSubmit.disabled = false;
+                btnSubmit.innerHTML = 'Submit Assessment';
+                showToast(err.message || 'Something went wrong. Your data has been saved. Please try again.');
+                validateCurrentStep();
+            });
+        }
+
+        // ── Init ──
+        function init() {
+            setupOptionStyling();
+            setupBlurValidation();
+            loadFromStorage();
+            updateConditionalField();
+            updateChildrenField();
+            validateCurrentStep();
+
+            btnNext.addEventListener('click', function() {
+                if (currentStep < totalSteps) {
+                    showStep(currentStep + 1);
+                }
+            });
+
+            btnBack.addEventListener('click', function() {
+                if (currentStep > 1) {
+                    showStep(currentStep - 1);
+                }
+            });
+
+            form.addEventListener('submit', submitForm);
+
+            // Keyboard: Enter on text inputs advances
+            form.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && e.target.tagName === 'INPUT' && e.target.type === 'text') {
+                    e.preventDefault();
+                    if (currentStep < totalSteps && !btnNext.disabled) {
+                        showStep(currentStep + 1);
+                    }
+                }
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+    </script>
+</body>
+</html>
