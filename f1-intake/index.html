@@ -733,7 +733,7 @@
 
                 <!-- Resume Upload -->
                 <div class="field-group">
-                    <label class="field-label">Resume / CV (optional)</label>
+                    <label class="field-label">Resume / CV</label>
                     <p class="field-hint">Helps us understand your background and qualifications</p>
                     <div class="file-upload-area" id="upload-area">
                         <input type="file" id="resume_file" name="resume_file" accept=".pdf,.doc,.docx">
@@ -745,6 +745,7 @@
                         <div class="file-name" id="file-name"></div>
                         <span class="file-remove" id="file-remove">Remove</span>
                     </div>
+                    <div class="field-error">Please upload your resume.</div>
                 </div>
 
                 <!-- Affirmation -->
@@ -915,6 +916,15 @@
                     if (err) err.classList.remove('visible');
                 }
             });
+
+            // Resume
+            const resumeErr = document.getElementById('upload-area').parentElement.querySelector('.field-error');
+            if (!resumeFile) {
+                if (resumeErr) resumeErr.classList.add('visible');
+                valid = false;
+            } else {
+                if (resumeErr) resumeErr.classList.remove('visible');
+            }
 
             // Affirmation
             const affirm = document.getElementById('affirmation_confirmed');
