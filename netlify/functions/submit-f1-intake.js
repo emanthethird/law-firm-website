@@ -168,6 +168,9 @@ function buildEmail(data) {
     <div class="section-title">Additional Information</div>
     <div class="field"><div class="field-value">${data.additional_info ? nl2br(data.additional_info) : "<em>None</em>"}</div></div>
 
+    <div class="section-title">Resume</div>
+    <div class="field"><div class="field-value">${data.resume_filename ? "Attached: " + sanitize(data.resume_filename) : "<em>Not provided</em>"}</div></div>
+
     <div class="section-title">Affirmation</div>
     <div class="field"><div class="field-value">Confirmed: Yes (${now})</div></div>
   </div>
@@ -251,6 +254,16 @@ exports.handler = async function (event) {
         to: [RECIPIENT_EMAIL],
         subject,
         html: emailHtml,
+        ...(data.resume_base64 && data.resume_filename
+          ? {
+              attachments: [
+                {
+                  filename: data.resume_filename,
+                  content: data.resume_base64,
+                },
+              ],
+            }
+          : {}),
       }),
     });
 

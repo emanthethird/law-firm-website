@@ -253,6 +253,73 @@
             color: var(--text-primary);
         }
 
+        /* -- File Upload -- */
+        .file-upload-area {
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            background: var(--white);
+        }
+        .file-upload-area:hover {
+            border-color: var(--sage);
+            background: rgba(107, 158, 133, 0.03);
+        }
+        .file-upload-area.has-file {
+            border-color: var(--sage);
+            background: rgba(107, 158, 133, 0.06);
+        }
+        .file-upload-area input[type="file"] {
+            display: none;
+        }
+        .file-upload-icon {
+            margin-bottom: 8px;
+        }
+        .file-upload-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--text-light);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .has-file .file-upload-icon svg {
+            stroke: var(--sage);
+        }
+        .file-upload-text {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .file-upload-text strong {
+            color: var(--sage);
+        }
+        .file-upload-meta {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+        .file-name {
+            font-size: 0.85rem;
+            color: var(--sage);
+            font-weight: 500;
+            margin-top: 8px;
+            display: none;
+        }
+        .has-file .file-name { display: block; }
+        .file-remove {
+            font-size: 0.78rem;
+            color: var(--error);
+            cursor: pointer;
+            margin-top: 4px;
+            display: none;
+        }
+        .has-file .file-remove { display: inline-block; }
+        .file-remove:hover { text-decoration: underline; }
+
         /* -- Affirmation -- */
         .affirmation-box {
             background: var(--warm-gray);
@@ -664,6 +731,22 @@
                     <textarea id="additional_info" name="additional_info" class="field-textarea" placeholder="Optional"></textarea>
                 </div>
 
+                <!-- Resume Upload -->
+                <div class="field-group">
+                    <label class="field-label">Resume / CV (optional)</label>
+                    <p class="field-hint">Helps us understand your background and qualifications</p>
+                    <div class="file-upload-area" id="upload-area">
+                        <input type="file" id="resume_file" name="resume_file" accept=".pdf,.doc,.docx">
+                        <div class="file-upload-icon">
+                            <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        </div>
+                        <div class="file-upload-text"><strong>Click to upload</strong> or drag and drop</div>
+                        <div class="file-upload-meta">PDF, DOC, or DOCX (max 5 MB)</div>
+                        <div class="file-name" id="file-name"></div>
+                        <span class="file-remove" id="file-remove">Remove</span>
+                    </div>
+                </div>
+
                 <!-- Affirmation -->
                 <div class="field-group">
                     <div class="affirmation-box">
@@ -864,10 +947,81 @@
             setTimeout(() => toast.classList.remove('visible'), 4000);
         }
 
+        // -- File Upload --
+        let resumeFile = null;
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('resume_file');
+        const fileNameEl = document.getElementById('file-name');
+        const fileRemove = document.getElementById('file-remove');
+
+        uploadArea.addEventListener('click', (e) => {
+            if (e.target === fileRemove || e.target.closest('.file-remove')) return;
+            fileInput.click();
+        });
+
+        fileInput.addEventListener('change', () => {
+            if (fileInput.files.length > 0) handleFile(fileInput.files[0]);
+        });
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.style.borderColor = 'var(--sage)';
+        });
+        uploadArea.addEventListener('dragleave', () => {
+            if (!resumeFile) uploadArea.style.borderColor = '';
+        });
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            if (e.dataTransfer.files.length > 0) handleFile(e.dataTransfer.files[0]);
+        });
+
+        fileRemove.addEventListener('click', (e) => {
+            e.stopPropagation();
+            resumeFile = null;
+            fileInput.value = '';
+            fileNameEl.textContent = '';
+            uploadArea.classList.remove('has-file');
+        });
+
+        function handleFile(file) {
+            const maxSize = 5 * 1024 * 1024;
+            const allowed = ['.pdf', '.doc', '.docx',
+                'application/pdf',
+                'application/msword',
+                'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+            const ext = file.name.toLowerCase().slice(file.name.lastIndexOf('.'));
+
+            if (!['.pdf', '.doc', '.docx'].includes(ext)) {
+                showToast('Please upload a PDF, DOC, or DOCX file.', true);
+                return;
+            }
+            if (file.size > maxSize) {
+                showToast('File is too large. Maximum size is 5 MB.', true);
+                return;
+            }
+
+            resumeFile = file;
+            fileNameEl.textContent = file.name;
+            uploadArea.classList.add('has-file');
+        }
+
+        function readFileAsBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const base64 = reader.result.split(',')[1];
+                    resolve(base64);
+                };
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
         // -- Collect Data --
         function collectData() {
             const data = {};
             form.querySelectorAll('input, select, textarea').forEach(el => {
+                if (el.type === 'file') return;
                 if (el.type === 'radio') {
                     if (el.checked) data[el.name] = el.value;
                 } else if (el.type === 'checkbox') {
@@ -934,6 +1088,18 @@
 
             const data = collectData();
             data.form_type = 'f1_intake';
+
+            if (resumeFile) {
+                try {
+                    data.resume_base64 = await readFileAsBase64(resumeFile);
+                    data.resume_filename = resumeFile.name;
+                } catch(e) {
+                    showToast('Failed to read the resume file. Please try again.', true);
+                    btn.disabled = false;
+                    btn.textContent = 'Submit Assessment';
+                    return;
+                }
+            }
 
             try {
                 const res = await fetch('/.netlify/functions/submit-f1-intake', {
