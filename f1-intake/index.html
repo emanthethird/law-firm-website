@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F-1 Strategy Call Assessment | EMAN &amp; Associates P.C.</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1a2638;
+            --navy-deep: #0f1923;
+            --sage: #6b9e85;
+            --sage-light: #7db495;
+            --cream: #faf8f5;
+            --warm-gray: #f3f0ec;
+            --text-primary: #1a2638;
+            --text-secondary: #5a6672;
+            --text-light: #8a939c;
+            --border: #e4e0db;
+            --white: #ffffff;
+            --error: #c0392b;
+            --error-bg: rgba(192, 57, 43, 0.06);
+        }
+
+        html { scroll-behavior: smooth; font-size: 16px; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-primary);
+            background: var(--cream);
+            line-height: 1.7;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        /* -- Header -- */
+        .site-header {
+            background: var(--navy-deep);
+            padding: 18px 24px;
+            text-align: center;
+        }
+        .site-header a {
+            color: var(--white);
+            text-decoration: none;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .site-header a:hover { color: var(--sage-light); }
+
+        /* -- Container -- */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+
+        /* -- Progress Bar -- */
+        .progress-wrap {
+            margin-bottom: 36px;
+        }
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .progress-step {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            transition: color 0.3s;
+        }
+        .progress-step.active { color: var(--sage); }
+        .progress-step.completed { color: var(--sage); }
+        .progress-bar {
+            height: 3px;
+            background: var(--border);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--sage);
+            border-radius: 3px;
+            transition: width 0.4s ease;
+            width: 20%;
+        }
+
+        /* -- Form Heading -- */
+        .form-heading {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.25;
+            margin-bottom: 6px;
+        }
+        .form-subheading {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+
+        /* -- Step Sections -- */
+        .step { display: none; }
+        .step.active { display: block; }
+
+        /* -- Form Fields -- */
+        .field-group {
+            margin-bottom: 24px;
+        }
+        .field-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+        }
+        .field-hint {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            margin-bottom: 6px;
+            font-style: italic;
+        }
+        .field-input, .field-select, .field-textarea {
+            width: 100%;
+            padding: 12px 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.92rem;
+            color: var(--text-primary);
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .field-input:focus, .field-select:focus, .field-textarea:focus {
+            border-color: var(--sage);
+            box-shadow: 0 0 0 3px rgba(107, 158, 133, 0.1);
+        }
+        .field-input.error, .field-select.error, .field-textarea.error {
+            border-color: var(--error);
+            box-shadow: 0 0 0 3px var(--error-bg);
+        }
+        .field-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .field-error {
+            font-size: 0.78rem;
+            color: var(--error);
+            margin-top: 4px;
+            display: none;
+        }
+        .field-error.visible { display: block; }
+
+        /* -- Number input -- */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* -- Radio & Checkbox Groups -- */
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 14px;
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            font-size: 0.9rem;
+        }
+        .radio-option:hover, .checkbox-option:hover {
+            border-color: var(--sage);
+            background: rgba(107, 158, 133, 0.03);
+        }
+        .radio-option.selected, .checkbox-option.selected {
+            border-color: var(--sage);
+            background: rgba(107, 158, 133, 0.06);
+        }
+        .radio-option input, .checkbox-option input {
+            accent-color: var(--sage);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        /* -- Conditional Fields -- */
+        .conditional-field {
+            display: none;
+            margin-top: 16px;
+            padding-left: 0;
+        }
+        .conditional-field.visible { display: block; }
+
+        /* -- Buttons -- */
+        .btn-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 36px;
+        }
+        .btn {
+            padding: 12px 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: var(--sage);
+            color: var(--white);
+        }
+        .btn-primary:hover { background: var(--sage-light); }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1.5px solid var(--border);
+        }
+        .btn-secondary:hover {
+            border-color: var(--text-light);
+            color: var(--text-primary);
+        }
+
+        /* -- Affirmation -- */
+        .affirmation-box {
+            background: var(--warm-gray);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-top: 8px;
+        }
+        .affirmation-box p {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        /* -- Toast -- */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--navy);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            z-index: 999;
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.3s;
+            max-width: 90vw;
+            text-align: center;
+        }
+        .toast.visible {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+        .toast.error {
+            background: var(--error);
+        }
+
+        /* -- Disclaimer -- */
+        .disclaimer {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        /* -- Responsive -- */
+        @media (max-width: 480px) {
+            .container { padding: 28px 16px 60px; }
+            .btn-row { flex-direction: column-reverse; }
+            .btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <a href="https://emanlegal.com">EMAN &amp; Associates P.C.</a>
+    </header>
+
+    <div class="container">
+        <!-- Progress -->
+        <div class="progress-wrap">
+            <div class="progress-steps">
+                <span class="progress-step active" data-step="0">Basics</span>
+                <span class="progress-step" data-step="1">Program</span>
+                <span class="progress-step" data-step="2">Funding</span>
+                <span class="progress-step" data-step="3">Qualification</span>
+                <span class="progress-step" data-step="4">Ties &amp; Submit</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+
+        <form id="f1-intake" novalidate>
+
+            <!-- ══════ STEP 1: BASICS ══════ -->
+            <div class="step active" data-step="0">
+                <h2 class="form-heading">Your Basic Information</h2>
+                <p class="form-subheading">Let's start with the fundamentals.</p>
+
+                <div class="field-group">
+                    <label class="field-label" for="legal_name">Full legal name (as it appears on your passport)</label>
+                    <input type="text" id="legal_name" name="legal_name" class="field-input" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="citizenship">Citizenship</label>
+                    <input type="text" id="citizenship" name="citizenship" class="field-input" placeholder="e.g. Canadian" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="country_of_residence">Currently residing in</label>
+                    <input type="text" id="country_of_residence" name="country_of_residence" class="field-input" placeholder="e.g. Toronto, Canada" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="current_status">Current immigration status (in country of residence)</label>
+                    <p class="field-hint">e.g. Canadian work permit, study permit, PR</p>
+                    <input type="text" id="current_status" name="current_status" class="field-input" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="status_expiry">Status expiry date</label>
+                    <input type="date" id="status_expiry" name="status_expiry" class="field-input" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="time_in_country">Time in current country of residence</label>
+                    <input type="text" id="time_in_country" name="time_in_country" class="field-input" placeholder="e.g. 3 years" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="age">Age</label>
+                    <input type="number" id="age" name="age" class="field-input" min="1" max="120" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="highest_education">Highest education completed</label>
+                    <select id="highest_education" name="highest_education" class="field-select" required>
+                        <option value="" disabled selected>Select one</option>
+                        <option value="High school diploma">High school diploma</option>
+                        <option value="Some college / university">Some college / university</option>
+                        <option value="Associate degree">Associate degree</option>
+                        <option value="Bachelor's degree">Bachelor's degree</option>
+                        <option value="Master's degree">Master's degree</option>
+                        <option value="Doctorate / PhD">Doctorate / PhD</option>
+                        <option value="Professional degree (JD, MD, etc.)">Professional degree (JD, MD, etc.)</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="btn-row">
+                    <span></span>
+                    <button type="button" class="btn btn-primary btn-next">Continue</button>
+                </div>
+            </div>
+
+            <!-- ══════ STEP 2: THE PROGRAM ══════ -->
+            <div class="step" data-step="1">
+                <h2 class="form-heading">The Program</h2>
+                <p class="form-subheading">Tell us about the school and program you're pursuing.</p>
+
+                <div class="field-group">
+                    <label class="field-label" for="us_school">U.S. school name</label>
+                    <input type="text" id="us_school" name="us_school" class="field-input" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label">Has an I-20 been issued?</label>
+                    <div class="radio-group" data-name="i20_issued">
+                        <label class="radio-option">
+                            <input type="radio" name="i20_issued" value="Yes"> Yes
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="i20_issued" value="No"> No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="i20_issued" value="Pending"> Pending
+                        </label>
+                    </div>
+                    <div class="field-error">Please select one.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="degree_level">Degree level and major</label>
+                    <input type="text" id="degree_level" name="degree_level" class="field-input" placeholder="e.g. Master's in Computer Science" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="program_start">Program start date</label>
+                    <input type="date" id="program_start" name="program_start" class="field-input" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="annual_cost">Annual cost (tuition + living)</label>
+                    <p class="field-hint">Per I-20 if available</p>
+                    <input type="text" id="annual_cost" name="annual_cost" class="field-input" placeholder="e.g. $45,000" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="btn-row">
+                    <button type="button" class="btn btn-secondary btn-prev">Back</button>
+                    <button type="button" class="btn btn-primary btn-next">Continue</button>
+                </div>
+            </div>
+
+            <!-- ══════ STEP 3: FUNDING ══════ -->
+            <div class="step" data-step="2">
+                <h2 class="form-heading">Funding</h2>
+                <p class="form-subheading">How are you paying for this program?</p>
+
+                <div class="field-group">
+                    <label class="field-label">Who is paying?</label>
+                    <div class="radio-group" data-name="funding_source">
+                        <label class="radio-option">
+                            <input type="radio" name="funding_source" value="Self"> Self
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="funding_source" value="Parents"> Parents
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="funding_source" value="Other sponsor"> Other sponsor
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="funding_source" value="Scholarship"> Scholarship
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="funding_source" value="Loan"> Loan
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="funding_source" value="Combination"> Combination of sources
+                        </label>
+                    </div>
+                    <div class="field-error">Please select one.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="total_funds">Total funds available (first year)</label>
+                    <input type="text" id="total_funds" name="total_funds" class="field-input" placeholder="e.g. $50,000 USD" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="funds_location">Funds in which country / currency?</label>
+                    <input type="text" id="funds_location" name="funds_location" class="field-input" placeholder="e.g. Canada / CAD" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="conditional-field" id="sponsor-fields">
+                    <div class="field-group">
+                        <label class="field-label" for="sponsor_occupation">Sponsor's occupation and annual income</label>
+                        <input type="text" id="sponsor_occupation" name="sponsor_occupation" class="field-input" placeholder="e.g. Engineer, $95,000/year">
+                    </div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label">Documentation available</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="documentation_available" value="Bank statements"> Bank statements
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="documentation_available" value="Tax returns"> Tax returns
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="documentation_available" value="Affidavit of support"> Affidavit of support
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="documentation_available" value="Scholarship letter"> Scholarship letter
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="documentation_available" value="Loan approval"> Loan approval
+                        </label>
+                    </div>
+                    <div class="field-error">Select at least one.</div>
+                </div>
+
+                <div class="btn-row">
+                    <button type="button" class="btn btn-secondary btn-prev">Back</button>
+                    <button type="button" class="btn btn-primary btn-next">Continue</button>
+                </div>
+            </div>
+
+            <!-- ══════ STEP 4: QUALIFICATION GATES ══════ -->
+            <div class="step" data-step="3">
+                <h2 class="form-heading">Qualification Check</h2>
+                <p class="form-subheading">These help us identify potential issues early.</p>
+
+                <div class="field-group">
+                    <label class="field-label">Prior U.S. visa refusal?</label>
+                    <div class="radio-group" data-name="prior_visa_refusal">
+                        <label class="radio-option">
+                            <input type="radio" name="prior_visa_refusal" value="No"> No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="prior_visa_refusal" value="Yes"> Yes
+                        </label>
+                    </div>
+                    <div class="field-error">Please select one.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label">Prior U.S. overstay or status violation?</label>
+                    <div class="radio-group" data-name="prior_overstay">
+                        <label class="radio-option">
+                            <input type="radio" name="prior_overstay" value="No"> No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="prior_overstay" value="Yes"> Yes
+                        </label>
+                    </div>
+                    <div class="field-error">Please select one.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label">Any criminal history (anywhere)?</label>
+                    <div class="radio-group" data-name="criminal_history">
+                        <label class="radio-option">
+                            <input type="radio" name="criminal_history" value="No"> No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="criminal_history" value="Yes"> Yes
+                        </label>
+                    </div>
+                    <div class="field-error">Please select one.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label">Prior U.S. immigrant petition filed for you?</label>
+                    <div class="radio-group" data-name="prior_immigrant_petition">
+                        <label class="radio-option">
+                            <input type="radio" name="prior_immigrant_petition" value="No"> No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="prior_immigrant_petition" value="Yes"> Yes
+                        </label>
+                    </div>
+                    <div class="field-error">Please select one.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label">Current family-based or employment-based petition pending?</label>
+                    <div class="radio-group" data-name="pending_petition">
+                        <label class="radio-option">
+                            <input type="radio" name="pending_petition" value="No"> No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="pending_petition" value="Yes"> Yes
+                        </label>
+                    </div>
+                    <div class="field-error">Please select one.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label">Do you intend to remain in the U.S. after your studies?</label>
+                    <div class="radio-group" data-name="intent_to_remain">
+                        <label class="radio-option">
+                            <input type="radio" name="intent_to_remain" value="No"> No
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="intent_to_remain" value="Yes"> Yes
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="intent_to_remain" value="Unsure"> Unsure
+                        </label>
+                    </div>
+                    <div class="field-error">Please select one.</div>
+                </div>
+
+                <div class="btn-row">
+                    <button type="button" class="btn btn-secondary btn-prev">Back</button>
+                    <button type="button" class="btn btn-primary btn-next">Continue</button>
+                </div>
+            </div>
+
+            <!-- ══════ STEP 5: TIES & SUBMIT ══════ -->
+            <div class="step" data-step="4">
+                <h2 class="form-heading">Ties and Additional Information</h2>
+                <p class="form-subheading">Strong ties to your home country are essential for an F-1 visa.</p>
+
+                <div class="field-group">
+                    <label class="field-label" for="family_location">Where does your immediate family live?</label>
+                    <input type="text" id="family_location" name="family_location" class="field-input" placeholder="e.g. Parents in Lagos, Nigeria" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="property_owned">Do you own property? If so, where?</label>
+                    <input type="text" id="property_owned" name="property_owned" class="field-input" placeholder="e.g. Condo in Toronto, or None">
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="current_employment">Current employment</label>
+                    <input type="text" id="current_employment" name="current_employment" class="field-input" placeholder="e.g. Software developer at XYZ Corp">
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="post_study_plans">Where do you plan to live after your studies?</label>
+                    <input type="text" id="post_study_plans" name="post_study_plans" class="field-input" required>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="career_path">What job, business, or career path is waiting for you after studies?</label>
+                    <textarea id="career_path" name="career_path" class="field-textarea" placeholder="Describe the opportunity or plan you have after completing the program" required></textarea>
+                    <div class="field-error">This field is required.</div>
+                </div>
+
+                <div class="field-group">
+                    <label class="field-label" for="additional_info">Anything else we should know?</label>
+                    <textarea id="additional_info" name="additional_info" class="field-textarea" placeholder="Optional"></textarea>
+                </div>
+
+                <!-- Affirmation -->
+                <div class="field-group">
+                    <div class="affirmation-box">
+                        <p>I confirm that the information I've provided is accurate and complete to the best of my knowledge. I understand that this assessment is confidential and will be reviewed only by attorneys at EMAN &amp; Associates P.C. I understand that submitting this form does not create an attorney-client relationship.</p>
+                        <label class="checkbox-option">
+                            <input type="checkbox" id="affirmation_confirmed" name="affirmation_confirmed" value="true">
+                            I confirm the above
+                        </label>
+                    </div>
+                    <div class="field-error">You must confirm the affirmation to submit.</div>
+                </div>
+
+                <div class="btn-row">
+                    <button type="button" class="btn btn-secondary btn-prev">Back</button>
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Submit Assessment</button>
+                </div>
+            </div>
+
+        </form>
+
+        <p class="disclaimer">Your assessment is confidential. It will be reviewed only by attorneys at EMAN &amp; Associates P.C. Submitting this form does not create an attorney-client relationship.</p>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+    (function() {
+        const STORAGE_KEY = 'eman_f1_intake';
+        const form = document.getElementById('f1-intake');
+        const steps = document.querySelectorAll('.step');
+        const progressSteps = document.querySelectorAll('.progress-step');
+        const progressFill = document.querySelector('.progress-fill');
+        const toast = document.getElementById('toast');
+        let currentStep = 0;
+
+        const stepFields = {
+            0: ['legal_name', 'citizenship', 'country_of_residence', 'current_status', 'status_expiry', 'time_in_country', 'age', 'highest_education'],
+            1: ['us_school', 'i20_issued', 'degree_level', 'program_start', 'annual_cost'],
+            2: ['funding_source', 'total_funds', 'funds_location', 'documentation_available'],
+            3: ['prior_visa_refusal', 'prior_overstay', 'criminal_history', 'prior_immigrant_petition', 'pending_petition', 'intent_to_remain'],
+            4: ['legal_name_placeholder'] // validated manually
+        };
+
+        // -- Save / Load --
+        function saveData() {
+            const data = {};
+            form.querySelectorAll('input, select, textarea').forEach(el => {
+                if (el.type === 'radio') {
+                    if (el.checked) data[el.name] = el.value;
+                } else if (el.type === 'checkbox') {
+                    if (el.name === 'affirmation_confirmed') {
+                        data[el.name] = el.checked;
+                    } else if (el.name === 'documentation_available') {
+                        if (!data.documentation_available) data.documentation_available = [];
+                        if (el.checked) data.documentation_available.push(el.value);
+                    }
+                } else {
+                    if (el.name) data[el.name] = el.value;
+                }
+            });
+            data._step = currentStep;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        }
+
+        function loadData() {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return;
+            try {
+                const data = JSON.parse(raw);
+                form.querySelectorAll('input, select, textarea').forEach(el => {
+                    if (el.type === 'radio') {
+                        el.checked = data[el.name] === el.value;
+                        if (el.checked) el.closest('.radio-option')?.classList.add('selected');
+                    } else if (el.type === 'checkbox') {
+                        if (el.name === 'affirmation_confirmed') {
+                            el.checked = data[el.name] === true;
+                            if (el.checked) el.closest('.checkbox-option')?.classList.add('selected');
+                        } else if (el.name === 'documentation_available') {
+                            el.checked = (data.documentation_available || []).includes(el.value);
+                            if (el.checked) el.closest('.checkbox-option')?.classList.add('selected');
+                        }
+                    } else {
+                        if (data[el.name] !== undefined) el.value = data[el.name];
+                    }
+                });
+                if (typeof data._step === 'number' && data._step >= 0 && data._step < steps.length) {
+                    currentStep = data._step;
+                    showStep(currentStep);
+                }
+                // trigger conditional visibility
+                updateConditionals();
+            } catch(e) {}
+        }
+
+        // -- Steps --
+        function showStep(idx) {
+            steps.forEach((s, i) => s.classList.toggle('active', i === idx));
+            progressSteps.forEach((s, i) => {
+                s.classList.toggle('active', i === idx);
+                s.classList.toggle('completed', i < idx);
+            });
+            progressFill.style.width = ((idx + 1) / steps.length * 100) + '%';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // -- Validation --
+        function validateStep(idx) {
+            let valid = true;
+            const step = steps[idx];
+
+            // Text/select/textarea inputs
+            step.querySelectorAll('.field-input[required], .field-select[required], .field-textarea[required]').forEach(el => {
+                const err = el.parentElement.querySelector('.field-error');
+                if (!el.value.trim()) {
+                    el.classList.add('error');
+                    if (err) err.classList.add('visible');
+                    valid = false;
+                } else {
+                    el.classList.remove('error');
+                    if (err) err.classList.remove('visible');
+                }
+            });
+
+            // Radio groups
+            step.querySelectorAll('.radio-group').forEach(group => {
+                const name = group.dataset.name;
+                const checked = group.querySelector('input:checked');
+                const err = group.parentElement.querySelector('.field-error');
+                if (!checked) {
+                    if (err) err.classList.add('visible');
+                    valid = false;
+                } else {
+                    if (err) err.classList.remove('visible');
+                }
+            });
+
+            // Checkbox groups (documentation)
+            step.querySelectorAll('.checkbox-group').forEach(group => {
+                const checked = group.querySelectorAll('input:checked');
+                const err = group.parentElement.querySelector('.field-error');
+                if (checked.length === 0) {
+                    if (err) err.classList.add('visible');
+                    valid = false;
+                } else {
+                    if (err) err.classList.remove('visible');
+                }
+            });
+
+            return valid;
+        }
+
+        function validateFinalStep() {
+            let valid = true;
+            const step = steps[4];
+
+            // Required text fields
+            step.querySelectorAll('.field-input[required], .field-textarea[required]').forEach(el => {
+                const err = el.parentElement.querySelector('.field-error');
+                if (!el.value.trim()) {
+                    el.classList.add('error');
+                    if (err) err.classList.add('visible');
+                    valid = false;
+                } else {
+                    el.classList.remove('error');
+                    if (err) err.classList.remove('visible');
+                }
+            });
+
+            // Affirmation
+            const affirm = document.getElementById('affirmation_confirmed');
+            const affirmErr = affirm.closest('.field-group').querySelector('.field-error');
+            if (!affirm.checked) {
+                if (affirmErr) affirmErr.classList.add('visible');
+                valid = false;
+            } else {
+                if (affirmErr) affirmErr.classList.remove('visible');
+            }
+
+            return valid;
+        }
+
+        // -- Conditional Fields --
+        function updateConditionals() {
+            const source = document.querySelector('input[name="funding_source"]:checked');
+            const sponsorFields = document.getElementById('sponsor-fields');
+            if (sponsorFields) {
+                const showSponsor = source && (source.value === 'Parents' || source.value === 'Other sponsor');
+                sponsorFields.classList.toggle('visible', showSponsor);
+            }
+        }
+
+        // -- Toast --
+        function showToast(msg, isError) {
+            toast.textContent = msg;
+            toast.classList.toggle('error', !!isError);
+            toast.classList.add('visible');
+            setTimeout(() => toast.classList.remove('visible'), 4000);
+        }
+
+        // -- Collect Data --
+        function collectData() {
+            const data = {};
+            form.querySelectorAll('input, select, textarea').forEach(el => {
+                if (el.type === 'radio') {
+                    if (el.checked) data[el.name] = el.value;
+                } else if (el.type === 'checkbox') {
+                    if (el.name === 'affirmation_confirmed') {
+                        data[el.name] = el.checked;
+                    } else if (el.name === 'documentation_available') {
+                        if (!data.documentation_available) data.documentation_available = [];
+                        if (el.checked) data.documentation_available.push(el.value);
+                    }
+                } else {
+                    if (el.name) data[el.name] = el.value;
+                }
+            });
+            return data;
+        }
+
+        // -- Event Listeners --
+        document.querySelectorAll('.btn-next').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (validateStep(currentStep)) {
+                    currentStep++;
+                    showStep(currentStep);
+                    saveData();
+                }
+            });
+        });
+
+        document.querySelectorAll('.btn-prev').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentStep--;
+                showStep(currentStep);
+                saveData();
+            });
+        });
+
+        // Radio styling
+        form.addEventListener('change', (e) => {
+            if (e.target.type === 'radio') {
+                const group = e.target.closest('.radio-group');
+                if (group) {
+                    group.querySelectorAll('.radio-option').forEach(opt => opt.classList.remove('selected'));
+                    e.target.closest('.radio-option')?.classList.add('selected');
+                }
+            }
+            if (e.target.type === 'checkbox') {
+                const opt = e.target.closest('.checkbox-option');
+                if (opt) opt.classList.toggle('selected', e.target.checked);
+            }
+            updateConditionals();
+            saveData();
+        });
+
+        // Auto-save on input
+        form.addEventListener('input', () => saveData());
+
+        // Submit
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!validateFinalStep()) return;
+
+            const btn = document.getElementById('submit-btn');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            const data = collectData();
+            data.form_type = 'f1_intake';
+
+            try {
+                const res = await fetch('/.netlify/functions/submit-f1-intake', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!res.ok) {
+                    const err = await res.json();
+                    throw new Error(err.error || 'Submission failed');
+                }
+
+                localStorage.removeItem(STORAGE_KEY);
+                window.location.href = '/f1-intake/thank-you/';
+            } catch(err) {
+                showToast('Something went wrong. Please try again.', true);
+                btn.disabled = false;
+                btn.textContent = 'Submit Assessment';
+            }
+        });
+
+        // Init
+        loadData();
+    })();
+    </script>
+
+</body>
+</html>
