@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E-2 Approvability Rubric | EMAN &amp; Associates P.C.</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --navy: #1a2638;
+    --navy-deep: #0f1923;
+    --sage: #6b9e85;
+    --sage-light: #7db495;
+    --cream: #faf8f5;
+    --warm-gray: #f3f0ec;
+    --text-primary: #1a2638;
+    --text-secondary: #5a6672;
+    --text-light: #8a939c;
+    --border: #e4e0db;
+    --white: #ffffff;
+    --green: #2e7d4f;
+    --green-bg: #e8f3ed;
+    --yellow: #b8860b;
+    --yellow-bg: #fbf3df;
+    --red: #b23a3a;
+    --red-bg: #fbeaea;
+  }
+
+  html { scroll-behavior:smooth; font-size:16px; }
+  body {
+    font-family:'Inter',-apple-system,sans-serif;
+    color:var(--text-primary);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  /* Header */
+  .site-header {
+    background:var(--navy-deep);
+    padding:14px 24px;
+    text-align:center;
+  }
+  .site-header a {
+    color:var(--white);
+    text-decoration:none;
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.05rem;
+    font-weight:600;
+  }
+
+  .toolbar {
+    background:var(--white);
+    border-bottom:1px solid var(--border);
+    padding:14px 24px;
+    position:sticky;
+    top:0;
+    z-index:50;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .toolbar h1 {
+    font-family:'Playfair Display',serif;
+    font-size:1.4rem;
+    font-weight:600;
+    color:var(--navy);
+    margin-right:auto;
+  }
+  .toolbar .badge {
+    display:inline-block;
+    background:var(--warm-gray);
+    color:var(--text-secondary);
+    font-size:0.7rem;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:4px;
+    margin-left:10px;
+  }
+  .btn {
+    background:var(--white);
+    border:1px solid var(--border);
+    color:var(--text-primary);
+    padding:8px 16px;
+    font-family:inherit;
+    font-size:0.85rem;
+    font-weight:500;
+    cursor:pointer;
+    border-radius:6px;
+    transition:all 0.15s;
+  }
+  .btn:hover { background:var(--warm-gray); border-color:var(--text-light); }
+  .btn-primary {
+    background:var(--navy);
+    color:var(--white);
+    border-color:var(--navy);
+  }
+  .btn-primary:hover { background:var(--navy-deep); border-color:var(--navy-deep); }
+  .btn-sage {
+    background:var(--sage);
+    color:var(--white);
+    border-color:var(--sage);
+  }
+  .btn-sage:hover { background:var(--sage-light); }
+
+  /* Layout */
+  .layout {
+    max-width:1400px;
+    margin:0 auto;
+    padding:24px;
+    display:grid;
+    grid-template-columns:1fr 480px;
+    gap:24px;
+    align-items:start;
+  }
+  @media (max-width:1080px) {
+    .layout { grid-template-columns:1fr; }
+    .scorecard-wrap { position:static !important; }
+  }
+
+  /* Form */
+  .form-section {
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:24px;
+    margin-bottom:16px;
+  }
+  .form-section h2 {
+    font-family:'Playfair Display',serif;
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--navy);
+    margin-bottom:4px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .form-section .section-num {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:24px;
+    height:24px;
+    background:var(--navy);
+    color:var(--white);
+    border-radius:50%;
+    font-size:0.75rem;
+    font-weight:600;
+    font-family:'Inter',sans-serif;
+  }
+  .form-section .section-desc {
+    font-size:0.85rem;
+    color:var(--text-secondary);
+    margin-bottom:18px;
+  }
+
+  .field { margin-bottom:18px; }
+  .field:last-child { margin-bottom:0; }
+  .field label.field-label {
+    display:block;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--text-primary);
+    margin-bottom:8px;
+  }
+  .field .hint {
+    display:block;
+    font-size:0.78rem;
+    color:var(--text-light);
+    margin-top:4px;
+    font-style:italic;
+  }
+
+  /* Radio pills */
+  .radio-group {
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .radio-pill {
+    position:relative;
+  }
+  .radio-pill input { position:absolute; opacity:0; pointer-events:none; }
+  .radio-pill label {
+    display:block;
+    padding:8px 14px;
+    border:1px solid var(--border);
+    background:var(--white);
+    border-radius:6px;
+    font-size:0.85rem;
+    cursor:pointer;
+    color:var(--text-secondary);
+    transition:all 0.15s;
+    user-select:none;
+  }
+  .radio-pill label:hover { border-color:var(--text-light); background:var(--warm-gray); }
+  .radio-pill input:checked + label {
+    background:var(--navy);
+    border-color:var(--navy);
+    color:var(--white);
+    font-weight:500;
+  }
+
+  input[type="text"], input[type="number"], select, textarea {
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    font-family:inherit;
+    font-size:0.9rem;
+    color:var(--text-primary);
+    background:var(--white);
+  }
+  input:focus, select:focus, textarea:focus {
+    outline:none;
+    border-color:var(--sage);
+    box-shadow:0 0 0 3px rgba(107,158,133,0.15);
+  }
+
+  /* Scorecard */
+  .scorecard-wrap {
+    position:sticky;
+    top:80px;
+  }
+  .scorecard {
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:20px;
+  }
+
+  .disposition {
+    padding:18px;
+    border-radius:8px;
+    margin-bottom:16px;
+    border-left:5px solid;
+  }
+  .disposition .disp-label {
+    font-size:0.7rem;
+    font-weight:600;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin-bottom:6px;
+    opacity:0.7;
+  }
+  .disposition .disp-text {
+    font-family:'Playfair Display',serif;
+    font-size:1.25rem;
+    font-weight:600;
+    line-height:1.3;
+  }
+  .disposition .disp-sub {
+    font-size:0.82rem;
+    margin-top:4px;
+    opacity:0.85;
+  }
+  .disposition.green { background:var(--green-bg); border-color:var(--green); color:var(--green); }
+  .disposition.yellow { background:var(--yellow-bg); border-color:var(--yellow); color:var(--yellow); }
+  .disposition.red { background:var(--red-bg); border-color:var(--red); color:var(--red); }
+
+  .counts {
+    display:flex;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .count-pill {
+    flex:1;
+    text-align:center;
+    padding:8px 6px;
+    border-radius:6px;
+    font-size:0.78rem;
+    font-weight:600;
+  }
+  .count-pill .num { font-size:1.4rem; display:block; line-height:1; margin-bottom:2px; font-family:'Playfair Display',serif; }
+  .count-pill.green { background:var(--green-bg); color:var(--green); }
+  .count-pill.yellow { background:var(--yellow-bg); color:var(--yellow); }
+  .count-pill.red { background:var(--red-bg); color:var(--red); }
+
+  .elements h3 {
+    font-size:0.7rem;
+    font-weight:600;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--text-light);
+    margin-bottom:10px;
+  }
+
+  .element {
+    display:grid;
+    grid-template-columns:24px 1fr 60px;
+    gap:10px;
+    align-items:flex-start;
+    padding:10px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .element:last-child { border-bottom:none; }
+  .element .el-num {
+    font-size:0.75rem;
+    color:var(--text-light);
+    font-weight:600;
+    padding-top:1px;
+  }
+  .element .el-body { font-size:0.85rem; }
+  .element .el-name { font-weight:600; color:var(--text-primary); }
+  .element .el-note { font-size:0.78rem; color:var(--text-secondary); margin-top:2px; line-height:1.4; }
+  .element .el-grade {
+    text-align:right;
+  }
+  .grade-pill {
+    display:inline-block;
+    padding:3px 10px;
+    border-radius:12px;
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:0.05em;
+  }
+  .grade-pill.green { background:var(--green); color:var(--white); }
+  .grade-pill.yellow { background:var(--yellow); color:var(--white); }
+  .grade-pill.red { background:var(--red); color:var(--white); }
+  .grade-pill.empty { background:var(--warm-gray); color:var(--text-light); }
+
+  .actions-panel {
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:20px;
+    margin-top:16px;
+  }
+  .actions-panel h3 {
+    font-family:'Playfair Display',serif;
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .actions-panel .panel-sub {
+    font-size:0.8rem;
+    color:var(--text-light);
+    margin-bottom:14px;
+  }
+  .action-item {
+    display:flex;
+    gap:10px;
+    padding:10px;
+    border-radius:6px;
+    margin-bottom:6px;
+    font-size:0.85rem;
+    line-height:1.5;
+  }
+  .action-item .marker {
+    width:6px;
+    flex-shrink:0;
+    border-radius:3px;
+    margin-top:4px;
+    margin-bottom:4px;
+  }
+  .action-item.high { background:var(--red-bg); }
+  .action-item.high .marker { background:var(--red); }
+  .action-item.med { background:var(--yellow-bg); }
+  .action-item.med .marker { background:var(--yellow); }
+  .action-item.low { background:var(--green-bg); }
+  .action-item.low .marker { background:var(--green); }
+  .action-item .text { flex:1; color:var(--text-primary); }
+  .action-item .text strong { color:var(--navy); }
+  .empty-state {
+    text-align:center;
+    color:var(--text-light);
+    font-size:0.85rem;
+    padding:20px;
+    font-style:italic;
+  }
+
+  /* Print */
+  @media print {
+    .toolbar, .form-section { display:none; }
+    .layout { grid-template-columns:1fr; padding:0; }
+    .scorecard-wrap { position:static; }
+    body { background:var(--white); }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="https://emanlegal.com">EMAN &amp; Associates P.C.</a>
+</header>
+
+<div class="toolbar">
+  <h1>E-2 Approvability Rubric <span class="badge">Internal Tool</span></h1>
+  <button type="button" class="btn" id="btn-example">Load Example</button>
+  <button type="button" class="btn" id="btn-reset">Reset</button>
+  <button type="button" class="btn btn-primary" onclick="window.print()">Print / Export</button>
+</div>
+
+<div class="layout">
+
+  <!-- INTAKE FORM -->
+  <div>
+
+    <!-- 1. Identity / Nationality -->
+    <section class="form-section">
+      <h2><span class="section-num">1</span>Identity &amp; Nationality</h2>
+      <p class="section-desc">22 CFR 41.51(b)(6) · 9 FAM 402.9-4(B) · Matter of Ognibene</p>
+
+      <div class="field">
+        <label class="field-label">Prospect name</label>
+        <input type="text" id="prospect-name" placeholder="Legal name">
+      </div>
+
+      <div class="field">
+        <label class="field-label">Canadian citizenship</label>
+        <div class="radio-group" data-name="citizenship">
+          <span class="radio-pill"><input type="radio" name="citizenship" value="citizen" id="cit-1"><label for="cit-1">Canadian citizen</label></span>
+          <span class="radio-pill"><input type="radio" name="citizenship" value="pr" id="cit-2"><label for="cit-2">Canadian PR only</label></span>
+          <span class="radio-pill"><input type="radio" name="citizenship" value="dual" id="cit-3"><label for="cit-3">Dual national</label></span>
+          <span class="radio-pill"><input type="radio" name="citizenship" value="none" id="cit-4"><label for="cit-4">Neither</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">U.S. lawful permanent resident?</label>
+        <div class="radio-group" data-name="lpr">
+          <span class="radio-pill"><input type="radio" name="lpr" value="no" id="lpr-1"><label for="lpr-1">No</label></span>
+          <span class="radio-pill"><input type="radio" name="lpr" value="yes" id="lpr-2"><label for="lpr-2">Yes</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Ownership structure of investing entity</label>
+        <div class="radio-group" data-name="ownership-struct">
+          <span class="radio-pill"><input type="radio" name="ownership-struct" value="sole" id="os-1"><label for="os-1">Sole investor (100%)</label></span>
+          <span class="radio-pill"><input type="radio" name="ownership-struct" value="cdn50plus" id="os-2"><label for="os-2">≥50% Canadian, traced</label></span>
+          <span class="radio-pill"><input type="radio" name="ownership-struct" value="5050" id="os-3"><label for="os-3">50/50 JV (two parties)</label></span>
+          <span class="radio-pill"><input type="radio" name="ownership-struct" value="below50" id="os-4"><label for="os-4">&lt;50% Canadian</label></span>
+          <span class="radio-pill"><input type="radio" name="ownership-struct" value="unclear" id="os-5"><label for="os-5">Unclear / multi-tier</label></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Capital -->
+    <section class="form-section">
+      <h2><span class="section-num">2</span>Capital &amp; Source of Funds</h2>
+      <p class="section-desc">22 CFR 41.51(b)(7) · 8 CFR 214.2(e)(12) · 9 FAM 402.9-6(B)</p>
+
+      <div class="field">
+        <label class="field-label">Qualifying capital available (USD)</label>
+        <div class="radio-group" data-name="capital">
+          <span class="radio-pill"><input type="radio" name="capital" value="under50" id="cap-1"><label for="cap-1">Under $50K</label></span>
+          <span class="radio-pill"><input type="radio" name="capital" value="50to100" id="cap-2"><label for="cap-2">$50K–$100K</label></span>
+          <span class="radio-pill"><input type="radio" name="capital" value="100to200" id="cap-3"><label for="cap-3">$100K–$200K</label></span>
+          <span class="radio-pill"><input type="radio" name="capital" value="200plus" id="cap-4"><label for="cap-4">$200K+</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Primary source of funds</label>
+        <div class="radio-group" data-name="source">
+          <span class="radio-pill"><input type="radio" name="source" value="savings" id="src-1"><label for="src-1">Personal savings</label></span>
+          <span class="radio-pill"><input type="radio" name="source" value="gift" id="src-2"><label for="src-2">Gift / inheritance</label></span>
+          <span class="radio-pill"><input type="radio" name="source" value="loan-personal" id="src-3"><label for="src-3">Loan (personal collateral)</label></span>
+          <span class="radio-pill"><input type="radio" name="source" value="loan-business" id="src-4"><label for="src-4">Loan (business collateral)</label></span>
+          <span class="radio-pill"><input type="radio" name="source" value="mixed" id="src-5"><label for="src-5">Mixed</label></span>
+          <span class="radio-pill"><input type="radio" name="source" value="unknown" id="src-6"><label for="src-6">Unknown / unclear</label></span>
+        </div>
+        <span class="hint">Business-collateralized debt does NOT count toward qualifying investment.</span>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Commitment status of funds</label>
+        <div class="radio-group" data-name="commitment">
+          <span class="radio-pill"><input type="radio" name="commitment" value="deployed" id="com-1"><label for="com-1">Already deployed</label></span>
+          <span class="radio-pill"><input type="radio" name="commitment" value="escrow" id="com-2"><label for="com-2">In escrow (conditioned on visa)</label></span>
+          <span class="radio-pill"><input type="radio" name="commitment" value="loi" id="com-3"><label for="com-3">LOI / soft commitment</label></span>
+          <span class="radio-pill"><input type="radio" name="commitment" value="intent" id="com-4"><label for="com-4">Intent only / scouting</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Source-of-funds paper trail</label>
+        <div class="radio-group" data-name="paper">
+          <span class="radio-pill"><input type="radio" name="paper" value="clean" id="pap-1"><label for="pap-1">Clean (bank, tax, deeds)</label></span>
+          <span class="radio-pill"><input type="radio" name="paper" value="partial" id="pap-2"><label for="pap-2">Partial / gaps</label></span>
+          <span class="radio-pill"><input type="radio" name="paper" value="none" id="pap-3"><label for="pap-3">None / undocumented</label></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Business -->
+    <section class="form-section">
+      <h2><span class="section-num">3</span>The Business</h2>
+      <p class="section-desc">8 CFR 214.2(e)(13)–(16) · 9 FAM 402.9-6(C)–(F)</p>
+
+      <div class="field">
+        <label class="field-label">Business status</label>
+        <div class="radio-group" data-name="biz-status">
+          <span class="radio-pill"><input type="radio" name="biz-status" value="operating" id="bs-1"><label for="bs-1">Operating with revenue</label></span>
+          <span class="radio-pill"><input type="radio" name="biz-status" value="prelaunch" id="bs-2"><label for="bs-2">Pre-launch, lease/permits in motion</label></span>
+          <span class="radio-pill"><input type="radio" name="biz-status" value="identified" id="bs-3"><label for="bs-3">Identified, in negotiation</label></span>
+          <span class="radio-pill"><input type="radio" name="biz-status" value="searching" id="bs-4"><label for="bs-4">Still searching</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Business type / character</label>
+        <div class="radio-group" data-name="biz-type">
+          <span class="radio-pill"><input type="radio" name="biz-type" value="active" id="bt-1"><label for="bt-1">Active operating company</label></span>
+          <span class="radio-pill"><input type="radio" name="biz-type" value="service" id="bt-2"><label for="bt-2">Asset-light service business</label></span>
+          <span class="radio-pill"><input type="radio" name="biz-type" value="franchise" id="bt-3"><label for="bt-3">Franchise / restaurant / retail</label></span>
+          <span class="radio-pill"><input type="radio" name="biz-type" value="re-active" id="bt-4"><label for="bt-4">Real estate (active mgmt/dev)</label></span>
+          <span class="radio-pill"><input type="radio" name="biz-type" value="re-passive" id="bt-5"><label for="bt-5">Real estate (passive holding)</label></span>
+          <span class="radio-pill"><input type="radio" name="biz-type" value="nonprofit" id="bt-6"><label for="bt-6">Non-profit / paper org</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Licensing required for principal's role?</label>
+        <div class="radio-group" data-name="licensing">
+          <span class="radio-pill"><input type="radio" name="licensing" value="not-required" id="lic-1"><label for="lic-1">Not required</label></span>
+          <span class="radio-pill"><input type="radio" name="licensing" value="held" id="lic-2"><label for="lic-2">Required &amp; held</label></span>
+          <span class="radio-pill"><input type="radio" name="licensing" value="employees" id="lic-3"><label for="lic-3">Required; licensed employees in seat</label></span>
+          <span class="radio-pill"><input type="radio" name="licensing" value="pending" id="lic-4"><label for="lic-4">Required, principal pursuing (months out)</label></span>
+          <span class="radio-pill"><input type="radio" name="licensing" value="none" id="lic-5"><label for="lic-5">Required, no plan in place</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Proportionality: capital vs. total enterprise cost</label>
+        <div class="radio-group" data-name="proportion">
+          <span class="radio-pill"><input type="radio" name="proportion" value="full" id="pr-1"><label for="pr-1">Capital ≈ 100% of total cost</label></span>
+          <span class="radio-pill"><input type="radio" name="proportion" value="majority" id="pr-2"><label for="pr-2">Capital is majority (60–95%)</label></span>
+          <span class="radio-pill"><input type="radio" name="proportion" value="minority" id="pr-3"><label for="pr-3">Capital is minority of cost</label></span>
+          <span class="radio-pill"><input type="radio" name="proportion" value="unknown" id="pr-4"><label for="pr-4">Total cost not yet known</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Non-investor U.S. employees</label>
+        <div class="radio-group" data-name="employees">
+          <span class="radio-pill"><input type="radio" name="employees" value="multiple" id="emp-1"><label for="emp-1">2+ in place / hired</label></span>
+          <span class="radio-pill"><input type="radio" name="employees" value="one" id="emp-2"><label for="emp-2">1 in place / hired</label></span>
+          <span class="radio-pill"><input type="radio" name="employees" value="planned" id="emp-3"><label for="emp-3">Hires planned (1st 24 months)</label></span>
+          <span class="radio-pill"><input type="radio" name="employees" value="none" id="emp-4"><label for="emp-4">None — solo operation</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Revenue / financial projections</label>
+        <div class="radio-group" data-name="financials">
+          <span class="radio-pill"><input type="radio" name="financials" value="strong-history" id="fin-1"><label for="fin-1">2+ yrs tax returns, healthy income</label></span>
+          <span class="radio-pill"><input type="radio" name="financials" value="projections" id="fin-2"><label for="fin-2">5-yr pro forma w/ business plan</label></span>
+          <span class="radio-pill"><input type="radio" name="financials" value="basic" id="fin-3"><label for="fin-3">Basic projections only</label></span>
+          <span class="radio-pill"><input type="radio" name="financials" value="none" id="fin-4"><label for="fin-4">None / "not sure"</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Principal's role in the business</label>
+        <div class="radio-group" data-name="role">
+          <span class="radio-pill"><input type="radio" name="role" value="full-control" id="role-1"><label for="role-1">Sole/majority owner, executive control</label></span>
+          <span class="radio-pill"><input type="radio" name="role" value="managerial" id="role-2"><label for="role-2">Managerial control documented</label></span>
+          <span class="radio-pill"><input type="radio" name="role" value="passive" id="role-3"><label for="role-3">Passive financial backer</label></span>
+          <span class="radio-pill"><input type="radio" name="role" value="unclear" id="role-4"><label for="role-4">Unclear / TBD</label></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Disqualifier Gates -->
+    <section class="form-section">
+      <h2><span class="section-num">4</span>Disqualifier Gates</h2>
+      <p class="section-desc">INA 212(a) · INA 214(b) · 22 CFR Part 40</p>
+
+      <div class="field">
+        <label class="field-label">Prior U.S. immigration history</label>
+        <div class="radio-group" data-name="prior-immig">
+          <span class="radio-pill"><input type="radio" name="prior-immig" value="clean" id="pi-1"><label for="pi-1">Clean / no prior issues</label></span>
+          <span class="radio-pill"><input type="radio" name="prior-immig" value="214b" id="pi-2"><label for="pi-2">Prior 214(b) refusal</label></span>
+          <span class="radio-pill"><input type="radio" name="prior-immig" value="overstay" id="pi-3"><label for="pi-3">Prior overstay / status violation</label></span>
+          <span class="radio-pill"><input type="radio" name="prior-immig" value="bar" id="pi-4"><label for="pi-4">3/10-year bar or removal</label></span>
+          <span class="radio-pill"><input type="radio" name="prior-immig" value="misrep" id="pi-5"><label for="pi-5">Misrepresentation finding</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Criminal history</label>
+        <div class="radio-group" data-name="criminal">
+          <span class="radio-pill"><input type="radio" name="criminal" value="none" id="cr-1"><label for="cr-1">None</label></span>
+          <span class="radio-pill"><input type="radio" name="criminal" value="minor" id="cr-2"><label for="cr-2">Minor / non-CIMT</label></span>
+          <span class="radio-pill"><input type="radio" name="criminal" value="dui" id="cr-3"><label for="cr-3">DUI history</label></span>
+          <span class="radio-pill"><input type="radio" name="criminal" value="cimt" id="cr-4"><label for="cr-4">CIMT / controlled substance</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Currently in the U.S.?</label>
+        <div class="radio-group" data-name="in-us">
+          <span class="radio-pill"><input type="radio" name="in-us" value="no" id="us-1"><label for="us-1">No — in Canada</label></span>
+          <span class="radio-pill"><input type="radio" name="in-us" value="maintained" id="us-2"><label for="us-2">Yes — maintained status</label></span>
+          <span class="radio-pill"><input type="radio" name="in-us" value="vwp" id="us-3"><label for="us-3">Yes — entered VWP</label></span>
+          <span class="radio-pill"><input type="radio" name="in-us" value="out-of-status" id="us-4"><label for="us-4">Yes — out of status</label></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Pending IV / immigrant petition?</label>
+        <div class="radio-group" data-name="iv">
+          <span class="radio-pill"><input type="radio" name="iv" value="none" id="iv-1"><label for="iv-1">None</label></span>
+          <span class="radio-pill"><input type="radio" name="iv" value="pending" id="iv-2"><label for="iv-2">I-140 / I-130 pending</label></span>
+          <span class="radio-pill"><input type="radio" name="iv" value="denied-aos" id="iv-3"><label for="iv-3">Denied AOS / asylum</label></span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- LIVE SCORECARD -->
+  <div class="scorecard-wrap">
+    <div class="scorecard">
+
+      <div class="disposition empty" id="disposition">
+        <div class="disp-label">Disposition</div>
+        <div class="disp-text" id="disp-text">Awaiting intake</div>
+        <div class="disp-sub" id="disp-sub">Fill in the intake form to score</div>
+      </div>
+
+      <div class="counts">
+        <div class="count-pill green"><span class="num" id="count-g">—</span>Approvable</div>
+        <div class="count-pill yellow"><span class="num" id="count-y">—</span>Fixable</div>
+        <div class="count-pill red"><span class="num" id="count-r">—</span>Blocker</div>
+      </div>
+
+      <div class="elements">
+        <h3>Rubric Elements</h3>
+        <div id="elements-list"></div>
+      </div>
+
+    </div>
+
+    <div class="actions-panel">
+      <h3>Strengthening Actions</h3>
+      <p class="panel-sub">Auto-generated from intake. Highest-priority items first.</p>
+      <div id="actions-list">
+        <div class="empty-state">Recommendations will appear as you complete the intake.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const ELEMENTS = [
+  { id: 1, name: 'Nationality',           auth: '22 CFR 41.51(b)(6); 9 FAM 402.9-4(B)' },
+  { id: 2, name: 'Bona fide enterprise',  auth: '8 CFR 214.2(e)(13); 9 FAM 402.9-6(C)' },
+  { id: 3, name: 'Investment (source)',   auth: '8 CFR 214.2(e)(12); 9 FAM 402.9-6(B)' },
+  { id: 4, name: 'Irrevocable commitment', auth: '9 FAM 402.9-6(B)(d)–(e)' },
+  { id: 5, name: 'Substantial capital',   auth: '9 FAM 402.9-6(D); Walsh & Pollard' },
+  { id: 6, name: 'Not marginal',          auth: '9 FAM 402.9-6(E)' },
+  { id: 7, name: 'Develop & direct',      auth: '9 FAM 402.9-6(F)' },
+  { id: 8, name: 'Intent to depart',      auth: 'INA 214(b); 9 FAM 402.9-4(C)' },
+  { id: 9, name: 'Admissibility',         auth: 'INA 212(a); 22 CFR Part 40' },
+  { id:10, name: 'Documentary readiness', auth: 'Mission Canada / Toronto checklist' }
+];
+
+function v(name) {
+  const checked = document.querySelector(`input[name="${name}"]:checked`);
+  return checked ? checked.value : null;
+}
+
+function score() {
+  const inputs = {
+    citizenship: v('citizenship'),
+    lpr: v('lpr'),
+    ownership: v('ownership-struct'),
+    capital: v('capital'),
+    source: v('source'),
+    commitment: v('commitment'),
+    paper: v('paper'),
+    bizStatus: v('biz-status'),
+    bizType: v('biz-type'),
+    licensing: v('licensing'),
+    proportion: v('proportion'),
+    employees: v('employees'),
+    financials: v('financials'),
+    role: v('role'),
+    priorImmig: v('prior-immig'),
+    criminal: v('criminal'),
+    inUs: v('in-us'),
+    iv: v('iv')
+  };
+
+  const results = {}; const actions = [];
+
+  // E1: Nationality
+  (() => {
+    if (!inputs.citizenship || !inputs.lpr || !inputs.ownership) { results[1] = { g:'empty', note:'Awaiting input' }; return; }
+    if (inputs.lpr === 'yes') { results[1] = { g:'red', note:'U.S. LPR — disqualifies E-2 nationality' }; actions.push({p:1, t:'<strong>LPR bar.</strong> A U.S. LPR cannot be an E-2 principal and LPR-held shares do not count toward 50%. Restructure or this is not a viable case.'}); return; }
+    if (inputs.citizenship === 'none') { results[1] = { g:'red', note:'Neither Canadian citizen nor PR' }; return; }
+    if (inputs.citizenship === 'pr') { results[1] = { g:'red', note:'Canadian PR ≠ citizen for treaty purposes' }; actions.push({p:1, t:'<strong>PR not citizen.</strong> Canadian PR does not satisfy the treaty-nationality test. Confirm citizenship or no E-2 path on Canadian treaty.'}); return; }
+    if (inputs.ownership === 'below50') { results[1] = { g:'red', note:'<50% Canadian ownership' }; actions.push({p:1, t:'<strong>Ownership shortfall.</strong> Restructure to ≥50% Canadian ownership traced to individuals, or this fails treaty nationality.'}); return; }
+    if (inputs.ownership === 'unclear') { results[1] = { g:'yellow', note:'Multi-tier; trace required' }; actions.push({p:2, t:'<strong>Trace ownership.</strong> Build a corporate matrix and share-by-share trace through all entity layers to named individuals with passports.'}); return; }
+    if (inputs.ownership === '5050') { results[1] = { g:'yellow', note:'50/50 JV — negative control' }; actions.push({p:2, t:'<strong>50/50 JV.</strong> Document equal management rights in the operating agreement so the negative-control theory applies (only works with two parties).'}); return; }
+    if (inputs.citizenship === 'dual') { results[1] = { g:'yellow', note:'Dual national — Ognibene watch' }; actions.push({p:2, t:'<strong>Dual nationality (Ognibene).</strong> Choose nationality of record and hold consistent across DS-160, DS-156E, and counsel cover letter. If invoking non-Canadian treaty, consular process on that passport — do not COS in the U.S.'}); return; }
+    results[1] = { g:'green', note:'Canadian citizen, clean ownership' };
+  })();
+
+  // E2: Bona fide enterprise
+  (() => {
+    if (!inputs.bizType || !inputs.bizStatus || !inputs.licensing) { results[2] = { g:'empty', note:'Awaiting input' }; return; }
+    if (inputs.bizType === 'nonprofit') { results[2] = { g:'red', note:'Non-profit / paper org excluded' }; actions.push({p:1, t:'<strong>Non-profit / paper org.</strong> E-2 requires for-profit, real, operating enterprise. Restructure to a for-profit entity with active commercial activity.'}); return; }
+    if (inputs.bizType === 're-passive') { results[2] = { g:'red', note:'Passive real estate excluded' }; actions.push({p:1, t:'<strong>Passive real estate.</strong> DOS excludes idle speculative holdings (9 FAM 402.9-6(C)). Reposition as active development/management or change strategy.'}); return; }
+    if (inputs.licensing === 'none') { results[2] = { g:'red', note:'Licensed activity, no plan' }; actions.push({p:1, t:'<strong>Licensing gap.</strong> Business requires a license the principal does not hold and has no plan to obtain. File not buildable until (a) licensed employees are in seat, or (b) licensure plan is in motion.'}); return; }
+    if (inputs.licensing === 'pending') { results[2] = { g:'yellow', note:'Principal pursuing license' }; actions.push({p:1, t:'<strong>Licensing pending.</strong> Hire CA-licensed employees ready to produce billable work on day one, so the business operates legally while the principal credentials up. Without them, the business is not "real and active."'}); return; }
+    if (inputs.bizStatus === 'searching') { results[2] = { g:'red', note:'No specific business identified' }; actions.push({p:1, t:'<strong>No target business.</strong> "Looking for a location" is not "in process of investing." Identify and commit before filing.'}); return; }
+    if (inputs.bizStatus === 'identified') { results[2] = { g:'yellow', note:'Identified, not yet binding' }; return; }
+    if (inputs.bizStatus === 'prelaunch') { results[2] = { g:'yellow', note:'Pre-launch, in motion' }; return; }
+    results[2] = { g:'green', note:'Operating enterprise, properly licensed' };
+  })();
+
+  // E3: Investment (source)
+  (() => {
+    if (!inputs.source || !inputs.paper) { results[3] = { g:'empty', note:'Awaiting input' }; return; }
+    if (inputs.source === 'loan-business') { results[3] = { g:'red', note:'Business-collateralized loan' }; actions.push({p:1, t:'<strong>Loan collateral problem.</strong> Funds secured by the U.S. business itself do not count as qualifying investment (9 FAM 402.9-6(B)(c)). Replace with personal-collateral debt or other qualifying source.'}); return; }
+    if (inputs.source === 'unknown') { results[3] = { g:'red', note:'Source unclear' }; actions.push({p:1, t:'<strong>Source unclear.</strong> Build full source-of-funds memo with bank, tax, deed, gift, or inheritance documentation before filing.'}); return; }
+    if (inputs.paper === 'none') { results[3] = { g:'red', note:'No paper trail' }; actions.push({p:1, t:'<strong>No paper trail.</strong> Even qualifying sources fail if undocumented. Reconstruct the source-to-commitment wire trail.'}); return; }
+    if (inputs.paper === 'partial' || inputs.source === 'mixed') { results[3] = { g:'yellow', note:'Trail gaps to close' }; actions.push({p:2, t:'<strong>Close paper-trail gaps.</strong> Source-of-funds memo by counsel with every wire reconciled from origin → personal account → investment account.'}); return; }
+    results[3] = { g:'green', note:'Lawful, documented source' };
+  })();
+
+  // E4: Irrevocable commitment
+  (() => {
+    if (!inputs.commitment) { results[4] = { g:'empty', note:'Awaiting input' }; return; }
+    if (inputs.commitment === 'intent') { results[4] = { g:'red', note:'Mere intent / scouting' }; actions.push({p:1, t:'<strong>No commitment.</strong> "Intent" or "scouting" fails the "in process of investing" test. Move capital to escrow conditioned on visa issuance and execute binding documents (lease, APA).'}); return; }
+    if (inputs.commitment === 'loi') { results[4] = { g:'yellow', note:'LOI not yet binding' }; actions.push({p:2, t:'<strong>Convert LOI to binding.</strong> Move to executed purchase agreement / signed lease / escrow with conditional release tied to visa issuance.'}); return; }
+    results[4] = { g:'green', note:inputs.commitment==='escrow'?'In escrow':'Funds deployed' };
+  })();
+
+  // E5: Substantial (proportionality)
+  (() => {
+    if (!inputs.capital || !inputs.proportion) { results[5] = { g:'empty', note:'Awaiting input' }; return; }
+    if (inputs.capital === 'under50') {
+      results[5] = { g:'red', note:'<$50K — very high refusal risk' };
+      actions.push({p:1, t:'<strong>Capital below practical floor.</strong> Under $50K is theoretically allowed by Walsh & Pollard but routinely refused. Increase capital or accept high refusal risk.'});
+      return;
+    }
+    if (inputs.proportion === 'minority') {
+      results[5] = { g:'red', note:'Capital is minority of total cost' };
+      actions.push({p:1, t:'<strong>Proportionality fails.</strong> Capital invested is a minority of total enterprise cost. Either scale the capital up, scale the enterprise scope down, or reposition the business as one where the capital is proportional.'});
+      return;
+    }
+    if (inputs.proportion === 'unknown') {
+      results[5] = { g:'yellow', note:'Total cost not yet documented' };
+      actions.push({p:2, t:'<strong>Document total enterprise cost.</strong> CPA-built startup-cost projection with trade-association statistics, Chamber estimates, and vendor quotes — required to defend proportionality.'});
+      return;
+    }
+    if (inputs.capital === '50to100') {
+      results[5] = { g:'yellow', note:'$50–100K zone — needs ~100% proportionality' };
+      actions.push({p:2, t:'<strong>"Small E-2" zone.</strong> Capital is in the $50–100K zone; ensure qualifying funds are ~100% of total cost and that the marginality narrative (hires, economic contribution) is strong.'});
+      return;
+    }
+    results[5] = { g:'green', note:'Substantial; proportional' };
+  })();
+
+  // E6: Marginality
+  (() => {
+    if (!inputs.employees || !inputs.financials) { results[6] = { g:'empty', note:'Awaiting input' }; return; }
+    if (inputs.employees === 'none' && (inputs.financials === 'none' || inputs.financials === 'basic')) {
+      results[6] = { g:'red', note:'Solo + no projections — marginal' };
+      actions.push({p:1, t:'<strong>Marginality risk.</strong> Solo operation with weak projections looks like a self-employment vehicle (regulation\'s express exclusion). Add hires on payroll or build defensible 5-year pro forma with economic-contribution narrative.'});
+      return;
+    }
+    if (inputs.financials === 'none') {
+      results[6] = { g:'yellow', note:'No projections yet' };
+      actions.push({p:2, t:'<strong>Build 5-year pro forma.</strong> Revenue, COGS, OpEx, headcount, net income with footnoted assumptions tied to industry comps. Required to defeat marginality for new businesses.'});
+      return;
+    }
+    if (inputs.employees === 'none') {
+      results[6] = { g:'yellow', note:'Solo — needs hiring plan' };
+      actions.push({p:2, t:'<strong>Add U.S. hires.</strong> Get at least one non-investor employee on W-2 payroll before filing. Solo operations frequently fail marginality.'});
+      return;
+    }
+    if (inputs.employees === 'planned') {
+      results[6] = { g:'yellow', note:'Hires planned, not yet in seat' };
+      actions.push({p:2, t:'<strong>Accelerate hires.</strong> Move planned hires to onboarded W-2 status before interview where feasible.'});
+      return;
+    }
+    results[6] = { g:'green', note:'Non-marginal — hires + financials' };
+  })();
+
+  // E7: Develop & direct
+  (() => {
+    if (!inputs.role || !inputs.ownership) { results[7] = { g:'empty', note:'Awaiting input' }; return; }
+    if (inputs.role === 'passive') { results[7] = { g:'red', note:'Passive backer — fails control test' }; actions.push({p:1, t:'<strong>Passive backer.</strong> E-2 requires the investor to develop and direct. Restructure role to majority owner or documented managerial control, or this is not an E-2 case.'}); return; }
+    if (inputs.role === 'unclear') { results[7] = { g:'yellow', note:'Role TBD — document control' }; actions.push({p:2, t:'<strong>Document control.</strong> Operating agreement / bylaws / employment agreement must vest hire/fire, capital deployment, banking, contract signature, and strategy in the principal.'}); return; }
+    if (inputs.ownership === '5050' && inputs.role === 'managerial') { results[7] = { g:'yellow', note:'50/50 managerial — only works two-party' }; return; }
+    results[7] = { g:'green', note:'Control documented' };
+  })();
+
+  // E8: Intent to depart
+  (() => {
+    if (!inputs.iv) { results[8] = { g:'empty', note:'Awaiting input' }; return; }
+    if (inputs.iv === 'denied-aos') { results[8] = { g:'red', note:'Denied AOS / asylum history' }; actions.push({p:1, t:'<strong>Adverse immigration history.</strong> Address head-on in cover letter; consider sequencing and waiver pathway. May affect 214(b) overcoming.'}); return; }
+    if (inputs.iv === 'pending') { results[8] = { g:'yellow', note:'Pending IV — handle carefully' }; actions.push({p:2, t:'<strong>Pending IV.</strong> 8 CFR 214.2(e)(5) allows E with pending IV but officer must be satisfied of intent to depart. Frame E as separate process from IV in the cover letter.'}); return; }
+    results[8] = { g:'green', note:'No competing immigrant intent' };
+  })();
+
+  // E9: Admissibility
+  (() => {
+    if (!inputs.priorImmig || !inputs.criminal) { results[9] = { g:'empty', note:'Awaiting input' }; return; }
+    if (inputs.priorImmig === 'bar' || inputs.priorImmig === 'misrep' || inputs.criminal === 'cimt') {
+      const lab = inputs.priorImmig === 'bar' ? '3/10-yr bar / removal'
+                 : inputs.priorImmig === 'misrep' ? 'Misrepresentation finding'
+                 : 'CIMT / drug';
+      results[9] = { g:'red', note:lab };
+      actions.push({p:1, t:`<strong>Inadmissibility: ${lab}.</strong> Evaluate INA 212(d)(3)(A) nonimmigrant waiver path. Build the waiver record concurrently (rehabilitation, hardship, equities, reasons for travel). Without a waiver this is not approvable.`});
+      return;
+    }
+    if (inputs.inUs === 'vwp') { results[9] = { g:'red', note:'VWP entrant cannot COS' }; actions.push({p:1, t:'<strong>VWP entrant.</strong> INA 248 bars change of status from VWP. Must depart and consular-process.'}); return; }
+    if (inputs.inUs === 'out-of-status') { results[9] = { g:'red', note:'Out of status — COS bar / UP risk' }; actions.push({p:1, t:'<strong>Out of status.</strong> COS likely barred; unlawful presence accruing. Triage immediately — depart before 180 days or evaluate waiver.'}); return; }
+    if (inputs.priorImmig === 'overstay') { results[9] = { g:'yellow', note:'Prior overstay — duration matters' }; actions.push({p:2, t:'<strong>Prior overstay.</strong> Quantify duration. >180 days triggers 3-yr bar; >1 year triggers 10-yr bar. Pull full I-94 history before filing.'}); return; }
+    if (inputs.priorImmig === '214b') { results[9] = { g:'yellow', note:'Prior 214(b) refusal' }; actions.push({p:2, t:'<strong>Prior 214(b) refusal.</strong> Address the underlying reason head-on; assemble new evidence that overcomes the prior finding.'}); return; }
+    if (inputs.criminal === 'dui') { results[9] = { g:'yellow', note:'DUI — panel physician possible' }; actions.push({p:2, t:'<strong>DUI history.</strong> Expect possible panel physician referral. Do not omit on the DS-160. Gather records.'}); return; }
+    if (inputs.criminal === 'minor') { results[9] = { g:'yellow', note:'Minor — confirm not CIMT' }; actions.push({p:2, t:'<strong>Minor criminal contact.</strong> Pull certified disposition and run CIMT analysis. Disclose on DS-160.'}); return; }
+    results[9] = { g:'green', note:'Clean admissibility' };
+  })();
+
+  // E10: Documentary readiness — always Y/G pending build
+  (() => {
+    // any meaningful intake done?
+    const anyAnswered = Object.values(inputs).some(x => x);
+    if (!anyAnswered) { results[10] = { g:'empty', note:'Awaiting input' }; return; }
+    results[10] = { g:'yellow', note:'Build to Toronto checklist; PDF ≤50p / 20MB' };
+    actions.push({p:3, t:'<strong>Toronto packaging.</strong> Single PDF, ≤50 pages, ≤20 MB, tabbed sections I–VII per the Toronto checklist. Cover letter ≤5 pages, no block-quoted FAM. DS-160 confirmation number must match the appointment confirmation number.'});
+  })();
+
+  return { results, actions };
+}
+
+function render() {
+  const { results, actions } = score();
+  const counts = { green:0, yellow:0, red:0, empty:0 };
+  const list = document.getElementById('elements-list');
+  list.innerHTML = '';
+  ELEMENTS.forEach(e => {
+    const r = results[e.id] || { g:'empty', note:'Awaiting input' };
+    counts[r.g]++;
+    const row = document.createElement('div');
+    row.className = 'element';
+    const gLabel = { green:'PASS', yellow:'WATCH', red:'BLOCK', empty:'—' }[r.g];
+    row.innerHTML = `
+      <div class="el-num">${e.id}.</div>
+      <div class="el-body">
+        <div class="el-name">${e.name}</div>
+        <div class="el-note">${r.note}</div>
+      </div>
+      <div class="el-grade"><span class="grade-pill ${r.g}">${gLabel}</span></div>
+    `;
+    list.appendChild(row);
+  });
+
+  document.getElementById('count-g').textContent = counts.green;
+  document.getElementById('count-y').textContent = counts.yellow;
+  document.getElementById('count-r').textContent = counts.red;
+
+  const disp = document.getElementById('disposition');
+  const dispText = document.getElementById('disp-text');
+  const dispSub = document.getElementById('disp-sub');
+  disp.classList.remove('green','yellow','red','empty');
+
+  if (counts.empty === 10) {
+    disp.classList.add('empty');
+    dispText.textContent = 'Awaiting intake';
+    dispSub.textContent = 'Fill in the intake form to score';
+  } else if (counts.red > 0) {
+    disp.classList.add('red');
+    dispText.textContent = 'Not currently approvable';
+    dispSub.textContent = `${counts.red} blocker${counts.red>1?'s':''} must be resolved before filing.`;
+  } else if (counts.yellow > 0 || counts.empty > 0) {
+    disp.classList.add('yellow');
+    dispText.textContent = 'Approvable with fixes';
+    const open = counts.yellow + counts.empty;
+    dispSub.textContent = `${open} item${open>1?'s':''} to strengthen or confirm before filing.`;
+  } else {
+    disp.classList.add('green');
+    dispText.textContent = 'Approvable as-is';
+    dispSub.textContent = 'All ten elements pass on current intake. Build the file.';
+  }
+
+  // Actions
+  const al = document.getElementById('actions-list');
+  if (actions.length === 0) {
+    if (counts.empty === 10) {
+      al.innerHTML = '<div class="empty-state">Recommendations will appear as you complete the intake.</div>';
+    } else if (counts.red === 0 && counts.yellow === 0) {
+      al.innerHTML = '<div class="empty-state">No strengthening actions flagged — proceed with file build.</div>';
+    } else {
+      al.innerHTML = '<div class="empty-state">Complete additional intake fields to surface actions.</div>';
+    }
+  } else {
+    actions.sort((a,b) => a.p - b.p);
+    al.innerHTML = actions.map(a => {
+      const cls = a.p === 1 ? 'high' : a.p === 2 ? 'med' : 'low';
+      return `<div class="action-item ${cls}"><div class="marker"></div><div class="text">${a.t}</div></div>`;
+    }).join('');
+  }
+}
+
+document.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', render));
+document.getElementById('btn-reset').addEventListener('click', () => {
+  document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+  document.getElementById('prospect-name').value = '';
+  render();
+});
+document.getElementById('btn-example').addEventListener('click', () => {
+  // Navdeep Ran example
+  const set = (n,v) => { const el = document.querySelector(`input[name="${n}"][value="${v}"]`); if (el) el.checked = true; };
+  document.getElementById('prospect-name').value = 'Navdeep Ran (Sacramento)';
+  set('citizenship','citizen');
+  set('lpr','no');
+  set('ownership-struct','sole');
+  set('capital','100to200');
+  set('source','savings');
+  set('commitment','loi');
+  set('paper','clean');
+  set('biz-status','identified');
+  set('biz-type','re-active');
+  set('licensing','pending');
+  set('proportion','unknown');
+  set('employees','planned');
+  set('financials','none');
+  set('role','full-control');
+  set('prior-immig','clean');
+  set('criminal','none');
+  set('in-us','no');
+  set('iv','none');
+  render();
+});
+
+render();
+</script>
+
+</body>
+</html>

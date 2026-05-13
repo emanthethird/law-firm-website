@@ -9,3 +9,9 @@ hero.png
 /attorney.jpg
 /pricing.html
 /review-*.jpeg
+
+# Node
+node_modules/
+package-lock.json
+.env
+.env.local

@@ -1,5 +1,17 @@
 // submit-intake.js — Netlify serverless function for E-2 intake form submissions
 
+const { scoreIntake, renderAnalysisHTML } = require("./intake-scoring");
+
+// @netlify/blobs is auto-available in the Netlify Functions runtime when the
+// site is deployed on Netlify. Locally without the SDK, the require will fail —
+// we wrap it in a try so submission still works in dev without storage.
+let getStore = null;
+try {
+  ({ getStore } = require("@netlify/blobs"));
+} catch (err) {
+  console.warn("@netlify/blobs not available — submissions will not be persisted.");
+}
+
 function sanitize(str) {
   if (typeof str !== "string") return "";
   return str
@@ -79,13 +91,14 @@ function validate(data) {
   return errors;
 }
 
-function buildEmail(data) {
+function buildEmail(data, analysis) {
   const now = new Date().toISOString();
   const hasDisqualifierFlag =
     data.prior_immigration_issues !== "No" ||
     data.criminal_history !== "No" ||
     data.prior_us_visa !== "No";
   const hasBudgetFlag = false;
+  const analysisHtml = analysis ? renderAnalysisHTML(analysis) : "";
 
   const html = `
 <!DOCTYPE html>
@@ -149,6 +162,8 @@ function buildEmail(data) {
 
     <div class="section-title">Affirmation</div>
     <div class="field"><div class="field-value">Confirmed: Yes (${now})</div></div>
+
+    ${analysisHtml}
   </div>
   <div class="footer">
     EMAN &amp; Associates P.C. &mdash; Confidential Intake Submission
@@ -216,8 +231,20 @@ exports.handler = async function (event) {
     };
   }
 
-  const emailHtml = buildEmail(data);
-  const subject = `E-2 Intake: ${sanitize(data.legal_name)} — ${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`;
+  let analysis = null;
+  try {
+    analysis = scoreIntake(data);
+  } catch (err) {
+    console.error("Scoring failed:", err);
+    // Continue without analysis rather than blocking submission.
+  }
+
+  const emailHtml = buildEmail(data, analysis);
+  const dispLabel = analysis
+    ? { red: "BLOCK", yellow: "WATCH", green: "PASS" }[analysis.disposition.level] || ""
+    : "";
+  const dispPrefix = dispLabel ? `[${dispLabel}] ` : "";
+  const subject = `${dispPrefix}E-2 Intake: ${sanitize(data.legal_name)} — ${new Date().toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`;
 
   try {
     const res = await fetch("https://api.resend.com/emails", {
@@ -248,6 +275,126 @@ exports.handler = async function (event) {
     }
 
     const result = await res.json();
+
+    // Persist to Netlify Blobs for the internal viewer. Non-fatal on error.
+    const caseId = "case_" + Date.now() + "_" + Math.random().toString(36).slice(2, 8);
+    if (getStore) {
+      try {
+        const store = getStore("e2-cases");
+        await store.setJSON(caseId, {
+          id: caseId,
+          submittedAt: new Date().toISOString(),
+          legalName: data.legal_name,
+          relocationTarget: data.relocation_target,
+          capitalRange: data.capital_range,
+          dispositionLevel: analysis ? analysis.disposition.level : null,
+          dispositionLabel: analysis ? analysis.disposition.label : null,
+          counts: analysis ? analysis.counts : null,
+          notes: "",
+          archived: false,
+          intake: data,
+          analysis: analysis,
+          emailId: result.id || null,
+        });
+      } catch (err) {
+        console.error("Blob write failed:", err);
+      }
+    }
+
+    // Optional channel pings (Slack + Teams). Non-fatal on error.
+    if (analysis) {
+      const level = analysis.disposition.level;
+      const dispTag = level === "red" ? "BLOCK" : level === "yellow" ? "WATCH" : "PASS";
+      const siteUrl = (process.env.SITE_URL || "https://emanlegal.com").replace(/\/+$/, "");
+      const caseUrl = siteUrl + "/internal/?id=" + caseId;
+      const counts = analysis.counts || { green: 0, yellow: 0, red: 0 };
+      const themeColor = level === "red" ? "b23a3a" : level === "yellow" ? "b8860b" : "2e7d4f";
+
+      const slackUrl = process.env.SLACK_WEBHOOK_URL;
+      if (slackUrl) {
+        try {
+          const slackBody = {
+            text: `[${dispTag}] New E-2 intake: ${data.legal_name}`,
+            blocks: [
+              {
+                type: "header",
+                text: { type: "plain_text", text: `[${dispTag}] New E-2 Intake` },
+              },
+              {
+                type: "section",
+                fields: [
+                  { type: "mrkdwn", text: `*Name:*\n${data.legal_name || "(no name)"}` },
+                  { type: "mrkdwn", text: `*Target:*\n${data.relocation_target || "—"}` },
+                  { type: "mrkdwn", text: `*Capital:*\n${data.capital_range || "—"}` },
+                  { type: "mrkdwn", text: `*Counts:*\n${counts.green} PASS · ${counts.yellow} WATCH · ${counts.red} BLOCK` },
+                ],
+              },
+              {
+                type: "section",
+                text: { type: "mrkdwn", text: `${analysis.disposition.label} — ${analysis.disposition.sub}` },
+              },
+              {
+                type: "actions",
+                elements: [
+                  {
+                    type: "button",
+                    text: { type: "plain_text", text: "View full analysis" },
+                    url: caseUrl,
+                  },
+                ],
+              },
+            ],
+          };
+          await fetch(slackUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(slackBody),
+          });
+        } catch (err) {
+          console.error("Slack webhook failed:", err);
+        }
+      }
+
+      const teamsUrl = process.env.TEAMS_WEBHOOK_URL;
+      if (teamsUrl) {
+        try {
+          const teamsBody = {
+            "@type": "MessageCard",
+            "@context": "https://schema.org/extensions",
+            summary: `[${dispTag}] New E-2 intake: ${data.legal_name}`,
+            themeColor: themeColor,
+            title: `[${dispTag}] New E-2 Intake`,
+            sections: [
+              {
+                activityTitle: data.legal_name || "(no name)",
+                activitySubtitle: `${analysis.disposition.label} — ${analysis.disposition.sub}`,
+                facts: [
+                  { name: "Target",  value: data.relocation_target || "—" },
+                  { name: "Capital", value: data.capital_range || "—" },
+                  { name: "Counts",  value: `${counts.green} PASS · ${counts.yellow} WATCH · ${counts.red} BLOCK` },
+                ],
+                markdown: true,
+              },
+            ],
+            potentialAction: [
+              {
+                "@type": "OpenUri",
+                name: "View full analysis",
+                targets: [{ os: "default", uri: caseUrl }],
+              },
+            ],
+          };
+          await fetch(teamsUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(teamsBody),
+          });
+        } catch (err) {
+          console.error("Teams webhook failed:", err);
+        }
+      }
+    }
+
     return {
       statusCode: 200,
       headers,
@@ -255,6 +402,8 @@ exports.handler = async function (event) {
         success: true,
         message: "Intake submitted successfully.",
         id: result.id,
+        caseId: caseId,
+        analysis: analysis,
       }),
     };
   } catch (err) {

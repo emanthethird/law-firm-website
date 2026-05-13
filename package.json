@@ -1,0 +1,9 @@
+{
+  "name": "emanlegal-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site + Netlify functions for emanlegal.com",
+  "dependencies": {
+    "@netlify/blobs": "^8.1.0"
+  }
+}

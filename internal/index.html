@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internal Cases | EMAN &amp; Associates P.C.</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+  :root {
+    --navy: #1a2638;
+    --navy-deep: #0f1923;
+    --sage: #6b9e85;
+    --sage-light: #7db495;
+    --cream: #faf8f5;
+    --warm-gray: #f3f0ec;
+    --text-primary: #1a2638;
+    --text-secondary: #5a6672;
+    --text-light: #8a939c;
+    --border: #e4e0db;
+    --white: #ffffff;
+    --green: #2e7d4f;
+    --green-bg: #e8f3ed;
+    --yellow: #b8860b;
+    --yellow-bg: #fbf3df;
+    --red: #b23a3a;
+    --red-bg: #fbeaea;
+  }
+
+  html { font-size:16px; }
+  body {
+    font-family:'Inter',-apple-system,sans-serif;
+    color:var(--text-primary);
+    background:var(--cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+
+  .site-header {
+    background:var(--navy-deep);
+    padding:14px 24px;
+    text-align:center;
+  }
+  .site-header a {
+    color:var(--white);
+    text-decoration:none;
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.05rem;
+    font-weight:600;
+  }
+
+  .toolbar {
+    background:var(--white);
+    border-bottom:1px solid var(--border);
+    padding:14px 24px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .toolbar h1 {
+    font-family:'Playfair Display',serif;
+    font-size:1.4rem;
+    font-weight:600;
+    color:var(--navy);
+    margin-right:auto;
+  }
+  .toolbar .badge {
+    display:inline-block;
+    background:var(--warm-gray);
+    color:var(--text-secondary);
+    font-size:0.7rem;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    border-radius:4px;
+    margin-left:10px;
+  }
+  .btn {
+    background:var(--white);
+    border:1px solid var(--border);
+    color:var(--text-primary);
+    padding:8px 16px;
+    font-family:inherit;
+    font-size:0.85rem;
+    font-weight:500;
+    cursor:pointer;
+    border-radius:6px;
+    transition:all 0.15s;
+  }
+  .btn:hover { background:var(--warm-gray); border-color:var(--text-light); }
+  .btn-primary {
+    background:var(--navy);
+    color:var(--white);
+    border-color:var(--navy);
+  }
+  .btn-primary:hover { background:var(--navy-deep); }
+  .btn-link {
+    background:transparent;
+    border:none;
+    color:var(--text-light);
+    font-size:0.82rem;
+    cursor:pointer;
+    text-decoration:underline;
+    padding:0;
+  }
+  .btn-link:hover { color:var(--text-secondary); }
+
+  /* Auth screen */
+  .auth-screen {
+    max-width:420px;
+    margin:80px auto;
+    padding:40px;
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:10px;
+  }
+  .auth-screen h2 {
+    font-family:'Playfair Display',serif;
+    font-size:1.4rem;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .auth-screen p {
+    color:var(--text-secondary);
+    font-size:0.9rem;
+    margin-bottom:20px;
+  }
+  .auth-screen input {
+    width:100%;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    font-family:inherit;
+    font-size:0.9rem;
+    margin-bottom:12px;
+  }
+  .auth-screen input:focus {
+    outline:none;
+    border-color:var(--sage);
+    box-shadow:0 0 0 3px rgba(107,158,133,0.15);
+  }
+  .auth-screen .auth-error {
+    color:var(--red);
+    font-size:0.82rem;
+    margin-top:6px;
+    margin-bottom:12px;
+  }
+
+  /* Layout */
+  .layout {
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:0;
+    height:calc(100vh - 56px - 60px);
+  }
+  @media (max-width:980px) {
+    .layout { grid-template-columns:1fr; height:auto; }
+    .sidebar { max-height:50vh; }
+  }
+
+  .sidebar {
+    background:var(--white);
+    border-right:1px solid var(--border);
+    overflow-y:auto;
+  }
+  .sidebar-toolbar {
+    padding:12px 16px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    gap:8px;
+    align-items:center;
+    position:sticky;
+    top:0;
+    background:var(--white);
+    z-index:5;
+  }
+  .filter-pill {
+    padding:5px 11px;
+    border-radius:14px;
+    font-size:0.72rem;
+    font-weight:600;
+    border:1px solid var(--border);
+    background:var(--white);
+    cursor:pointer;
+    color:var(--text-secondary);
+  }
+  .filter-pill.active {
+    background:var(--navy);
+    color:var(--white);
+    border-color:var(--navy);
+  }
+  .filter-pill.green.active { background:var(--green); border-color:var(--green); }
+  .filter-pill.yellow.active { background:var(--yellow); border-color:var(--yellow); }
+  .filter-pill.red.active { background:var(--red); border-color:var(--red); }
+
+  .search-row {
+    padding:10px 16px;
+    border-bottom:1px solid var(--border);
+    background:var(--white);
+    position:sticky;
+    top:46px;
+    z-index:4;
+  }
+  .search-row input {
+    width:100%;
+    padding:8px 10px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    font-family:inherit;
+    font-size:0.85rem;
+    background:var(--cream);
+  }
+  .search-row input:focus {
+    outline:none;
+    border-color:var(--sage);
+    background:var(--white);
+  }
+
+  .archive-tag {
+    display:inline-block;
+    margin-left:6px;
+    padding:1px 6px;
+    background:var(--warm-gray);
+    color:var(--text-light);
+    font-size:0.62rem;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    border-radius:8px;
+    vertical-align:1px;
+  }
+  .notes-dot {
+    display:inline-block;
+    width:6px;
+    height:6px;
+    background:var(--sage);
+    border-radius:50%;
+    margin-left:4px;
+    vertical-align:2px;
+  }
+
+  .case-row {
+    padding:14px 16px;
+    border-bottom:1px solid var(--border);
+    cursor:pointer;
+    transition:background 0.1s;
+  }
+  .case-row:hover { background:var(--warm-gray); }
+  .case-row.active { background:var(--warm-gray); border-left:3px solid var(--sage); padding-left:13px; }
+  .case-row .case-top {
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:8px;
+    margin-bottom:4px;
+  }
+  .case-row .case-name {
+    font-weight:600;
+    color:var(--text-primary);
+    font-size:0.92rem;
+    line-height:1.3;
+  }
+  .case-row .case-meta {
+    font-size:0.75rem;
+    color:var(--text-light);
+    margin-top:2px;
+  }
+  .disp-pill {
+    display:inline-block;
+    padding:2px 8px;
+    border-radius:10px;
+    font-size:0.65rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .disp-pill.green { background:var(--green); color:#fff; }
+  .disp-pill.yellow { background:var(--yellow); color:#fff; }
+  .disp-pill.red { background:var(--red); color:#fff; }
+  .disp-pill.empty { background:var(--warm-gray); color:var(--text-light); }
+
+  /* Detail */
+  .detail {
+    overflow-y:auto;
+    padding:24px;
+  }
+  .empty-state {
+    text-align:center;
+    color:var(--text-light);
+    font-size:0.9rem;
+    padding:80px 20px;
+  }
+  .empty-state .big {
+    font-family:'Playfair Display',serif;
+    font-size:1.2rem;
+    color:var(--text-secondary);
+    margin-bottom:6px;
+  }
+  .detail-card {
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:24px;
+    margin-bottom:16px;
+  }
+  .detail-card h2 {
+    font-family:'Playfair Display',serif;
+    font-size:1.2rem;
+    color:var(--navy);
+    margin-bottom:10px;
+  }
+  .detail-card .meta {
+    font-size:0.8rem;
+    color:var(--text-light);
+    margin-bottom:18px;
+  }
+
+  .intake-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:12px 24px;
+  }
+  .intake-field {
+    font-size:0.85rem;
+  }
+  .intake-field .lab {
+    font-size:0.7rem;
+    color:var(--text-light);
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-weight:600;
+    margin-bottom:2px;
+  }
+  .intake-field .val {
+    color:var(--text-primary);
+    white-space:pre-wrap;
+    word-break:break-word;
+  }
+  .intake-field .val.muted { color:var(--text-light); font-style:italic; }
+  .intake-field.full { grid-column:1 / -1; }
+
+  .section-bar {
+    font-size:0.7rem;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--sage);
+    border-bottom:2px solid var(--border);
+    padding-bottom:8px;
+    margin:20px 0 14px;
+  }
+  .section-bar:first-child { margin-top:0; }
+
+  .analysis-host {
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:24px;
+  }
+  .analysis-host > h2 {
+    font-family:'Playfair Display',serif;
+    font-size:1.2rem;
+    color:var(--navy);
+    margin-bottom:10px;
+  }
+
+  .loading {
+    color:var(--text-light);
+    font-style:italic;
+    padding:20px;
+    text-align:center;
+  }
+
+  /* Detail action bar + notes + danger zone */
+  .case-actions {
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:16px;
+    padding-top:16px;
+    border-top:1px solid var(--border);
+  }
+  .btn-danger {
+    background:var(--white);
+    border:1px solid var(--red);
+    color:var(--red);
+  }
+  .btn-danger:hover { background:var(--red-bg); }
+  .btn-sage {
+    background:var(--sage);
+    border-color:var(--sage);
+    color:var(--white);
+  }
+  .btn-sage:hover { background:var(--sage-light); border-color:var(--sage-light); }
+
+  .notes-card {
+    background:var(--white);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:20px 24px;
+    margin-top:16px;
+  }
+  .notes-card h3 {
+    font-family:'Playfair Display',serif;
+    font-size:1.05rem;
+    color:var(--navy);
+    margin-bottom:6px;
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+  }
+  .notes-card .save-state {
+    font-size:0.75rem;
+    color:var(--text-light);
+    font-family:'Inter',sans-serif;
+    font-weight:400;
+    font-style:italic;
+  }
+  .notes-card textarea {
+    width:100%;
+    min-height:120px;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius:6px;
+    font-family:inherit;
+    font-size:0.88rem;
+    line-height:1.6;
+    color:var(--text-primary);
+    resize:vertical;
+  }
+  .notes-card textarea:focus {
+    outline:none;
+    border-color:var(--sage);
+    box-shadow:0 0 0 3px rgba(107,158,133,0.15);
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="https://emanlegal.com">EMAN &amp; Associates P.C.</a>
+</header>
+
+<!-- AUTH SCREEN -->
+<div id="auth-screen" class="auth-screen" style="display:none;">
+  <h2>Internal access</h2>
+  <p>Enter the internal viewer token to continue. Contact e@emanlegal.com if you don't have it.</p>
+  <input type="password" id="auth-input" placeholder="Token" autocomplete="off">
+  <div class="auth-error" id="auth-error" style="display:none;"></div>
+  <button type="button" class="btn btn-primary" id="auth-submit" style="width:100%;">Unlock</button>
+</div>
+
+<!-- MAIN APP -->
+<div id="main" style="display:none;">
+
+  <div class="toolbar">
+    <h1>E-2 Cases <span class="badge">Internal</span></h1>
+    <button type="button" class="btn" id="btn-toggle-archived">Show archived</button>
+    <button type="button" class="btn" id="btn-export">Export CSV</button>
+    <button type="button" class="btn" id="btn-refresh">Refresh</button>
+    <button type="button" class="btn-link" id="btn-logout">Sign out</button>
+  </div>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-toolbar">
+        <button type="button" class="filter-pill active" data-filter="all">All</button>
+        <button type="button" class="filter-pill red" data-filter="red">Block</button>
+        <button type="button" class="filter-pill yellow" data-filter="yellow">Watch</button>
+        <button type="button" class="filter-pill green" data-filter="green">Pass</button>
+      </div>
+      <div class="search-row">
+        <input type="search" id="search-input" placeholder="Search by name…" autocomplete="off">
+      </div>
+      <div id="case-list"><div class="loading">Loading cases…</div></div>
+    </aside>
+
+    <main class="detail">
+      <div id="detail-host">
+        <div class="empty-state">
+          <div class="big">Select a case from the list</div>
+          <div>The intake and analysis will appear here.</div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+</div>
+
+<script>
+const TOKEN_KEY = "eman.internal.token";
+
+function getToken() { return sessionStorage.getItem(TOKEN_KEY) || ""; }
+function setToken(t) { sessionStorage.setItem(TOKEN_KEY, t); }
+function clearToken() { sessionStorage.removeItem(TOKEN_KEY); }
+
+const authScreen = document.getElementById("auth-screen");
+const mainApp = document.getElementById("main");
+const authInput = document.getElementById("auth-input");
+const authError = document.getElementById("auth-error");
+const authSubmit = document.getElementById("auth-submit");
+
+function showAuth() {
+  mainApp.style.display = "none";
+  authScreen.style.display = "block";
+  setTimeout(() => authInput.focus(), 0);
+}
+function showMain() {
+  authScreen.style.display = "none";
+  mainApp.style.display = "block";
+  loadCases();
+}
+
+async function tryAuth(token) {
+  authError.style.display = "none";
+  authSubmit.disabled = true;
+  authSubmit.textContent = "Verifying…";
+  try {
+    const res = await fetch("/.netlify/functions/list-cases", {
+      headers: { Authorization: "Bearer " + token }
+    });
+    if (res.status === 401) {
+      authError.textContent = "Invalid token. Try again.";
+      authError.style.display = "block";
+      return false;
+    }
+    if (!res.ok) {
+      authError.textContent = "Server error (" + res.status + "). Try again.";
+      authError.style.display = "block";
+      return false;
+    }
+    setToken(token);
+    return true;
+  } catch (err) {
+    authError.textContent = "Network error. Try again.";
+    authError.style.display = "block";
+    return false;
+  } finally {
+    authSubmit.disabled = false;
+    authSubmit.textContent = "Unlock";
+  }
+}
+
+authSubmit.addEventListener("click", async () => {
+  const t = authInput.value.trim();
+  if (!t) { authError.textContent = "Enter a token."; authError.style.display = "block"; return; }
+  const ok = await tryAuth(t);
+  if (ok) showMain();
+});
+authInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") authSubmit.click();
+});
+
+document.getElementById("btn-logout").addEventListener("click", () => {
+  clearToken();
+  showAuth();
+});
+document.getElementById("btn-refresh").addEventListener("click", () => loadCases());
+
+document.querySelectorAll(".filter-pill").forEach(p => {
+  p.addEventListener("click", () => {
+    document.querySelectorAll(".filter-pill").forEach(x => x.classList.remove("active"));
+    p.classList.add("active");
+    currentFilter = p.dataset.filter;
+    renderList();
+  });
+});
+
+document.getElementById("search-input").addEventListener("input", (e) => {
+  searchTerm = e.target.value.trim().toLowerCase();
+  renderList();
+});
+
+document.getElementById("btn-toggle-archived").addEventListener("click", (e) => {
+  showArchived = !showArchived;
+  e.target.textContent = showArchived ? "Show active" : "Show archived";
+  activeId = null;
+  loadCases();
+});
+
+document.getElementById("btn-export").addEventListener("click", () => exportCsv());
+
+let allCases = [];
+let currentFilter = "all";
+let activeId = null;
+let searchTerm = "";
+let showArchived = false;
+
+function fmtDate(iso) {
+  if (!iso) return "";
+  try {
+    const d = new Date(iso);
+    return d.toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" });
+  } catch { return iso; }
+}
+
+async function loadCases() {
+  const host = document.getElementById("case-list");
+  host.innerHTML = '<div class="loading">Loading cases…</div>';
+  try {
+    const url = "/.netlify/functions/list-cases?archived=" + (showArchived ? "true" : "false");
+    const res = await fetch(url, {
+      headers: { Authorization: "Bearer " + getToken() }
+    });
+    if (res.status === 401) { clearToken(); showAuth(); return; }
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    allCases = data.cases || [];
+    renderList();
+    // Honor ?id=... deep link on first load
+    if (!deepLinkConsumed) {
+      const params = new URLSearchParams(location.search);
+      const wantedId = params.get("id");
+      if (wantedId && allCases.find(c => c.id === wantedId)) {
+        activeId = wantedId;
+        renderList();
+        loadCase(activeId);
+      }
+      deepLinkConsumed = true;
+    }
+  } catch (err) {
+    host.innerHTML = '<div class="loading">Failed to load. ' + (err.message || "") + '</div>';
+  }
+}
+
+let deepLinkConsumed = false;
+
+async function exportCsv() {
+  const btn = document.getElementById("btn-export");
+  const orig = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "Exporting…";
+  try {
+    const res = await fetch("/.netlify/functions/export-cases", {
+      headers: { Authorization: "Bearer " + getToken() }
+    });
+    if (res.status === 401) { clearToken(); showAuth(); return; }
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "e2-cases-" + new Date().toISOString().slice(0, 10) + ".csv";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  } catch (err) {
+    alert("Export failed: " + (err.message || "unknown"));
+  } finally {
+    btn.disabled = false;
+    btn.textContent = orig;
+  }
+}
+
+function renderList() {
+  const host = document.getElementById("case-list");
+  let list = allCases;
+  if (currentFilter !== "all") {
+    list = list.filter(c => c.dispositionLevel === currentFilter);
+  }
+  if (searchTerm) {
+    list = list.filter(c => {
+      return (c.legalName || "").toLowerCase().includes(searchTerm) ||
+             (c.relocationTarget || "").toLowerCase().includes(searchTerm);
+    });
+  }
+  if (list.length === 0) {
+    let msg;
+    if (searchTerm) msg = "No matches for \"" + esc(searchTerm) + "\".";
+    else if (showArchived) msg = "No archived cases.";
+    else if (currentFilter !== "all") msg = "No cases in this filter.";
+    else msg = "No cases yet.";
+    host.innerHTML = '<div class="loading">' + msg + '</div>';
+    return;
+  }
+  host.innerHTML = list.map(c => {
+    const lvl = c.dispositionLevel || "empty";
+    const lbl = lvl === "green" ? "PASS" : lvl === "yellow" ? "WATCH" : lvl === "red" ? "BLOCK" : "—";
+    const isActive = c.id === activeId ? " active" : "";
+    const archiveTag = c.archived ? '<span class="archive-tag">Archived</span>' : "";
+    const notesDot = c.hasNotes ? '<span class="notes-dot" title="Has notes"></span>' : "";
+    return `<div class="case-row${isActive}" data-id="${c.id}">
+      <div class="case-top">
+        <div class="case-name">${esc(c.legalName || "(no name)")}${notesDot}${archiveTag}</div>
+        <span class="disp-pill ${lvl}">${lbl}</span>
+      </div>
+      <div class="case-meta">${esc(c.relocationTarget || "")} · ${esc(c.capitalRange || "")}</div>
+      <div class="case-meta">${fmtDate(c.submittedAt)}</div>
+    </div>`;
+  }).join("");
+  host.querySelectorAll(".case-row").forEach(row => {
+    row.addEventListener("click", () => {
+      activeId = row.dataset.id;
+      renderList();
+      loadCase(activeId);
+    });
+  });
+}
+
+function esc(s) {
+  return String(s == null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
+}
+
+async function loadCase(id) {
+  const host = document.getElementById("detail-host");
+  host.innerHTML = '<div class="empty-state"><div class="big">Loading…</div></div>';
+  try {
+    const res = await fetch("/.netlify/functions/get-case?id=" + encodeURIComponent(id), {
+      headers: { Authorization: "Bearer " + getToken() }
+    });
+    if (res.status === 401) { clearToken(); showAuth(); return; }
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const data = await res.json();
+    renderDetail(data);
+  } catch (err) {
+    host.innerHTML = '<div class="empty-state"><div class="big">Failed to load</div><div>' + esc(err.message || "") + '</div></div>';
+  }
+}
+
+function field(label, value, opts) {
+  opts = opts || {};
+  const cls = opts.full ? "intake-field full" : "intake-field";
+  const muted = !value || value === "" || value === "n/a" || value === "N/A";
+  const safe = Array.isArray(value)
+    ? (value.length ? value.map(esc).join(", ") : "—")
+    : (value ? esc(value) : "—");
+  return `<div class="${cls}"><div class="lab">${esc(label)}</div><div class="val${muted ? " muted" : ""}">${safe}</div></div>`;
+}
+
+function renderDetail(data) {
+  const c = data.case;
+  const a = c.intake || {};
+  const isArchived = !!c.archived;
+  const html = `
+    <div class="detail-card">
+      <h2>${esc(c.legalName || "(no name)")}${isArchived ? ' <span class="archive-tag">Archived</span>' : ""}</h2>
+      <div class="meta">Submitted ${fmtDate(c.submittedAt)} · Case ID ${esc(c.id)}${c.updatedAt ? " · Updated " + fmtDate(c.updatedAt) : ""}</div>
+
+      <div class="section-bar">Section 1 · Basics</div>
+      <div class="intake-grid">
+        ${field("Spouse", a.has_spouse)}
+        ${field("Dependent children", a.has_children === "Yes" ? "Yes (" + (a.number_of_children || "n/a") + ")" : "No")}
+        ${field("Relocation target", a.relocation_target)}
+      </div>
+
+      <div class="section-bar">Section 2 · Capital &amp; Source</div>
+      <div class="intake-grid">
+        ${field("Capital range", a.capital_range)}
+        ${field("Documentation available", a.documentation_available)}
+        ${field("External capital", a.external_capital, { full: true })}
+        ${field("Source breakdown", a.source_breakdown, { full: true })}
+      </div>
+
+      <div class="section-bar">Section 3 · Business Target</div>
+      <div class="intake-grid">
+        ${field("Target status", a.business_target_status, { full: true })}
+        ${field("Target business details", a.target_business_details, { full: true })}
+        ${field("Annual revenue", a.business_revenue)}
+        ${field("Net income", a.business_net_income)}
+        ${field("Employees", a.business_employees)}
+        ${field("Relevant experience", a.relevant_experience, { full: true })}
+      </div>
+
+      <div class="section-bar">Section 4 · Disqualifier Gates</div>
+      <div class="intake-grid">
+        ${field("Prior immigration issues", a.prior_immigration_issues)}
+        ${field("Criminal history", a.criminal_history)}
+        ${field("Prior US visa", a.prior_us_visa)}
+      </div>
+
+      <div class="section-bar">Section 5 · Additional</div>
+      <div class="intake-grid">
+        ${field("Additional disclosures", a.additional_disclosures, { full: true })}
+      </div>
+
+      <div class="case-actions">
+        <button type="button" class="btn" id="btn-copy-link">Copy link</button>
+        <button type="button" class="btn ${isArchived ? "btn-sage" : ""}" id="btn-archive">${isArchived ? "Unarchive" : "Archive"}</button>
+        <button type="button" class="btn btn-danger" id="btn-delete">Delete permanently</button>
+      </div>
+    </div>
+
+    <div class="notes-card">
+      <h3>Attorney notes <span class="save-state" id="notes-state"></span></h3>
+      <textarea id="notes-editor" placeholder="Add prep notes, call follow-ups, restructuring options…">${esc(c.notes || "")}</textarea>
+    </div>
+
+    <div class="analysis-host">
+      ${data.analysisHtml || '<div class="empty-state">No analysis stored for this case.</div>'}
+    </div>
+  `;
+  const host = document.getElementById("detail-host");
+  host.innerHTML = html;
+
+  // Wire up case actions
+  host.querySelector("#btn-copy-link").addEventListener("click", () => {
+    const url = location.origin + location.pathname + "?id=" + encodeURIComponent(c.id);
+    navigator.clipboard.writeText(url).then(() => {
+      const b = host.querySelector("#btn-copy-link");
+      const orig = b.textContent;
+      b.textContent = "Copied ✓";
+      setTimeout(() => { b.textContent = orig; }, 1500);
+    });
+  });
+
+  host.querySelector("#btn-archive").addEventListener("click", async () => {
+    await updateCase(c.id, { archived: !isArchived });
+    activeId = null;
+    await loadCases();
+    document.getElementById("detail-host").innerHTML = '<div class="empty-state"><div class="big">Case ' + (isArchived ? "unarchived" : "archived") + '</div></div>';
+  });
+
+  host.querySelector("#btn-delete").addEventListener("click", async () => {
+    if (!confirm("Permanently delete this case? This cannot be undone.\n\nConsider Archive instead.")) return;
+    await deleteCase(c.id);
+    activeId = null;
+    await loadCases();
+    document.getElementById("detail-host").innerHTML = '<div class="empty-state"><div class="big">Case deleted</div></div>';
+  });
+
+  // Notes auto-save with debounce
+  const ta = host.querySelector("#notes-editor");
+  const state = host.querySelector("#notes-state");
+  let savedValue = c.notes || "";
+  let saveTimer = null;
+  ta.addEventListener("input", () => {
+    state.textContent = "Editing…";
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(async () => {
+      const v = ta.value;
+      if (v === savedValue) { state.textContent = ""; return; }
+      state.textContent = "Saving…";
+      const ok = await updateCase(c.id, { notes: v }, true);
+      if (ok) {
+        savedValue = v;
+        state.textContent = "Saved · " + new Date().toLocaleTimeString();
+        // refresh sidebar dot
+        const inList = allCases.find(x => x.id === c.id);
+        if (inList) inList.hasNotes = !!v.trim();
+        renderList();
+      } else {
+        state.textContent = "Save failed — retrying on next change.";
+      }
+    }, 900);
+  });
+}
+
+async function updateCase(id, patch, silent) {
+  try {
+    const res = await fetch("/.netlify/functions/update-case", {
+      method: "POST",
+      headers: { Authorization: "Bearer " + getToken(), "Content-Type": "application/json" },
+      body: JSON.stringify(Object.assign({ id }, patch)),
+    });
+    if (res.status === 401) { clearToken(); showAuth(); return false; }
+    if (!res.ok) {
+      if (!silent) alert("Update failed (" + res.status + ").");
+      return false;
+    }
+    return true;
+  } catch (err) {
+    if (!silent) alert("Update failed: " + (err.message || "unknown"));
+    return false;
+  }
+}
+
+async function deleteCase(id) {
+  try {
+    const res = await fetch("/.netlify/functions/delete-case", {
+      method: "POST",
+      headers: { Authorization: "Bearer " + getToken(), "Content-Type": "application/json" },
+      body: JSON.stringify({ id }),
+    });
+    if (res.status === 401) { clearToken(); showAuth(); return false; }
+    if (!res.ok) { alert("Delete failed (" + res.status + ")."); return false; }
+    return true;
+  } catch (err) {
+    alert("Delete failed: " + (err.message || "unknown"));
+    return false;
+  }
+}
+
+// Bootstrap
+if (getToken()) {
+  // Verify the saved token before showing main
+  fetch("/.netlify/functions/list-cases", { headers: { Authorization: "Bearer " + getToken() } })
+    .then(res => {
+      if (res.ok) showMain();
+      else { clearToken(); showAuth(); }
+    })
+    .catch(() => showAuth());
+} else {
+  showAuth();
+}
+</script>
+
+</body>
+</html>
