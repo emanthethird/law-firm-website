@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Structure Your Investment for the E-2 Visa | Eman and Associates P.C.</title>
+    <meta name="description" content="The E-2 investment must be at risk and irrevocably committed. Here is what counts, what does not, and how to document it correctly.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #1a2638; --navy-deep: #0f1923; --sage: #6b9e85; --sage-light: #7db495;
+            --cream: #faf8f5; --warm-gray: #f3f0ec; --text-primary: #1a2638;
+            --text-secondary: #5a6672; --text-light: #8a939c; --border: #e4e0db; --white: #ffffff;
+        }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text-primary); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .nav { background: var(--navy-deep); padding: 1.5rem 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+        .nav__logo { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.9); text-decoration: none; }
+        .nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav__link { font-size: 0.825rem; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+        .nav__link:hover, .nav__link--active { color: rgba(255,255,255,0.95); }
+        .nav__toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .nav__toggle span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.8); border-radius: 2px; }
+        .article-header { background: var(--navy-deep); padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .article-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(107,158,133,0.07) 0%, transparent 70%); pointer-events: none; }
+        .article-header__inner { position: relative; max-width: 800px; }
+        .article-category { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+        .article-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+        .article-meta { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .article-meta span { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+        .article-meta__dot { color: rgba(255,255,255,0.15); }
+        .article-body { padding: 4rem 0 2rem; }
+        .article-body__inner { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+        .article-body h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 3rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+        .article-body h2:first-child { margin-top: 0; }
+        .article-body h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin: 1.75rem 0 0.5rem; }
+        .article-body p { font-size: 1rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 1.1rem; }
+        .article-body ul, .article-body ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        .article-body li { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 0.35rem; }
+        .article-body strong { color: var(--text-primary); font-weight: 600; }
+        .article-body a { color: var(--sage); text-decoration: none; border-bottom: 1px solid rgba(107,158,133,0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-bottom-color: var(--sage); }
+        .callout { background: var(--cream); border-left: 3px solid var(--sage); padding: 1.25rem 1.5rem; margin: 2rem 0; border-radius: 0 4px 4px 0; }
+        .callout p { margin-bottom: 0; }
+        .callout p:not(:last-child) { margin-bottom: 0.5rem; }
+        .callout--warning { background: #fff9f5; border-left-color: #c8845a; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0 2rem; }
+        .two-col__card { border: 1px solid var(--border); border-radius: 4px; padding: 1.25rem 1.5rem; }
+        .two-col__card--fail { border-color: #e4d0c8; background: #fff9f7; }
+        .two-col__card--work { border-color: #c0d9ce; background: #f5faf8; }
+        .two-col__card h3 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; margin-top: 0; }
+        .two-col__card--fail h3 { color: #b06040; }
+        .two-col__card--work h3 { color: var(--sage); }
+        .two-col__card ul { margin: 0; padding: 0; list-style: none; }
+        .two-col__card li { font-size: 0.875rem; color: var(--text-secondary); padding: 0.3rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); line-height: 1.5; }
+        .two-col__card li:last-child { border-bottom: none; }
+        .related { background: var(--warm-gray); padding: 4rem 0; border-top: 1px solid var(--border); }
+        .related__header { margin-bottom: 2rem; }
+        .related__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; display: block; }
+        .related h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); }
+        .related__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .related-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem; text-decoration: none; display: block; transition: border-color 0.2s, transform 0.2s; }
+        .related-card:hover { border-color: var(--sage); transform: translateY(-2px); }
+        .related-card__tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; display: block; }
+        .related-card__title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 600; color: var(--navy); line-height: 1.3; margin-bottom: 0.5rem; }
+        .related-card__desc { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; }
+        .article-cta { background: var(--navy); padding: 4rem 0; text-align: center; }
+        .article-cta__inner { max-width: 580px; margin: 0 auto; padding: 0 2rem; }
+        .article-cta__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+        .article-cta h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; color: var(--white); margin-bottom: 1rem; line-height: 1.2; }
+        .article-cta p { color: rgba(255,255,255,0.55); margin-bottom: 2rem; font-size: 0.9375rem; line-height: 1.7; }
+        .btn-primary { display: inline-block; background: var(--sage); color: var(--white); font-size: 0.875rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 3px; text-decoration: none; border: none; transition: background 0.2s; }
+        .btn-primary:hover { background: var(--sage-light); }
+        .footer { background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.05); padding: 3rem 0; }
+        .footer__inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+        .footer__logo { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; }
+        .footer__contact { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+        .footer__contact a { color: rgba(255,255,255,0.25); text-decoration: none; }
+        .footer__links { display: flex; gap: 1.5rem; }
+        .footer__links a { font-size: 0.75rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+        .footer__links a:hover { color: rgba(255,255,255,0.6); }
+        .footer__legal { font-size: 0.75rem; color: rgba(255,255,255,0.2); width: 100%; }
+        @media (max-width: 640px) {
+            .nav__links { display: none; }
+            .nav__toggle { display: flex; }
+            .nav__links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy-deep); padding: 1.5rem 2rem; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.05); z-index: 99; }
+            .two-col { grid-template-columns: 1fr; }
+            .related__grid { grid-template-columns: 1fr; }
+            .footer__inner { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+    <div class="container">
+        <div class="nav__inner">
+            <a href="../index.html" class="nav__logo">Eman &amp; Associates</a>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="../index.html#about" class="nav__link">About Us</a></li>
+                <li><a href="../index.html#process" class="nav__link">Our Process</a></li>
+                <li><a href="../index.html#cases" class="nav__link">Case Studies</a></li>
+                <li><a href="../blog/" class="nav__link nav__link--active">Blog</a></li>
+                <li><a href="../contact.html" class="nav__link">Contact</a></li>
+            </ul>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</nav>
+
+<div class="article-header">
+    <div class="container">
+        <div class="article-header__inner">
+            <span class="article-category">Business</span>
+            <h1>How to Structure Your Investment for the E-2 Visa</h1>
+            <div class="article-meta">
+                <span>By Emmanuel Okharedia</span>
+                <span class="article-meta__dot">&bull;</span>
+                <span>April 2026</span>
+                <span class="article-meta__dot">&bull;</span>
+                <span>8 min read</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article-body">
+    <div class="article-body__inner">
+
+        <p>How you structure your investment matters almost as much as how much you invest. The E-2 visa has specific requirements about what counts as a qualifying investment, how it needs to be committed, and how it needs to be documented. Getting this right is one of the places where working with an experienced attorney makes a real difference.</p>
+
+        <p>This article covers the core requirements, what qualifies, what does not, and how to build a clean paper trail.</p>
+
+        <h2>The Two Core Requirements</h2>
+
+        <p>Before anything else, two requirements govern the investment itself.</p>
+
+        <h3>At risk</h3>
+        <p>The investment must be genuinely at risk of loss. This means the capital must be deployed into the business in a way that could result in a partial or total loss if the enterprise fails. Money sitting safely in a personal bank account is not at risk. Money invested in equipment, inventory, a lease, or a business acquisition is at risk because you cannot simply withdraw it if things do not work out.</p>
+
+        <h3>Irrevocably committed</h3>
+        <p>The funds must be committed to the enterprise before the visa is approved. You cannot show up to your consular interview with a plan to invest after you arrive. The investment needs to be made. Signed agreements, transferred funds, purchased assets. Officers want to see that you are already in, not that you intend to be.</p>
+
+        <div class="callout">
+            <p><strong>These two requirements work together.</strong> An investment that is at risk but not yet committed does not qualify. An investment that is committed but protected from loss (for example, a loan that is personally secured and fully recoverable) also raises questions. Both boxes need to be checked.</p>
+        </div>
+
+        <h2>What Counts as a Qualifying Investment</h2>
+
+        <div class="two-col">
+            <div class="two-col__card two-col__card--work">
+                <h3>Generally qualifies</h3>
+                <ul>
+                    <li>Business acquisition purchase price</li>
+                    <li>Franchise fees and buildout costs</li>
+                    <li>Equipment and machinery purchases</li>
+                    <li>Inventory and supplies</li>
+                    <li>Leasehold improvements</li>
+                    <li>Security deposits and prepaid rent (in some cases)</li>
+                    <li>Website, branding, and technology development</li>
+                    <li>Professional fees directly related to setup (legal, accounting)</li>
+                    <li>Working capital deposited into the business account</li>
+                </ul>
+            </div>
+            <div class="two-col__card two-col__card--fail">
+                <h3>Generally does not qualify</h3>
+                <ul>
+                    <li>Funds still in personal bank accounts</li>
+                    <li>Real estate held separately from the operating business</li>
+                    <li>Loans where the business assets are the sole collateral</li>
+                    <li>Passive investment accounts</li>
+                    <li>Goodwill without documented basis</li>
+                    <li>Personal assets not transferred to the business</li>
+                    <li>Speculative or contingent commitments</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>A Note on Loans</h2>
+
+        <p>Using borrowed funds for the E-2 investment is allowed, with an important caveat. The loan must be secured by assets other than the business itself. If the only collateral for the loan is the E-2 enterprise, the investment is not truly at risk: if the business fails, the lender simply takes the business assets back, and the investor loses nothing of their own. Officers look for this.</p>
+
+        <p>A common and acceptable structure: borrowing against personal assets such as a home or a stock portfolio to fund the business investment. The personal assets are at risk. The investment qualifies. A loan secured solely by business equipment or the business entity itself is more problematic.</p>
+
+        <h2>Source of Funds Documentation</h2>
+
+        <p>You need to show not just that you invested the money, but where that money came from. Officers are looking for a lawful, traceable source. This is called source of funds documentation, and it typically includes:</p>
+
+        <ul>
+            <li>Bank statements showing the accumulation of funds over time</li>
+            <li>Employment records, salary history, or business income documentation</li>
+            <li>Records of asset sales (real estate, businesses, investment accounts)</li>
+            <li>Inheritance or gift documentation where applicable</li>
+            <li>Loan documents if borrowed funds were used</li>
+        </ul>
+
+        <p>The paper trail needs to connect your funds to their origin and then to the business. Gaps in the trail raise questions. Large, unexplained deposits are a red flag. The more clearly the documentation tells a coherent story, the smoother the process.</p>
+
+        <h2>Documenting the Investment Itself</h2>
+
+        <p>Once the money is in the business, you need to document that clearly too. The standard documents include:</p>
+
+        <ul>
+            <li>Wire transfer records or bank statements showing transfers into the business account</li>
+            <li>Purchase agreements and closing statements for acquisitions</li>
+            <li>Invoices, receipts, and payment records for equipment and inventory</li>
+            <li>Signed lease agreements and evidence of deposits paid</li>
+            <li>Franchise agreement and fee payment records</li>
+            <li>Business bank account statements reflecting the invested capital</li>
+        </ul>
+
+        <p>The goal is to build a paper trail that an officer can follow from your personal funds to the business investment without having to take anything on faith.</p>
+
+        <h2>Entity Structure Considerations</h2>
+
+        <p>Most E-2 investors form a U.S. limited liability company (LLC) or corporation to hold the business. Both structures work for E-2 purposes. The choice between them depends on tax considerations, operational preferences, and the specific nature of the business, which is a conversation for your attorney and accountant.</p>
+
+        <p>What matters from an immigration standpoint is that the entity is properly formed in a U.S. state, that the investor holds a controlling interest (typically at least 50%), and that the investment is made into the entity in a way that is clearly documented.</p>
+
+        <div class="callout callout--warning">
+            <p><strong>One structural issue that comes up regularly:</strong> investors who form the entity correctly but then commingle personal and business funds, or who make investments through multiple entities without a clear ownership chain. Officers need to see that you own and control the enterprise. If the ownership structure is convoluted or unclear, it creates problems that are avoidable with proper setup from the start.</p>
+        </div>
+
+        <h2>The Practical Takeaway</h2>
+
+        <p>Getting the investment structure right is not complicated if you plan it in advance. The requirements are specific but they are also clear. At risk, irrevocably committed, from a lawful source, with a documented paper trail. If you can demonstrate all of that cleanly, the investment side of your E-2 application is solid.</p>
+
+        <p>Where people run into trouble is usually in one of two places: not committing the funds before the interview, or not having clean documentation of where the money came from. Both are avoidable with a bit of planning and good legal guidance.</p>
+
+    </div>
+</div>
+
+<section class="related">
+    <div class="container">
+        <div class="related__header">
+            <span class="related__label">Keep Reading</span>
+            <h2>Related Articles</h2>
+        </div>
+        <div class="related__grid">
+            <a href="e2-visa-investment-amount.html" class="related-card">
+                <span class="related-card__tag">Business</span>
+                <div class="related-card__title">How Much Do You Need to Invest for an E-2 Visa?</div>
+                <div class="related-card__desc">There is no fixed minimum. Here is how "substantial" is actually defined and what it means for your application.</div>
+            </a>
+            <a href="what-businesses-qualify-for-e2-visa.html" class="related-card">
+                <span class="related-card__tag">Business</span>
+                <div class="related-card__title">What Businesses Qualify for an E-2 Visa?</div>
+                <div class="related-card__desc">Not every business type works. Here is the framework officers use to evaluate whether an enterprise qualifies.</div>
+            </a>
+            <a href="e2-visa-requirements.html" class="related-card">
+                <span class="related-card__tag">Eligibility</span>
+                <div class="related-card__title">E-2 Visa Requirements: The Five Things You Need to Qualify</div>
+                <div class="related-card__desc">A clear breakdown of every requirement and what consular officers are actually looking for.</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="article-cta">
+    <div class="article-cta__inner">
+        <span class="article-cta__label">Get It Right</span>
+        <h2>Questions About Structuring Your Investment?</h2>
+        <p>We help investors set up their investment correctly from the start, so the documentation tells a clean story at the consulate.</p>
+        <a href="../contact.html" class="btn-primary">Talk to Us</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <a href="../index.html" class="footer__logo">Eman and Associates P.C.</a>
+            <div class="footer__contact">1 Washington St. #1362, Boston, MA 02108 &nbsp;&bull;&nbsp; <a href="tel:+16175069260">617-506-9260</a></div>
+            <div class="footer__links">
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms-of-service.html">Terms of Service</a>
+            </div>
+            <span class="footer__legal">Licensed in Massachusetts &nbsp;&bull;&nbsp; Eman and Associates P.C.</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
+</body>
+</html>
