@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can You Use an Airbnb Business to Get an E-2 Visa? | Eman and Associates P.C.</title>
+    <meta name="description" content="Short-term rentals sit in a gray area for E-2 visa purposes. Here is what actually matters when USCIS and consular officers evaluate an STR-based application.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #1a2638; --navy-deep: #0f1923; --sage: #6b9e85; --sage-light: #7db495;
+            --cream: #faf8f5; --warm-gray: #f3f0ec; --text-primary: #1a2638;
+            --text-secondary: #5a6672; --text-light: #8a939c; --border: #e4e0db; --white: #ffffff;
+        }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text-primary); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        .nav { background: var(--navy-deep); padding: 1.5rem 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+        .nav__logo { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.9); text-decoration: none; }
+        .nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav__link { font-size: 0.825rem; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+        .nav__link:hover, .nav__link--active { color: rgba(255,255,255,0.95); }
+        .nav__toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .nav__toggle span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.8); border-radius: 2px; }
+
+        .article-header { background: var(--navy-deep); padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .article-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(107,158,133,0.07) 0%, transparent 70%); pointer-events: none; }
+        .article-header__inner { position: relative; max-width: 800px; }
+        .article-category { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+        .article-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+        .article-meta { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .article-meta span { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+        .article-meta__dot { color: rgba(255,255,255,0.15); }
+
+        .article-body { padding: 4rem 0 2rem; }
+        .article-body__inner { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+        .article-body h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 3rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+        .article-body h2:first-child { margin-top: 0; }
+        .article-body h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin: 1.75rem 0 0.5rem; }
+        .article-body p { font-size: 1rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 1.1rem; }
+        .article-body ul, .article-body ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        .article-body li { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 0.35rem; }
+        .article-body strong { color: var(--text-primary); font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--sage); text-decoration: none; border-bottom: 1px solid rgba(107,158,133,0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-bottom-color: var(--sage); }
+
+        .callout { background: var(--cream); border-left: 3px solid var(--sage); padding: 1.25rem 1.5rem; margin: 2rem 0; border-radius: 0 4px 4px 0; }
+        .callout p { margin-bottom: 0; }
+        .callout p:not(:last-child) { margin-bottom: 0.5rem; }
+
+        .callout--warning { background: #fff9f5; border-left-color: #c8845a; }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin: 1.5rem 0 2rem; }
+        .two-col__card { border: 1px solid var(--border); border-radius: 4px; padding: 1.25rem 1.5rem; }
+        .two-col__card--fail { border-color: #e4d0c8; background: #fff9f7; }
+        .two-col__card--work { border-color: #c0d9ce; background: #f5faf8; }
+        .two-col__card h3 { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; margin-top: 0; }
+        .two-col__card--fail h3 { color: #b06040; }
+        .two-col__card--work h3 { color: var(--sage); }
+        .two-col__card ul { margin: 0; padding: 0; list-style: none; }
+        .two-col__card li { font-size: 0.875rem; color: var(--text-secondary); padding: 0.3rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); line-height: 1.5; }
+        .two-col__card li:last-child { border-bottom: none; }
+
+        .related { background: var(--warm-gray); padding: 4rem 0; border-top: 1px solid var(--border); }
+        .related__header { margin-bottom: 2rem; }
+        .related__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; display: block; }
+        .related h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); }
+        .related__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .related-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem; text-decoration: none; display: block; transition: border-color 0.2s, transform 0.2s; }
+        .related-card:hover { border-color: var(--sage); transform: translateY(-2px); }
+        .related-card__tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; display: block; }
+        .related-card__title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 600; color: var(--navy); line-height: 1.3; margin-bottom: 0.5rem; }
+        .related-card__desc { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; }
+
+        .article-cta { background: var(--navy); padding: 4rem 0; text-align: center; }
+        .article-cta__inner { max-width: 580px; margin: 0 auto; padding: 0 2rem; }
+        .article-cta__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+        .article-cta h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; color: var(--white); margin-bottom: 1rem; line-height: 1.2; }
+        .article-cta p { color: rgba(255,255,255,0.55); margin-bottom: 2rem; font-size: 0.9375rem; line-height: 1.7; }
+        .btn-primary { display: inline-block; background: var(--sage); color: var(--white); font-size: 0.875rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 3px; text-decoration: none; border: none; transition: background 0.2s; }
+        .btn-primary:hover { background: var(--sage-light); }
+
+        .footer { background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.05); padding: 3rem 0; }
+        .footer__inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+        .footer__logo { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; }
+        .footer__contact { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+        .footer__contact a { color: rgba(255,255,255,0.25); text-decoration: none; }
+        .footer__links { display: flex; gap: 1.5rem; }
+        .footer__links a { font-size: 0.75rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+        .footer__links a:hover { color: rgba(255,255,255,0.6); }
+        .footer__legal { font-size: 0.75rem; color: rgba(255,255,255,0.2); width: 100%; }
+
+        @media (max-width: 640px) {
+            .nav__links { display: none; }
+            .nav__toggle { display: flex; }
+            .nav__links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy-deep); padding: 1.5rem 2rem; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.05); z-index: 99; }
+            .two-col { grid-template-columns: 1fr; }
+            .related__grid { grid-template-columns: 1fr; }
+            .footer__inner { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+    <div class="container">
+        <div class="nav__inner">
+            <a href="../index.html" class="nav__logo">Eman &amp; Associates</a>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="../index.html#about" class="nav__link">About Us</a></li>
+                <li><a href="../index.html#process" class="nav__link">Our Process</a></li>
+                <li><a href="../index.html#cases" class="nav__link">Case Studies</a></li>
+                <li><a href="../blog/" class="nav__link nav__link--active">Blog</a></li>
+                <li><a href="../contact.html" class="nav__link">Contact</a></li>
+            </ul>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</nav>
+
+<div class="article-header">
+    <div class="container">
+        <div class="article-header__inner">
+            <span class="article-category">Business</span>
+            <h1>Can You Use an Airbnb Business to Get an E-2 Visa?</h1>
+            <div class="article-meta">
+                <span>By Emmanuel Okharedia</span>
+                <span class="article-meta__dot">&bull;</span>
+                <span>April 2026</span>
+                <span class="article-meta__dot">&bull;</span>
+                <span>8 min read</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article-body">
+    <div class="article-body__inner">
+
+        <p>This question comes up more than you might think. Short-term rentals have exploded as a business category, and a lot of entrepreneurs have built real, active operations around platforms like Airbnb and VRBO. So it is fair to ask: can that kind of business support an E-2 visa?</p>
+
+        <p>The honest answer is: it depends. Not on the platform you use, but on what you are actually doing with the business.</p>
+
+        <h2>The Rule That Governs This</h2>
+
+        <p>The E-2 visa requires that your investment be in a <em>bona fide</em> operating enterprise. That means a real, active business. Not a passive investment. Not a holding vehicle. A business where someone is showing up, making decisions, managing operations, and generating economic activity.</p>
+
+        <p>This is where short-term rentals run into trouble. Buying a property and listing it on Airbnb while a management company handles everything looks a lot like passive investment. And passive investment does not qualify.</p>
+
+        <div class="callout">
+            <p><strong>The core distinction:</strong> USCIS and consular officers are not evaluating your property. They are evaluating your business. Those are two different things. A property is an asset. A hospitality operation is a business. The E-2 only cares about the latter.</p>
+        </div>
+
+        <h2>What Makes an STR Business Potentially Work</h2>
+
+        <p>There is no carve-out in the regulations specifically for short-term rentals. What there is, is a framework for evaluating whether any business is real, active, and non-marginal. Short-term rental operations can meet that framework. But they have to genuinely meet it, not just appear to.</p>
+
+        <p>Here is what officers look for when evaluating an STR-based E-2 application:</p>
+
+        <h3>Active hospitality services</h3>
+        <p>Is the business actually providing hotel-like services? Guest communication, cleaning and turnover management, concierge services, marketing, pricing strategy, maintenance coordination. The more the operation looks like a real hospitality company and less like a landlord collecting checks, the stronger the case.</p>
+
+        <h3>Employees or contracted staff</h3>
+        <p>The E-2 enterprise is supposed to contribute to the U.S. economy, which includes creating jobs. A business with housekeeping staff, a guest relations coordinator, and a maintenance person tells a very different story than a single-owner operation where everything is outsourced to a third-party management app.</p>
+
+        <h3>Scale of the portfolio</h3>
+        <p>One Airbnb listing is a tough case to make. It is very difficult to argue that a single property represents a substantial investment in a non-marginal enterprise capable of generating more than a modest income. A portfolio of properties operated under a unified brand and management structure is a fundamentally different business. Scale matters here, both for the investment amount and for the operational story.</p>
+
+        <h3>A real business structure</h3>
+        <p>There needs to be a properly formed U.S. entity, a business website, booking and operational systems, a brand identity, and documentation of the business's footprint. This is true for any E-2 enterprise. With STRs, it matters even more because officers are specifically looking for evidence that this is a business, not just a property.</p>
+
+        <h3>The marginality test</h3>
+        <p>The enterprise cannot be marginal. That means it needs to have the capacity to generate significantly more than just enough to support the investor and their family. An STR operation with one or two units will almost always fail this test. A multi-unit hospitality company with documented revenue, growth projections, and staff can pass it.</p>
+
+        <h2>What Tends to Fail</h2>
+
+        <div class="two-col">
+            <div class="two-col__card two-col__card--fail">
+                <h3>Likely to be denied</h3>
+                <ul>
+                    <li>A single vacation rental with minimal active management</li>
+                    <li>Delegating everything to a property management company while the investor stays passive</li>
+                    <li>A real estate investment dressed up as a business without genuine operational substance</li>
+                    <li>Insufficient revenue to demonstrate the enterprise is non-marginal</li>
+                    <li>No employees, no staff, no operational infrastructure</li>
+                </ul>
+            </div>
+            <div class="two-col__card two-col__card--work">
+                <h3>Likely to be stronger</h3>
+                <ul>
+                    <li>Multiple units operated as a branded hospitality company</li>
+                    <li>Employed or contracted staff for cleaning, guest services, maintenance</li>
+                    <li>Active day-to-day involvement by the investor in operations</li>
+                    <li>Revenue and projections that clear the marginality threshold</li>
+                    <li>A documented business structure with systems, branding, and operational history</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>The Burden Is on You</h2>
+
+        <p>There is no official ruling that says short-term rentals qualify or do not qualify for the E-2. That ambiguity is both the opportunity and the risk.</p>
+
+        <p>The opportunity is that a well-structured, genuinely active STR operation can make a compelling case. Hospitality is a legitimate industry. Running multiple properties as a managed hospitality business is real work that creates real economic activity.</p>
+
+        <p>The risk is that the default assumption at the consulate is skepticism. Real estate investment is explicitly excluded from E-2 eligibility. If your application looks like real estate investment with a thin business layer on top, it will be treated that way.</p>
+
+        <div class="callout callout--warning">
+            <p><strong>One thing worth saying plainly:</strong> if you are genuinely running an active STR operation with multiple units, staff, and real operational involvement, you may have a viable E-2 case. If you are hoping to buy a few properties, list them on Airbnb, and count that as your E-2 investment, that is unlikely to work. The distinction matters, and it needs to be real, not cosmetic.</p>
+        </div>
+
+        <h2>A Note on Toronto and Other Consulates</h2>
+
+        <p>For Canadian applicants, the Toronto consulate processes the large majority of E-2 applications. Consular officers there have seen a lot of cases. They are familiar with STR-based applications, and they tend to scrutinize the active versus passive question carefully.</p>
+
+        <p>This does not mean Toronto is hostile to STR businesses. It means you need a well-documented, credible case that clearly demonstrates active management and genuine business operations. The documentation strategy matters as much as the business itself.</p>
+
+        <h2>The Bottom Line</h2>
+
+        <p>Short-term rentals are not disqualified from E-2 eligibility. Passive real estate investment is. Those are different things, and understanding the distinction is the starting point for figuring out whether your situation has a viable path forward.</p>
+
+        <p>If you are building a real hospitality operation and you want to use it as the basis for an E-2 visa, the question is whether the business can meet the standard on its own merits. That is a conversation worth having with an attorney before you invest the time and money in an application.</p>
+
+        <p>We assess these situations regularly. If you have an STR business or are thinking about building one as your E-2 enterprise, reach out and we will give you a straight answer about where you stand.</p>
+
+    </div>
+</div>
+
+<section class="related">
+    <div class="container">
+        <div class="related__header">
+            <span class="related__label">Keep Reading</span>
+            <h2>Related Articles</h2>
+        </div>
+        <div class="related__grid">
+            <a href="what-businesses-qualify-for-e2-visa.html" class="related-card">
+                <span class="related-card__tag">Business</span>
+                <div class="related-card__title">What Businesses Qualify for an E-2 Visa?</div>
+                <div class="related-card__desc">Franchises, acquisitions, new ventures. What works, what does not, and why the distinction matters.</div>
+            </a>
+            <a href="e2-visa-investment-structure.html" class="related-card">
+                <span class="related-card__tag">Business</span>
+                <div class="related-card__title">How to Structure Your Investment for the E-2 Visa</div>
+                <div class="related-card__desc">The investment must be "at risk." Here is what that means and how to document it correctly.</div>
+            </a>
+            <a href="e2-visa-requirements.html" class="related-card">
+                <span class="related-card__tag">Eligibility</span>
+                <div class="related-card__title">E-2 Visa Requirements: The Five Things You Need to Qualify</div>
+                <div class="related-card__desc">A clear breakdown of every requirement and what consular officers are actually looking for.</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="article-cta">
+    <div class="article-cta__inner">
+        <span class="article-cta__label">Get a Straight Answer</span>
+        <h2>Not Sure If Your Business Qualifies?</h2>
+        <p>We assess E-2 eligibility regularly, including STR-based cases. Tell us about your situation and we will give you an honest evaluation.</p>
+        <a href="../contact.html" class="btn-primary">Start the Conversation</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <a href="../index.html" class="footer__logo">Eman and Associates P.C.</a>
+            <div class="footer__contact">1 Washington St. #1362, Boston, MA 02108 &nbsp;&bull;&nbsp; <a href="tel:+16175069260">617-506-9260</a></div>
+            <div class="footer__links">
+                <a href="../privacy-policy.html">Privacy Policy</a>
+                <a href="../terms-of-service.html">Terms of Service</a>
+            </div>
+            <span class="footer__legal">Licensed in Massachusetts &nbsp;&bull;&nbsp; Eman and Associates P.C.</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
+
+</body>
+</html>
