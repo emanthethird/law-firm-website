@@ -1,141 +1,381 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://emanlegal.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/"/>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/"/>
     <lastmod>2026-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/contact"/>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://emanlegal.com/webinar-canada/</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://emanlegal.com/fr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/contact"/>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://emanlegal.com/privacy-policy</loc>
-    <lastmod>2026-06-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://emanlegal.com/terms-of-service</loc>
-    <lastmod>2026-06-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-canada-processing-time-2026</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-canada-processing-time-2026"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-canada-processing-time-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-canada-processing-time-2026"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-canada-processing-time-2026</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-canada-processing-time-2026"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-canada-processing-time-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-canada-processing-time-2026"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-denial-reasons</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-denial-reasons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-denial-reasons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-denial-reasons"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-denial-reasons</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-denial-reasons"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-denial-reasons"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-denial-reasons"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-family</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-family"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-family"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-family"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-family</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-family"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-family"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-family"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-green-card</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-green-card"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-green-card"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-green-card"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-green-card</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-green-card"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-green-card"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-green-card"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-interview</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-interview"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-interview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-interview"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-interview</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-interview"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-interview"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-interview"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-investment-amount</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-investment-amount"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-investment-amount"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-investment-amount"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-investment-amount</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-investment-amount"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-investment-amount"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-investment-amount"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-investment-structure</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-investment-structure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-investment-structure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-investment-structure"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-investment-structure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-investment-structure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-investment-structure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-investment-structure"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-new-business-vs-buying</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-new-business-vs-buying"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-new-business-vs-buying"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-new-business-vs-buying"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-new-business-vs-buying</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-new-business-vs-buying"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-new-business-vs-buying"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-new-business-vs-buying"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-processing-timeline</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-processing-timeline"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-processing-timeline"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-processing-timeline"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-processing-timeline</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-processing-timeline"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-processing-timeline"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-processing-timeline"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-renewal</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-renewal"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-renewal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-renewal"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-renewal</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-renewal"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-renewal"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-renewal"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-requirements</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-requirements"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-requirements"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-requirements"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-requirements</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-requirements"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-requirements"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-requirements"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-short-term-rentals</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-short-term-rentals"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-short-term-rentals"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-short-term-rentals"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-short-term-rentals</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-short-term-rentals"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-short-term-rentals"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-short-term-rentals"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-treaty-countries</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-treaty-countries"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-treaty-countries"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-treaty-countries"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-treaty-countries</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-treaty-countries"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-treaty-countries"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-treaty-countries"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-vs-eb5</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-vs-eb5"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-vs-eb5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-vs-eb5"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-vs-eb5</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-vs-eb5"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-vs-eb5"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-vs-eb5"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/e2-visa-vs-l1</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-vs-l1"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-vs-l1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-vs-l1"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/e2-visa-vs-l1</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-vs-l1"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-vs-l1"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-vs-l1"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/what-businesses-qualify-for-e2-visa</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/what-businesses-qualify-for-e2-visa"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/what-businesses-qualify-for-e2-visa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/what-businesses-qualify-for-e2-visa"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/what-businesses-qualify-for-e2-visa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/what-businesses-qualify-for-e2-visa"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/what-businesses-qualify-for-e2-visa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/what-businesses-qualify-for-e2-visa"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://emanlegal.com/blog/what-is-e2-visa</loc>
-    <lastmod>2026-06-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/what-is-e2-visa"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/what-is-e2-visa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/what-is-e2-visa"/>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/fr/blog/what-is-e2-visa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/what-is-e2-visa"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/what-is-e2-visa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/what-is-e2-visa"/>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/webinar-canada/</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/privacy-policy</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://emanlegal.com/terms-of-service</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 </urlset>

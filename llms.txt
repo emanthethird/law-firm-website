@@ -1,6 +1,6 @@
 # Eman and Associates P.C.
 
-> Boston-based business immigration law firm specializing in E-2 Treaty Investor Visas, led by attorney Emmanuel Okharedia. The firm handles the entire E-2 process under one roof: visa filing, U.S. entity formation, business structuring, and supporting transactions. Particular focus on Canadian investors (whose E-2 visa interviews are processed exclusively at the U.S. consulate in Toronto).
+> Boston-based business immigration law firm specializing in E-2 Treaty Investor Visas, led by attorney Emmanuel Okharedia. The firm handles the entire E-2 process under one roof: visa filing, U.S. entity formation, business structuring, and supporting transactions. Particular focus on Canadian investors (whose E-2 visa interviews are processed exclusively at the U.S. consulate in Toronto). The full site is also available in French at https://emanlegal.com/fr/ (founder Emmanuel Okharedia speaks fluent French; France, Belgium, and Switzerland are all E-2 treaty countries).
 
 Key facts:
 - Firm: Eman and Associates P.C. (EMAN & Associates)
@@ -35,3 +35,11 @@ Key facts:
 - [E-2 Visa vs. L-1 Visa: Which One Is Right for Your Business?](https://emanlegal.com/blog/e2-visa-vs-l1): Both the E-2 and L-1 let you work in the U.S. through a business, but they serve very different situations. Here is how to tell which one fits yours.
 - [What Businesses Qualify for an E-2 Visa?](https://emanlegal.com/blog/what-businesses-qualify-for-e2-visa): Not every business qualifies for an E-2 visa. Learn which industries and business types work, what makes a business 'non-marginal,' and which structures to avoid.
 - [What Is the E-2 Visa? A Complete Guide](https://emanlegal.com/blog/what-is-e2-visa): A complete guide to the E-2 Treaty Investor Visa. Learn what it is, who qualifies, how it works, and what the process looks like from start to finish.
+
+## Version française (French version)
+
+Le site complet est disponible en français. Every page above has a French counterpart under `/fr/`.
+
+- [Accueil](https://emanlegal.com/fr/): Présentation du cabinet, à qui nous nous adressons, les quatre facteurs qui déterminent l'approbation du visa E-2, témoignages clients et FAQ.
+- [Contact](https://emanlegal.com/fr/contact): Réservez un appel d'évaluation E-2 gratuit.
+- [Centre de ressources sur le visa E-2](https://emanlegal.com/fr/blog/): Guides sur le visa E-2 (Treaty Investor) rédigés par l'avocat Emmanuel Okharedia.

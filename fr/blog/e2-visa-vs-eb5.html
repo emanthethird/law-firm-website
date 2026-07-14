@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visa E-2 vs visa EB-5 : quelle différence et comment passer de l'un à l'autre ? | Eman and Associates P.C.</title>
+    <meta name="description" content="Le visa E-2 vous installe aux États-Unis. L'EB-5 vous donne la carte verte. Voici comment les deux programmes se comparent et comment les entrepreneurs utilisent l'E-2 comme tremplin vers la résidence permanente.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --navy: #1a2638; --navy-deep: #0f1923; --sage: #6b9e85; --sage-light: #7db495;
+            --cream: #faf8f5; --warm-gray: #f3f0ec; --text-primary: #1a2638;
+            --text-secondary: #5a6672; --text-light: #8a939c; --border: #e4e0db; --white: #ffffff;
+        }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text-primary); background: var(--white); line-height: 1.7; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        .nav { background: var(--navy-deep); padding: 1.5rem 0; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .nav__inner { display: flex; align-items: center; justify-content: space-between; }
+        .nav__logo { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.9); text-decoration: none; }
+        .nav__links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+        .nav__link { font-size: 0.825rem; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+        .nav__link:hover, .nav__link--active { color: rgba(255,255,255,0.95); }
+        .nav__toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .nav__toggle span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.8); border-radius: 2px; }
+
+        .article-header { background: var(--navy-deep); padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .article-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(107,158,133,0.07) 0%, transparent 70%); pointer-events: none; }
+        .article-header__inner { position: relative; max-width: 800px; }
+        .article-category { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+        .article-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
+        .article-meta { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+        .article-meta span { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+        .article-meta__dot { color: rgba(255,255,255,0.15); }
+
+        .article-body { padding: 4rem 0 2rem; }
+        .article-body__inner { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+        .article-body h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: var(--navy); margin: 3rem 0 1rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+        .article-body h2:first-child { margin-top: 0; }
+        .article-body h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin: 1.75rem 0 0.5rem; }
+        .article-body p { font-size: 1rem; line-height: 1.85; color: var(--text-secondary); margin-bottom: 1.1rem; }
+        .article-body ul, .article-body ol { margin: 0.75rem 0 1.25rem 1.5rem; }
+        .article-body li { font-size: 1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 0.35rem; }
+        .article-body strong { color: var(--text-primary); font-weight: 600; }
+        .article-body em { font-style: italic; }
+        .article-body a { color: var(--sage); text-decoration: none; border-bottom: 1px solid rgba(107,158,133,0.3); transition: border-color 0.2s; }
+        .article-body a:hover { border-bottom-color: var(--sage); }
+
+        .callout { background: var(--cream); border-left: 3px solid var(--sage); padding: 1.25rem 1.5rem; margin: 2rem 0; border-radius: 0 4px 4px 0; }
+        .callout p { margin-bottom: 0; }
+        .callout p:not(:last-child) { margin-bottom: 0.5rem; }
+        .callout--warning { background: #fff9f5; border-left-color: #c8845a; }
+
+        .compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.9375rem; }
+        .compare-table th { background: var(--navy); color: var(--white); padding: 0.75rem 1rem; text-align: left; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; }
+        .compare-table th:first-child { border-radius: 4px 0 0 0; }
+        .compare-table th:last-child { border-radius: 0 4px 0 0; }
+        .compare-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; line-height: 1.6; }
+        .compare-table tr:nth-child(even) td { background: var(--cream); }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .compare-table td:first-child { font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+
+        .pathway { counter-reset: step; margin: 1.5rem 0 2rem; }
+        .pathway__step { display: flex; gap: 1.25rem; padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+        .pathway__step:last-child { border-bottom: none; }
+        .pathway__num { flex-shrink: 0; width: 32px; height: 32px; background: var(--sage); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; margin-top: 2px; }
+        .pathway__content h3 { margin: 0 0 0.4rem; font-size: 0.95rem; font-weight: 600; color: var(--navy); }
+        .pathway__content p { margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.7; }
+
+        .related { background: var(--warm-gray); padding: 4rem 0; border-top: 1px solid var(--border); }
+        .related__header { margin-bottom: 2rem; }
+        .related__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; display: block; }
+        .related h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; font-weight: 700; color: var(--navy); }
+        .related__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .related-card { background: var(--white); border: 1px solid var(--border); border-radius: 4px; padding: 1.5rem; text-decoration: none; display: block; transition: border-color 0.2s, transform 0.2s; }
+        .related-card:hover { border-color: var(--sage); transform: translateY(-2px); }
+        .related-card__tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; display: block; }
+        .related-card__title { font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; font-weight: 600; color: var(--navy); line-height: 1.3; margin-bottom: 0.5rem; }
+        .related-card__desc { font-size: 0.8rem; color: var(--text-light); line-height: 1.6; }
+
+        .article-cta { background: var(--navy); padding: 4rem 0; text-align: center; }
+        .article-cta__inner { max-width: 580px; margin: 0 auto; padding: 0 2rem; }
+        .article-cta__label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--sage); margin-bottom: 1rem; display: block; }
+        .article-cta h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.6rem, 3vw, 2rem); font-weight: 700; color: var(--white); margin-bottom: 1rem; line-height: 1.2; }
+        .article-cta p { color: rgba(255,255,255,0.55); margin-bottom: 2rem; font-size: 0.9375rem; line-height: 1.7; }
+        .btn-primary { display: inline-block; background: var(--sage); color: var(--white); font-size: 0.875rem; font-weight: 600; padding: 0.875rem 2rem; border-radius: 3px; text-decoration: none; border: none; transition: background 0.2s; }
+        .btn-primary:hover { background: var(--sage-light); }
+
+        .footer { background: var(--navy-deep); border-top: 1px solid rgba(255,255,255,0.05); padding: 3rem 0; }
+        .footer__inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+        .footer__logo { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.3); text-decoration: none; }
+        .footer__contact { font-size: 0.75rem; color: rgba(255,255,255,0.25); }
+        .footer__contact a { color: rgba(255,255,255,0.25); text-decoration: none; }
+        .footer__links { display: flex; gap: 1.5rem; }
+        .footer__links a { font-size: 0.75rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+        .footer__links a:hover { color: rgba(255,255,255,0.6); }
+        .footer__legal { font-size: 0.75rem; color: rgba(255,255,255,0.2); width: 100%; }
+
+        @media (max-width: 640px) {
+            .nav__links { display: none; }
+            .nav__toggle { display: flex; }
+            .nav__links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy-deep); padding: 1.5rem 2rem; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.05); z-index: 99; }
+            .related__grid { grid-template-columns: 1fr; }
+            .footer__inner { flex-direction: column; align-items: flex-start; }
+            .compare-table { font-size: 0.85rem; }
+            .compare-table td:first-child { white-space: normal; }
+        }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ98LNEDZL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KQ98LNEDZL');
+    </script>
+    <link rel="canonical" href="https://emanlegal.com/fr/blog/e2-visa-vs-eb5">
+    <link rel="alternate" hreflang="en" href="https://emanlegal.com/blog/e2-visa-vs-eb5">
+    <link rel="alternate" hreflang="fr" href="https://emanlegal.com/fr/blog/e2-visa-vs-eb5">
+    <link rel="alternate" hreflang="x-default" href="https://emanlegal.com/blog/e2-visa-vs-eb5">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://emanlegal.com/fr/blog/e2-visa-vs-eb5">
+    <meta property="og:site_name" content="Eman and Associates P.C.">
+    <meta property="og:title" content="Visa E-2 vs visa EB-5 : quelle différence et comment passer de l'un à l'autre ? | Eman and Associates P.C.">
+    <meta property="og:description" content="Le visa E-2 vous installe aux États-Unis. L'EB-5 vous donne la carte verte. Voici comment les deux programmes se comparent et comment les entrepreneurs utilisent l'E-2 comme tremplin vers la résidence permanente.">
+    <meta property="og:image" content="https://emanlegal.com/hero.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Visa E-2 vs visa EB-5 : quelle différence et comment passer de l'un à l'autre ? | Eman and Associates P.C.">
+    <meta name="twitter:description" content="Le visa E-2 vous installe aux États-Unis. L'EB-5 vous donne la carte verte. Voici comment les deux programmes se comparent et comment les entrepreneurs utilisent l'E-2 comme tremplin vers la résidence permanente.">
+    <meta name="twitter:image" content="https://emanlegal.com/hero.jpg">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Visa E-2 vs visa EB-5 : quelle différence et comment passer de l'un à l'autre ?",
+  "description": "Le visa E-2 vous installe aux États-Unis. L'EB-5 vous donne la carte verte. Voici comment les deux programmes se comparent et comment les entrepreneurs utilisent l'E-2 comme tremplin vers la résidence permanente.",
+  "url": "https://emanlegal.com/fr/blog/e2-visa-vs-eb5",
+  "mainEntityOfPage": "https://emanlegal.com/fr/blog/e2-visa-vs-eb5",
+  "inLanguage": "fr",
+  "image": "https://emanlegal.com/hero.jpg",
+  "datePublished": "2026-04-11",
+  "dateModified": "2026-06-18",
+  "author": {
+    "@type": "Person",
+    "name": "Emmanuel Okharedia",
+    "jobTitle": "Attorney",
+    "worksFor": {
+      "@type": "LegalService",
+      "name": "Eman and Associates P.C.",
+      "url": "https://emanlegal.com/"
+    }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Eman and Associates P.C.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://emanlegal.com/favicon.svg"
+    }
+  }
+}
+</script>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+    <div class="container">
+        <div class="nav__inner">
+            <a href="/fr/" class="nav__logo">Eman &amp; Associates</a>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="/fr/#about" class="nav__link">À propos</a></li>
+                <li><a href="/fr/#process" class="nav__link">Notre méthode</a></li>
+                <li><a href="/fr/#cases" class="nav__link">Études de cas</a></li>
+                <li><a href="/fr/blog/" class="nav__link nav__link--active">Blog</a></li>
+                <li><a href="/fr/contact" class="nav__link">Contact</a></li>
+                <li><a href="/blog/e2-visa-vs-eb5" class="nav__link">EN</a></li>
+            </ul>
+            <button class="nav__toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+</nav>
+
+<div class="article-header">
+    <div class="container">
+        <div class="article-header__inner">
+            <span class="article-category">Comparatifs</span>
+            <h1>Visa E-2 vs visa EB-5 : quelle est la différence et peut-on passer de l'un à l'autre ?</h1>
+            <div class="article-meta">
+                <span>Par Emmanuel Okharedia</span>
+                <span class="article-meta__dot">&bull;</span>
+                <span>Avril 2026</span>
+                <span class="article-meta__dot">&bull;</span>
+                <span>9 min de lecture</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="article-body">
+    <div class="article-body__inner">
+
+        <p>Si vous vous êtes renseigné sur les visas d'investisseur pour les États-Unis, vous avez probablement rencontré à la fois le visa E-2 (Treaty Investor) et le visa EB-5. Les deux impliquent d'investir dans une entreprise américaine. Les deux exigent de mettre un capital réel en risque. Et vus de loin, ils peuvent sembler répondre au même besoin.</p>
+
+        <p>Ce n'est pas le cas. Ils sont conçus pour des objectifs très différents, et comprendre cette différence compte beaucoup avant de décider quelle voie suivre. Cet article détaille comment les deux programmes se comparent et, surtout, comment certains investisseurs utilisent l'E-2 comme première étape vers l'obtention d'une carte verte (green card) via l'EB-5.</p>
+
+        <h2>La différence la plus importante : temporaire vs permanent</h2>
+
+        <p>Le visa E-2 est un visa non-immigrant. Il vous permet de vivre et de travailler aux États-Unis pour diriger votre entreprise, mais il ne mène pas à lui seul à une carte verte. Vous le renouvelez, parfois pendant de nombreuses années, mais votre statut reste toujours temporaire au sens juridique. Vous ne pouvez pas obtenir la naturalisation sur la seule base du statut E-2.</p>
+
+        <p>L'EB-5 est un visa d'immigrant. Il mène directement à la résidence permanente légale, c'est-à-dire à la carte verte. Si votre demande est approuvée, vous devenez résident permanent des États-Unis. C'est un résultat catégoriquement différent.</p>
+
+        <div class="callout">
+            <p><strong>En résumé :</strong> le visa E-2 vous installe sur place et vous permet de construire. L'EB-5 vous donne une carte verte. Ce n'est pas la même chose, et les exigences reflètent cette différence.</p>
+        </div>
+
+        <h2>Comparaison côte à côte</h2>
+
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th>Catégorie</th>
+                    <th>Visa E-2</th>
+                    <th>Visa EB-5</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Type de visa</td>
+                    <td>Non-immigrant (temporaire)</td>
+                    <td>Immigrant (résidence permanente)</td>
+                </tr>
+                <tr>
+                    <td>Pays signataire requis ?</td>
+                    <td>Oui. Vous devez avoir la nationalité d'un pays signataire d'un traité.</td>
+                    <td>Non. Ouvert aux investisseurs de toute nationalité.</td>
+                </tr>
+                <tr>
+                    <td>Investissement minimum</td>
+                    <td>Aucun montant fixe. Il doit être « substantiel » par rapport à l'entreprise.</td>
+                    <td>$1,050,000 en règle générale. $800,000 dans une Targeted Employment Area (TEA).</td>
+                </tr>
+                <tr>
+                    <td>Création d'emplois</td>
+                    <td>L'entreprise ne doit pas être marginale (capable de faire vivre plus que la famille de l'investisseur), mais aucun nombre d'emplois précis n'est exigé.</td>
+                    <td>Doit créer au moins 10 emplois à temps plein pour des travailleurs américains.</td>
+                </tr>
+                <tr>
+                    <td>Implication dans l'entreprise</td>
+                    <td>L'investisseur doit participer activement à la direction de l'entreprise.</td>
+                    <td>Implication active non requise pour les investissements via Regional Center. L'investissement direct exige un rôle de gestion.</td>
+                </tr>
+                <tr>
+                    <td>Traitement</td>
+                    <td>Procédure consulaire ou changement de statut. Peut être relativement rapide.</td>
+                    <td>Adjudication par l'USCIS puis procédure consulaire ou ajustement de statut. Peut prendre plusieurs années.</td>
+                </tr>
+                <tr>
+                    <td>Voie vers la citoyenneté</td>
+                    <td>Aucune directement. L'E-2 ne mène pas à la carte verte.</td>
+                    <td>Oui. Les titulaires de la carte verte peuvent demander la naturalisation après 5 ans.</td>
+                </tr>
+                <tr>
+                    <td>À qui il convient</td>
+                    <td>Aux entrepreneurs qui veulent vivre et diriger une entreprise aux États-Unis sur une base renouvelable.</td>
+                    <td>Aux investisseurs qui visent la résidence permanente et peuvent satisfaire aux exigences de capital et d'emplois.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Ce que l'EB-5 exige réellement</h2>
+
+        <p>Le programme EB-5 a été créé par le Congrès en 1990 pour attirer des capitaux étrangers et stimuler la création d'emplois. Les exigences fondamentales ont peu changé depuis, même si les seuils d'investissement ont été sensiblement révisés en 2022.</p>
+
+        <h3>Le montant de l'investissement</h3>
+        <p>Le minimum standard est de $1,050,000. Si vous investissez dans une Targeted Employment Area, c'est-à-dire une zone rurale ou une zone à fort taux de chômage, le minimum descend à $800,000. Ces seuils sont ajustés périodiquement. Le montant intégral doit être déployé dans une entreprise éligible et doit être exposé à un risque de perte.</p>
+
+        <h3>L'exigence de création d'emplois</h3>
+        <p>C'est là que l'EB-5 devient strict. Votre investissement doit créer ou préserver au moins 10 emplois à temps plein pour des travailleurs américains. « Travailleurs américains » désigne les citoyens, les résidents permanents et les autres travailleurs autorisés. Cela n'inclut ni vous ni les membres de votre famille. Pour les investissements directs, il doit généralement s'agir d'employés directs de l'entreprise. Pour les investissements via Regional Center, les emplois peuvent être comptabilisés indirectement à l'aide de modèles économiques.</p>
+
+        <h3>Les deux voies : investissement direct vs Regional Center</h3>
+        <p>L'EB-5 direct signifie que vous investissez directement dans une nouvelle entreprise commerciale que vous contribuez à exploiter. L'EB-5 via Regional Center signifie que vous investissez dans un fonds mutualisé agréé par l'USCIS, qui déploie le capital dans des projets de développement de plus grande envergure. La plupart des investisseurs EB-5 choisissent la voie du Regional Center parce qu'elle permet la comptabilisation indirecte des emplois et n'exige pas de gestion active. Cependant, les Regional Centers demandent une due diligence rigoureuse et le montant minimum d'investissement s'applique toujours.</p>
+
+        <h2>Pourquoi les gens commencent par le visa E-2</h2>
+
+        <p>Le parcours E-2 vers EB-5 est plus courant que la plupart des gens ne le pensent. Voici le scénario typique : un entrepreneur d'un pays signataire d'un traité veut diriger une entreprise aux États-Unis. Le visa E-2 exige un investissement plus faible, se traite plus vite et lui permet de s'installer rapidement. Il développe l'entreprise pendant quelques années. À un moment donné, il souhaite cesser de renouveler et obtenir un statut permanent. C'est alors que l'EB-5 entre en scène.</p>
+
+        <p>Plusieurs raisons précises expliquent pourquoi cette séquence a du sens pour beaucoup de personnes :</p>
+
+        <h3>L'E-2 n'exige pas de montant d'investissement minimum</h3>
+        <p>Pour une entreprise à ses débuts, atteindre le seuil de capital EB-5 de $800,000 à $1,050,000 dès le premier jour est un véritable obstacle. Le visa E-2 vous permet de démarrer avec un investissement réaliste pour la taille de votre entreprise et de croître à partir de là.</p>
+
+        <h3>L'E-2 se traite plus rapidement</h3>
+        <p>Les dossiers EB-5 peuvent prendre plusieurs années entre le dépôt et la délivrance de la carte verte, selon votre pays de naissance. Pour les ressortissants de pays comme l'Inde et la Chine, il y a historiquement eu de longs arriérés en raison des quotas annuels par pays. Le visa E-2 vous met au travail en quelques mois, pas en quelques années.</p>
+
+        <h3>L'E-2 fait ses preuves par l'entreprise</h3>
+        <p>Au moment où vous êtes prêt à entamer l'EB-5, vous disposez déjà de plusieurs années d'historique d'exploitation, d'une création d'emplois documentée et d'un bilan concret. C'est réellement utile dans une demande EB-5 directe. Vous ne projetez pas ce que l'entreprise fera. Vous montrez ce qu'elle a fait.</p>
+
+        <h2>Comment fonctionne la transition de l'E-2 vers l'EB-5</h2>
+
+        <p>Ce n'est pas un processus automatique. Le statut E-2 ne se convertit pas en statut EB-5. Ce sont des programmes de visa distincts, avec des demandes distinctes et des critères d'éligibilité distincts. Ce que vous faites, c'est utiliser le temps passé sous E-2 pour progresser jusqu'au point où vous remplissez les conditions de l'EB-5.</p>
+
+        <div class="pathway">
+            <div class="pathway__step">
+                <div class="pathway__num">1</div>
+                <div class="pathway__content">
+                    <h3>Entrer et construire sous statut E-2</h3>
+                    <p>Vous arrivez aux États-Unis sous statut E-2 et vous dirigez l'entreprise. Vous renouvelez votre visa au besoin. Vous accumulez un historique opérationnel, du chiffre d'affaires et une création d'emplois qui compteront plus tard.</p>
+                </div>
+            </div>
+            <div class="pathway__step">
+                <div class="pathway__num">2</div>
+                <div class="pathway__content">
+                    <h3>Accumuler le capital</h3>
+                    <p>Que ce soit grâce aux revenus de l'entreprise, à votre épargne personnelle ou à une combinaison des deux, vous travaillez à atteindre le seuil d'investissement EB-5. Si vous passez par un Regional Center, vous cherchez un projet éligible dans lequel investir. Si vous optez pour un EB-5 direct, vous bâtissez une entreprise capable de satisfaire à l'exigence de création d'emplois.</p>
+                </div>
+            </div>
+            <div class="pathway__step">
+                <div class="pathway__num">3</div>
+                <div class="pathway__content">
+                    <h3>Déposer le formulaire I-526E (Regional Center) ou I-526 (direct)</h3>
+                    <p>C'est la pétition d'immigrant qui établit votre éligibilité à l'EB-5. Vous la déposez auprès de l'USCIS tout en restant sous statut E-2. Son adjudication peut prendre d'un an à plusieurs années selon les délais de traitement de l'USCIS et votre pays de naissance.</p>
+                </div>
+            </div>
+            <div class="pathway__step">
+                <div class="pathway__num">4</div>
+                <div class="pathway__content">
+                    <h3>Maintenir le statut E-2 pendant l'attente</h3>
+                    <p>C'est l'un des avantages pratiques du visa E-2. Vous pouvez continuer à renouveler votre visa E-2 pendant que votre pétition EB-5 est en cours d'examen. Vous n'avez ni à quitter le pays ni à cesser d'exploiter votre entreprise en attendant que le processus d'immigration avance.</p>
+                </div>
+            </div>
+            <div class="pathway__step">
+                <div class="pathway__num">5</div>
+                <div class="pathway__content">
+                    <h3>Ajuster votre statut ou déposer la demande au consulat</h3>
+                    <p>Une fois votre I-526 ou I-526E approuvée et un numéro de visa disponible, vous déposez soit une demande d'ajustement de statut aux États-Unis, soit vous passez par la procédure consulaire à l'étranger. À l'issue de cette étape, vous recevez une carte verte conditionnelle valable deux ans.</p>
+                </div>
+            </div>
+            <div class="pathway__step">
+                <div class="pathway__num">6</div>
+                <div class="pathway__content">
+                    <h3>Lever les conditions avec le formulaire I-829</h3>
+                    <p>Dans les 90 jours précédant l'expiration de votre carte verte conditionnelle, vous déposez le formulaire I-829 pour lever les conditions. Vous devez démontrer que vous avez satisfait aux exigences d'investissement et de création d'emplois. Une fois la demande approuvée, vous recevez une carte verte permanente.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Un point important : le pays de naissance compte</h2>
+
+        <p>Le visa E-2 est réservé aux ressortissants des pays signataires d'un traité. L'EB-5 n'a pas de restriction de nationalité, mais il comporte des quotas par pays sur le nombre de cartes vertes pouvant être délivrées chaque année. Si vous êtes né dans un pays à forte demande comme l'Inde ou la Chine, vous pouvez faire face à une attente considérable même après l'approbation de votre pétition. Cet arriéré n'affecte en rien le visa E-2.</p>
+
+        <div class="callout callout--warning">
+            <p><strong>Cela mérite d'être anticipé :</strong> si vous venez d'un pays soumis à un arriéré EB-5, le visa E-2 n'est pas seulement un tremplin. Il peut devoir s'inscrire dans une stratégie de plus long terme le temps que votre date de priorité devienne courante. Un avocat en droit de l'immigration peut vous donner une estimation réaliste du calendrier pour votre nationalité spécifique.</p>
+        </div>
+
+        <h2>Pouvez-vous utiliser votre entreprise E-2 comme entreprise EB-5 ?</h2>
+
+        <p>Parfois, oui. Si vous avez bâti sous statut E-2 une entreprise qui satisfait aux exigences de l'EB-5, c'est-à-dire que vous avez investi le montant de capital requis et que l'entreprise a créé au moins 10 emplois à temps plein pour des travailleurs américains, alors en théorie la même entreprise pourrait servir de base à une pétition EB-5 directe.</p>
+
+        <p>En pratique, cela exige une documentation rigoureuse. L'investissement en capital doit être clairement traçable et exposé au risque. Les emplois doivent être correctement comptabilisés et vérifiés. Et l'entreprise doit être qualifiée de nouvelle entreprise commerciale au sens des règles EB-5, qui ont leur propre définition.</p>
+
+        <p>Beaucoup de personnes qui effectuent la transition E-2 vers EB-5 finissent par investir séparément dans un projet de Regional Center plutôt que d'essayer d'utiliser leur entreprise E-2 existante. C'est souvent plus simple, car la comptabilisation des emplois et la structure de conformité sont déjà intégrées au Regional Center. Mais les deux voies sont possibles, et la bonne dépend de votre entreprise, de votre capital et de vos objectifs.</p>
+
+        <h2>Lequel vous convient ?</h2>
+
+        <p>Il n'existe pas de réponse universelle. Mais voici une façon simple d'y réfléchir :</p>
+
+        <ul>
+            <li>Si vous êtes ressortissant d'un pays signataire, que vous voulez diriger une entreprise aux États-Unis et que la carte verte n'est pas votre priorité immédiate, le visa E-2 est presque certainement le bon point de départ.</li>
+            <li>Si vous disposez d'un capital important et souhaitez une voie directe vers la résidence permanente sans avoir à diriger activement une entreprise, la voie EB-5 via Regional Center mérite d'être étudiée.</li>
+            <li>Si vous êtes ressortissant d'un pays signataire, que vous voulez d'abord bâtir une entreprise et qu'à terme vous visez un statut permanent, la séquence E-2 vers EB-5 est un chemin éprouvé qui repose sur une vraie logique.</li>
+            <li>Si vous n'êtes pas ressortissant d'un pays signataire, le visa E-2 ne vous est pas accessible, et l'EB-5 est probablement le visa d'investisseur sur lequel vous concentrer.</li>
+        </ul>
+
+        <p>Ces décisions ont des conséquences à long terme. Les montants d'investissement, les délais, les exigences documentaires et les résultats en matière d'immigration sont tous différents. C'est le genre de planification qui gagne à être discutée avec quelqu'un qui a vu comment ces dossiers se déroulent réellement, pas seulement comment ils se présentent sur le papier.</p>
+
+    </div>
+</div>
+
+<section class="related">
+    <div class="container">
+        <div class="related__header">
+            <span class="related__label">Poursuivre la lecture</span>
+            <h2>Articles connexes</h2>
+        </div>
+        <div class="related__grid">
+            <a href="/fr/blog/e2-visa-requirements" class="related-card">
+                <span class="related-card__tag">Éligibilité</span>
+                <div class="related-card__title">Conditions du visa E-2 : les cinq critères pour être éligible</div>
+                <div class="related-card__desc">Un décryptage clair de chaque exigence et de ce que les agents consulaires recherchent réellement.</div>
+            </a>
+            <a href="/fr/blog/e2-visa-treaty-countries" class="related-card">
+                <span class="related-card__tag">Éligibilité</span>
+                <div class="related-card__title">Quels pays ont un traité de visa E-2 avec les États-Unis ?</div>
+                <div class="related-card__desc">Tous les pays ne sont pas éligibles. Voici la liste complète et que faire si votre pays n'y figure pas.</div>
+            </a>
+            <a href="/fr/blog/e2-visa-green-card" class="related-card">
+                <span class="related-card__tag">Après l'approbation</span>
+                <div class="related-card__title">Un visa E-2 peut-il mener à la carte verte ?</div>
+                <div class="related-card__desc">L'E-2 ne mène pas à lui seul à la carte verte. Voici les voies que les investisseurs utilisent réellement pour opérer cette transition.</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="article-cta">
+    <div class="article-cta__inner">
+        <span class="article-cta__label">Anticipez</span>
+        <h2>Vous hésitez entre l'E-2, l'EB-5 ou le parcours qui les relie ?</h2>
+        <p>Ce sont des décisions de long terme. Nous aidons les investisseurs à comprendre leurs options et à bâtir une stratégie qui sert à la fois leurs objectifs d'affaires et leurs objectifs d'immigration.</p>
+        <a href="/fr/contact" class="btn-primary">Parlez-nous</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <a href="/fr/" class="footer__logo">Eman and Associates P.C.</a>
+            <div class="footer__contact">1 Washington St. #1362, Boston, MA 02108 &nbsp;&bull;&nbsp; <a href="tel:+18576782406">857-678-2406</a></div>
+            <div class="footer__links">
+                <a href="/privacy-policy">Politique de confidentialité</a>
+                <a href="/terms-of-service">Conditions d'utilisation</a>
+            </div>
+            <span class="footer__legal">Avocat inscrit au barreau du Massachusetts &nbsp;&bull;&nbsp; Eman and Associates P.C.</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle && links) toggle.addEventListener('click', () => links.classList.toggle('open'));
+</script>
+
+</body>
+</html>
