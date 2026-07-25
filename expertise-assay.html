@@ -3,65 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Convergence Assay — Locate the one domain you are truly expert in</title>
-<meta name="description" content="A self-scoring instrument that triangulates the single domain you are, with near-certainty, an absolute expert in — by detecting the independent traces genuine mastery leaves behind.">
+<title>The Convergence Assay — Discover the one thing you're an expert in</title>
+<meta name="description" content="A self-scoring instrument that discovers the single domain you are, with transparent certainty, an absolute expert in. You supply nothing — you just pick the option that feels most like you, and it names the answer.">
 <style>
   /* ============================================================
      THE CONVERGENCE ASSAY
-     Palette — a calibrated-instrument identity.
-       ink       #14181B  near-black slate ground (dark panel)
-       paper     #E9ECEC  cool lab-printout ground (light)
-       signal    #D98A2B  amber "readout lights up" — a captured trace
-       structure #2C8078  teal — gauges, structure, the frame
-       neutral   #6C757A  slate-biased mid grey (chosen, not defaulted)
+     A calibrated-instrument identity.
+       signal    #B96E12/#E7A23F  amber "readout lights up" (a captured trace)
+       structure #1F6C64/#3FA093  teal — gauges, frame, structure
      Type — monospace is the instrument's own voice (readouts, labels,
        verdict); a humanist sans carries the small amount of prose.
      ============================================================ */
-
   :root {
     color-scheme: light dark;
-
     --mono: "SFMono-Regular", ui-monospace, "JetBrains Mono", "Cascadia Code", Menlo, Consolas, monospace;
     --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
     /* light / lab-printout tokens (default) */
-    --bg:        #E4E7E7;
-    --panel:     #F3F5F4;
-    --panel-2:   #ECEFEE;
-    --ink:       #171B1E;
-    --ink-soft:  #414A4E;
-    --muted:     #6C757A;
-    --line:      #C4CBCB;
-    --line-soft: #D6DBDA;
-    --signal:    #B96E12;
-    --signal-bg: #F2E3CC;
-    --structure: #1F6C64;
-    --struct-bg: #D8E7E4;
-    --off:       #C9CFCE;
-    --shadow:    0 1px 0 rgba(23,27,30,.04), 0 18px 40px -28px rgba(23,27,30,.45);
-    --focus:     #1F6C64;
+    --bg:#E4E7E7; --panel:#F3F5F4; --panel-2:#ECEFEE; --ink:#171B1E; --ink-soft:#414A4E;
+    --muted:#6C757A; --line:#C4CBCB; --line-soft:#D6DBDA; --signal:#B96E12; --signal-bg:#F2E3CC;
+    --structure:#1F6C64; --struct-bg:#D8E7E4; --off:#C9CFCE;
+    --shadow:0 1px 0 rgba(23,27,30,.04), 0 18px 40px -28px rgba(23,27,30,.45); --focus:#1F6C64;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg:        #0F1315;
-      --panel:     #171C1F;
-      --panel-2:   #1D2427;
-      --ink:       #EDF0EF;
-      --ink-soft:  #B9C1C0;
-      --muted:     #7C8688;
-      --line:      #2A3236;
-      --line-soft: #222A2D;
-      --signal:    #E7A23F;
-      --signal-bg: #33291A;
-      --structure: #3FA093;
-      --struct-bg: #16302D;
-      --off:       #2A3236;
-      --shadow:    0 20px 50px -30px rgba(0,0,0,.8);
-      --focus:     #3FA093;
+      --bg:#0F1315; --panel:#171C1F; --panel-2:#1D2427; --ink:#EDF0EF; --ink-soft:#B9C1C0;
+      --muted:#7C8688; --line:#2A3236; --line-soft:#222A2D; --signal:#E7A23F; --signal-bg:#33291A;
+      --structure:#3FA093; --struct-bg:#16302D; --off:#2A3236;
+      --shadow:0 20px 50px -30px rgba(0,0,0,.8); --focus:#3FA093;
     }
   }
-  /* explicit toggle overrides — must win in both directions */
   :root[data-theme="light"] {
     --bg:#E4E7E7; --panel:#F3F5F4; --panel-2:#ECEFEE; --ink:#171B1E; --ink-soft:#414A4E;
     --muted:#6C757A; --line:#C4CBCB; --line-soft:#D6DBDA; --signal:#B96E12; --signal-bg:#F2E3CC;
@@ -78,356 +48,137 @@
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--sans);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
+    margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans);
+    line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
-
-  /* faint engineering grid on the ground */
   body::before {
-    content:"";
-    position: fixed; inset: 0;
+    content:""; position:fixed; inset:0;
     background-image:
       linear-gradient(to right, var(--line-soft) 1px, transparent 1px),
       linear-gradient(to bottom, var(--line-soft) 1px, transparent 1px);
-    background-size: 46px 46px;
-    opacity: .35;
-    pointer-events: none;
-    z-index: 0;
+    background-size:46px 46px; opacity:.35; pointer-events:none; z-index:0;
   }
+  .wrap { position:relative; z-index:1; max-width:820px; margin:0 auto; padding:clamp(18px,4vw,46px) clamp(14px,4vw,30px) 80px; }
 
-  .wrap {
-    position: relative;
-    z-index: 1;
-    max-width: 820px;
-    margin: 0 auto;
-    padding: clamp(18px, 4vw, 46px) clamp(14px, 4vw, 30px) 80px;
-  }
-
-  /* ---- instrument frame ---- */
-  .instrument {
-    position: relative;
-    background: var(--panel);
-    border: 1px solid var(--line);
-    box-shadow: var(--shadow);
-  }
-  /* corner tick marks */
+  .instrument { position:relative; background:var(--panel); border:1px solid var(--line); box-shadow:var(--shadow); }
   .instrument::before, .instrument::after {
     content:""; position:absolute; width:12px; height:12px; pointer-events:none;
-    border-color: var(--structure); border-style: solid;
+    border-color:var(--structure); border-style:solid;
   }
   .instrument::before { top:-1px; left:-1px; border-width:2px 0 0 2px; }
   .instrument::after  { top:-1px; right:-1px; border-width:2px 2px 0 0; }
 
   header.masthead {
-    padding: clamp(20px,4vw,34px) clamp(20px,4vw,40px) clamp(18px,3vw,26px);
-    border-bottom: 1px solid var(--line);
-    background:
-      radial-gradient(120% 140% at 100% 0%, var(--struct-bg) 0%, transparent 55%);
+    padding:clamp(20px,4vw,34px) clamp(20px,4vw,40px) clamp(18px,3vw,26px);
+    border-bottom:1px solid var(--line);
+    background:radial-gradient(120% 140% at 100% 0%, var(--struct-bg) 0%, transparent 55%);
   }
   .eyebrow {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .28em;
-    text-transform: uppercase;
-    color: var(--structure);
-    display: flex; align-items: center; gap: 10px;
-    margin: 0 0 16px;
+    font-family:var(--mono); font-size:11px; letter-spacing:.28em; text-transform:uppercase;
+    color:var(--structure); display:flex; align-items:center; gap:10px; margin:0 0 16px;
   }
-  .eyebrow .dot {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: var(--signal);
-    box-shadow: 0 0 0 3px var(--signal-bg);
-    animation: pulse 2.6s ease-in-out infinite;
-  }
+  .eyebrow .dot { width:7px; height:7px; border-radius:50%; background:var(--signal); box-shadow:0 0 0 3px var(--signal-bg); animation:pulse 2.6s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{opacity:.55} 50%{opacity:1} }
 
-  h1.title {
-    font-family: var(--mono);
-    font-weight: 600;
-    letter-spacing: -.01em;
-    text-wrap: balance;
-    font-size: clamp(28px, 6vw, 46px);
-    line-height: 1.02;
-    margin: 0 0 14px;
-  }
-  h1.title .amp { color: var(--signal); }
-  .lede {
-    max-width: 62ch;
-    color: var(--ink-soft);
-    font-size: clamp(15px, 2.2vw, 17px);
-    margin: 0;
-  }
-  .lede b { color: var(--ink); font-weight: 600; }
+  h1.title { font-family:var(--mono); font-weight:600; letter-spacing:-.01em; text-wrap:balance; font-size:clamp(28px,6vw,46px); line-height:1.02; margin:0 0 14px; }
+  h1.title .amp { color:var(--signal); }
+  .lede { max-width:62ch; color:var(--ink-soft); font-size:clamp(15px,2.2vw,17px); margin:0; }
+  .lede b { color:var(--ink); font-weight:600; }
+  .readout-line { font-family:var(--mono); font-size:11px; letter-spacing:.12em; color:var(--muted); text-transform:uppercase; margin-top:20px; display:flex; flex-wrap:wrap; gap:6px 20px; }
+  .readout-line span b { color:var(--structure); font-weight:600; }
 
-  .readout-line {
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: .12em;
-    color: var(--muted);
-    text-transform: uppercase;
-    margin-top: 20px;
-    display: flex; flex-wrap: wrap; gap: 6px 20px;
-  }
-  .readout-line span b { color: var(--structure); font-weight: 600; }
+  .stage { padding:clamp(20px,4vw,40px); }
+  .stage[hidden] { display:none; }
 
-  /* ---- stage body ---- */
-  .stage { padding: clamp(20px,4vw,40px); }
-  .stage[hidden] { display: none; }
+  h2.step { font-family:var(--mono); font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--structure); margin:0 0 6px; display:flex; align-items:baseline; gap:12px; }
+  h2.step .n { color:var(--muted); }
+  .prompt { font-size:clamp(19px,3.2vw,24px); font-weight:600; letter-spacing:-.01em; line-height:1.28; text-wrap:balance; margin:0 0 4px; }
+  .sub { color:var(--ink-soft); margin:8px 0 0; font-size:15px; max-width:60ch; }
 
-  h2.step {
-    font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--structure);
-    margin: 0 0 6px;
-    display:flex; align-items:baseline; gap:12px;
-  }
-  h2.step .n { color: var(--muted); }
-  .prompt {
-    font-size: clamp(19px, 3.2vw, 24px);
-    font-weight: 600;
-    letter-spacing: -.01em;
-    line-height: 1.28;
-    text-wrap: balance;
-    margin: 0 0 4px;
-  }
-  .sub {
-    color: var(--ink-soft);
-    margin: 8px 0 0;
-    font-size: 15px;
-    max-width: 60ch;
-  }
+  /* how-it-works on the start screen */
+  .howto { list-style:none; margin:24px 0 30px; padding:0; display:grid; gap:14px; }
+  .howto li { display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; font-size:15px; color:var(--ink-soft); }
+  .howto .mk { font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--structure); background:var(--struct-bg); border:1px solid color-mix(in srgb, var(--structure) 30%, transparent); padding:4px 8px; border-radius:3px; white-space:nowrap; margin-top:2px; text-transform:uppercase; }
+  .howto b { color:var(--ink); }
 
-  /* elicitation inputs */
-  .elicit-hints {
-    display: grid; gap: 10px;
-    margin: 22px 0 26px;
-    padding: 0; list-style: none;
-  }
-  .elicit-hints li {
-    display: grid; grid-template-columns: auto 1fr; gap: 12px;
-    align-items: start;
-    font-size: 14.5px; color: var(--ink-soft);
-  }
-  .elicit-hints .tag {
-    font-family: var(--mono); font-size: 10px; letter-spacing:.1em;
-    text-transform: uppercase; color: var(--structure);
-    background: var(--struct-bg);
-    border: 1px solid color-mix(in srgb, var(--structure) 30%, transparent);
-    padding: 3px 7px; border-radius: 3px; white-space: nowrap;
-    margin-top: 2px;
-  }
+  .segmap { display:flex; gap:4px; margin:0 0 12px; }
+  .segmap i { height:4px; flex:1; background:var(--off); border-radius:2px; transition:background .3s; }
+  .segmap i.done { background:var(--structure); }
+  .segmap i.cur  { background:var(--signal); }
+  .phase-tag { font-family:var(--mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin:0 0 26px; }
+  .phase-tag b { color:var(--signal); font-weight:600; }
 
-  .domain-inputs { display: grid; gap: 12px; margin: 8px 0 4px; }
-  .field {
-    display: grid; grid-template-columns: 38px 1fr; align-items: center;
-    border: 1px solid var(--line);
-    background: var(--panel-2);
-    transition: border-color .15s, box-shadow .15s;
-  }
-  .field:focus-within {
-    border-color: var(--structure);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--structure) 22%, transparent);
-  }
-  .field .idx {
-    font-family: var(--mono); font-size: 12px; color: var(--muted);
-    text-align: center; align-self: stretch; display:flex; align-items:center; justify-content:center;
-    border-right: 1px solid var(--line);
-    background: var(--panel);
-  }
-  .field input {
-    border: 0; background: transparent; color: var(--ink);
-    font-family: var(--sans); font-size: 16px;
-    padding: 13px 14px; width: 100%;
-  }
-  .field input:focus { outline: none; }
-  .field input::placeholder { color: var(--muted); }
-
-  .hint-min {
-    font-family: var(--mono); font-size: 11px; letter-spacing:.08em;
-    color: var(--muted); margin: 14px 0 0; text-transform: uppercase;
-  }
-
-  /* ---- signal question ---- */
-  .segmap {
-    display: flex; gap: 4px; margin: 0 0 30px;
-  }
-  .segmap i {
-    height: 4px; flex: 1; background: var(--off); border-radius: 2px;
-    transition: background .3s;
-  }
-  .segmap i.done { background: var(--structure); }
-  .segmap i.cur  { background: var(--signal); }
-
-  .trace-tag {
-    font-family: var(--mono); font-size: 11px; letter-spacing:.16em;
-    text-transform: uppercase; color: var(--signal);
-    margin: 0 0 14px;
-  }
-
-  .chips { display: grid; gap: 10px; margin: 26px 0 8px; }
+  .chips { display:grid; gap:10px; margin:24px 0 8px; }
   .chip {
-    position: relative;
-    display: flex; align-items: center; gap: 14px;
-    width: 100%; text-align: left;
-    font-family: var(--sans); font-size: 16.5px; color: var(--ink);
-    background: var(--panel-2);
-    border: 1px solid var(--line);
-    padding: 15px 17px;
-    cursor: pointer;
-    transition: border-color .14s, background .14s, transform .05s;
+    position:relative; display:flex; align-items:center; gap:14px; width:100%; text-align:left;
+    font-family:var(--sans); font-size:16.5px; color:var(--ink); background:var(--panel-2);
+    border:1px solid var(--line); padding:15px 17px; cursor:pointer;
+    transition:border-color .14s, background .14s, transform .05s;
   }
-  .chip:hover { border-color: var(--structure); }
-  .chip:active { transform: translateY(1px); }
-  .chip .led {
-    width: 15px; height: 15px; flex: none; border-radius: 50%;
-    border: 2px solid var(--off);
-    background: transparent;
-    transition: all .16s;
-  }
-  .chip[aria-pressed="true"] {
-    border-color: var(--signal);
-    background: var(--signal-bg);
-  }
-  .chip[aria-pressed="true"] .led {
-    border-color: var(--signal);
-    background: var(--signal);
-    box-shadow: 0 0 0 4px color-mix(in srgb, var(--signal) 26%, transparent);
-  }
-  .chip .chip-lab { flex: 1; font-weight: 500; }
+  .chip:hover { border-color:var(--structure); }
+  .chip:active { transform:translateY(1px); }
+  .chip .led { width:15px; height:15px; flex:none; border-radius:50%; border:2px solid var(--off); background:transparent; transition:all .16s; }
+  .chip[aria-pressed="true"] { border-color:var(--signal); background:var(--signal-bg); }
+  .chip[aria-pressed="true"] .led { border-color:var(--signal); background:var(--signal); box-shadow:0 0 0 4px color-mix(in srgb, var(--signal) 26%, transparent); }
+  .chip .chip-lab { flex:1; font-weight:500; }
+  .chip.none-chip { border-style:dashed; color:var(--muted); font-size:15px; }
+  .chip.none-chip[aria-pressed="true"] { border-color:var(--structure); background:var(--struct-bg); color:var(--ink); }
+  .chip.none-chip[aria-pressed="true"] .led { border-color:var(--structure); background:var(--structure); box-shadow:0 0 0 4px color-mix(in srgb, var(--structure) 26%, transparent); }
 
-  .chip.none-chip { border-style: dashed; color: var(--muted); font-size: 15px; }
-  .chip.none-chip[aria-pressed="true"] {
-    border-color: var(--structure); background: var(--struct-bg); color: var(--ink);
-  }
-  .chip.none-chip[aria-pressed="true"] .led {
-    border-color: var(--structure); background: var(--structure);
-    box-shadow: 0 0 0 4px color-mix(in srgb, var(--structure) 26%, transparent);
-  }
+  .controls { display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:30px; flex-wrap:wrap; }
+  .btn { font-family:var(--mono); font-size:13px; letter-spacing:.1em; text-transform:uppercase; padding:13px 22px; border:1px solid var(--structure); background:var(--structure); color:#fff; cursor:pointer; transition:filter .15s, opacity .15s; }
+  .btn:hover { filter:brightness(1.06); }
+  .btn:disabled { opacity:.4; cursor:not-allowed; }
+  .btn.ghost { background:transparent; color:var(--structure); }
+  .btn.ghost:hover { background:var(--struct-bg); }
+  .counter { font-family:var(--mono); font-size:12px; color:var(--muted); letter-spacing:.08em; }
 
-  /* ---- controls ---- */
-  .controls {
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 14px; margin-top: 30px; flex-wrap: wrap;
-  }
-  .btn {
-    font-family: var(--mono); font-size: 13px; letter-spacing: .1em;
-    text-transform: uppercase;
-    padding: 13px 22px; border: 1px solid var(--structure);
-    background: var(--structure); color: #fff;
-    cursor: pointer; transition: filter .15s, opacity .15s;
-  }
-  :root[data-theme="dark"] .btn, @media (prefers-color-scheme: dark){ }
-  .btn:hover { filter: brightness(1.06); }
-  .btn:disabled { opacity: .4; cursor: not-allowed; }
-  .btn.ghost {
-    background: transparent; color: var(--structure);
-  }
-  .btn.ghost:hover { background: var(--struct-bg); }
-  .btn.big { width: 100%; justify-content: center; display: flex; padding: 16px; font-size: 14px; }
-  .counter { font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing:.08em; }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline:2px solid var(--focus); outline-offset:2px; }
 
-  /* focus visibility */
-  a:focus-visible, button:focus-visible, input:focus-visible {
-    outline: 2px solid var(--focus); outline-offset: 2px;
-  }
+  /* results */
+  .verdict-band { font-family:var(--mono); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--structure); margin:0 0 18px; }
+  .verdict-head { font-family:var(--mono); font-size:13px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 2px; }
+  .verdict-domain { font-family:var(--mono); font-weight:600; font-size:clamp(28px,6.4vw,52px); line-height:1.03; letter-spacing:-.02em; text-wrap:balance; color:var(--signal); margin:4px 0 6px; }
+  .verdict-fam { font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--structure); margin:0 0 12px; }
+  .verdict-lead { font-size:16px; color:var(--ink-soft); margin:12px 0 0; max-width:60ch; }
+  .verdict-lead b { color:var(--ink); }
 
-  /* ---- results ---- */
-  .verdict-band {
-    font-family: var(--mono); font-size: 11px; letter-spacing:.22em;
-    text-transform: uppercase; color: var(--structure); margin: 0 0 18px;
-  }
-  .verdict-head { margin: 0 0 4px; }
-  .verdict-domain {
-    font-family: var(--mono); font-weight: 600;
-    font-size: clamp(30px, 7vw, 56px); line-height: 1.02;
-    letter-spacing: -.02em; text-wrap: balance;
-    color: var(--signal);
-    margin: 4px 0 2px;
-  }
-  .verdict-lead {
-    font-size: 16px; color: var(--ink-soft); margin: 12px 0 0; max-width: 60ch;
-  }
+  .gauges { display:grid; gap:18px; margin:30px 0; }
+  @media (min-width:560px){ .gauges { grid-template-columns:1fr 1fr; } }
+  .gauge { border:1px solid var(--line); background:var(--panel-2); padding:18px 18px 20px; }
+  .gauge .glab { font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; display:flex; justify-content:space-between; align-items:center; }
+  .gauge .gval { font-family:var(--mono); font-size:30px; font-weight:600; color:var(--ink); font-variant-numeric:tabular-nums; line-height:1; }
+  .gauge .gval small { font-size:14px; color:var(--muted); font-weight:400; }
+  .bar { height:8px; background:var(--off); margin-top:14px; border-radius:4px; overflow:hidden; }
+  .bar > i { display:block; height:100%; border-radius:4px; transition:width 1s cubic-bezier(.2,.7,.2,1); }
+  .bar.sig > i { background:var(--signal); }
+  .bar.str > i { background:var(--structure); }
 
-  .gauges { display: grid; gap: 18px; margin: 30px 0; }
-  @media (min-width: 560px){ .gauges { grid-template-columns: 1fr 1fr; } }
-  .gauge {
-    border: 1px solid var(--line); background: var(--panel-2); padding: 18px 18px 20px;
-  }
-  .gauge .glab {
-    font-family: var(--mono); font-size: 10.5px; letter-spacing:.14em;
-    text-transform: uppercase; color: var(--muted); margin: 0 0 12px;
-    display:flex; justify-content: space-between; align-items:center;
-  }
-  .gauge .gval {
-    font-family: var(--mono); font-size: 30px; font-weight: 600; color: var(--ink);
-    font-variant-numeric: tabular-nums; line-height: 1;
-  }
-  .gauge .gval small { font-size: 14px; color: var(--muted); font-weight: 400; }
-  .bar { height: 8px; background: var(--off); margin-top: 14px; border-radius: 4px; overflow:hidden; }
-  .bar > i { display:block; height: 100%; border-radius: 4px; transition: width 1s cubic-bezier(.2,.7,.2,1); }
-  .bar.sig > i { background: var(--signal); }
-  .bar.str > i { background: var(--structure); }
+  .matrix-wrap { margin:34px 0 8px; overflow-x:auto; }
+  .matrix-title { font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--structure); margin:0 0 4px; }
+  .matrix-note { color:var(--muted); font-size:13px; margin:0 0 16px; max-width:62ch; }
+  table.matrix { border-collapse:collapse; width:100%; min-width:460px; font-family:var(--mono); }
+  table.matrix th, table.matrix td { padding:8px 6px; text-align:center; }
+  table.matrix thead th { font-size:10px; letter-spacing:.06em; color:var(--muted); font-weight:500; text-transform:uppercase; border-bottom:1px solid var(--line); vertical-align:bottom; }
+  table.matrix tbody th { text-align:left; font-size:13px; font-weight:600; color:var(--ink); white-space:nowrap; padding-right:14px; font-family:var(--sans); }
+  table.matrix tbody tr.win th { color:var(--signal); }
+  table.matrix td .cell { width:15px; height:15px; border-radius:3px; margin:0 auto; background:var(--off); border:1px solid transparent; }
+  table.matrix td .cell.on { background:var(--signal); box-shadow:0 0 8px -1px color-mix(in srgb, var(--signal) 70%, transparent); }
+  table.matrix td.total { font-weight:600; font-size:14px; color:var(--ink-soft); font-variant-numeric:tabular-nums; }
+  table.matrix tbody tr.win td.total { color:var(--signal); }
+  table.matrix tbody tr { border-bottom:1px solid var(--line-soft); }
 
-  /* convergence matrix */
-  .matrix-wrap { margin: 34px 0 8px; overflow-x: auto; }
-  .matrix-title {
-    font-family: var(--mono); font-size: 12px; letter-spacing:.14em; text-transform: uppercase;
-    color: var(--structure); margin: 0 0 4px;
-  }
-  .matrix-note { color: var(--muted); font-size: 13px; margin: 0 0 16px; max-width: 62ch; }
-  table.matrix { border-collapse: collapse; width: 100%; min-width: 460px; font-family: var(--mono); }
-  table.matrix th, table.matrix td { padding: 8px 6px; text-align: center; }
-  table.matrix thead th {
-    font-size: 10px; letter-spacing:.06em; color: var(--muted); font-weight: 500;
-    text-transform: uppercase; border-bottom: 1px solid var(--line); vertical-align: bottom;
-  }
-  table.matrix tbody th {
-    text-align: left; font-size: 13px; font-weight: 600; color: var(--ink);
-    white-space: nowrap; padding-right: 14px; font-family: var(--sans);
-  }
-  table.matrix tbody tr.win th { color: var(--signal); }
-  table.matrix td .cell {
-    width: 15px; height: 15px; border-radius: 3px; margin: 0 auto;
-    background: var(--off); border: 1px solid transparent;
-  }
-  table.matrix td .cell.on { background: var(--signal); box-shadow: 0 0 8px -1px color-mix(in srgb, var(--signal) 70%, transparent); }
-  table.matrix td.total { font-weight: 600; font-size: 14px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
-  table.matrix tbody tr.win td.total { color: var(--signal); }
-  table.matrix tbody tr { border-bottom: 1px solid var(--line-soft); }
+  .interpret { margin:30px 0 0; padding:20px 22px; border-left:3px solid var(--structure); background:var(--panel-2); }
+  .interpret h3 { font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--structure); margin:0 0 10px; }
+  .interpret p { margin:0 0 10px; color:var(--ink-soft); font-size:15px; }
+  .interpret p:last-child { margin-bottom:0; }
+  .interpret b { color:var(--ink); }
 
-  .interpret {
-    margin: 30px 0 0; padding: 20px 22px;
-    border-left: 3px solid var(--structure); background: var(--panel-2);
-  }
-  .interpret h3 {
-    font-family: var(--mono); font-size: 12px; letter-spacing:.14em; text-transform: uppercase;
-    color: var(--structure); margin: 0 0 10px;
-  }
-  .interpret p { margin: 0 0 10px; color: var(--ink-soft); font-size: 15px; }
-  .interpret p:last-child { margin-bottom: 0; }
-  .interpret b { color: var(--ink); }
+  .footnote { margin-top:26px; font-family:var(--mono); font-size:11px; letter-spacing:.05em; color:var(--muted); line-height:1.7; }
+  .restart { margin-top:26px; }
+  .site-foot { text-align:center; margin-top:26px; color:var(--muted); font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; }
 
-  .footnote {
-    margin-top: 26px; font-family: var(--mono); font-size: 11px; letter-spacing:.05em;
-    color: var(--muted); line-height: 1.7;
-  }
-  .restart { margin-top: 26px; }
-
-  .site-foot {
-    text-align: center; margin-top: 26px; color: var(--muted);
-    font-family: var(--mono); font-size: 11px; letter-spacing:.14em; text-transform: uppercase;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; transition: none !important; }
-  }
+  @media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } }
 </style>
 </head>
 <body>
@@ -435,65 +186,52 @@
     <div class="instrument">
 
       <header class="masthead">
-        <p class="eyebrow"><span class="dot"></span> The Convergence Assay · v1.0</p>
-        <h1 class="title">What are you<br>actually <span class="amp">expert</span> in?</h1>
-        <p class="lede">You can't answer that by asking yourself how confident you feel — confidence is the <b>least</b> reliable signal of mastery. This instrument works differently. Genuine expertise leaves <b>independent traces</b>: things you know that aren't written anywhere, errors you catch before you can explain them, a hidden layer you see that others don't. We test your candidate domains against ten of those traces. The one domain where they <b>converge</b> is the answer.</p>
+        <p class="eyebrow"><span class="dot"></span> The Convergence Assay · v2.0</p>
+        <h1 class="title">Find the one thing<br>you're truly <span class="amp">expert</span> in.</h1>
+        <p class="lede">You don't have to know the answer going in — and you won't type a single word. Expertise gives itself away through <b>recognition</b>: the mistake that makes you wince, the jargon that's second nature, the thing you'd reach for without thinking. This instrument shows you concrete options and simply asks which one is <b>most you</b>. The domain your answers keep pointing back to is the answer.</p>
         <div class="readout-line">
-          <span>Method · <b>trace triangulation</b></span>
-          <span>Runtime · <b>~4 min</b></span>
-          <span>Output · <b>one domain + certainty</b></span>
+          <span>Method · <b>recognition &amp; convergence</b></span>
+          <span>Runtime · <b>~3 min</b></span>
+          <span>You supply · <b>nothing but taps</b></span>
         </div>
       </header>
 
-      <!-- STAGE 1 — ELICIT -->
-      <section class="stage" id="stage-elicit">
-        <h2 class="step"><span class="n">01</span> Name your candidates</h2>
-        <p class="prompt">List the 2–4 domains where you might, plausibly, be an expert.</p>
-        <p class="sub">Don't overthink the wording, and don't be modest or grandiose — just name the territories. If you're stuck, the four prompts below tend to surface real candidates that self-assessment hides.</p>
-
-        <ul class="elicit-hints">
-          <li><span class="tag">Asked</span> <span>What do people come to <em>you</em> about — unprompted, even when they could ask someone else?</span></li>
-          <li><span class="tag">Unpaid hours</span> <span>What have you poured uncounted hours into because you wanted to, not because you had to?</span></li>
-          <li><span class="tag">Irritation</span> <span>What do you see done <em>wrong</em> in a way that genuinely bothers you, when others don't even notice?</span></li>
-          <li><span class="tag">No prep</span> <span>What could you talk about for an hour, right now, with zero preparation?</span></li>
+      <!-- STAGE 0 — INTRO -->
+      <section class="stage" id="stage-intro">
+        <h2 class="step"><span class="n">00</span> How it works</h2>
+        <p class="prompt">Ten questions. Every answer is already written for you.</p>
+        <ul class="howto">
+          <li><span class="mk">Round 1</span> <span>Five questions locate your <b>territory</b> — which of eight broad families of expertise you live in. You just pick the option that fits.</span></li>
+          <li><span class="mk">Round 2</span> <span>Five more questions zero in <b>inside that territory</b>, showing you the tell-tale signs of each candidate skill — one per option — so the specific domain surfaces on its own.</span></li>
+          <li><span class="mk">Verdict</span> <span>The instrument names the single domain your answers <b>converged</b> on, with an honest certainty rating. If they scatter, it says so instead of flattering you.</span></li>
         </ul>
-
-        <div class="domain-inputs" id="domainInputs">
-          <label class="field"><span class="idx">A</span><input type="text" maxlength="42" placeholder="e.g. residential landscape design" data-dom aria-label="Candidate domain 1"></label>
-          <label class="field"><span class="idx">B</span><input type="text" maxlength="42" placeholder="e.g. training rescue dogs" data-dom aria-label="Candidate domain 2"></label>
-          <label class="field"><span class="idx">C</span><input type="text" maxlength="42" placeholder="optional" data-dom aria-label="Candidate domain 3"></label>
-          <label class="field"><span class="idx">D</span><input type="text" maxlength="42" placeholder="optional" data-dom aria-label="Candidate domain 4"></label>
-        </div>
-        <p class="hint-min" id="elicitHint">Enter at least two candidates to begin.</p>
-
         <div class="controls">
           <span></span>
-          <button class="btn" id="startBtn" disabled>Begin assay →</button>
+          <button class="btn" id="beginBtn">Begin assay →</button>
         </div>
       </section>
 
-      <!-- STAGE 2 — SIGNALS -->
-      <section class="stage" id="stage-signals" hidden>
+      <!-- STAGE 1 — QUESTIONS -->
+      <section class="stage" id="stage-q" hidden>
         <div class="segmap" id="segmap"></div>
-        <h2 class="step"><span class="n" id="qNum">01</span> <span id="traceName">Signal</span></h2>
-        <p class="trace-tag" id="traceTag"></p>
+        <p class="phase-tag" id="phaseTag"></p>
+        <h2 class="step"><span class="n" id="qNum">01</span> <span id="lensName">—</span></h2>
         <p class="prompt" id="qText">—</p>
         <p class="sub" id="qSub"></p>
-
         <div class="chips" id="chips"></div>
-
         <div class="controls">
           <button class="btn ghost" id="backBtn">← Back</button>
           <span class="counter" id="counter">1 / 10</span>
-          <button class="btn" id="nextBtn">Next →</button>
+          <button class="btn" id="nextBtn" disabled>Next →</button>
         </div>
       </section>
 
-      <!-- STAGE 3 — RESULT -->
+      <!-- STAGE 2 — RESULT -->
       <section class="stage" id="stage-result" hidden>
         <p class="verdict-band" id="verdictBand">Assay complete · convergence detected</p>
-        <p class="verdict-head step" style="color:var(--muted)"><span class="n">Verdict</span></p>
+        <p class="verdict-head">The domain you're an expert in</p>
         <div class="verdict-domain" id="verdictDomain">—</div>
+        <p class="verdict-fam" id="verdictFam"></p>
         <p class="verdict-lead" id="verdictLead"></p>
 
         <div class="gauges">
@@ -504,23 +242,21 @@
           </div>
           <div class="gauge">
             <p class="glab"><span>Signal convergence</span><span id="domTag" style="color:var(--structure)"></span></p>
-            <div class="gval"><span id="convVal">0</span><small> / 10 traces</small></div>
+            <div class="gval"><span id="convVal">0</span><small> / 5 tells</small></div>
             <div class="bar str"><i id="convBar" style="width:0"></i></div>
           </div>
         </div>
 
         <div class="matrix-wrap">
-          <p class="matrix-title">The convergence matrix</p>
-          <p class="matrix-note">Each lit cell is an independent trace of expertise that fired for that domain. Certainty comes from the <em>conjunction</em> — a single lit row is where mastery actually lives.</p>
+          <p class="matrix-title">Where each tell pointed</p>
+          <p class="matrix-note">In Round 2, each of five independent tells — a mistake, a piece of jargon, an instinct, a prediction, a detail — pointed at one candidate. Certainty comes from the <em>conjunction</em>: the row that lights up across unrelated tells is where your mastery actually lives.</p>
           <table class="matrix" id="matrix"></table>
         </div>
 
         <div class="interpret" id="interpret"></div>
-
         <p class="footnote" id="footnote"></p>
-
         <div class="restart">
-          <button class="btn ghost" id="restartBtn">↻ Run again with different candidates</button>
+          <button class="btn ghost" id="restartBtn">↻ Run the assay again</button>
         </div>
       </section>
 
@@ -531,332 +267,577 @@
 <script>
 (function(){
   "use strict";
-
-  /* ---------- the ten traces ---------------------------------------
-     weight = how strongly a trace indicates GENUINE mastery vs.
-     something that can be inflated by vanity. Tacit knowledge, an
-     instant error-sense, and uncounted hours are the hardest to fake,
-     so they weigh most. ---------------------------------------------- */
-  var TRACES = [
-    { tag:"Trace 01 · Tacit knowledge", name:"The unwritten thing", weight:3,
-      q:"For which of these could you teach a beginner something crucial that isn't written in any book, course, or article — something you only know from having done it?",
-      sub:"The signature of real mastery is knowledge that never made it into words." },
-    { tag:"Trace 02 · Error detection", name:"The wrongness alarm", weight:3,
-      q:"In which do you instantly sense when something is <em>subtly wrong</em> — before you can even explain why it's wrong?",
-      sub:"Experts perceive errors as a feeling first, an explanation second." },
-    { tag:"Trace 03 · Uncounted hours", name:"The hours you never counted", weight:3,
-      q:"In which have you put in the most hours you never tracked — because you wanted to, not because you had to?",
-      sub:"Deliberate practice, not talent, is what actually accumulates into expertise." },
-    { tag:"Trace 04 · The hidden layer", name:"The layer others can't see", weight:2,
-      q:"In which do you perceive a whole layer of structure or activity that ordinary people don't even know exists?",
-      sub:"Mastery reorganizes what you literally see." },
-    { tag:"Trace 05 · Prediction", name:"The correct hunch", weight:2,
-      q:"In which can you predict how something will turn out — and be right — in ways that surprise other people?",
-      sub:"Reliable prediction is compressed experience." },
-    { tag:"Trace 06 · Diagnosis", name:"Why the beginner is stuck", weight:2,
-      q:"In which could you watch a beginner for a minute and tell exactly <em>why</em> they're stuck?",
-      sub:"You can only diagnose what you've truly internalized." },
-    { tag:"Trace 07 · Unforced consultation", name:"Who they ask", weight:2,
-      q:"In which do people seek your opinion even when they have no obligation to — and could easily ask someone else?",
-      sub:"Revealed trust is a harder signal than any credential." },
-    { tag:"Trace 08 · Structural recovery", name:"Rebuild from the bones", weight:2,
-      q:"In which could you rebuild your skill from near-zero far faster than a smart newcomer — because you understand the structure, not just the steps?",
-      sub:"Experts hold the deep structure; novices hold the surface." },
-    { tag:"Trace 09 · The frontier", name:"The edge of the known", weight:2,
-      q:"In which can you clearly name what is <em>not yet known</em> — the open, unsolved edge of the field?",
-      sub:"Only someone deep in a domain can see where it runs out." },
-    { tag:"Trace 10 · The boredom line", name:"Strong opinions on the dull parts", weight:1,
-      q:"In which do you hold strong, specific opinions about details that almost everyone else finds impossibly boring?",
-      sub:"Caring about the tedious minutiae is a fingerprint of the deeply invested." }
-  ];
-  var MAXW = TRACES.reduce(function(s,t){return s+t.weight;},0); // 22
-
-  /* ---------- state ---------- */
-  var domains = [];              // [{label}]
-  var answers = [];              // answers[qi] = array of domain indices selected
-  var qi = 0;
-
   var $ = function(id){ return document.getElementById(id); };
 
-  /* ---------- STAGE 1 ---------- */
-  var domInputs = Array.prototype.slice.call(document.querySelectorAll('#domainInputs input'));
-  function readDomains(){
-    return domInputs.map(function(i){ return i.value.trim(); }).filter(function(v){ return v.length; });
-  }
-  function refreshStart(){
-    var d = readDomains();
-    var ok = d.length >= 2;
-    $('startBtn').disabled = !ok;
-    $('elicitHint').textContent = ok
-      ? (d.length + " candidates locked in. Ready.")
-      : "Enter at least two candidates to begin.";
-  }
-  domInputs.forEach(function(i){ i.addEventListener('input', refreshStart); });
+  /* ================= DATA =================
+     8 families. Each family carries five Round-1 phrasings (r1),
+     aligned to the five Round-1 lenses below, and a set of domains.
+     Each domain carries five "tells" used in Round 2. Every string is
+     a concrete, recognizable option the taker only has to recognize. */
 
-  $('startBtn').addEventListener('click', function(){
-    var labels = readDomains();
-    if(labels.length < 2) return;
-    domains = labels.map(function(l){ return { label: l }; });
-    answers = TRACES.map(function(){ return []; });
-    qi = 0;
-    $('stage-elicit').hidden = true;
-    $('stage-signals').hidden = false;
+  var R1_LENS = [
+    { name:"Lost time",        stem:"You'd happily lose an entire Saturday to…",              sub:"Not what you should do — what you'd actually choose." },
+    { name:"Caught mistakes",  stem:"You catch mistakes other people miss in…",               sub:"The thing done badly that you can't un-see." },
+    { name:"The one they ask",  stem:"People keep ending up asking you about…",                sub:"Unprompted — even when they could ask someone else." },
+    { name:"Strong opinions",  stem:"You hold strong, specific opinions about the details of…", sub:"The minutiae most people find impossibly boring." },
+    { name:"Competent cold",   stem:"Dropped into it with no warning, you'd feel strangely competent…", sub:"Where you'd trust yourself to figure it out." }
+  ];
+
+  var R2_LENS = [
+    { key:"wince",   code:"WNC", name:"The wince",       stem:"Which mistake makes you wince the most when you watch someone make it?", sub:"You feel it's wrong before you can explain why." },
+    { key:"jargon",  code:"JRG", name:"Second nature",   stem:"Which of these is second nature — words you use without thinking?",  sub:"Insider language you never had to memorize." },
+    { key:"reach",   code:"RCH", name:"The instinct",    stem:"In a pinch, which do you instinctively reach for first?",                sub:"The move an expert makes on reflex." },
+    { key:"predict", code:"PRD", name:"The call",        stem:"Which of these can you call before other people see it coming?",         sub:"Compressed experience, showing up as a hunch." },
+    { key:"detail",  code:"DTL", name:"The detail",      stem:"Which 'small detail' do you actually have strong opinions about?",       sub:"The thing only someone deep in it would care about." }
+  ];
+
+  var FAMILIES = [
+    { key:"hands", name:"Hands & Craft", r1:[
+      "building, fixing, or making something with your hands",
+      "how things get built, cooked, grown, or repaired",
+      "how to make, fix, or maintain something physical",
+      "tools, techniques, joints, and materials",
+      "making something out of raw materials" ]},
+    { key:"systems", name:"Systems & Code", r1:[
+      "getting a machine, program, or network to behave",
+      "how software, networks, or devices are set up",
+      "why their tech is broken and how to fix it",
+      "how code, data, or infrastructure should be built",
+      "fixing a broken system under pressure" ]},
+    { key:"people", name:"People & Influence", r1:[
+      "reading people and moving them toward something",
+      "how a conversation, pitch, or team is handled",
+      "how to handle a person or a tricky situation",
+      "what actually motivates people and how to say things",
+      "winning someone over or calming them down" ]},
+    { key:"body", name:"Body & Movement", r1:[
+      "training, moving, or pushing your body to perform",
+      "someone's form, technique, or training",
+      "how to get stronger, fitter, or better at a movement",
+      "programming, recovery, and technique",
+      "coaching a body to do something hard" ]},
+    { key:"words", name:"Words & Argument", r1:[
+      "wrestling ideas or language into the right shape",
+      "arguments, writing, or how something is phrased",
+      "how to word, argue, or make sense of something",
+      "grammar, logic, evidence, and precise wording",
+      "building the argument from a pile of facts" ]},
+    { key:"money", name:"Money & Risk", r1:[
+      "figuring out where money, odds, or value really flow",
+      "decisions that ignore the numbers, odds, or risk",
+      "what to do with their money or a risky decision",
+      "fees, odds, incentives, and the real math",
+      "managing a pot of money or a risky bet" ]},
+    { key:"aesthetic", name:"Eye & Sound", r1:[
+      "making something look, sound, or feel just right",
+      "how something looks, sounds, or is composed",
+      "how to make a thing look or sound better",
+      "composition, color, tone, and spacing",
+      "making something ugly or flat suddenly work" ]},
+    { key:"care", name:"Care & Living Things", r1:[
+      "looking after the health or growth of a living thing",
+      "how a person, patient, or animal is doing",
+      "what's wrong with a body, a pet, or someone struggling",
+      "subtle signs of health, stress, or trouble",
+      "caring for a living thing that needs help" ]}
+  ];
+
+  // domains: t = {wince, jargon, reach, predict, detail}
+  var DOMAINS = [
+    // ---- hands ----
+    { key:"woodworking", fam:"hands", name:"Woodworking & carpentry", t:{
+      wince:"Measuring once and cutting anyway", jargon:"Kerf, mortise, grain direction",
+      reach:"A sharp chisel and a square", predict:"Which joint will split before it's glued",
+      detail:"Whether to sand to 220 or stop at 150" }},
+    { key:"cooking", fam:"hands", name:"Cooking (savory)", t:{
+      wince:"Crowding the pan so nothing browns", jargon:"Fond, deglaze, carryover heat",
+      reach:"A hot pan and salt, tasting as you go", predict:"That a dish needs acid before you taste it",
+      detail:"Whether the pasta water is salted enough" }},
+    { key:"baking", fam:"hands", name:"Baking & pastry", t:{
+      wince:"Overworking the dough until it's tough", jargon:"Hydration %, lamination, crumb",
+      reach:"A scale, never measuring cups", predict:"That a bake will sink before it's out of the oven",
+      detail:"Weighing flour in grams vs. scooping cups" }},
+    { key:"sewing", fam:"hands", name:"Sewing & textiles", t:{
+      wince:"Not pressing the seams as you go", jargon:"Bias, seam allowance, selvedge",
+      reach:"A seam ripper and a good iron", predict:"That a garment won't hang right off the bolt",
+      detail:"Whether the grainline is actually straight" }},
+    { key:"repair", fam:"hands", name:"Auto & mechanical repair", t:{
+      wince:"Rounding a bolt with the wrong-size wrench", jargon:"Torque spec, play, TDC",
+      reach:"A torque wrench and penetrating oil", predict:"Which noise means an expensive week",
+      detail:"Torquing to spec vs. 'good and tight'" }},
+    { key:"diy", fam:"hands", name:"Home renovation & DIY", t:{
+      wince:"Skipping the stud finder and hoping", jargon:"Load-bearing, plumb, on-center",
+      reach:"A level and a stud finder", predict:"Which 'quick fix' becomes a whole weekend",
+      detail:"Whether a wall is actually plumb" }},
+    { key:"garden", fam:"hands", name:"Gardening & plants", t:{
+      wince:"Watering a plant that's actually root-rotting", jargon:"Hardening off, pH, full sun vs. part shade",
+      reach:"A finger in the soil to check moisture", predict:"That a plant is dying weeks before it shows",
+      detail:"Whether it's over- or under-watered" }},
+
+    // ---- systems ----
+    { key:"software", fam:"systems", name:"Software development", t:{
+      wince:"Catching every error and silently swallowing it", jargon:"Race condition, idempotent, tech debt",
+      reach:"A debugger and version control", predict:"Which shortcut becomes tomorrow's outage",
+      detail:"Naming, structure, or where the real bug hides" }},
+    { key:"it", fam:"systems", name:"Networking & IT", t:{
+      wince:"Plugging in with no idea of the subnet", jargon:"DNS, DHCP, packet loss",
+      reach:"ping first, then the actual logs", predict:"That it's DNS (it's always DNS)",
+      detail:"Whether a cable run has a service loop" }},
+    { key:"security", fam:"systems", name:"Cybersecurity", t:{
+      wince:"Reusing one password everywhere", jargon:"Threat model, attack surface, phishing",
+      reach:"The principle of least privilege", predict:"How a system will actually get breached",
+      detail:"Whether that email is a phish" }},
+    { key:"electronics", fam:"systems", name:"Electronics & hardware", t:{
+      wince:"Probing a live circuit without checking", jargon:"Voltage drop, pull-up resistor, ground loop",
+      reach:"A multimeter before anything else", predict:"Which component is about to fry",
+      detail:"Whether the ground is actually grounded" }},
+    { key:"data", fam:"systems", name:"Data & statistics", t:{
+      wince:"Confusing correlation with cause", jargon:"Base rate, p-hacking, sample size",
+      reach:"The distribution before the average", predict:"That a 'trend' is just noise",
+      detail:"Whether the sample is even representative" }},
+
+    // ---- people ----
+    { key:"sales", fam:"people", name:"Sales & persuasion", t:{
+      wince:"Leading with price instead of value", jargon:"Objection handling, pipeline, the close",
+      reach:"A question, not a pitch", predict:"Which deal is about to ghost you",
+      detail:"When to shut up and let them talk" }},
+    { key:"teaching", fam:"people", name:"Teaching & instruction", t:{
+      wince:"Explaining at your level, not theirs", jargon:"Scaffolding, prior knowledge, misconception",
+      reach:"A question that reveals the gap", predict:"Exactly where a learner will get stuck",
+      detail:"Whether they understood or just nodded" }},
+    { key:"negotiation", fam:"people", name:"Negotiation", t:{
+      wince:"Naming a number first with no anchor", jargon:"BATNA, anchor, concession",
+      reach:"Silence right after the offer", predict:"Who will blink first",
+      detail:"What the other side needs vs. wants" }},
+    { key:"leadership", fam:"people", name:"Leadership & management", t:{
+      wince:"Solving it yourself instead of coaching", jargon:"One-on-one, alignment, delegation",
+      reach:"Clarity on who owns what", predict:"Which quiet person is about to quit",
+      detail:"Whether a team is aligned or just polite" }},
+    { key:"counseling", fam:"people", name:"Counseling & listening", t:{
+      wince:"Jumping to advice before they feel heard", jargon:"Reflective listening, boundaries, holding space",
+      reach:"A pause and an open question", predict:"What they're not saying out loud",
+      detail:"When to be quiet vs. when to name it" }},
+    { key:"parenting", fam:"people", name:"Parenting & child-raising", t:{
+      wince:"Negotiating with a kid who's just tired", jargon:"Regulation, natural consequences, boundaries",
+      reach:"Calm, and a reliable routine", predict:"The meltdown ten minutes before it lands",
+      detail:"Whether it's hunger, sleep, or a real limit" }},
+
+    // ---- body ----
+    { key:"strength", fam:"body", name:"Strength & fitness training", t:{
+      wince:"Ego-lifting with a rounded back", jargon:"Progressive overload, RPE, deload",
+      reach:"A program, not a random workout", predict:"Which lift will stall and why",
+      detail:"Whether the reps actually hit depth" }},
+    { key:"endurance", fam:"body", name:"Running & endurance", t:{
+      wince:"Going out too fast on every run", jargon:"Zone 2, cadence, negative split",
+      reach:"A heart-rate cap on easy days", predict:"Who went out too hard to finish",
+      detail:"Whether easy days are actually easy" }},
+    { key:"martial", fam:"body", name:"Martial arts & combat sport", t:{
+      wince:"Dropping the hands when tired", jargon:"Guard, distance, framing",
+      reach:"Position before submission", predict:"Where the next strike is coming from",
+      detail:"Whether the footwork is actually right" }},
+    { key:"dance", fam:"body", name:"Dance & movement", t:{
+      wince:"Hitting the steps but missing the music", jargon:"Musicality, frame, isolation",
+      reach:"The count first, then the feeling", predict:"Who's leading from the arms, not the body",
+      detail:"Whether they're actually on the beat" }},
+    { key:"sport", fam:"body", name:"Team & ball sport", t:{
+      wince:"Ball-watching instead of reading the play", jargon:"Spacing, off-ball, the read",
+      reach:"Position and timing over athleticism", predict:"Where the play is about to break down",
+      detail:"Whether someone's in the right spot" }},
+    { key:"mobility", fam:"body", name:"Yoga & mobility", t:{
+      wince:"Forcing a stretch past the joint", jargon:"Breath, alignment, end range",
+      reach:"The breath before the depth", predict:"Which cue will unlock a pose",
+      detail:"Whether the alignment is safe" }},
+
+    // ---- words ----
+    { key:"writing", fam:"words", name:"Writing & editing", t:{
+      wince:"Burying the point in paragraph four", jargon:"Lede, active voice, kill your darlings",
+      reach:"A red pen and the delete key", predict:"Which sentence a reader will quit on",
+      detail:"'Less' vs. 'fewer', and the serial comma" }},
+    { key:"speaking", fam:"words", name:"Public speaking", t:{
+      wince:"Opening with 'sorry, I'm not prepared'", jargon:"The hook, the beat, the callback",
+      reach:"A pause instead of a filler word", predict:"When a room is about to lose interest",
+      detail:"Whether a joke will land or die" }},
+    { key:"law", fam:"words", name:"Law & legal reasoning", t:{
+      wince:"Arguing the facts when the law is the point", jargon:"Precedent, burden, holding vs. dicta",
+      reach:"The exact wording of the statute", predict:"Which argument a judge won't buy",
+      detail:"Whether a clause says what they think it says" }},
+    { key:"history", fam:"words", name:"History", t:{
+      wince:"Judging the past by today's assumptions", jargon:"Primary source, historiography, context",
+      reach:"The source, not the summary", predict:"Which popular 'fact' is a myth",
+      detail:"Whether a claim has a real source" }},
+    { key:"philosophy", fam:"words", name:"Philosophy & logic", t:{
+      wince:"Winning with a slick but invalid argument", jargon:"Valid vs. sound, begging the question",
+      reach:"A definition of terms first", predict:"Where an argument secretly assumes its conclusion",
+      detail:"Whether the premises actually support it" }},
+
+    // ---- money ----
+    { key:"investing", fam:"money", name:"Investing & markets", t:{
+      wince:"Buying high and panic-selling low", jargon:"Expected value, drawdown, diversification",
+      reach:"The base rate over the hot tip", predict:"That the hot stock will mean-revert",
+      detail:"Whether fees are quietly eating returns" }},
+    { key:"finance", fam:"money", name:"Personal finance & budgeting", t:{
+      wince:"Carrying a balance at 24% APR", jargon:"Compound interest, emergency fund, APR",
+      reach:"A budget and an automatic transfer", predict:"Which 'small' expense sinks the month",
+      detail:"The real cost of a subscription over a year" }},
+    { key:"accounting", fam:"money", name:"Accounting & books", t:{
+      wince:"Mixing personal and business money", jargon:"Accrual, reconcile, cash flow",
+      reach:"A reconciled ledger", predict:"Where the books won't balance",
+      detail:"Whether it's a debit or a credit" }},
+    { key:"poker", fam:"money", name:"Poker & game strategy", t:{
+      wince:"Playing the cards, not the player", jargon:"Pot odds, range, tilt",
+      reach:"Expected value over gut feeling", predict:"When someone is bluffing",
+      detail:"Whether the odds justify the call" }},
+    { key:"realestate", fam:"money", name:"Real estate", t:{
+      wince:"Falling for the staging, not the structure", jargon:"Comps, cap rate, contingency",
+      reach:"The inspection and the comps", predict:"Which 'deal' hides a money pit",
+      detail:"What the place is actually worth" }},
+
+    // ---- aesthetic ----
+    { key:"photography", fam:"aesthetic", name:"Photography", t:{
+      wince:"Nailing focus on the wrong thing", jargon:"Exposure triangle, golden hour, bokeh",
+      reach:"The light before the subject", predict:"That a shot is blown out before the histogram",
+      detail:"Whether the horizon is actually level" }},
+    { key:"design", fam:"aesthetic", name:"Visual & graphic design", t:{
+      wince:"Ten fonts fighting on one page", jargon:"Kerning, hierarchy, whitespace",
+      reach:"A grid and one type scale", predict:"Which layout will feel cluttered",
+      detail:"Whether the spacing is consistent" }},
+    { key:"interior", fam:"aesthetic", name:"Interior & spatial design", t:{
+      wince:"Shoving all the furniture against the walls", jargon:"Scale, flow, focal point",
+      reach:"A sense of proportion and light", predict:"Whether a room will feel cramped",
+      detail:"Whether the rug is the right size" }},
+    { key:"musicperf", fam:"aesthetic", name:"Music performance", t:{
+      wince:"Rushing the tempo when nervous", jargon:"Dynamics, phrasing, intonation",
+      reach:"The metronome, honestly", predict:"Who's going sharp before the chorus",
+      detail:"Whether it's actually in tune" }},
+    { key:"musicprod", fam:"aesthetic", name:"Music production & mixing", t:{
+      wince:"Making everything loud so nothing stands out", jargon:"EQ, compression, the mix",
+      reach:"A high-pass filter and reference tracks", predict:"Which frequency is muddying the mix",
+      detail:"Whether the vocal sits right in the mix" }},
+    { key:"drawing", fam:"aesthetic", name:"Drawing & painting", t:{
+      wince:"Drawing what you know, not what you see", jargon:"Value, gesture, negative space",
+      reach:"Big shapes before any details", predict:"Where the proportions are off",
+      detail:"Whether the values actually read" }},
+    { key:"style", fam:"aesthetic", name:"Personal style & fashion", t:{
+      wince:"Great pieces that fit terribly", jargon:"Proportion, drape, palette",
+      reach:"Fit and tailoring over labels", predict:"Whether an outfit will photograph well",
+      detail:"Whether the hem sits at the right spot" }},
+
+    // ---- care ----
+    { key:"nursing", fam:"care", name:"Nursing & clinical care", t:{
+      wince:"Treating the number, not the patient", jargon:"Vitals, baseline, acuity",
+      reach:"A full set of vitals and a good look", predict:"Which patient is about to crash",
+      detail:"Whether a subtle change actually matters" }},
+    { key:"vet", fam:"care", name:"Animal care & veterinary", t:{
+      wince:"Missing pain an animal is hiding", jargon:"Body condition, gait, appetite",
+      reach:"Hands on the animal, watching it move", predict:"That an animal's sick before it shows",
+      detail:"Whether that limp is muscle or joint" }},
+    { key:"dogtraining", fam:"care", name:"Dog & animal training", t:{
+      wince:"Repeating a cue the dog never learned", jargon:"Marker, reinforcement, threshold",
+      reach:"Timing and a reward the animal wants", predict:"When a dog is about to react",
+      detail:"Whether the reward timing is right" }},
+    { key:"coaching", fam:"care", name:"Coaching people's growth", t:{
+      wince:"Giving the answer instead of the question", jargon:"Goals, accountability, the block",
+      reach:"A question that shifts their thinking", predict:"What's really holding someone back",
+      detail:"Whether they're committed or just complying" }},
+    { key:"hospitality", fam:"care", name:"Hospitality & hosting", t:{
+      wince:"A guest with an empty glass, unnoticed", jargon:"Covers, in the weeds, mise en place",
+      reach:"Reading what a guest needs before they ask", predict:"Which table is about to need something",
+      detail:"Whether the room's energy is right" }}
+  ];
+
+  // index domains by family
+  var FAM_DOMAINS = {};
+  FAMILIES.forEach(function(f){ FAM_DOMAINS[f.key] = []; });
+  DOMAINS.forEach(function(d){ FAM_DOMAINS[d.fam].push(d); });
+  var FAM_BY_KEY = {}; FAMILIES.forEach(function(f){ FAM_BY_KEY[f.key]=f; });
+  var DOM_BY_KEY = {}; DOMAINS.forEach(function(d){ DOM_BY_KEY[d.key]=d; });
+
+  var NONE = "__none__";
+  var POOL_CAP = 8;
+
+  /* ================= STATE ================= */
+  var qi = 0;                 // 0..9
+  var p1 = [null,null,null,null,null];   // family key | NONE | null
+  var p2 = [null,null,null,null,null];   // domain key | NONE | null
+  var pool = [];              // domain objects for round 2
+  var shuffledOpts = [];      // current question's option order (keys)
+
+  /* seeded-ish shuffle (Date/Math.random fine in-browser) */
+  function shuffle(a){ a=a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
+
+  /* ================= FLOW ================= */
+  $('beginBtn').addEventListener('click', function(){
+    $('stage-intro').hidden = true;
+    $('stage-q').hidden = false;
     buildSegmap();
     renderQuestion();
-    window.scrollTo({top:0, behavior:'smooth'});
+    scrollTop();
   });
 
-  /* ---------- STAGE 2 ---------- */
   function buildSegmap(){
-    var m = $('segmap'); m.innerHTML = '';
-    for(var k=0;k<TRACES.length;k++){ m.appendChild(document.createElement('i')); }
+    var m = $('segmap'); m.innerHTML='';
+    for(var k=0;k<10;k++) m.appendChild(document.createElement('i'));
   }
   function paintSegmap(){
     var segs = $('segmap').children;
-    for(var k=0;k<segs.length;k++){
-      segs[k].className = k < qi ? 'done' : (k === qi ? 'cur' : '');
-    }
+    for(var k=0;k<segs.length;k++) segs[k].className = k<qi ? 'done' : (k===qi ? 'cur' : '');
+  }
+
+  function currentSelection(){
+    return qi < 5 ? p1[qi] : p2[qi-5];
+  }
+  function setSelection(val){
+    if(qi < 5) p1[qi] = val; else p2[qi-5] = val;
   }
 
   function renderQuestion(){
-    var t = TRACES[qi];
-    $('qNum').textContent = String(qi+1).padStart(2,'0');
-    $('traceName').textContent = t.name;
-    $('traceTag').textContent = t.tag.toUpperCase();
-    $('qText').innerHTML = t.q;
-    $('qSub').textContent = t.sub;
-    $('counter').textContent = (qi+1) + ' / ' + TRACES.length;
-    $('backBtn').style.visibility = qi === 0 ? 'hidden' : 'visible';
-    $('nextBtn').textContent = qi === TRACES.length-1 ? 'See verdict →' : 'Next →';
     paintSegmap();
+    var isR1 = qi < 5;
+    $('phaseTag').innerHTML = isR1
+      ? 'Round 1 — <b>locating your territory</b>'
+      : 'Round 2 — <b>pinpointing the domain</b>';
+    $('qNum').textContent = String(qi+1).padStart(2,'0');
+    $('counter').textContent = (qi+1) + ' / 10';
+    $('backBtn').style.visibility = qi===0 ? 'hidden' : 'visible';
+    $('nextBtn').textContent = qi===9 ? 'See verdict →' : 'Next →';
 
-    var wrap = $('chips'); wrap.innerHTML = '';
-    domains.forEach(function(d, di){
+    var opts, labelFor, lens;
+    if(isR1){
+      lens = R1_LENS[qi];
+      opts = shuffle(FAMILIES.map(function(f){ return f.key; }));
+      labelFor = function(k){ return FAM_BY_KEY[k].r1[qi]; };
+    } else {
+      var j = qi-5;
+      lens = R2_LENS[j];
+      opts = shuffle(pool.map(function(d){ return d.key; }));
+      labelFor = function(k){ return DOM_BY_KEY[k].t[lens.key]; };
+    }
+    shuffledOpts = opts;
+    $('lensName').textContent = lens.name;
+    $('qText').textContent = lens.stem;
+    $('qSub').textContent = lens.sub;
+
+    var sel = currentSelection();
+    var wrap = $('chips'); wrap.innerHTML='';
+    opts.forEach(function(k){
       var b = document.createElement('button');
-      b.type = 'button'; b.className = 'chip';
-      b.setAttribute('aria-pressed', answers[qi].indexOf(di) > -1 ? 'true' : 'false');
+      b.type='button'; b.className='chip';
+      b.setAttribute('aria-pressed', sel===k ? 'true':'false');
       b.innerHTML = '<span class="led"></span><span class="chip-lab"></span>';
-      b.querySelector('.chip-lab').textContent = d.label;
-      b.addEventListener('click', function(){ toggle(di, b); });
+      b.querySelector('.chip-lab').textContent = labelFor(k);
+      b.addEventListener('click', function(){ pick(k); });
       wrap.appendChild(b);
     });
-    // "none" option
     var none = document.createElement('button');
-    none.type = 'button'; none.className = 'chip none-chip';
-    none.setAttribute('aria-pressed', answers[qi].indexOf(-1) > -1 ? 'true' : 'false');
-    none.innerHTML = '<span class="led"></span><span class="chip-lab">None of these — this trace doesn’t fire for any of them</span>';
-    none.addEventListener('click', function(){ toggleNone(none); });
+    none.type='button'; none.className='chip none-chip';
+    none.setAttribute('aria-pressed', sel===NONE ? 'true':'false');
+    none.innerHTML = '<span class="led"></span><span class="chip-lab">None of these is really me</span>';
+    none.addEventListener('click', function(){ pick(NONE); });
     wrap.appendChild(none);
+
+    $('nextBtn').disabled = (currentSelection()==null);
   }
 
-  function toggle(di, btn){
-    // selecting a real domain clears the "none" flag
-    var i = answers[qi].indexOf(di);
-    if(i > -1){ answers[qi].splice(i,1); btn.setAttribute('aria-pressed','false'); }
-    else {
-      answers[qi].push(di); btn.setAttribute('aria-pressed','true');
-      var ni = answers[qi].indexOf(-1);
-      if(ni > -1){ answers[qi].splice(ni,1); var nb = document.querySelector('.none-chip'); if(nb) nb.setAttribute('aria-pressed','false'); }
+  function pick(k){
+    setSelection(k);
+    // single-select: repaint pressed states
+    var chips = $('chips').children;
+    for(var i=0;i<chips.length;i++){
+      var isNone = chips[i].classList.contains('none-chip');
+      var thisKey = isNone ? NONE : shuffledOpts[i];
+      chips[i].setAttribute('aria-pressed', thisKey===k ? 'true':'false');
     }
-  }
-  function toggleNone(btn){
-    var pressed = btn.getAttribute('aria-pressed') === 'true';
-    if(pressed){ answers[qi] = answers[qi].filter(function(x){return x!==-1;}); btn.setAttribute('aria-pressed','false'); }
-    else {
-      answers[qi] = [-1]; btn.setAttribute('aria-pressed','true');
-      Array.prototype.forEach.call(document.querySelectorAll('#chips .chip:not(.none-chip)'), function(c){ c.setAttribute('aria-pressed','false'); });
-    }
+    $('nextBtn').disabled = false;
   }
 
   $('nextBtn').addEventListener('click', function(){
-    if(qi < TRACES.length-1){ qi++; renderQuestion(); window.scrollTo({top:0, behavior:'smooth'}); }
+    if(currentSelection()==null) return;
+    if(qi===4){ buildPool(); }          // entering round 2
+    if(qi < 9){ qi++; renderQuestion(); scrollTop(); }
     else { computeAndShow(); }
   });
   $('backBtn').addEventListener('click', function(){
-    if(qi > 0){ qi--; renderQuestion(); window.scrollTo({top:0, behavior:'smooth'}); }
+    if(qi>0){ qi--; renderQuestion(); scrollTop(); }
   });
 
-  /* ---------- STAGE 3 — scoring ---------- */
-  function computeAndShow(){
-    // weighted score + trace-hit count per domain
-    var score = domains.map(function(){ return 0; });
-    var hits  = domains.map(function(){ return 0; });
-    var grid  = domains.map(function(){ return TRACES.map(function(){ return false; }); });
+  /* choose round-2 domain pool from round-1 family votes */
+  function buildPool(){
+    var votes = {}; FAMILIES.forEach(function(f){ votes[f.key]=0; });
+    p1.forEach(function(v){ if(v && v!==NONE) votes[v]++; });
+    var ranked = FAMILIES.map(function(f){ return f.key; })
+      .sort(function(a,b){ return votes[b]-votes[a]; });
+    var top = ranked[0], topV = votes[top];
 
-    answers.forEach(function(sel, q){
-      sel.forEach(function(di){
-        if(di < 0) return;
-        score[di] += TRACES[q].weight;
-        hits[di]  += 1;
-        grid[di][q] = true;
+    var chosenFams = [];
+    if(topV === 0){
+      // no family signal at all: fall back to one flagship domain per family
+      pool = FAMILIES.map(function(f){ return FAM_DOMAINS[f.key][0]; }).slice(0, POOL_CAP);
+      return;
+    }
+    chosenFams.push(top);
+    // include the runner-up family too if it's within one vote (straddler)
+    if(ranked[1] && votes[ranked[1]] > 0 && votes[ranked[1]] >= topV-1) chosenFams.push(ranked[1]);
+
+    var p = [];
+    chosenFams.forEach(function(fk){
+      FAM_DOMAINS[fk].forEach(function(d){ if(p.length < POOL_CAP) p.push(d); });
+    });
+    // guarantee at least 3 options to choose among
+    if(p.length < 3){
+      FAMILIES.some(function(f){
+        FAM_DOMAINS[f.key].forEach(function(d){ if(p.length<POOL_CAP && p.indexOf(d)<0) p.push(d); });
+        return p.length>=4;
       });
+    }
+    pool = p;
+  }
+
+  /* ================= SCORING ================= */
+  function computeAndShow(){
+    // round-2 domain tally
+    var dVotesMap = {}; pool.forEach(function(d){ dVotesMap[d.key]=0; });
+    var grid = {}; pool.forEach(function(d){ grid[d.key]=[false,false,false,false,false]; });
+    var noneCount = 0;
+    p1.forEach(function(v){ if(v===NONE) noneCount++; });
+    p2.forEach(function(v, j){
+      if(v===NONE || v==null){ if(v===NONE) noneCount++; return; }
+      if(dVotesMap[v]==null) dVotesMap[v]=0;
+      dVotesMap[v]++; if(grid[v]) grid[v][j]=true;
     });
 
-    // rank
-    var order = domains.map(function(_,i){ return i; }).sort(function(a,b){
-      if(score[b] !== score[a]) return score[b]-score[a];
-      return hits[b]-hits[a];
-    });
-    var top = order[0];
-    var topScore = score[top], topHits = hits[top];
-    var second = order.length > 1 ? order[1] : -1;
-    var secondScore = second > -1 ? score[second] : 0;
+    var ranked = pool.map(function(d){ return d.key; })
+      .sort(function(a,b){ return dVotesMap[b]-dVotesMap[a]; });
+    var topKey = ranked[0];
+    var dVotes = topKey ? dVotesMap[topKey] : 0;
+    var secondKey = ranked[1] || null;
+    var rVotes = secondKey ? dVotesMap[secondKey] : 0;
 
-    // contenders = domains that captured any signal
-    var contenders = score.filter(function(s){ return s > 0; }).length;
+    // family votes backing the winning domain
+    var winFam = topKey ? DOM_BY_KEY[topKey].fam : null;
+    var fWin = 0; p1.forEach(function(v){ if(v===winFam) fWin++; });
 
-    // dominance: how far the leader out-distances the runner-up (0.5 tie .. 1 uncontested)
-    var dominance = (topScore + secondScore) > 0 ? topScore / (topScore + secondScore) : 0;
-    // convergence: fraction of the ten independent traces the leader captured
-    var convergence = topHits / TRACES.length;
-    // potency: leader's weighted score vs. the theoretical maximum
-    var potency = topScore / MAXW;
-
-    /* ---- certainty model ------------------------------------------
-       Certainty is HIGH only when the leader (a) captures many
-       independent traces AND (b) clearly out-distances rivals.
-       We treat each captured trace as lowering the chance the pattern
-       is coincidental, then temper by dominance & absolute potency. */
-    var certainty;
-    var band, bandTxt, inconclusive = false;
-
-    if(topScore === 0 || topHits < 3){
+    var inconclusive = false, certainty;
+    if(dVotes < 2 || noneCount >= 7){
       inconclusive = true;
-      certainty = Math.round(20 + potency*100);
+      certainty = Math.round(18 + (dVotes/5)*30);   // low, honest
     } else {
-      // core convergence term, 0..1, sharpened so 8+/10 traces reads as near-certain
-      var convTerm = Math.pow(convergence, 0.7);           // 0.8 -> .86, 1.0 -> 1
-      // dominance credit: a leader that out-distances the OTHER named candidates
-      // (even ones that scored zero) has genuinely won the comparison. We only
-      // fall back to a neutral prior if fewer than two domains were ever named.
-      var domTerm  = domains.length < 2 ? 0.85 : (dominance - 0.5) / 0.5; // 0..1
-      domTerm = Math.max(0, Math.min(1, domTerm));
-      var raw = 0.60*convTerm + 0.25*domTerm + 0.15*potency;
-      certainty = Math.round(40 + raw*59);                 // maps to ~40..99
-      certainty = Math.min(99, certainty);
+      var convD = dVotes/5;                     // how many of 5 tells agreed
+      var convF = fWin/5;                       // territory agreement
+      var dom = (dVotes+rVotes)>0 ? dVotes/(dVotes+rVotes) : 1;  // vs runner-up
+      var nonePenalty = 1 - (noneCount/10)*0.5; // scattered 'none' lowers trust
+      var raw = (0.50*convD + 0.20*convF + 0.30*dom) * nonePenalty;
+      certainty = Math.min(99, Math.round(40 + raw*59));
     }
 
-    // band label
+    var band, bandTxt;
     if(inconclusive){ band='inconclusive'; bandTxt='INCONCLUSIVE'; }
-    else if(certainty >= 92 && topHits >= 8){ band='conclusive'; bandTxt='CONCLUSIVE'; }
-    else if(certainty >= 78 && topHits >= 6){ band='strong'; bandTxt='STRONG'; }
-    else if(certainty >= 62){ band='probable'; bandTxt='PROBABLE'; }
+    else if(certainty>=90 && dVotes>=4){ band='conclusive'; bandTxt='CONCLUSIVE'; }
+    else if(certainty>=76 && dVotes>=3){ band='strong'; bandTxt='STRONG'; }
+    else if(certainty>=60){ band='probable'; bandTxt='PROBABLE'; }
     else { band='weak'; bandTxt='WEAK / CONTESTED'; }
 
-    renderResult({
-      order:order, score:score, hits:hits, grid:grid, top:top, second:second,
-      topScore:topScore, topHits:topHits, secondScore:secondScore,
-      certainty:certainty, convergence:convergence, dominance:dominance,
-      contenders:contenders, band:band, bandTxt:bandTxt, inconclusive:inconclusive
+    render({
+      ranked:ranked, dVotesMap:dVotesMap, grid:grid, topKey:topKey, secondKey:secondKey,
+      dVotes:dVotes, rVotes:rVotes, fWin:fWin, winFam:winFam, noneCount:noneCount,
+      certainty:certainty, band:band, bandTxt:bandTxt, inconclusive:inconclusive
     });
   }
 
-  function renderResult(r){
-    $('stage-signals').hidden = true;
+  function render(r){
+    $('stage-q').hidden = true;
     $('stage-result').hidden = false;
-    window.scrollTo({top:0, behavior:'smooth'});
+    scrollTop();
 
-    var winLabel = domains[r.top].label;
-
-    // headline
     if(r.inconclusive){
       $('verdictBand').textContent = 'Assay complete · no convergence';
-      $('verdictDomain').textContent = 'No clear domain';
+      $('verdictDomain').textContent = 'No single domain';
       $('verdictDomain').style.color = 'var(--structure)';
-      $('verdictLead').innerHTML = 'Your signals didn’t converge on a single territory — the traces scattered, or too few fired. That’s a real result, not a failure: it usually means your expertise is still <b>consolidating</b>, or that your strongest domain wasn’t among the candidates you named. Try again with sharper candidates, or read the matrix below to see which traces are already lighting up.';
+      $('verdictFam').textContent = '';
+      $('verdictLead').innerHTML = 'Your answers didn’t converge on one place — the tells scattered, or too little felt like you. That’s an honest result, not a failure. It usually means one of two things: your real expertise sits <b>outside this instrument’s map</b>, or your skill is <b>broad but not yet deep</b> in any single spot. The readout below shows where the flickers were.';
     } else {
+      var d = DOM_BY_KEY[r.topKey];
       $('verdictBand').textContent = 'Assay complete · convergence detected';
-      $('verdictDomain').textContent = winLabel;
+      $('verdictDomain').textContent = d.name;
       $('verdictDomain').style.color = 'var(--signal)';
+      $('verdictFam').textContent = 'Territory · ' + FAM_BY_KEY[d.fam].name;
       var lead;
-      if(r.band === 'conclusive'){
-        lead = 'The traces converge, hard, on one territory. Across ten independent tests of genuine mastery, <b>'+esc(winLabel)+'</b> lit up '+r.topHits+' of them and out-distanced everything else you named. This is the domain you are, without much doubt, an expert in.';
-      } else if(r.band === 'strong'){
-        lead = 'The evidence points clearly at <b>'+esc(winLabel)+'</b>. It captured '+r.topHits+' of the ten independent traces of expertise — a strong, coherent signal, with a little room left to consolidate.';
-      } else if(r.band === 'probable'){
-        lead = 'Your leading domain is <b>'+esc(winLabel)+'</b>, but the signal is real rather than overwhelming. It fired on '+r.topHits+' traces; the certainty band below reflects that it’s probable, not locked.';
+      if(r.band==='conclusive'){
+        lead = 'The tells converge, hard, on one place. Across five independent signals — a mistake, a reflex, a piece of jargon, a prediction, a detail — <b>'+esc(d.name)+'</b> lit up '+r.dVotes+' of them and out-distanced everything else. This is the thing you’re an expert in.';
+      } else if(r.band==='strong'){
+        lead = 'The signal points clearly at <b>'+esc(d.name)+'</b>. It captured '+r.dVotes+' of the five independent tells — a strong, coherent pattern, with a little room left to consolidate.';
+      } else if(r.band==='probable'){
+        lead = 'Your leading domain is <b>'+esc(d.name)+'</b>, but the signal is real rather than overwhelming — '+r.dVotes+' of five tells agreed. Treat the certainty below as a genuine lead, not a locked verdict.';
       } else {
-        lead = '<b>'+esc(winLabel)+'</b> edges ahead — but the traces are contested and spread across your candidates. Treat this as a lead to investigate, not a settled verdict.';
+        lead = '<b>'+esc(d.name)+'</b> edges ahead, but the tells are contested and spread out. It’s a direction worth investigating, not a settled answer.';
       }
       $('verdictLead').innerHTML = lead;
     }
 
-    // gauges
     animateNum($('certVal'), r.certainty, 900);
     $('certBar').style.width = r.certainty + '%';
     $('bandTag').textContent = r.bandTxt;
-    animateNum($('convVal'), r.topHits, 900);
-    $('convBar').style.width = (r.convergence*100) + '%';
-    $('domTag').textContent = r.contenders <= 1 ? 'SINGLE CANDIDATE' : (Math.round(r.dominance*100) + '% OF LEAD');
+    animateNum($('convVal'), r.dVotes, 900);
+    $('convBar').style.width = (r.dVotes/5*100) + '%';
+    $('domTag').textContent = r.rVotes>0 ? (Math.round(r.dVotes/(r.dVotes+r.rVotes)*100)+'% OF LEAD') : (r.dVotes>0?'UNCONTESTED':'—');
 
-    // matrix
     buildMatrix(r);
 
-    // interpretation
-    var interp = $('interpret');
-    var html = '<h3>How to read this</h3>';
+    var interp = $('interpret'), html = '<h3>How to read this</h3>';
     if(r.inconclusive){
-      html += '<p>Certainty is deliberately withheld here. This instrument only claims high confidence when one domain fires across <b>many independent traces at once</b> — the conjunction is what makes a verdict trustworthy. Yours didn’t reach that bar.</p>'+
-              '<p>Two common causes: the domain you’re actually expert in wasn’t on your list, or your practice is broad but not yet deep in any single place. Re-run with the true candidate included, and watch whether one row lights up end to end.</p>';
+      html += '<p>Certainty is deliberately withheld here. This instrument only claims confidence when one domain fires across <b>several independent tells at once</b> — the conjunction is what makes a verdict trustworthy. Yours didn’t clear that bar.</p>'+
+              '<p>If your real domain wasn’t among the options, that’s the map’s limit, not yours — the eight families here can’t contain every human skill. If it <em>was</em> present but your picks jumped around, your expertise may still be consolidating. Either way, running it again and trusting your gut on each tell will sharpen the read.</p>';
     } else {
-      html += '<p>Why '+r.certainty+'%, and not a flattering 100? Because certainty here isn’t a vibe — it’s built from three things: <b>convergence</b> ('+r.topHits+'/10 independent traces fired), <b>dominance</b> ('+(r.contenders<=1?'a single serious candidate':Math.round(r.dominance*100)+'% of the leading margin')+'), and raw potency. High marks on all three is what pushes it toward the ceiling.</p>';
-      html += '<p>The logic is Bayesian, not generous: any one trace can be vanity or luck. But the odds that <b>'+esc(winLabel)+'</b> would light up '+r.topHits+' unrelated traces — tacit knowledge <em>and</em> an error-sense <em>and</em> uncounted hours <em>and</em> the rest — purely by accident are small. That conjunction is the real basis for confidence.</p>';
-      if(r.band !== 'conclusive'){
-        html += '<p>To move toward certainty: look at the unlit cells in your winning row. Each dark cell is a trace of mastery you haven’t yet developed — the concrete edge of your expertise.</p>';
+      var d = DOM_BY_KEY[r.topKey];
+      html += '<p>Why '+r.certainty+'%, and not a flattering 100? Because certainty here is built, not asserted: from <b>convergence</b> ('+r.dVotes+'/5 independent tells fired), <b>territory agreement</b> ('+r.fWin+'/5 of your Round 1 answers pointed at '+esc(FAM_BY_KEY[d.fam].name)+'), and <b>dominance</b> over the runner-up.</p>';
+      html += '<p>The logic is Bayesian, not generous: any single tell could be a coincidence. But the odds that <b>'+esc(d.name)+'</b> would light up '+r.dVotes+' unrelated tells — the wince <em>and</em> the instinct <em>and</em> the jargon <em>and</em> the rest — purely by chance are small. That conjunction is the real basis for confidence.</p>';
+      if(r.band!=='conclusive'){
+        html += '<p>To move toward certainty: look at the dark cells in your winning row. Each unlit tell is an edge of this skill you haven’t fully grown into yet.</p>';
       }
     }
     interp.innerHTML = html;
 
-    // footnote
+    var winName = r.topKey ? DOM_BY_KEY[r.topKey].name : '—';
     $('footnote').innerHTML =
-      'ASSAY LOG · leader = '+esc(winLabel).toUpperCase()+' · weighted score '+r.topScore+'/'+MAXW+
-      ' · traces fired '+r.topHits+'/10'+
-      (r.contenders>1 ? ' · runner-up '+esc(domains[r.second].label).toUpperCase()+' at '+r.secondScore : ' · uncontested')+
-      ' · certainty '+r.certainty+'%';
+      'ASSAY LOG · leader = '+esc(winName).toUpperCase()+
+      ' · tells fired '+r.dVotes+'/5'+
+      (r.rVotes>0 ? ' · runner-up '+esc(DOM_BY_KEY[r.secondKey].name).toUpperCase()+' at '+r.rVotes : '')+
+      ' · territory '+r.fWin+'/5 · skipped '+r.noneCount+'/10 · certainty '+r.certainty+'%';
   }
 
   function buildMatrix(r){
+    // rows = domains that got >=1 vote (else top of pool), cols = 5 tells
+    var rows = r.ranked.filter(function(k){ return r.dVotesMap[k] > 0; });
+    if(rows.length === 0) rows = r.ranked.slice(0, Math.min(3, r.ranked.length));
     var tbl = $('matrix');
-    var thead = '<thead><tr><th style="text-align:left">Domain</th>';
-    for(var t=0;t<TRACES.length;t++){ thead += '<th title="'+esc(stripTags(TRACES[t].q))+'">'+String(t+1).padStart(2,'0')+'</th>'; }
+    var thead = '<thead><tr><th style="text-align:left">Candidate</th>';
+    R2_LENS.forEach(function(l){ thead += '<th title="'+esc(l.name)+'">'+l.code+'</th>'; });
     thead += '<th>Σ</th></tr></thead>';
-
     var tbody = '<tbody>';
-    r.order.forEach(function(di){
-      var isWin = (di === r.top) && !r.inconclusive && r.score[di] > 0;
-      tbody += '<tr class="'+(isWin?'win':'')+'"><th>'+esc(domains[di].label)+'</th>';
-      for(var t=0;t<TRACES.length;t++){
-        tbody += '<td><span class="cell '+(r.grid[di][t]?'on':'')+'"></span></td>';
-      }
-      tbody += '<td class="total">'+r.score[di]+'</td></tr>';
+    rows.forEach(function(k){
+      var isWin = (k===r.topKey) && !r.inconclusive;
+      tbody += '<tr class="'+(isWin?'win':'')+'"><th>'+esc(DOM_BY_KEY[k].name)+'</th>';
+      for(var c=0;c<5;c++){ tbody += '<td><span class="cell '+(r.grid[k][c]?'on':'')+'"></span></td>'; }
+      tbody += '<td class="total">'+r.dVotesMap[k]+'</td></tr>';
     });
     tbody += '</tbody>';
     tbl.innerHTML = thead + tbody;
   }
 
-  /* ---------- utils ---------- */
-  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
-  function stripTags(s){ return String(s).replace(/<[^>]+>/g,''); }
+  /* ================= UTIL ================= */
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function scrollTop(){ window.scrollTo({top:0, behavior:'smooth'}); }
   function animateNum(el, target, dur){
-    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent = target; return; }
-    var start = 0, t0 = null;
-    function frame(ts){
-      if(!t0) t0 = ts;
-      var p = Math.min(1, (ts - t0)/dur);
-      el.textContent = Math.round(start + (target-start)*(1-Math.pow(1-p,3)));
-      if(p < 1) requestAnimationFrame(frame);
-    }
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){ el.textContent=target; return; }
+    var t0=null;
+    function frame(ts){ if(!t0)t0=ts; var p=Math.min(1,(ts-t0)/dur); el.textContent=Math.round(target*(1-Math.pow(1-p,3))); if(p<1) requestAnimationFrame(frame); }
     requestAnimationFrame(frame);
   }
 
-  /* ---------- restart ---------- */
   $('restartBtn').addEventListener('click', function(){
-    $('stage-result').hidden = true;
-    $('stage-elicit').hidden = false;
-    window.scrollTo({top:0, behavior:'smooth'});
+    qi=0; p1=[null,null,null,null,null]; p2=[null,null,null,null,null]; pool=[];
+    $('stage-result').hidden=true; $('stage-intro').hidden=false; scrollTop();
   });
 
-  refreshStart();
 })();
 </script>
 </body>
