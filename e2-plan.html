@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>E-2 Engagement &amp; Service Plans — Eman &amp; Associates P.C.</title>
+    <link rel="icon" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1a2638;
+            --sage: #6b9e85;
+            --sage-dark: #5a8a72;
+            --cream: #faf8f5;
+            --text-primary: #1a2638;
+            --text-secondary: #5a6672;
+            --text-light: #8a939c;
+            --border: #e4e0db;
+            --border-faint: #ece8e3;
+            --white: #ffffff;
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            color: var(--text-primary);
+            background: var(--cream);
+            line-height: 1.6;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        .serif { font-family: 'Playfair Display', Georgia, serif; }
+
+        /* ─── SLIDE FRAME ─── */
+        .slide {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: clamp(2rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 3.5rem);
+        }
+        .slide + .slide { border-top: 1px solid var(--border); }
+
+        /* ─── HEADER ─── */
+        .s-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .brand {
+            font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+            letter-spacing: 0.22em;
+            font-weight: 500;
+            color: var(--navy);
+            white-space: nowrap;
+            padding-top: 0.6rem;
+        }
+        .brand .amp { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; letter-spacing: 0; }
+        .brand .pc { color: var(--text-light); font-weight: 400; }
+        .s-title-wrap { text-align: right; margin-left: auto; }
+        .s-title {
+            font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.1;
+        }
+        .s-sub {
+            margin-top: 0.5rem;
+            font-size: clamp(0.62rem, 1.15vw, 0.78rem);
+            letter-spacing: 0.14em;
+            font-weight: 500;
+            color: var(--sage-dark);
+            text-transform: uppercase;
+        }
+
+        /* ─── ROADMAP ─── */
+        .roadmap {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1rem, 2.5vw, 2rem);
+            margin-top: clamp(2rem, 5vw, 3.75rem);
+        }
+        .phase-week {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 0.85rem;
+        }
+        .phase-rail {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-bottom: 1.6rem;
+        }
+        .phase-rail .dot {
+            width: 11px; height: 11px;
+            border-radius: 50%;
+            border: 2px solid var(--sage);
+            background: var(--cream);
+            flex-shrink: 0;
+        }
+        .phase-rail .line {
+            height: 2px;
+            background: var(--sage);
+            flex: 1;
+        }
+        .phase-card {
+            border-top: 3px solid var(--sage);
+            border-left: 1px solid var(--border-faint);
+            border-right: 1px solid var(--border-faint);
+            border-bottom: 1px solid var(--border-faint);
+            background: var(--white);
+            padding: clamp(1.4rem, 2.5vw, 2rem);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .phase-top {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1.4rem;
+        }
+        .phase-num {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 3vw, 2.1rem);
+            font-weight: 500;
+            color: var(--navy);
+            line-height: 1;
+        }
+        .phase-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.15;
+        }
+        .phase-name span {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+        ul.steps { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; }
+        ul.steps li {
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+        ul.steps li::before {
+            content: "";
+            position: absolute;
+            left: 0; top: 0.4em;
+            width: 8px; height: 8px;
+            background: var(--sage);
+        }
+        .exit-gate {
+            margin-top: auto;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-faint);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.45;
+        }
+        .exit-gate b {
+            color: var(--sage-dark);
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+        }
+
+        /* ─── PLANS ─── */
+        .plans {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(1rem, 2.5vw, 2rem);
+            margin-top: clamp(2rem, 5vw, 3.75rem);
+        }
+        .plan {
+            position: relative;
+            border-top: 3px solid var(--sage);
+            border-left: 1px solid var(--border-faint);
+            border-right: 1px solid var(--border-faint);
+            border-bottom: 1px solid var(--border-faint);
+            background: var(--white);
+            padding: clamp(1.4rem, 2.5vw, 2rem);
+            display: flex;
+            flex-direction: column;
+        }
+        .plan.featured { box-shadow: 0 10px 30px -12px rgba(26,38,56,0.18); }
+        .plan-badge {
+            position: absolute;
+            top: -3px; right: 0;
+            background: var(--sage-dark);
+            color: #fff;
+            font-size: 0.62rem;
+            letter-spacing: 0.16em;
+            font-weight: 600;
+            text-transform: uppercase;
+            padding: 0.4rem 0.85rem;
+        }
+        .plan-tier {
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 0.9rem;
+        }
+        .plan-price {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 4.5vw, 3rem);
+            font-weight: 500;
+            color: var(--navy);
+            line-height: 1;
+        }
+        .plan-price em {
+            font-family: 'Inter', sans-serif;
+            font-style: normal;
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-left: 0.35rem;
+            vertical-align: 0.5em;
+        }
+        .plan-desc {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .plan-inc-label {
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border-faint);
+            font-size: 0.7rem;
+            letter-spacing: 0.13em;
+            font-weight: 600;
+            color: var(--sage-dark);
+            text-transform: uppercase;
+            margin-bottom: 0.9rem;
+        }
+        .plan ul.steps li { font-size: 0.92rem; }
+
+        /* ─── EVERY PLAN INCLUDES ─── */
+        .includes {
+            margin-top: clamp(1.5rem, 3vw, 2rem);
+            border: 1px solid var(--border);
+            background: var(--white);
+            padding: clamp(1.4rem, 3vw, 2rem);
+        }
+        .includes-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            font-weight: 600;
+            color: var(--sage-dark);
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+        .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem 1.5rem;
+        }
+        .includes-grid div {
+            position: relative;
+            padding-left: 1.4rem;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            line-height: 1.35;
+        }
+        .includes-grid div::before {
+            content: "";
+            position: absolute;
+            left: 0; top: 0.35em;
+            width: 8px; height: 8px;
+            background: var(--sage);
+        }
+
+        .fine-print {
+            margin-top: clamp(1.5rem, 3vw, 2rem);
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            max-width: 62ch;
+        }
+
+        /* ─── SLIDE FOOTER TAGLINE ─── */
+        .s-foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-top: clamp(2rem, 4vw, 3rem);
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        .tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--navy);
+        }
+        .tagline em { font-style: italic; color: var(--sage-dark); }
+        .s-foot .site {
+            font-size: 0.75rem;
+            letter-spacing: 0.16em;
+            font-weight: 500;
+            color: var(--text-light);
+            text-transform: uppercase;
+        }
+
+        /* ─── CTA ─── */
+        .cta {
+            text-align: center;
+            padding: clamp(2.5rem, 6vw, 4rem) 1.25rem clamp(3rem, 7vw, 5rem);
+            background: var(--navy);
+        }
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .cta a {
+            display: inline-block;
+            background: var(--sage);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.03em;
+            padding: 0.95rem 2.4rem;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+        .cta a:hover { background: var(--sage-dark); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 860px) {
+            .roadmap, .plans { grid-template-columns: 1fr; }
+            .includes-grid { grid-template-columns: repeat(2, 1fr); }
+            .s-head { flex-direction: column; }
+            .s-title-wrap { text-align: left; margin-left: 0; }
+            .brand { padding-top: 0; }
+            .phase-rail { display: none; }
+        }
+        @media (max-width: 460px) {
+            .includes-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ══════════ SLIDE 1 · ENGAGEMENT ROADMAP ══════════ -->
+    <section class="slide" id="roadmap">
+        <div class="s-head">
+            <div class="brand">EMAN <span class="amp">&amp;</span> ASSOCIATES <span class="pc">P.C.</span></div>
+            <div class="s-title-wrap">
+                <h1 class="s-title serif">E-2 Treaty Investor Engagement</h1>
+                <div class="s-sub">Engagement to Visa · About 3 to 4 Months · Consular Processing</div>
+            </div>
+        </div>
+
+        <div class="roadmap">
+            <!-- Phase I -->
+            <div>
+                <div class="phase-week">Week 1</div>
+                <div class="phase-rail"><span class="dot"></span><span class="line"></span></div>
+                <div class="phase-card">
+                    <div class="phase-top">
+                        <div class="phase-num">I</div>
+                        <div class="phase-name serif">Strategy &amp; Structure<span>Weeks 1–3</span></div>
+                    </div>
+                    <ul class="steps">
+                        <li>E-2 Strategy Session &amp; Qualification Assessment</li>
+                        <li>U.S. LLC Formation in Target State</li>
+                        <li>Operating Agreement</li>
+                        <li>Franchise Agreement Review &amp; Negotiation</li>
+                        <li>Investment Escrow Structuring</li>
+                    </ul>
+                    <div class="exit-gate"><b>Exit Gate ▸</b> Entity formed, franchise agreement signed, escrow in place</div>
+                </div>
+            </div>
+
+            <!-- Phase II -->
+            <div>
+                <div class="phase-week">Week 3</div>
+                <div class="phase-rail"><span class="dot"></span><span class="line"></span></div>
+                <div class="phase-card">
+                    <div class="phase-top">
+                        <div class="phase-num">II</div>
+                        <div class="phase-name serif">Application Build &amp; Filing<span>Weeks 3–7</span></div>
+                    </div>
+                    <ul class="steps">
+                        <li>Source-of-Funds Documentation &amp; Financial Trail</li>
+                        <li>Business Plan with Financial Projections</li>
+                        <li>Complete Visa Application Preparation &amp; Filing</li>
+                    </ul>
+                    <div class="exit-gate"><b>Exit Gate ▸</b> Application accepted for consular review</div>
+                </div>
+            </div>
+
+            <!-- Phase III -->
+            <div>
+                <div class="phase-week">Week 8</div>
+                <div class="phase-rail"><span class="dot"></span><span class="line"></span></div>
+                <div class="phase-card">
+                    <div class="phase-top">
+                        <div class="phase-num">III</div>
+                        <div class="phase-name serif">Interview &amp; Approval<span>Weeks 8–14+</span></div>
+                    </div>
+                    <ul class="steps">
+                        <li>Consular Interview Prep (Mock Interview)</li>
+                        <li>Interview Day Support &amp; Visa Issuance</li>
+                    </ul>
+                    <div class="exit-gate"><b>Exit Gate ▸</b> Visa in hand</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="s-foot">
+            <div class="tagline serif">Some firms file. <em>We finish.</em></div>
+            <div class="site">emanlegal.com</div>
+        </div>
+    </section>
+
+    <!-- ══════════ SLIDE 2 · SERVICE PLANS ══════════ -->
+    <section class="slide" id="plans">
+        <div class="s-head">
+            <div class="brand">EMAN <span class="amp">&amp;</span> ASSOCIATES <span class="pc">P.C.</span></div>
+            <div class="s-title-wrap">
+                <h2 class="s-title serif">Service Plans &amp; Fee Schedule</h2>
+                <div class="s-sub">E-2 Treaty Investor Engagement · Flat Legal Fees · Same Case Standard on Every Plan</div>
+            </div>
+        </div>
+
+        <div class="plans">
+            <!-- Premier -->
+            <div class="plan">
+                <div class="plan-tier">Premier</div>
+                <div class="plan-price serif">$21,500 <em>Flat</em></div>
+                <div class="plan-desc">For acquisitions: the target business vetted before the money moves.</div>
+                <div class="plan-inc-label">Everything in Select, plus</div>
+                <ul class="steps">
+                    <li>Business acquisition due diligence: financial, legal, and operational review of the target business</li>
+                </ul>
+            </div>
+
+            <!-- Select (featured) -->
+            <div class="plan featured">
+                <div class="plan-badge">Most Selected</div>
+                <div class="plan-tier">Select</div>
+                <div class="plan-price serif">$11,500 <em>Flat</em></div>
+                <div class="plan-desc">The complete case, with downside fee protection.</div>
+                <div class="plan-inc-label">Everything in Standard, plus</div>
+                <ul class="steps">
+                    <li>50% legal-fee refund if the application is denied</li>
+                </ul>
+            </div>
+
+            <!-- Standard -->
+            <div class="plan">
+                <div class="plan-tier">Standard</div>
+                <div class="plan-price serif">$9,950 <em>Flat</em></div>
+                <div class="plan-desc">The complete E-2 case, start to finish.</div>
+                <div class="plan-inc-label">Included</div>
+                <ul class="steps">
+                    <li>All ten core services below, on standard engagement terms</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="includes">
+            <div class="includes-label">Every Plan Includes</div>
+            <div class="includes-grid">
+                <div>E-2 Strategy Session &amp; Qualification Assessment</div>
+                <div>U.S. LLC Formation in Target State</div>
+                <div>Operating Agreement</div>
+                <div>Franchise Agreement Review &amp; Negotiation</div>
+                <div>Investment Escrow Structuring</div>
+                <div>Source-of-Funds Documentation &amp; Financial Trail</div>
+                <div>Business Plan with Financial Projections</div>
+                <div>Complete Visa Application Preparation &amp; Filing</div>
+                <div>Consular Interview Prep (Mock Interview)</div>
+                <div>Client Portal Access</div>
+            </div>
+        </div>
+
+        <p class="fine-print">
+            All fees are flat legal fees in U.S. dollars; government filing fees are additional.
+            Dependent representation is available at $1,000 per applicant. Refund terms are
+            contractual fee terms only and are not a guarantee or prediction of any outcome.
+            Full terms are set out in the Engagement Agreement.
+        </p>
+
+        <div class="s-foot">
+            <div class="tagline serif">Some firms file. <em>We finish.</em></div>
+            <div class="site">emanlegal.com</div>
+        </div>
+    </section>
+
+    <!-- ══════════ CTA ══════════ -->
+    <div class="cta">
+        <h2>Ready to begin your E-2?</h2>
+        <a href="https://app.emanlegal.com/widget/booking/XTTM106cQhjWfErMYSrQ" target="_blank" rel="noopener">Book a Call</a>
+    </div>
+
+</body>
+</html>
