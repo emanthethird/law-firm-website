@@ -69,6 +69,11 @@
         .footer__links a:hover { color: rgba(255,255,255,0.6); }
         .footer__legal { font-size: 0.75rem; color: rgba(255,255,255,0.2); width: 100%; }
         @media (max-width: 768px) { .nav__links { display: none; } .nav__toggle { display: flex; } .nav__links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy-deep); padding: 1.5rem 2rem; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.05); z-index: 99; } .related__grid { grid-template-columns: 1fr; } .footer__inner { flex-direction: column; align-items: flex-start; } }
+        .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.9rem; }
+        .article-body th { background: var(--navy); color: var(--white); text-align: left; padding: 0.75rem 1rem; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em; }
+        .article-body td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-secondary); line-height: 1.6; vertical-align: top; }
+        .article-body tr:nth-child(even) td { background: var(--cream); }
+        .table-scroll { overflow-x: auto; }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ98LNEDZL"></script>
@@ -103,7 +108,7 @@
   "mainEntityOfPage": "https://emanlegal.com/blog/e2-visa-requirements",
   "image": "https://emanlegal.com/hero.jpg",
   "datePublished": "2026-04-10",
-  "dateModified": "2026-06-18",
+  "dateModified": "2026-07-28",
   "author": {
     "@type": "Person",
     "name": "Emmanuel Okharedia",
@@ -122,6 +127,71 @@
       "url": "https://emanlegal.com/favicon.svg"
     }
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://emanlegal.com/blog/e2-visa-requirements#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I qualify for an E-2 visa with less than $50,000?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rarely. Investments below $50,000 are very rarely approved because the proportionality and sufficiency tests are hard to satisfy at that level. Most successful E-2 investments fall between $80,000 and $300,000."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does buying a franchise satisfy the E-2 requirements?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A franchise can work well because the paid franchise fee, build-out costs, and equipment all count as at-risk investment, and the franchisor's proven model strengthens the business plan. But a franchise does not automatically satisfy any requirement; the investment must still be substantial and the business non-marginal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my spouse work on an E-2 visa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The spouse of an E-2 investor receives work authorization incident to status and can work for any employer in the United States, not just the E-2 business. Children under 21 can live in the U.S. and attend school but cannot work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long is the E-2 visa valid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Validity depends on the reciprocity schedule between the United States and your country. Many treaty countries receive visas valid up to five years, while others receive much shorter periods. The E-2 can be renewed indefinitely as long as the business continues to operate and the requirements remain satisfied."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to hire employees immediately?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. A new enterprise can qualify by showing the capacity to become non-marginal within five years, typically through a credible business plan with realistic hiring projections. But a plan that never involves hiring anyone is a serious weakness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I apply if my country is not a treaty country?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not directly. Treaty nationality is a strict citizenship requirement. Some investors obtain citizenship in a treaty country first, and others use alternative categories such as the L-1 intracompany transferee visa, which has no nationality restriction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to my E-2 status if I sell the business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "E-2 status is tied to the specific qualifying enterprise. If you sell the business, the basis for your status ends, and you must depart, change to another status, or invest in a new qualifying enterprise and file a new application."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -154,7 +224,7 @@
                 <span>&bull;</span>
                 <span>April 2026</span>
                 <span>&bull;</span>
-                <span>8 min read</span>
+                <span>13 min read</span>
             </div>
         </div>
     </div>
@@ -167,13 +237,40 @@
 
         <p>This article walks through all five requirements in detail. It covers what the law says, what consular officers are actually looking for, and where applicants most often stumble.</p>
 
+        <p>The requirements come from the statute at INA 101(a)(15)(E), the regulations at 8 CFR 214.2(e), and the State Department's instructions to consular officers at 9 FAM 402.9. Here is the whole framework at a glance:</p>
+
+        <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Requirement</th><th>What the officer looks for</th><th>Key evidence</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Treaty country nationality</td><td>You are a citizen of a treaty country, and the enterprise is at least 50 percent owned by treaty nationals</td><td>Passport, corporate ownership records, cap table or operating agreement</td></tr>
+                <tr><td>Substantial investment</td><td>The amount is proportional to the total cost of the business and sufficient to make it operational</td><td>Bank statements, wire transfers, purchase agreement, itemized startup budget</td></tr>
+                <tr><td>Investment at risk</td><td>Funds are irrevocably committed and exposed to loss if the business fails</td><td>Receipts, executed contracts, lease, escrow agreement with binding release conditions</td></tr>
+                <tr><td>Real and non-marginal enterprise</td><td>An active, operating business with the capacity to generate more than a minimal living</td><td>Business plan, financial projections, payroll records, tax returns</td></tr>
+                <tr><td>Develop and direct</td><td>You own at least 50 percent or otherwise hold operational control</td><td>Operating agreement, organizational chart, your resume and role description</td></tr>
+            </tbody>
+        </table>
+        </div>
+
         <h2>Requirement One: Treaty Country Nationality</h2>
 
         <p>You must be a citizen of a country that has a qualifying trade and commerce treaty with the United States. The U.S. maintains these treaties with more than 80 countries. Your nationality at the time of application controls, not your country of residence.</p>
 
         <p>This requirement is binary. Either your country has a treaty or it does not. If it does not, no amount of money or business experience changes your eligibility. Citizens of China, India, Brazil, Russia, Vietnam, and Nigeria are among the most common nationalities that cannot use the E-2 program.</p>
 
-        <p>If you hold dual citizenship, things get more interesting. If one of your nationalities is a treaty country, you may be able to apply through that nationality, even if your other passport is from a non-treaty country. See the full breakdown in <a href="e2-visa-treaty-countries.html">E-2 Treaty Countries: The Complete List and What It Means for You</a>.</p>
+        <h3>The 50 percent rule for company nationality</h3>
+
+        <p>The nationality requirement applies to the enterprise, not just to you. A company takes the nationality of its owners, and to qualify, at least 50 percent of the business must be owned by nationals of the treaty country. If you own the whole company, this is automatic. If you have partners, the math becomes a threshold issue: a British citizen who owns half of a U.S. LLC alongside an American partner has a qualifying British enterprise, but if that share drops to 40 percent, the company loses its treaty nationality and the E-2 fails. Any buy-in or restructuring that dilutes treaty ownership below half puts the visa itself at stake.</p>
+
+        <p>One technical point: a treaty-country citizen who holds a U.S. green card does not count toward the 50 percent. For this calculation, that owner's stake is treated as domestic.</p>
+
+        <h3>Dual citizens and permanent residents</h3>
+
+        <p>If you hold dual citizenship, things get more interesting. If one of your nationalities is a treaty country, you may be able to apply through that nationality, even if your other passport is from a non-treaty country. You choose which passport to apply under, and the enterprise's nationality follows the citizenship you use: a person holding both Indian and Canadian citizenship simply applies as a Canadian. See the full breakdown in <a href="e2-visa-treaty-countries.html">E-2 Treaty Countries: The Complete List and What It Means for You</a>.</p>
+
+        <p>Permanent residency, by contrast, is never enough. Someone who has lived in the United Kingdom for twenty years on permanent resident status but still carries a Nigerian passport is a Nigerian national for E-2 purposes. The treaty benefit attaches to citizenship only, and until the citizenship certificate is in hand, the E-2 door stays closed.</p>
 
         <p>One important nuance: the nationality that controls is the one you use to apply. You need to demonstrate ties to the treaty country and typically apply at that country's consulate.</p>
 
@@ -184,6 +281,10 @@
         <p><strong>Proportionality</strong> means your investment is a significant percentage of the total cost to acquire or establish the business. If the total cost is $100,000, putting in $80,000 is proportional. Putting in $20,000 is not, even if $20,000 is a lot of money in absolute terms.</p>
 
         <p><strong>Sufficiency</strong> means the amount is enough to ensure the business's successful operation. A business plan that requires $150,000 to launch properly, supported by an investment of $60,000, raises immediate questions.</p>
+
+        <h3>The sliding scale</h3>
+
+        <p>Proportionality operates as a sliding scale, and 9 FAM 402.9 describes it in exactly those terms: the lower the total cost of the business, the higher the percentage you are expected to fund. For a business that costs $100,000 to establish or acquire, an officer will generally want to see 80 to 100 percent of that amount invested. A $500,000 business might qualify with a somewhat lower proportion, and a multi-million dollar enterprise with a lower percentage still, because at that scale the absolute amount is unmistakably substantial on its own. Partial funding with a promise to invest more later reads as hedging.</p>
 
         <p>In practice, successful E-2 investments typically fall between $80,000 and $300,000. Investments below $50,000 are very rarely approved. Higher-cost businesses, such as manufacturing operations or full-service restaurants, often require significantly more. Read the deeper analysis in <a href="e2-visa-investment-amount.html">How Much Do You Need to Invest for an E-2 Visa</a>.</p>
 
@@ -204,6 +305,36 @@
 
         <p>The "at risk" requirement also means the investment must be subject to partial or total loss if the business fails. You need to be exposed to real commercial risk. A fully collateralized loan where you face no downside does not satisfy this element.</p>
 
+        <p>Here is how the line gets drawn in practice:</p>
+
+        <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Counts toward the investment</th><th>Does not count</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Purchase price actually paid for an existing business or franchise</td><td>Cash sitting in a personal or business account that you could withdraw tomorrow</td></tr>
+                <tr><td>Equipment, furniture, vehicles, and technology bought for the business</td><td>A letter of intent or unsigned agreement with no binding obligation</td></tr>
+                <tr><td>Leasehold improvements and build-out costs</td><td>Funds earmarked for the business but never actually spent</td></tr>
+                <tr><td>Inventory and initial supplies</td><td>Value you assign to your own ideas, time, or goodwill</td></tr>
+                <tr><td>Escrowed funds under a binding agreement with release conditioned only on visa issuance</td><td>Escrowed funds you can recover at will, with no binding release conditions</td></tr>
+                <tr><td>Loans secured by your personal assets, where you carry the repayment risk</td><td>Loans secured only by the assets of the E-2 business itself</td></tr>
+                <tr><td>Reasonable startup expenses: licenses, insurance, deposits, initial marketing</td><td>Fully collateralized borrowing where the lender's only recourse is business assets and you face no personal downside</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <p>The escrow entry matters because it is the standard tool for buying an existing business without gambling the purchase price on visa approval. A binding escrow agreement, with release conditioned only on visa issuance, satisfies the at-risk test while protecting you if the application is denied.</p>
+
+        <h3>Source of funds: proving where the money came from</h3>
+
+        <p>Committing the money is half the battle; you also have to trace it. Officers want a documented path from the origin of the funds to the business bank account, and gaps in that chain generate refusals.</p>
+
+        <p>Legitimate sources include earnings and savings (shown through employment records, tax returns, and bank statements over time), sale of property (shown through the sale contract and closing statement), sale of another business, inheritance, and gifts. A gifted investment is acceptable if documented: a signed gift letter stating the funds carry no repayment obligation, plus evidence of the donor's own lawful source of funds.</p>
+
+        <p>Borrowed funds follow the at-risk logic above. A loan secured by your personal assets, such as a mortgage on your home, counts because you carry the repayment risk personally. A loan secured by the assets of the E-2 business itself does not. How you assemble and paper these funds is a planning exercise in its own right; see <a href="e2-visa-investment-structure.html">How to Structure Your E-2 Investment</a>.</p>
+
+
         <h2>Requirement Four: A Real and Non-Marginal Enterprise</h2>
 
         <p>This is where many applications run into trouble, and it is worth spending time on.</p>
@@ -218,6 +349,18 @@
 
         <p>A solo consulting firm with no employees and no plans to hire is the classic problem case. Even with a significant investment, it is very difficult to argue that such a business is non-marginal.</p>
 
+        <h3>A worked example: solo consultant vs. cafe</h3>
+
+        <p>Suppose two applicants each invest $120,000. The first is a management consultant who forms a U.S. LLC, works alone from a home office, and projects $95,000 in annual net income. The money is real, but the enterprise's only economic function is to support the consultant. No hiring, no payroll, no footprint beyond one person's living. Expect the officer to conclude the business is marginal.</p>
+
+        <p>The second applicant opens a cafe with the same $120,000. Year one projections show the owner plus two part-time staff; by the end of year two, the plan calls for four employees on payroll, backed by realistic revenue figures, a signed lease, and comparable financials from similar cafes. This business creates jobs, pays payroll taxes, and buys from local suppliers. That is what non-marginal looks like, and the difference has nothing to do with the size of the check.</p>
+
+        <p>A concrete, credible plan to hire or subcontract meaningful work to U.S. workers can still move the analysis for the consultant, but a hiring projection bolted on just to make the numbers work is easy to spot.</p>
+
+        <h3>The five-year window for new businesses</h3>
+
+        <p>For a new enterprise, the regulations give you time. A business that cannot yet generate non-marginal income qualifies if it has the capacity to do so within five years of the visa being issued. That capacity is proven through the business plan: revenue projections built from defensible assumptions and a hiring timeline tied to those revenues. The test is only as strong as the projections behind it.</p>
+
         <p>Learn more about which types of businesses satisfy this standard in <a href="what-businesses-qualify-for-e2-visa.html">What Businesses Qualify for an E-2 Visa</a>.</p>
 
         <h2>Requirement Five: You Are Coming to Develop and Direct the Business</h2>
@@ -228,7 +371,9 @@
 
         <p>Second, if you own less than 50 percent, you must hold a position within the company that gives you operational control. This is harder to demonstrate and requires careful documentation of your role relative to other owners.</p>
 
-        <p>Employees of the E-2 investor can also obtain E-2 status, but they must be in executive, supervisory, or essential skills positions. This is separate from the investor's own application and has its own requirements.</p>
+        <p>Minority owners are not shut out, but they have to build control through corporate devices. An operating agreement naming you as sole managing member, a management agreement vesting day-to-day authority in your position, or voting arrangements giving you decision-making power over operations can each establish the required control. The documents have to show that you, not your co-owners, actually run the enterprise. A 30 percent owner with no special governance rights does not develop and direct anything.</p>
+
+        <p>Employees of the E-2 investor can also obtain E-2 status if they hold the same treaty nationality as the enterprise and serve in executive, supervisory, or essential skills positions. An essential skills employee brings specialized knowledge the business cannot readily source in the U.S. labor market. This is separate from the investor's own application and has its own requirements.</p>
 
         <h2>How the Requirements Work Together</h2>
 
@@ -255,9 +400,47 @@
 
         <p>The source of your investment funds also requires documentation. You need to show not just that you have the money, but where it came from. Unexplained large deposits, funds from unrelated third parties, or capital without a clear origin can all raise red flags at the interview stage.</p>
 
+        <h2>Where You Prove It: Consulate or USCIS</h2>
+
+        <p>The five requirements never change, but there are two procedural routes for demonstrating them.</p>
+
+        <p><strong>Consular processing</strong> is the standard route. You complete the DS-160 online application along with the DS-156E treaty investor supplement, submit your evidence package to the U.S. embassy or consulate, and attend an in-person interview. The consular officer applies the five requirements directly at that interview, so preparation for that conversation matters as much as the paperwork; see <a href="e2-visa-interview.html">How to Prepare for Your E-2 Visa Interview</a>. Approval results in a visa in your passport that lets you travel in and out of the United States.</p>
+
+        <p><strong>Change of status</strong> is available if you are already in the United States in another lawful status. You file Form I-129 with USCIS, and the adjudication happens on paper, with no interview. If approved, you hold E-2 status and can run the business, but you do not receive a visa. The moment you leave the country, you must apply at a consulate anyway to return, and the consular officer is not bound by the USCIS approval. Change of status suits people who need to start operating quickly and can defer travel.</p>
+
         <div class="callout">
             <p><strong>Key takeaway:</strong> All five requirements must be satisfied simultaneously. Strong performance on four out of five is not enough. The application needs to tell a complete, documented story on every element, which is why thorough preparation matters so much.</p>
         </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Can I qualify for an E-2 visa with less than $50,000?</h3>
+
+        <p>Rarely. There is no statutory minimum, but the proportionality and sufficiency tests are very hard to satisfy at that level. An investment under $50,000 implies either a business too small to be credible or one that is significantly underfunded. Most successful E-2 investments fall between $80,000 and $300,000.</p>
+
+        <h3>Does buying a franchise satisfy the requirements?</h3>
+
+        <p>A franchise can be an excellent E-2 vehicle, but it does not automatically satisfy anything. The franchise fee, build-out, and equipment purchases are clearly documented at-risk expenditures, and the franchisor's proven model makes projections more credible. You still face the full substantiality, marginality, and develop-and-direct analysis, and a franchise handed to a manager while you stay abroad fails like any other passive investment.</p>
+
+        <h3>Can my spouse work on an E-2 visa?</h3>
+
+        <p>Yes. Your spouse receives work authorization incident to status and can work for any employer in the United States, in any field. Children under 21 can live in the U.S. and attend school, but they cannot work. The full picture for dependents is covered in <a href="e2-visa-family.html">The E-2 Visa for Your Family: Spouses and Children</a>.</p>
+
+        <h3>How long is the E-2 visa valid?</h3>
+
+        <p>It depends on the reciprocity schedule between the United States and your treaty country. Many countries receive visas valid for up to five years with multiple entries; others receive far shorter periods. Each entry grants a two-year period of status, and there is no cap on renewals: as long as the business operates and the requirements remain satisfied, the E-2 can be extended indefinitely.</p>
+
+        <h3>Do I need to hire employees immediately?</h3>
+
+        <p>No. A new enterprise qualifies by showing the capacity to become non-marginal within five years, normally through a business plan with realistic hiring projections. What you cannot do is present a plan that never involves hiring anyone, and at renewal the officer will compare projections against reality.</p>
+
+        <h3>Can I apply if my country is not a treaty country?</h3>
+
+        <p>Not directly. Treaty nationality is a strict citizenship requirement with no waiver. Some investors acquire citizenship in a treaty country first and apply as nationals of that country. Others use the L-1 intracompany transferee visa, which has no nationality restriction but requires an existing foreign company transferring you to a U.S. affiliate.</p>
+
+        <h3>What happens to my E-2 if I sell the business?</h3>
+
+        <p>Your status is tied to the specific qualifying enterprise, so selling it ends the basis for your E-2. The practical options are to depart, change to another nonimmigrant status, or invest in a new qualifying enterprise and file a fresh application. If a sale is on the horizon, plan the immigration sequence before you sign.</p>
 
     </div>
 </div>

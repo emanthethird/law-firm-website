@@ -69,6 +69,11 @@
         .footer__links a:hover { color: rgba(255,255,255,0.6); }
         .footer__legal { font-size: 0.75rem; color: rgba(255,255,255,0.2); width: 100%; }
         @media (max-width: 768px) { .nav__links { display: none; } .nav__toggle { display: flex; } .nav__links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy-deep); padding: 1.5rem 2rem; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.05); z-index: 99; } .related__grid { grid-template-columns: 1fr; } .footer__inner { flex-direction: column; align-items: flex-start; } }
+        .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.9rem; }
+        .article-body th { background: var(--navy); color: var(--white); text-align: left; padding: 0.75rem 1rem; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em; }
+        .article-body td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-secondary); line-height: 1.6; vertical-align: top; }
+        .article-body tr:nth-child(even) td { background: var(--cream); }
+        .table-scroll { overflow-x: auto; }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ98LNEDZL"></script>
@@ -103,7 +108,7 @@
   "mainEntityOfPage": "https://emanlegal.com/blog/e2-visa-investment-amount",
   "image": "https://emanlegal.com/hero.jpg",
   "datePublished": "2026-04-10",
-  "dateModified": "2026-06-18",
+  "dateModified": "2026-07-28",
   "author": {
     "@type": "Person",
     "name": "Emmanuel Okharedia",
@@ -122,6 +127,71 @@
       "url": "https://emanlegal.com/favicon.svg"
     }
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://emanlegal.com/blog/e2-visa-investment-amount#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a minimum investment for the E-2 visa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Neither the statute nor the regulations at 8 CFR 214.2(e) set a fixed dollar minimum. The investment must be substantial relative to the total cost of the business, and in practice most successful applications involve $80,000 to $300,000."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get an E-2 visa with $50,000?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is possible but difficult. Investments below $50,000 are rarely approved because it is hard to show the business is adequately capitalized and more than marginal. A genuinely low-cost business model and a very strong business plan are essential at that level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does working capital count toward the E-2 investment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if it is reasonable in amount for the business and genuinely committed to it. Large uncommitted cash reserves sitting in an account you control do not count because they are not at risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can borrowed money count toward the E-2 investment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if the loan is secured by your personal assets and you are personally liable for repayment. Loans secured only by the assets of the E-2 business itself do not count because those funds are not personally at risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I have to spend the money before applying for the E-2 visa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mostly, yes. The funds must be spent or irrevocably committed before the visa is adjudicated. For business purchases, an escrow arrangement conditioned on visa approval satisfies the requirement while protecting you if the visa is denied."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can two investors combine funds for one E-2 business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but ownership matters. Each E-2 applicant must own at least 50 percent of the business or hold operational control. Two 50/50 partners who are both from treaty countries can each qualify for their own E-2 visa through the same company."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the E-2 investment have to be in cash?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Equipment, inventory, and other tangible assets you transfer to the business can count at fair market value, as long as ownership passes to the enterprise and the value is documented. Most successful applications combine cash with purchased assets."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -154,7 +224,7 @@
                 <span>&bull;</span>
                 <span>April 2026</span>
                 <span>&bull;</span>
-                <span>7 min read</span>
+                <span>12 min read</span>
             </div>
         </div>
     </div>
@@ -175,9 +245,27 @@
 
         <h3>Part one: proportionality</h3>
 
-        <p>Your investment must represent a significant proportion of the total cost to acquire or establish the business. The State Department's Foreign Affairs Manual uses what is often called a sliding scale or inversely proportional test. As the total cost of the business goes up, the required percentage of investment as a proportion of that cost comes down slightly. For lower-cost businesses, the percentage needs to be higher.</p>
+        <p>Your investment must represent a significant proportion of the total cost to acquire or establish the business. The State Department's Foreign Affairs Manual, at 9 FAM 402.9-6(B), uses what is often called a sliding scale or inversely proportional test. As the total cost of the business goes up, the required percentage of investment as a proportion of that cost comes down slightly. For lower-cost businesses, the percentage needs to be higher.</p>
 
         <p>A rough guide: for a business with a total cost under $100,000, you should expect to invest 75 to 100 percent of that amount. For a business in the $200,000 to $500,000 range, investing 60 to 75 percent is often sufficient. For larger businesses, the percentage can be lower, but the absolute dollar amount will be much higher.</p>
+
+        <p>Here is how the sliding scale plays out in practice:</p>
+
+        <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Total cost of business</th><th>Expected invested proportion</th><th>Example</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Under $100,000</td><td>Close to 100 percent</td><td>A $90,000 mobile cleaning business funded almost entirely by the applicant's own committed capital</td></tr>
+                <tr><td>$100,000 to $500,000</td><td>A clear majority share, often 60 to 80 percent</td><td>A $250,000 restaurant acquisition with $175,000 invested by the applicant</td></tr>
+                <tr><td>$500,000 to $1 million</td><td>Roughly half or more</td><td>A $700,000 trucking company purchase with $400,000 invested</td></tr>
+                <tr><td>Over $1 million</td><td>Progressively lower proportions become acceptable</td><td>A $2 million manufacturing operation funded 30 to 40 percent by the investor, with the rest properly financed</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <p>Treat these proportions as a framework, not a formula. Officers apply judgment, and the strength of the rest of your application shifts where the line falls.</p>
 
         <h3>Part two: sufficiency</h3>
 
@@ -195,30 +283,55 @@
 
         <p><strong>$300,000 and above:</strong> Required for capital-intensive businesses like restaurants, manufacturing operations, medical practices, and larger retail establishments. If the business genuinely costs this much, the investment needs to match it.</p>
 
+        <h2>Typical Investment Ranges by Business Type</h2>
+
+        <p>The right number depends heavily on what kind of business you are running. A consulting firm and a full-service restaurant have completely different cost structures. The ranges below are what we typically see in successful applications: practical benchmarks, not legal thresholds. Your actual number should come from a real budget for your specific business.</p>
+
+        <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Business type</th><th>Typical all-in E-2 investment range</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Service franchise (staffing, tutoring, senior care)</td><td>$80,000 to $150,000</td><td>Franchise fee, territory rights, modest equipment, and working capital.</td></tr>
+                <tr><td>Food franchise / quick-service restaurant</td><td>$150,000 to $350,000</td><td>Build-out and kitchen equipment drive the cost.</td></tr>
+                <tr><td>Full-service restaurant</td><td>$250,000 to $400,000+</td><td>Capital intensive. The investment must match the true cost of opening.</td></tr>
+                <tr><td>E-commerce with inventory</td><td>$80,000 to $200,000</td><td>Inventory depth matters. Asset-light dropshipping models are difficult to support.</td></tr>
+                <tr><td>Consulting or professional services</td><td>$60,000 to $120,000</td><td>Easier to fund, but marginality risk is high if the plan looks like a one-person job.</td></tr>
+                <tr><td>Trucking and logistics</td><td>$100,000 to $250,000</td><td>Trucks, trailers, insurance, and operating authority. Equipment purchases document themselves.</td></tr>
+                <tr><td>Retail store</td><td>$120,000 to $300,000</td><td>Lease deposits, fit-out, fixtures, and opening inventory make up most of the budget.</td></tr>
+                <tr><td>Cleaning or home services company</td><td>$70,000 to $150,000</td><td>Vehicles, equipment, branding, and marketing. A credible hiring plan helps with marginality.</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <p>Notice that every range sits above the level where applications start to struggle. Businesses that genuinely cost less than $50,000 to launch tend to fail the substantiality and marginality tests together. For a closer look at which business models hold up, see <a href="what-businesses-qualify-for-e2-visa.html">What Businesses Qualify for the E-2 Visa</a>.</p>
+
         <h2>What Counts as Investment?</h2>
 
         <p>Not all money flows count. The investment must be funds that are at risk in the business. This means the capital must already be committed or deployed, not merely available. See the full explanation of the at-risk requirement in <a href="e2-visa-requirements.html">E-2 Visa Requirements: The Five Things You Need to Qualify</a>.</p>
 
-        <p>What typically counts toward your investment total:</p>
+        <p>The regulation at 8 CFR 214.2(e) frames the investment as the applicant placing capital, including funds and other assets, at risk in the commercial sense with the objective of generating a profit. In practice, that breaks down like this:</p>
 
-        <ul>
-            <li>Purchase price for an existing business or franchise</li>
-            <li>Leasehold improvements and build-out costs</li>
-            <li>Equipment and machinery purchases</li>
-            <li>Initial inventory</li>
-            <li>Working capital committed in escrow or already spent</li>
-            <li>Professional fees paid to establish and launch the business</li>
-            <li>Marketing and pre-opening expenses directly tied to the business</li>
-        </ul>
+        <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Counts toward the investment</th><th>Does not count</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Purchase price paid for an existing business or franchise</td><td>Uncommitted cash reserves sitting in an account you control freely</td></tr>
+                <tr><td>Franchise fees paid to the franchisor</td><td>Personal living funds and money set aside for household expenses</td></tr>
+                <tr><td>Equipment, machinery, and vehicles purchased for the business</td><td>Loans secured only by the assets of the E-2 business itself</td></tr>
+                <tr><td>Leasehold improvements and build-out costs</td><td>Speculative future spending not yet committed by a signed contract</td></tr>
+                <tr><td>Initial inventory and opening supplies</td><td>Goodwill or intangible value not supported by actual expenditure</td></tr>
+                <tr><td>Initial lease deposits and prepaid rent</td><td>Personal assets like your home or car, unless pledged as collateral on a business loan</td></tr>
+                <tr><td>Professional fees paid to establish and launch the business (legal, accounting, licensing)</td><td>Marketing budgets that exist only as a line in a spreadsheet</td></tr>
+                <tr><td>Working capital that is reasonable in amount for the business, committed in escrow or already deployed</td><td>Working capital padding far beyond what the business plan actually requires</td></tr>
+            </tbody>
+        </table>
+        </div>
 
-        <p>What generally does not count:</p>
-
-        <ul>
-            <li>Funds sitting in a personal or business bank account you control freely</li>
-            <li>Personal assets like your home or car (unless pledged as collateral on a business loan)</li>
-            <li>Money borrowed from the business itself</li>
-            <li>Goodwill or intangible assets not supported by actual expenditure</li>
-        </ul>
+        <p>The working capital line deserves attention because it is where applicants most often try to inflate the number. Some working capital is legitimate: payroll for the first few months, rent, insurance, initial marketing. But an officer who sees $60,000 of working capital attached to a plan that needs $20,000 will discount the difference. Parking cash in the business account does not make it invested.</p>
 
         <h2>Borrowed Money and the At-Risk Requirement</h2>
 
@@ -228,13 +341,73 @@
 
         <p>Properly structured loans secured by your home, investment accounts, or other personal property can count. Loans from friends or family can also qualify if the terms are documented, commercially reasonable, and the lender has no interest in the business itself.</p>
 
+        <h2>The Timing Problem: You Spend Before You Get the Visa</h2>
+
+        <p>This is the part of the E-2 that surprises almost everyone. You must spend, or irrevocably commit, most of the investment before the visa is granted. Not after. A bank balance next to a business plan is an intention to invest, and intentions do not satisfy the at-risk requirement.</p>
+
+        <p>Applicants call this the chicken-and-egg problem, and the name fits. You need the visa to run the business, but you need to have funded the business to get the visa. There is no way around the sequence.</p>
+
+        <p>For a startup, the answer is to genuinely build the business first: sign the lease, buy the equipment, pay the franchise fee, hire your first employee if the plan calls for it. Every dollar spent before your interview works in your favor.</p>
+
+        <p>For a business acquisition, spending the full purchase price before you know the visa outcome is a real risk, and the standard risk-management tool is escrow. You place the purchase funds in escrow under an agreement that releases them to the seller when the visa is approved and returns them to you if it is denied. Properly drafted, an escrow counts as irrevocable commitment because the money is out of your control either way. The agreement must be real: a signed purchase contract, a licensed escrow agent, and release conditions tied specifically to visa adjudication.</p>
+
+        <p>Which path you are on changes the shape of your evidence. We compare the two approaches in <a href="e2-visa-new-business-vs-buying.html">Starting a New Business vs. Buying One for Your E-2 Visa</a>, and because the spending happens before adjudication, build the funding steps into your calendar early using <a href="e2-visa-processing-timeline.html">the E-2 processing timeline</a>.</p>
+
+        <h2>Two Hypothetical Examples</h2>
+
+        <p>Both examples below are hypothetical, constructed to show how the pieces fit together. They are not client cases.</p>
+
+        <h3>Example A: a $140,000 franchise purchase</h3>
+
+        <p>Suppose an investor from a treaty country buys into a home services franchise. The budget looks like this: $45,000 franchise fee paid to the franchisor, $38,000 for two branded vehicles and equipment, $22,000 in leasehold improvements for a small office and storage unit, $8,000 in initial lease deposit and prepaid rent, $9,000 in professional fees for entity formation, licensing, and immigration counsel, and $18,000 in committed working capital for the first months of payroll and marketing. Total: $140,000.</p>
+
+        <p>By interview day, roughly $122,000 has been spent outright and the working capital sits in the business account, allocated month by month in the business plan. Proportionality is close to 100 percent of the total cost, exactly what the sliding scale expects at this price point, and every line item is documented with an invoice, contract, or receipt. This is what a clean file looks like.</p>
+
+        <h3>Example B: a $90,000 startup service business</h3>
+
+        <p>Now suppose an applicant launches a commercial cleaning company from scratch with $90,000. Before the interview, she forms the company, signs a two-year office lease, buys a van and industrial equipment for $34,000, spends $12,000 on branding, a website, and initial marketing, pays $7,000 in professional and licensing fees, puts down $6,000 in deposits and prepaid rent, and hires an operations employee. About $62,000 is spent or contractually committed; the remaining $28,000 is working capital tied to a hiring and marketing schedule in the plan.</p>
+
+        <p>The pre-interview spending does two jobs at once. It converts savings into an at-risk investment, and it proves the business is real: a lease, a van, an employee, customers being solicited. A startup cannot use escrow because there is no seller to contract with. Spending is the startup's version of commitment; escrow is the acquisition's.</p>
+
         <h2>Proving the Source of Funds</h2>
 
         <p>The investment amount matters, but so does where it came from. Source of funds documentation is a significant part of any E-2 application, and consular officers scrutinize it carefully.</p>
 
-        <p>You need to trace your investment funds to a legitimate source. Common sources include personal savings, proceeds from the sale of property or a business in your home country, inheritance, or salary income accumulated over time. Each source requires documentation.</p>
+        <h3>The documentation chain</h3>
+
+        <p>Think of it as a chain with no missing links: where the money was earned or received, where it sat, how it moved, and how it landed in the business. Each stage needs paper: bank statements showing the balance over time, transfer records matching dates and amounts, and the underlying document that explains the origin. An officer should be able to follow every significant dollar from origin to business account without asking you a single question.</p>
+
+        <h3>Common sources and what each one needs</h3>
+
+        <p><strong>Salary and business profits from your home country:</strong> tax returns, financial statements, and dividend or distribution records showing the income actually accumulated.</p>
+
+        <p><strong>Sale of property:</strong> the sale contract, proof of your prior ownership, and the bank record showing the proceeds arriving. For property owned for many years, a short ownership history is usually enough.</p>
+
+        <p><strong>Inheritance:</strong> the will or estate document, proof of the family relationship, and the distribution record showing the funds passing to you.</p>
+
+        <p><strong>Gifts:</strong> gifted funds can fund an E-2 investment; you do not have to have earned the money yourself. A gift needs a signed gift letter stating the money is an unconditional gift with no expectation of repayment, plus evidence of the giver's own source of funds. A parent gifting $150,000 must be able to show where it came from, because the tracing obligation follows the money one step back.</p>
+
+        <p><strong>Loans:</strong> as covered above, loan proceeds count when the loan is secured by your personal assets and you carry personal liability. Document the loan agreement, the collateral, and the disbursement. Loans collateralized by the E-2 business itself do not count toward the investment.</p>
+
+        <h3>A caution on cryptocurrency</h3>
+
+        <p>Proceeds from cryptocurrency are usable, but treat them as a high-scrutiny source. You will need to reconstruct the full history: exchange records showing the original purchases, transaction histories for significant movements, the sale converting crypto to fiat, and the transfer into your account. Officers are not hostile to crypto wealth; they are hostile to funds they cannot trace. Start the reconstruction months before you file, not weeks.</p>
 
         <p>Large deposits without explanation, funds from third parties who have no documented relationship to you, or capital that suddenly appeared without a clear history will trigger questions and potentially a denial. Start gathering your financial records early in the process.</p>
+
+        <h2>What If the Officer Thinks the Amount Is Too Low?</h2>
+
+        <p>Sometimes an officer accepts that your funds are real and at risk but concludes the total is simply not enough. This objection usually wears two hats at once: substantiality (the investment is small relative to what the business really costs) and marginality (a business this thinly funded will only ever support you and your family). The two findings overlap because they grow from the same root, an underfunded plan.</p>
+
+        <p>If you get this signal before filing, in a request for evidence, or after a refusal, you have real options:</p>
+
+        <ul>
+            <li><strong>Inject additional capital.</strong> Increasing the investment and documenting the new spending changes the substantiality math immediately.</li>
+            <li><strong>Strengthen the hiring plan.</strong> A concrete schedule of positions, wages, and start dates, backed by the revenue projections that fund them, attacks the marginality finding head on.</li>
+            <li><strong>Show revenue evidence.</strong> Signed customer contracts, letters of intent, franchise performance data, or actual early sales prove the business can grow beyond a living for one family.</li>
+        </ul>
+
+        <p>Weak-investment refusals are among the most preventable denials, because the math is visible before you file. To understand how these cases go wrong, read <a href="e2-visa-denial-reasons.html">The Most Common E-2 Visa Denial Reasons</a> before you commit your capital.</p>
 
         <h2>How This Compares to the EB-5</h2>
 
@@ -251,6 +424,36 @@
         <div class="callout">
             <p><strong>Key takeaway:</strong> There is no magic number that guarantees E-2 approval. The investment must be proportional to the total cost of the business and sufficient to capitalize it for successful operation. Most approved applications fall between $80,000 and $300,000, but the right amount for your situation depends on your specific business.</p>
         </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Is there a minimum investment for the E-2 visa?</h3>
+
+        <p>No. Neither the statute nor the regulations at 8 CFR 214.2(e) set a fixed dollar minimum. The investment must be substantial relative to the total cost of the business under the sliding scale in 9 FAM 402.9-6(B). Most successful applications involve $80,000 to $300,000, but that is a pattern, not a rule.</p>
+
+        <h3>Can I get an E-2 with $50,000?</h3>
+
+        <p>It is possible, but difficult. Below $50,000, it is hard to show the business is adequately capitalized and hard to escape the marginality objection. The exceptions are businesses with genuinely low startup costs, a credible hiring plan, and strong revenue evidence. Get an honest assessment before you spend anything at this level.</p>
+
+        <h3>Does working capital count toward the investment?</h3>
+
+        <p>Yes, when it is reasonable in amount for the business and genuinely committed, either already deployed or allocated in a month-by-month operating plan. What does not count is a large uncommitted cash reserve parked in the business account to inflate the number. Officers can tell the difference.</p>
+
+        <h3>Can borrowed money count toward the investment?</h3>
+
+        <p>Yes, if the loan is secured by your personal assets and you are personally liable for repayment. Loans secured only by the assets of the E-2 business do not count, because you have nothing personally at risk if the business fails. Documented loans from family can qualify on the same principle.</p>
+
+        <h3>Do I have to spend the money before applying?</h3>
+
+        <p>For the most part, yes. The funds must be spent or irrevocably committed before the visa is adjudicated. Startups satisfy this by actually building the business before the interview. Buyers satisfy it with an escrow arrangement that releases the purchase funds on visa approval and returns them on denial.</p>
+
+        <h3>Can two investors combine funds?</h3>
+
+        <p>Ownership is the constraint. Each E-2 applicant must own at least 50 percent of the business or hold operational control. Two partners from treaty countries who each hold exactly 50 percent can each qualify for their own E-2 visa through the same company. Three equal partners cannot, because nobody reaches the 50 percent line.</p>
+
+        <h3>Does the investment have to be in cash?</h3>
+
+        <p>No. Tangible assets you transfer to the enterprise, such as equipment, vehicles, or inventory, can count at fair market value, provided ownership actually passes to the business and the value is documented. What you cannot count is intangible goodwill or assets you merely make available without transferring.</p>
 
     </div>
 </div>

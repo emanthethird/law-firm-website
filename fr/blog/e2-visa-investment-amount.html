@@ -69,6 +69,11 @@
         .footer__links a:hover { color: rgba(255,255,255,0.6); }
         .footer__legal { font-size: 0.75rem; color: rgba(255,255,255,0.2); width: 100%; }
         @media (max-width: 768px) { .nav__links { display: none; } .nav__toggle { display: flex; } .nav__links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy-deep); padding: 1.5rem 2rem; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.05); z-index: 99; } .related__grid { grid-template-columns: 1fr; } .footer__inner { flex-direction: column; align-items: flex-start; } }
+        .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.9rem; }
+        .article-body th { background: var(--navy); color: var(--white); text-align: left; padding: 0.75rem 1rem; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em; }
+        .article-body td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-secondary); line-height: 1.6; vertical-align: top; }
+        .article-body tr:nth-child(even) td { background: var(--cream); }
+        .table-scroll { overflow-x: auto; }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ98LNEDZL"></script>
@@ -104,7 +109,7 @@
   "image": "https://emanlegal.com/hero.jpg",
   "inLanguage": "fr",
   "datePublished": "2026-04-10",
-  "dateModified": "2026-06-18",
+  "dateModified": "2026-07-28",
   "author": {
     "@type": "Person",
     "name": "Emmanuel Okharedia",
@@ -123,6 +128,72 @@
       "url": "https://emanlegal.com/favicon.svg"
     }
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://emanlegal.com/fr/blog/e2-visa-investment-amount#faq",
+  "inLanguage": "fr",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Existe-t-il un investissement minimum pour le visa E-2 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Ni la loi ni le règlement 8 CFR 214.2(e) ne fixent de montant minimum en dollars. L'investissement doit être substantiel par rapport au coût total de l'entreprise, et en pratique la plupart des dossiers approuvés se situent entre 80 000 $ et 300 000 $."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je obtenir un visa E-2 avec 50 000 $ ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "C'est possible, mais difficile. Les investissements inférieurs à 50 000 $ sont rarement approuvés, car il est difficile de démontrer que l'entreprise est correctement capitalisée et plus que marginale. Un modèle économique aux coûts réellement faibles et un business plan très solide sont indispensables à ce niveau."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le fonds de roulement compte-t-il dans l'investissement E-2 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, s'il est d'un montant raisonnable pour l'entreprise et réellement engagé dans celle-ci. D'importantes réserves de trésorerie non engagées sur un compte dont vous disposez librement ne comptent pas, car elles ne sont pas à risque."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'argent emprunté peut-il compter dans l'investissement E-2 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, si le prêt est garanti par vos actifs personnels et que vous êtes personnellement tenu de le rembourser. Les prêts garantis uniquement par les actifs de l'entreprise E-2 elle-même ne comptent pas, car ces fonds ne sont pas personnellement à risque."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dois-je dépenser l'argent avant de demander le visa E-2 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pour l'essentiel, oui. Les fonds doivent être dépensés ou engagés de manière irrévocable avant la décision sur le visa. Pour le rachat d'une entreprise, un montage sous séquestre (escrow) conditionné à l'approbation du visa satisfait l'exigence tout en vous protégeant en cas de refus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Deux investisseurs peuvent-ils combiner leurs fonds pour une même entreprise E-2 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, mais la détention du capital est déterminante. Chaque candidat E-2 doit détenir au moins 50 pour cent de l'entreprise ou en exercer le contrôle opérationnel. Deux associés à 50/50, tous deux ressortissants de pays signataires d'un traité, peuvent chacun obtenir leur propre visa E-2 par la même société."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'investissement E-2 doit-il être en numéraire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Les équipements, le stock et les autres actifs corporels que vous transférez à l'entreprise peuvent compter à leur juste valeur de marché, à condition que la propriété passe à l'entreprise et que la valeur soit documentée. La plupart des dossiers qui aboutissent combinent du numéraire et des actifs achetés."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -155,7 +226,7 @@
                 <span>&bull;</span>
                 <span>Avril 2026</span>
                 <span>&bull;</span>
-                <span>7 min de lecture</span>
+                <span>Lecture : 12 min</span>
             </div>
         </div>
     </div>
@@ -176,9 +247,27 @@
 
         <h3>Premier volet : la proportionnalité</h3>
 
-        <p>Votre investissement doit représenter une proportion significative du coût total d'acquisition ou de création de l'entreprise. Le Foreign Affairs Manual du Département d'État américain applique ce qu'on appelle souvent un barème dégressif, ou test de proportionnalité inverse. Plus le coût total de l'entreprise augmente, plus le pourcentage d'investissement exigé par rapport à ce coût diminue légèrement. Pour les entreprises à faible coût, le pourcentage doit être plus élevé.</p>
+        <p>Votre investissement doit représenter une proportion significative du coût total d'acquisition ou de création de l'entreprise. Le Foreign Affairs Manual du Département d'État américain, au point 9 FAM 402.9-6(B), applique ce qu'on appelle souvent un barème dégressif, ou test de proportionnalité inverse. Plus le coût total de l'entreprise augmente, plus le pourcentage d'investissement exigé par rapport à ce coût diminue légèrement. Pour les entreprises à faible coût, le pourcentage doit être plus élevé.</p>
 
         <p>À titre indicatif : pour une entreprise dont le coût total est inférieur à 100 000 $, prévoyez d'investir 75 à 100 pour cent de ce montant. Pour une entreprise dans la fourchette de 200 000 $ à 500 000 $, un investissement de 60 à 75 pour cent est souvent suffisant. Pour des entreprises plus importantes, le pourcentage peut être plus faible, mais le montant absolu en dollars sera bien plus élevé.</p>
+
+        <p>Voici comment ce barème dégressif se traduit en pratique :</p>
+
+        <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Coût total de l'entreprise</th><th>Proportion investie attendue</th><th>Exemple</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Moins de 100 000 $</td><td>Proche de 100 pour cent</td><td>Une entreprise de nettoyage mobile de 90 000 $ financée presque entièrement par le capital engagé du candidat lui-même</td></tr>
+                <tr><td>De 100 000 $ à 500 000 $</td><td>Une nette majorité, souvent 60 à 80 pour cent</td><td>L'acquisition d'un restaurant de 250 000 $ avec 175 000 $ investis par le candidat</td></tr>
+                <tr><td>De 500 000 $ à 1 million de dollars</td><td>Environ la moitié ou plus</td><td>L'achat d'une société de transport routier de 700 000 $ avec 400 000 $ investis</td></tr>
+                <tr><td>Plus de 1 million de dollars</td><td>Des proportions progressivement plus faibles deviennent acceptables</td><td>Une unité de production de 2 millions de dollars financée à 30 ou 40 pour cent par l'investisseur, le reste étant correctement financé</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <p>Considérez ces proportions comme un cadre de référence, pas comme une formule. Les agents exercent leur jugement, et la solidité du reste de votre dossier déplace la ligne.</p>
 
         <h3>Second volet : la suffisance</h3>
 
@@ -196,30 +285,55 @@
 
         <p><strong>300 000 $ et plus :</strong> requis pour les entreprises à forte intensité de capital comme les restaurants, les activités de production, les cabinets médicaux et les commerces de détail de grande taille. Si l'entreprise coûte réellement ce montant, l'investissement doit être à la hauteur.</p>
 
+        <h2>Fourchettes d'investissement typiques par type d'entreprise</h2>
+
+        <p>Le bon chiffre dépend fortement du type d'entreprise que vous exploitez. Un cabinet de conseil et un restaurant avec service à table ont des structures de coûts totalement différentes. Les fourchettes ci-dessous correspondent à ce que nous observons habituellement dans les dossiers qui aboutissent : des repères pratiques, pas des seuils légaux. Votre chiffre réel doit provenir d'un vrai budget établi pour votre entreprise spécifique.</p>
+
+        <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Type d'entreprise</th><th>Fourchette d'investissement E-2 typique, tout compris</th><th>Remarques</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Franchise de services (recrutement, soutien scolaire, aide aux seniors)</td><td>De 80 000 $ à 150 000 $</td><td>Droit d'entrée de la franchise, droits territoriaux, équipement modeste et fonds de roulement.</td></tr>
+                <tr><td>Franchise de restauration / restauration rapide</td><td>De 150 000 $ à 350 000 $</td><td>Les travaux d'aménagement et l'équipement de cuisine constituent l'essentiel du coût.</td></tr>
+                <tr><td>Restaurant avec service à table</td><td>De 250 000 $ à 400 000 $ et plus</td><td>Forte intensité de capital. L'investissement doit correspondre au coût réel d'ouverture.</td></tr>
+                <tr><td>E-commerce avec stock</td><td>De 80 000 $ à 200 000 $</td><td>La profondeur du stock compte. Les modèles de dropshipping sans actifs sont difficiles à défendre.</td></tr>
+                <tr><td>Conseil ou services professionnels</td><td>De 60 000 $ à 120 000 $</td><td>Plus facile à financer, mais le risque de marginalité est élevé si le projet ressemble à un emploi pour une seule personne.</td></tr>
+                <tr><td>Transport routier et logistique</td><td>De 100 000 $ à 250 000 $</td><td>Camions, remorques, assurances et licences d'exploitation. Les achats d'équipement se documentent d'eux-mêmes.</td></tr>
+                <tr><td>Commerce de détail</td><td>De 120 000 $ à 300 000 $</td><td>Dépôts de garantie du bail, aménagement, agencement et stock d'ouverture composent l'essentiel du budget.</td></tr>
+                <tr><td>Entreprise de nettoyage ou de services à domicile</td><td>De 70 000 $ à 150 000 $</td><td>Véhicules, équipement, image de marque et marketing. Un plan d'embauche crédible aide sur la question de la marginalité.</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <p>Vous remarquerez que chaque fourchette se situe au-dessus du niveau où les dossiers commencent à peiner. Les entreprises dont le lancement coûte réellement moins de 50 000 $ tendent à échouer à la fois au test du caractère substantiel et à celui de la marginalité. Pour un examen plus précis des modèles d'entreprise qui tiennent la route, consultez <a href="/fr/blog/what-businesses-qualify-for-e2-visa">Quelles entreprises sont éligibles au visa E-2</a>.</p>
+
         <h2>Qu'est-ce qui compte comme investissement ?</h2>
 
-        <p>Tous les flux d'argent ne comptent pas. L'investissement doit être constitué de fonds à risque dans l'entreprise. Cela signifie que le capital doit déjà être engagé ou déployé, et pas simplement disponible. Consultez l'explication complète de l'exigence de fonds à risque dans <a href="/fr/blog/e2-visa-requirements">Les exigences du visa E-2 : les cinq conditions pour être éligible</a>.</p>
+        <p>Tous les flux d'argent ne comptent pas. L'investissement doit être constitué de fonds « at risk » (à risque) dans l'entreprise. Cela signifie que le capital doit déjà être engagé ou déployé, et pas simplement disponible. Consultez l'explication complète de l'exigence de fonds à risque dans <a href="/fr/blog/e2-visa-requirements">Les exigences du visa E-2 : les cinq conditions pour être éligible</a>.</p>
 
-        <p>Ce qui compte généralement dans le total de votre investissement :</p>
+        <p>Le règlement 8 CFR 214.2(e) définit l'investissement comme le fait, pour le candidat, de placer du capital, y compris des fonds et d'autres actifs, à risque au sens commercial du terme, avec l'objectif de générer un profit. En pratique, cela se décompose ainsi :</p>
 
-        <ul>
-            <li>Le prix d'achat d'une entreprise existante ou d'une franchise</li>
-            <li>Les aménagements locatifs et les coûts de travaux</li>
-            <li>Les achats d'équipements et de machines</li>
-            <li>Le stock initial</li>
-            <li>Le fonds de roulement bloqué sous séquestre (escrow) ou déjà dépensé</li>
-            <li>Les honoraires professionnels payés pour créer et lancer l'entreprise</li>
-            <li>Les dépenses de marketing et de pré-ouverture directement liées à l'entreprise</li>
-        </ul>
+        <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Compte dans l'investissement</th><th>Ne compte pas</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Le prix d'achat payé pour une entreprise existante ou une franchise</td><td>Les réserves de trésorerie non engagées sur un compte dont vous disposez librement</td></tr>
+                <tr><td>Les droits d'entrée versés au franchiseur</td><td>Les fonds destinés à vos dépenses personnelles et au budget du foyer</td></tr>
+                <tr><td>Les équipements, machines et véhicules achetés pour l'entreprise</td><td>Les prêts garantis uniquement par les actifs de l'entreprise E-2 elle-même</td></tr>
+                <tr><td>Les aménagements locatifs et les coûts de travaux</td><td>Les dépenses futures hypothétiques non engagées par un contrat signé</td></tr>
+                <tr><td>Le stock initial et les fournitures d'ouverture</td><td>Le goodwill ou la valeur incorporelle non justifiés par des dépenses réelles</td></tr>
+                <tr><td>Les dépôts de garantie initiaux et les loyers payés d'avance</td><td>Les biens personnels comme votre maison ou votre voiture, sauf s'ils sont donnés en garantie d'un prêt professionnel</td></tr>
+                <tr><td>Les honoraires professionnels payés pour créer et lancer l'entreprise (juridique, comptabilité, licences)</td><td>Les budgets marketing qui n'existent que sous forme de ligne dans un tableur</td></tr>
+                <tr><td>Le fonds de roulement d'un montant raisonnable pour l'entreprise, bloqué sous séquestre (escrow) ou déjà déployé</td><td>Le fonds de roulement gonflé bien au-delà de ce que le business plan exige réellement</td></tr>
+            </tbody>
+        </table>
+        </div>
 
-        <p>Ce qui ne compte généralement pas :</p>
-
-        <ul>
-            <li>Les fonds déposés sur un compte bancaire personnel ou professionnel dont vous disposez librement</li>
-            <li>Les biens personnels comme votre maison ou votre voiture (sauf s'ils sont donnés en garantie d'un prêt professionnel)</li>
-            <li>L'argent emprunté à l'entreprise elle-même</li>
-            <li>Le goodwill ou les actifs incorporels non justifiés par des dépenses réelles</li>
-        </ul>
+        <p>La ligne du fonds de roulement mérite une attention particulière, car c'est là que les candidats tentent le plus souvent de gonfler le chiffre. Une part de fonds de roulement est légitime : la masse salariale des premiers mois, le loyer, les assurances, le marketing initial. Mais un agent qui voit 60 000 $ de fonds de roulement rattachés à un plan qui en nécessite 20 000 $ écartera la différence. Laisser dormir de la trésorerie sur le compte de l'entreprise n'en fait pas un investissement.</p>
 
         <h2>Fonds empruntés et exigence de fonds à risque</h2>
 
@@ -229,13 +343,73 @@
 
         <p>Des prêts correctement structurés, garantis par votre résidence, vos comptes de placement ou d'autres biens personnels, peuvent compter. Les prêts consentis par des amis ou des proches peuvent aussi être admis si les conditions sont documentées, commercialement raisonnables, et si le prêteur ne détient aucun intérêt dans l'entreprise elle-même.</p>
 
+        <h2>Le problème de calendrier : vous dépensez avant d'obtenir le visa</h2>
+
+        <p>C'est l'aspect du visa E-2 qui surprend presque tout le monde. Vous devez dépenser, ou engager de manière irrévocable, l'essentiel de l'investissement avant que le visa ne soit accordé. Pas après. Un solde bancaire posé à côté d'un business plan est une intention d'investir, et les intentions ne satisfont pas l'exigence de fonds à risque.</p>
+
+        <p>Les candidats parlent du problème de l'œuf et de la poule, et l'image est juste. Vous avez besoin du visa pour exploiter l'entreprise, mais vous devez avoir financé l'entreprise pour obtenir le visa. Il n'existe aucun moyen de contourner cet ordre des choses.</p>
+
+        <p>Pour une création d'entreprise, la réponse consiste à construire réellement l'entreprise d'abord : signer le bail, acheter l'équipement, payer le droit d'entrée de la franchise, embaucher votre premier salarié si le plan le prévoit. Chaque dollar dépensé avant votre entretien joue en votre faveur.</p>
+
+        <p>Pour le rachat d'une entreprise, dépenser la totalité du prix d'achat avant de connaître l'issue de la demande représente un risque réel, et l'outil standard de gestion de ce risque est l'escrow (le séquestre). Vous placez les fonds d'achat sous séquestre en vertu d'un accord qui les libère au profit du vendeur lorsque le visa est approuvé et vous les restitue s'il est refusé. Correctement rédigé, un séquestre vaut engagement irrévocable, car l'argent échappe à votre contrôle dans les deux cas. L'accord doit être réel : un contrat d'achat signé, un agent de séquestre agréé et des conditions de libération liées spécifiquement à la décision sur le visa.</p>
+
+        <p>Le chemin sur lequel vous vous trouvez change la nature de vos preuves. Nous comparons les deux approches dans <a href="/fr/blog/e2-visa-new-business-vs-buying">Créer une nouvelle entreprise ou racheter une entreprise existante pour le visa E-2</a>, et comme les dépenses interviennent avant la décision, intégrez tôt les étapes de financement dans votre planning à l'aide <a href="/fr/blog/e2-visa-processing-timeline">du calendrier de traitement du visa E-2</a>.</p>
+
+        <h2>Deux exemples hypothétiques</h2>
+
+        <p>Les deux exemples ci-dessous sont hypothétiques, construits pour montrer comment les pièces s'assemblent. Ce ne sont pas des dossiers de clients.</p>
+
+        <h3>Exemple A : l'achat d'une franchise à 140 000 $</h3>
+
+        <p>Supposons qu'un investisseur ressortissant d'un pays signataire d'un traité achète une franchise de services à domicile. Le budget se présente ainsi : 45 000 $ de droit d'entrée versés au franchiseur, 38 000 $ pour deux véhicules aux couleurs de la marque et l'équipement, 22 000 $ d'aménagements locatifs pour un petit bureau et un espace de stockage, 8 000 $ de dépôt de garantie et de loyer payé d'avance, 9 000 $ d'honoraires professionnels pour la création de l'entité, les licences et le conseil en immigration, et 18 000 $ de fonds de roulement engagé pour les premiers mois de masse salariale et de marketing. Total : 140 000 $.</p>
+
+        <p>Le jour de l'entretien, environ 122 000 $ ont été dépensés directement et le fonds de roulement se trouve sur le compte de l'entreprise, ventilé mois par mois dans le business plan. La proportionnalité est proche de 100 pour cent du coût total, exactement ce que le barème dégressif attend à ce niveau de prix, et chaque poste est documenté par une facture, un contrat ou un reçu. Voilà à quoi ressemble un dossier propre.</p>
+
+        <h3>Exemple B : une création d'entreprise de services à 90 000 $</h3>
+
+        <p>Supposons maintenant qu'une candidate lance de zéro une entreprise de nettoyage commercial avec 90 000 $. Avant l'entretien, elle crée la société, signe un bail de bureau de deux ans, achète une camionnette et de l'équipement industriel pour 34 000 $, dépense 12 000 $ en image de marque, site web et marketing initial, paie 7 000 $ d'honoraires professionnels et de licences, verse 6 000 $ de dépôts de garantie et de loyers payés d'avance, et embauche un salarié aux opérations. Environ 62 000 $ sont dépensés ou engagés par contrat ; les 28 000 $ restants constituent un fonds de roulement rattaché à un calendrier d'embauche et de marketing prévu dans le plan.</p>
+
+        <p>Les dépenses effectuées avant l'entretien remplissent deux fonctions à la fois. Elles transforment une épargne en investissement à risque, et elles prouvent que l'entreprise est réelle : un bail, une camionnette, un salarié, des clients démarchés. Une création d'entreprise ne peut pas recourir au séquestre, car il n'y a aucun vendeur avec qui contracter. La dépense est la forme d'engagement de la création d'entreprise ; le séquestre est celle de l'acquisition.</p>
+
         <h2>Prouver l'origine des fonds</h2>
 
         <p>Le montant de l'investissement compte, mais son origine aussi. La documentation sur l'origine des fonds constitue une partie importante de toute demande E-2, et les agents consulaires l'examinent avec attention.</p>
 
-        <p>Vous devez pouvoir retracer vos fonds d'investissement jusqu'à une source légitime. Les sources courantes incluent l'épargne personnelle, le produit de la vente d'un bien immobilier ou d'une entreprise dans votre pays d'origine, un héritage ou des revenus salariaux accumulés au fil du temps. Chaque source exige des justificatifs.</p>
+        <h3>La chaîne documentaire</h3>
+
+        <p>Représentez-vous une chaîne sans maillon manquant : où l'argent a été gagné ou reçu, où il a été conservé, comment il a circulé et comment il est arrivé dans l'entreprise. Chaque étape exige des justificatifs : des relevés bancaires montrant le solde dans le temps, des ordres de virement dont les dates et les montants concordent, et le document sous-jacent qui explique l'origine. Un agent doit pouvoir suivre chaque dollar significatif de son origine jusqu'au compte de l'entreprise sans avoir à vous poser la moindre question.</p>
+
+        <h3>Les sources courantes et ce que chacune exige</h3>
+
+        <p><strong>Salaires et bénéfices d'entreprise dans votre pays d'origine :</strong> déclarations fiscales, états financiers et justificatifs de dividendes ou de distributions montrant que les revenus se sont réellement accumulés.</p>
+
+        <p><strong>Vente d'un bien immobilier :</strong> le contrat de vente, la preuve de votre propriété antérieure et le relevé bancaire montrant l'arrivée du produit de la vente. Pour un bien détenu pendant de nombreuses années, un bref historique de propriété suffit généralement.</p>
+
+        <p><strong>Héritage :</strong> le testament ou l'acte de succession, la preuve du lien familial et le justificatif de la distribution montrant le transfert des fonds à votre profit.</p>
+
+        <p><strong>Donations :</strong> des fonds reçus en donation peuvent financer un investissement E-2 ; vous n'êtes pas obligé d'avoir gagné l'argent vous-même. Une donation exige une lettre de donation signée précisant que l'argent est un don inconditionnel sans attente de remboursement, plus la preuve de l'origine des fonds du donateur lui-même. Un parent qui donne 150 000 $ doit pouvoir montrer d'où vient cet argent, car l'obligation de traçabilité remonte la chaîne d'un cran.</p>
+
+        <p><strong>Prêts :</strong> comme indiqué plus haut, le produit d'un prêt compte lorsque le prêt est garanti par vos actifs personnels et que vous êtes personnellement tenu de le rembourser. Documentez le contrat de prêt, la garantie et le versement des fonds. Les prêts garantis par l'entreprise E-2 elle-même ne comptent pas dans l'investissement.</p>
+
+        <h3>Une mise en garde sur les cryptomonnaies</h3>
+
+        <p>Le produit de la vente de cryptomonnaies est utilisable, mais traitez-le comme une source soumise à un examen renforcé. Vous devrez reconstituer l'historique complet : les relevés des plateformes d'échange montrant les achats d'origine, l'historique des transactions pour les mouvements significatifs, la vente convertissant les cryptomonnaies en monnaie classique et le virement vers votre compte. Les agents ne sont pas hostiles au patrimoine issu des cryptomonnaies ; ils sont hostiles aux fonds qu'ils ne peuvent pas retracer. Commencez cette reconstitution plusieurs mois avant de déposer votre demande, pas quelques semaines avant.</p>
 
         <p>Des dépôts importants sans explication, des fonds provenant de tiers sans lien documenté avec vous, ou un capital apparu soudainement sans historique clair déclencheront des questions, voire un refus. Commencez à rassembler vos documents financiers tôt dans le processus.</p>
+
+        <h2>Et si l'agent estime que le montant est trop faible ?</h2>
+
+        <p>Il arrive qu'un agent admette que vos fonds sont réels et à risque, mais conclue que le total n'est tout simplement pas suffisant. Cette objection revêt généralement deux formes à la fois : le caractère substantiel (l'investissement est faible par rapport au coût réel de l'entreprise) et la marginalité (une entreprise aussi peu financée ne fera jamais vivre que vous et votre famille). Les deux constats se recoupent parce qu'ils partent de la même racine, un plan sous-financé.</p>
+
+        <p>Si vous recevez ce signal avant le dépôt, dans une demande de preuves complémentaires (Request for Evidence) ou après un refus, vous disposez de vraies options :</p>
+
+        <ul>
+            <li><strong>Injecter du capital supplémentaire.</strong> Augmenter l'investissement et documenter les nouvelles dépenses change immédiatement le calcul du caractère substantiel.</li>
+            <li><strong>Renforcer le plan d'embauche.</strong> Un calendrier concret de postes, de salaires et de dates de prise de fonction, appuyé par les projections de revenus qui les financent, attaque de front le constat de marginalité.</li>
+            <li><strong>Apporter des preuves de revenus.</strong> Des contrats clients signés, des lettres d'intention, des données de performance de la franchise ou de premières ventes réelles prouvent que l'entreprise peut aller au-delà du simple gagne-pain d'une famille.</li>
+        </ul>
+
+        <p>Les refus pour investissement insuffisant figurent parmi les plus évitables, car le calcul est visible avant même le dépôt. Pour comprendre comment ces dossiers déraillent, lisez <a href="/fr/blog/e2-visa-denial-reasons">Pourquoi les demandes de visa E-2 sont refusées</a> avant d'engager votre capital.</p>
 
         <h2>Comparaison avec l'EB-5</h2>
 
@@ -252,6 +426,36 @@
         <div class="callout">
             <p><strong>À retenir :</strong> il n'existe aucun chiffre magique garantissant l'approbation d'un visa E-2. L'investissement doit être proportionnel au coût total de l'entreprise et suffisant pour la capitaliser en vue d'une exploitation réussie. La plupart des dossiers approuvés se situent entre 80 000 $ et 300 000 $, mais le montant adapté à votre situation dépend de votre entreprise spécifique.</p>
         </div>
+
+        <h2>Questions fréquentes</h2>
+
+        <h3>Existe-t-il un investissement minimum pour le visa E-2 ?</h3>
+
+        <p>Non. Ni la loi ni le règlement 8 CFR 214.2(e) ne fixent de minimum en dollars. L'investissement doit être substantiel par rapport au coût total de l'entreprise, selon le barème dégressif du 9 FAM 402.9-6(B). La plupart des dossiers approuvés se situent entre 80 000 $ et 300 000 $, mais c'est une tendance, pas une règle.</p>
+
+        <h3>Puis-je obtenir un visa E-2 avec 50 000 $ ?</h3>
+
+        <p>C'est possible, mais difficile. En dessous de 50 000 $, il est difficile de démontrer que l'entreprise est correctement capitalisée et difficile d'échapper à l'objection de marginalité. Les exceptions sont des entreprises aux coûts de démarrage réellement faibles, dotées d'un plan d'embauche crédible et de preuves de revenus solides. Faites évaluer honnêtement votre projet avant de dépenser quoi que ce soit à ce niveau.</p>
+
+        <h3>Le fonds de roulement compte-t-il dans l'investissement ?</h3>
+
+        <p>Oui, lorsqu'il est d'un montant raisonnable pour l'entreprise et réellement engagé, c'est-à-dire déjà déployé ou ventilé dans un plan d'exploitation mois par mois. Ce qui ne compte pas, c'est une importante réserve de trésorerie non engagée laissée sur le compte de l'entreprise pour gonfler le chiffre. Les agents font la différence.</p>
+
+        <h3>L'argent emprunté peut-il compter dans l'investissement ?</h3>
+
+        <p>Oui, si le prêt est garanti par vos actifs personnels et que vous êtes personnellement tenu de le rembourser. Les prêts garantis uniquement par les actifs de l'entreprise E-2 ne comptent pas, car vous ne risquez rien personnellement si l'entreprise échoue. Les prêts documentés consentis par des proches peuvent être admis selon le même principe.</p>
+
+        <h3>Dois-je dépenser l'argent avant de déposer ma demande ?</h3>
+
+        <p>Pour l'essentiel, oui. Les fonds doivent être dépensés ou engagés de manière irrévocable avant la décision sur le visa. Les créations d'entreprise y répondent en construisant réellement l'entreprise avant l'entretien. Les acheteurs y répondent par un séquestre (escrow) qui libère les fonds d'achat en cas d'approbation du visa et les restitue en cas de refus.</p>
+
+        <h3>Deux investisseurs peuvent-ils combiner leurs fonds ?</h3>
+
+        <p>La détention du capital est la contrainte. Chaque candidat E-2 doit détenir au moins 50 pour cent de l'entreprise ou en exercer le contrôle opérationnel. Deux associés de pays signataires détenant chacun exactement 50 pour cent peuvent chacun obtenir leur propre visa E-2 par la même société. Trois associés à parts égales ne le peuvent pas, car personne n'atteint la barre des 50 pour cent.</p>
+
+        <h3>L'investissement doit-il être en numéraire ?</h3>
+
+        <p>Non. Les actifs corporels que vous transférez à l'entreprise, comme des équipements, des véhicules ou du stock, peuvent compter à leur juste valeur de marché, à condition que la propriété passe réellement à l'entreprise et que la valeur soit documentée. Ce que vous ne pouvez pas compter, c'est le goodwill incorporel ou des actifs simplement mis à disposition sans transfert de propriété.</p>
 
     </div>
 </div>

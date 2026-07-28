@@ -69,6 +69,11 @@
         .footer__links a:hover { color: rgba(255,255,255,0.6); }
         .footer__legal { font-size: 0.75rem; color: rgba(255,255,255,0.2); width: 100%; }
         @media (max-width: 768px) { .nav__links { display: none; } .nav__toggle { display: flex; } .nav__links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--navy-deep); padding: 1.5rem 2rem; gap: 1.25rem; border-top: 1px solid rgba(255,255,255,0.05); z-index: 99; } .related__grid { grid-template-columns: 1fr; } .footer__inner { flex-direction: column; align-items: flex-start; } }
+        .article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0 2rem; font-size: 0.9rem; }
+        .article-body th { background: var(--navy); color: var(--white); text-align: left; padding: 0.75rem 1rem; font-weight: 600; font-size: 0.8rem; letter-spacing: 0.05em; }
+        .article-body td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-secondary); line-height: 1.6; vertical-align: top; }
+        .article-body tr:nth-child(even) td { background: var(--cream); }
+        .table-scroll { overflow-x: auto; }
     </style>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KQ98LNEDZL"></script>
@@ -104,7 +109,7 @@
   "image": "https://emanlegal.com/hero.jpg",
   "inLanguage": "fr",
   "datePublished": "2026-04-10",
-  "dateModified": "2026-06-18",
+  "dateModified": "2026-07-28",
   "author": {
     "@type": "Person",
     "name": "Emmanuel Okharedia",
@@ -123,6 +128,72 @@
       "url": "https://emanlegal.com/favicon.svg"
     }
   }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://emanlegal.com/fr/blog/e2-visa-requirements#faq",
+  "inLanguage": "fr",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Puis-je être éligible au visa E-2 avec moins de 50 000 $ ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rarement. Les investissements inférieurs à 50 000 $ sont très rarement approuvés, car les critères de proportionnalité et de suffisance sont difficiles à satisfaire à ce niveau. La plupart des investissements E-2 qui aboutissent se situent entre 80 000 $ et 300 000 $."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'achat d'une franchise satisfait-il les conditions du E-2 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Une franchise peut bien fonctionner, car le droit d'entrée versé, les coûts d'aménagement et les équipements comptent comme investissement à risque, et le modèle éprouvé du franchiseur renforce le plan d'affaires. Mais une franchise ne satisfait automatiquement aucune condition : l'investissement doit rester substantiel et l'entreprise non marginale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mon conjoint peut-il travailler avec un visa E-2 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Le conjoint d'un investisseur E-2 reçoit une autorisation de travail attachée à son statut et peut travailler pour n'importe quel employeur aux États-Unis, pas seulement pour l'entreprise E-2. Les enfants de moins de 21 ans peuvent vivre aux États-Unis et y être scolarisés, mais ils ne peuvent pas travailler."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la durée de validité du visa E-2 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La validité dépend du barème de réciprocité entre les États-Unis et votre pays. De nombreux pays signataires obtiennent des visas valables jusqu'à cinq ans, d'autres des durées bien plus courtes. Le E-2 peut être renouvelé indéfiniment tant que l'entreprise continue de fonctionner et que les conditions restent remplies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dois-je embaucher des salariés immédiatement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Une nouvelle entreprise peut être éligible en démontrant sa capacité à devenir non marginale dans les cinq ans, en général grâce à un plan d'affaires crédible comportant des projections d'embauches réalistes. Mais un plan qui ne prévoit jamais d'embaucher qui que ce soit constitue une faiblesse sérieuse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je déposer une demande si mon pays n'est pas un pays signataire ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pas directement. La nationalité d'un pays signataire est une condition stricte de citoyenneté. Certains investisseurs obtiennent d'abord la citoyenneté d'un pays signataire, et d'autres utilisent des catégories alternatives comme le visa L-1 de transfert intragroupe, qui ne comporte aucune restriction de nationalité."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qu'advient-il de mon statut E-2 si je vends l'entreprise ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le statut E-2 est lié à l'entreprise qualifiante spécifique. Si vous vendez l'entreprise, le fondement de votre statut disparaît : vous devez quitter le pays, passer à un autre statut ou investir dans une nouvelle entreprise qualifiante et déposer une nouvelle demande."
+      }
+    }
+  ]
 }
 </script>
 </head>
@@ -155,7 +226,7 @@
                 <span>&bull;</span>
                 <span>Avril 2026</span>
                 <span>&bull;</span>
-                <span>Lecture : 8 min</span>
+                <span>Lecture : 13 min</span>
             </div>
         </div>
     </div>
@@ -168,13 +239,40 @@
 
         <p>Cet article passe en revue les cinq conditions en détail. Il explique ce que dit la loi, ce que les agents consulaires recherchent réellement et les points sur lesquels les candidats trébuchent le plus souvent.</p>
 
+        <p>Ces conditions découlent de la loi (INA 101(a)(15)(E)), de la réglementation (8 CFR 214.2(e)) et des instructions du Département d'État aux agents consulaires (9 FAM 402.9). Voici l'ensemble du cadre en un coup d'œil :</p>
+
+        <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Condition</th><th>Ce que l'agent recherche</th><th>Preuves clés</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Nationalité d'un pays signataire</td><td>Vous êtes citoyen d'un pays signataire et l'entreprise est détenue à au moins 50 % par des ressortissants de ce pays</td><td>Passeport, registres de propriété de la société, table de capitalisation ou statuts (operating agreement)</td></tr>
+                <tr><td>Investissement substantiel</td><td>Le montant est proportionnel au coût total de l'entreprise et suffisant pour la rendre opérationnelle</td><td>Relevés bancaires, virements, contrat d'acquisition, budget de démarrage détaillé</td></tr>
+                <tr><td>Investissement « at risk » (à risque)</td><td>Les fonds sont engagés de manière irrévocable et exposés à une perte en cas d'échec de l'entreprise</td><td>Justificatifs de dépenses, contrats signés, bail, contrat de séquestre avec conditions de déblocage contraignantes</td></tr>
+                <tr><td>Entreprise réelle et non marginale</td><td>Une entreprise active, en exploitation, capable de générer plus qu'un revenu minimal</td><td>Plan d'affaires, projections financières, registres de paie, déclarations fiscales</td></tr>
+                <tr><td>Développer et diriger</td><td>Vous détenez au moins 50 % ou exercez autrement le contrôle opérationnel</td><td>Statuts (operating agreement), organigramme, votre CV et la description de votre rôle</td></tr>
+            </tbody>
+        </table>
+        </div>
+
         <h2>Condition n° 1 : la nationalité d'un pays signataire</h2>
 
         <p>Vous devez être citoyen d'un pays ayant conclu un traité de commerce et de navigation qualifiant avec les États-Unis. Les États-Unis maintiennent de tels traités avec plus de 80 pays. C'est votre nationalité au moment de la demande qui compte, pas votre pays de résidence.</p>
 
         <p>Cette condition est binaire. Soit votre pays a un traité, soit il n'en a pas. S'il n'en a pas, aucune somme d'argent ni expérience entrepreneuriale ne change votre éligibilité. Les citoyens de la Chine, de l'Inde, du Brésil, de la Russie, du Vietnam et du Nigeria comptent parmi les nationalités les plus courantes qui ne peuvent pas utiliser le programme E-2.</p>
 
-        <p>Si vous avez la double nationalité, les choses deviennent plus intéressantes. Si l'une de vos nationalités correspond à un pays signataire, vous pouvez peut-être déposer votre demande au titre de cette nationalité, même si votre autre passeport provient d'un pays non signataire. Consultez l'analyse complète dans <a href="/fr/blog/e2-visa-treaty-countries">Pays signataires du traité E-2 : la liste complète et ce qu'elle signifie pour vous</a>.</p>
+        <h3>La règle des 50 % pour la nationalité de la société</h3>
+
+        <p>La condition de nationalité s'applique à l'entreprise, pas seulement à vous. Une société prend la nationalité de ses propriétaires et, pour être éligible, l'entreprise doit être détenue à au moins 50 % par des ressortissants du pays signataire. Si vous détenez la totalité de la société, c'est automatique. Si vous avez des associés, le calcul devient une question de seuil : un citoyen britannique qui détient la moitié d'une LLC américaine aux côtés d'un associé américain dispose d'une entreprise britannique éligible, mais si sa part tombe à 40 %, la société perd sa nationalité de pays signataire et le E-2 échoue. Toute entrée au capital ou restructuration qui dilue la participation des ressortissants du pays signataire sous la barre des 50 % met le visa lui-même en jeu.</p>
+
+        <p>Un point technique : un citoyen d'un pays signataire qui détient une carte verte américaine ne compte pas dans les 50 %. Pour ce calcul, sa participation est traitée comme une participation américaine.</p>
+
+        <h3>Double nationalité et résidents permanents</h3>
+
+        <p>Si vous avez la double nationalité, les choses deviennent plus intéressantes. Si l'une de vos nationalités correspond à un pays signataire, vous pouvez peut-être déposer votre demande au titre de cette nationalité, même si votre autre passeport provient d'un pays non signataire. Vous choisissez le passeport sous lequel vous déposez la demande, et la nationalité de l'entreprise suit la citoyenneté que vous utilisez : une personne qui possède à la fois la nationalité indienne et la nationalité canadienne dépose simplement sa demande en tant que ressortissant canadien. Consultez l'analyse complète dans <a href="e2-visa-treaty-countries.html">Pays signataires du traité E-2 : la liste complète et ce qu'elle signifie pour vous</a>.</p>
+
+        <p>La résidence permanente, en revanche, ne suffit jamais. Une personne qui vit au Royaume-Uni depuis vingt ans avec un statut de résident permanent mais qui détient toujours un passeport nigérian reste un ressortissant nigérian aux fins du E-2. L'avantage du traité s'attache uniquement à la citoyenneté et, tant que le certificat de citoyenneté n'est pas en main, la porte du E-2 reste fermée.</p>
 
         <p>Une nuance importante : la nationalité qui compte est celle que vous utilisez pour votre demande. Vous devez démontrer des liens avec le pays signataire et déposer en principe votre demande au consulat de ce pays.</p>
 
@@ -186,9 +284,13 @@
 
         <p><strong>La suffisance</strong> signifie que le montant est suffisant pour assurer le bon fonctionnement de l'entreprise. Un plan d'affaires qui exige 150 000 $ pour un lancement dans de bonnes conditions, adossé à un investissement de 60 000 $, soulève immédiatement des questions.</p>
 
-        <p>En pratique, les investissements E-2 qui aboutissent se situent généralement entre 80 000 $ et 300 000 $. Les investissements inférieurs à 50 000 $ sont très rarement approuvés. Les entreprises plus coûteuses, comme les activités industrielles ou les restaurants avec service complet, exigent souvent nettement plus. Lisez l'analyse approfondie dans <a href="/fr/blog/e2-visa-investment-amount">Combien faut-il investir pour un visa E-2</a>.</p>
+        <h3>L'échelle mobile</h3>
 
-        <h2>Condition n° 3 : l'investissement doit être « à risque »</h2>
+        <p>La proportionnalité fonctionne comme une échelle mobile, et le 9 FAM 402.9 la décrit exactement en ces termes : plus le coût total de l'entreprise est faible, plus le pourcentage que vous devez financer est élevé. Pour une entreprise dont la création ou l'acquisition coûte 100 000 $, l'agent voudra généralement voir 80 à 100 % de ce montant investi. Une entreprise de 500 000 $ peut être éligible avec une proportion un peu plus faible, et une entreprise de plusieurs millions de dollars avec un pourcentage encore inférieur, car à cette échelle le montant absolu est incontestablement substantiel en lui-même. Un financement partiel assorti d'une promesse d'investir davantage plus tard donne l'impression que vous vous ménagez une porte de sortie.</p>
+
+        <p>En pratique, les investissements E-2 qui aboutissent se situent généralement entre 80 000 $ et 300 000 $. Les investissements inférieurs à 50 000 $ sont très rarement approuvés. Les entreprises plus coûteuses, comme les activités industrielles ou les restaurants avec service complet, exigent souvent nettement plus. Lisez l'analyse approfondie dans <a href="e2-visa-investment-amount.html">Combien faut-il investir pour un visa E-2</a>.</p>
+
+        <h2>Condition n° 3 : l'investissement doit être « at risk » (à risque)</h2>
 
         <p>C'est la condition qui surprend le plus. Avoir l'argent ne suffit pas. Les fonds doivent être engagés de manière irrévocable dans l'entreprise.</p>
 
@@ -203,7 +305,36 @@
 
         <p>Ce qui ne compte pas : de l'argent qui dort sur un compte bancaire professionnel et que vous pourriez retirer demain, une épargne personnelle réservée mais pas encore dépensée, ou une lettre d'intention d'investir sans aucune obligation contraignante.</p>
 
-        <p>Le critère « à risque » signifie également que l'investissement doit être exposé à une perte partielle ou totale en cas d'échec de l'entreprise. Vous devez être exposé à un risque commercial réel. Un prêt entièrement garanti où vous ne courez aucun risque de perte ne satisfait pas à cet élément.</p>
+        <p>Le critère « at risk » (à risque) signifie également que l'investissement doit être exposé à une perte partielle ou totale en cas d'échec de l'entreprise. Vous devez être exposé à un risque commercial réel. Un prêt entièrement garanti où vous ne courez aucun risque de perte ne satisfait pas à cet élément.</p>
+
+        <p>Voici comment la ligne est tracée en pratique :</p>
+
+        <div class="table-scroll">
+        <table>
+            <thead>
+                <tr><th>Compte dans l'investissement</th><th>Ne compte pas</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Prix d'achat effectivement versé pour une entreprise existante ou une franchise</td><td>De l'argent qui dort sur un compte personnel ou professionnel et que vous pourriez retirer demain</td></tr>
+                <tr><td>Équipements, mobilier, véhicules et technologies achetés pour l'entreprise</td><td>Une lettre d'intention ou un contrat non signé, sans obligation contraignante</td></tr>
+                <tr><td>Aménagements de locaux et coûts d'installation</td><td>Des fonds réservés à l'entreprise mais jamais réellement dépensés</td></tr>
+                <tr><td>Stocks et fournitures initiales</td><td>La valeur que vous attribuez à vos propres idées, à votre temps ou à votre clientèle potentielle</td></tr>
+                <tr><td>Fonds placés sous séquestre en vertu d'un contrat contraignant, dont le déblocage dépend uniquement de la délivrance du visa</td><td>Des fonds sous séquestre que vous pouvez récupérer à volonté, sans conditions de déblocage contraignantes</td></tr>
+                <tr><td>Prêts garantis par vos actifs personnels, où vous portez le risque de remboursement</td><td>Prêts garantis uniquement par les actifs de l'entreprise E-2 elle-même</td></tr>
+                <tr><td>Frais de démarrage raisonnables : licences, assurances, dépôts de garantie, marketing initial</td><td>Un emprunt entièrement garanti où le seul recours du prêteur porte sur les actifs de l'entreprise et où vous ne courez aucun risque personnel</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <p>La ligne consacrée au séquestre est importante, car il s'agit de l'outil standard pour acheter une entreprise existante sans miser le prix d'achat sur l'approbation du visa. Un contrat de séquestre contraignant, dont le déblocage dépend uniquement de la délivrance du visa, satisfait le critère « at risk » (à risque) tout en vous protégeant si la demande est refusée.</p>
+
+        <h3>L'origine des fonds : prouver d'où vient l'argent</h3>
+
+        <p>Engager l'argent n'est que la moitié du travail : vous devez aussi en retracer l'origine. Les agents veulent un cheminement documenté depuis l'origine des fonds jusqu'au compte bancaire de l'entreprise, et les lacunes dans cette chaîne provoquent des refus.</p>
+
+        <p>Les sources légitimes comprennent les revenus et l'épargne (démontrés par des justificatifs d'emploi, des déclarations fiscales et des relevés bancaires sur la durée), la vente d'un bien immobilier (démontrée par le contrat de vente et le décompte de clôture), la vente d'une autre entreprise, un héritage et les donations. Un investissement issu d'une donation est acceptable s'il est documenté : une lettre de donation signée précisant que les fonds ne sont assortis d'aucune obligation de remboursement, plus la preuve de l'origine licite des fonds du donateur.</p>
+
+        <p>Les fonds empruntés suivent la logique du « at risk » exposée ci-dessus. Un prêt garanti par vos actifs personnels, comme une hypothèque sur votre logement, compte parce que vous portez personnellement le risque de remboursement. Un prêt garanti par les actifs de l'entreprise E-2 elle-même ne compte pas. La manière d'assembler et de documenter ces fonds est un exercice de planification à part entière : consultez <a href="e2-visa-investment-structure.html">Comment structurer votre investissement E-2</a>.</p>
 
         <h2>Condition n° 4 : une entreprise réelle et non marginale</h2>
 
@@ -219,7 +350,19 @@
 
         <p>Un cabinet de conseil individuel sans salariés et sans projet d'embauche est le cas problématique classique. Même avec un investissement important, il est très difficile de soutenir qu'une telle entreprise n'est pas marginale.</p>
 
-        <p>Découvrez quels types d'entreprises satisfont à ce critère dans <a href="/fr/blog/what-businesses-qualify-for-e2-visa">Quelles entreprises sont éligibles au visa E-2</a>.</p>
+        <h3>Un exemple concret : consultant solo contre café</h3>
+
+        <p>Supposons que deux candidats investissent chacun 120 000 $. Le premier est un consultant en management qui crée une LLC américaine, travaille seul depuis son bureau à domicile et projette 95 000 $ de revenu net annuel. L'argent est bien réel, mais la seule fonction économique de l'entreprise est de faire vivre le consultant. Pas d'embauche, pas de masse salariale, pas d'empreinte économique au-delà du niveau de vie d'une seule personne. Attendez-vous à ce que l'agent conclue que l'entreprise est marginale.</p>
+
+        <p>Le second candidat ouvre un café avec les mêmes 120 000 $. Les projections de la première année prévoient le propriétaire plus deux employés à temps partiel. À la fin de la deuxième année, le plan prévoit quatre salariés sur la paie, avec des chiffres de revenus réalistes, un bail signé et des données financières comparables issues de cafés similaires. Cette entreprise crée des emplois, paie des charges sociales et s'approvisionne auprès de fournisseurs locaux. Voilà à quoi ressemble une entreprise non marginale, et la différence n'a rien à voir avec le montant du chèque.</p>
+
+        <p>Un projet concret et crédible d'embaucher des travailleurs américains, ou de leur sous-traiter un volume de travail significatif, peut encore faire pencher l'analyse en faveur du consultant. Mais une projection d'embauches ajoutée artificiellement pour faire tenir les chiffres se repère facilement.</p>
+
+        <h3>La fenêtre de cinq ans pour les nouvelles entreprises</h3>
+
+        <p>Pour une nouvelle entreprise, la réglementation vous laisse du temps. Une entreprise qui ne peut pas encore générer un revenu non marginal est éligible si elle a la capacité de le faire dans les cinq ans suivant la délivrance du visa. Cette capacité se prouve par le plan d'affaires : des projections de revenus fondées sur des hypothèses défendables et un calendrier d'embauches lié à ces revenus. Le critère n'est aussi solide que les projections qui le soutiennent.</p>
+
+        <p>Découvrez quels types d'entreprises satisfont à ce critère dans <a href="what-businesses-qualify-for-e2-visa.html">Quelles entreprises sont éligibles au visa E-2</a>.</p>
 
         <h2>Condition n° 5 : vous venez développer et diriger l'entreprise</h2>
 
@@ -229,7 +372,9 @@
 
         <p>Deuxièmement, si vous détenez moins de 50 %, vous devez occuper au sein de la société une position qui vous confère le contrôle opérationnel. C'est plus difficile à démontrer et cela exige une documentation soignée de votre rôle par rapport aux autres associés.</p>
 
-        <p>Les employés de l'investisseur E-2 peuvent également obtenir le statut E-2, mais ils doivent occuper des postes de direction, d'encadrement ou de compétences essentielles. Cette demande est distincte de celle de l'investisseur et obéit à ses propres conditions.</p>
+        <p>Les associés minoritaires ne sont pas exclus, mais ils doivent construire ce contrôle par des mécanismes de gouvernance. Des statuts (operating agreement) vous désignant comme unique gérant (sole managing member), un contrat de gestion confiant l'autorité quotidienne à votre poste, ou des accords de vote vous donnant le pouvoir de décision sur les opérations peuvent chacun établir le contrôle requis. Les documents doivent montrer que c'est vous, et non vos coassociés, qui dirigez réellement l'entreprise. Un associé à 30 % sans droits de gouvernance particuliers ne développe ni ne dirige quoi que ce soit.</p>
+
+        <p>Les employés de l'investisseur E-2 peuvent également obtenir le statut E-2 s'ils possèdent la même nationalité de pays signataire que l'entreprise et occupent des postes de direction, d'encadrement ou de compétences essentielles. Un employé aux compétences essentielles apporte un savoir-faire spécialisé que l'entreprise ne peut pas facilement trouver sur le marché du travail américain. Cette demande est distincte de celle de l'investisseur et obéit à ses propres conditions.</p>
 
         <h2>Comment les conditions s'articulent entre elles</h2>
 
@@ -246,7 +391,7 @@
             <li>Des entreprises qui sont en réalité des activités de freelance ou de conseil déguisées en sociétés</li>
         </ul>
 
-        <p>Comprendre pourquoi des demandes échouent est tout aussi important que comprendre ce qui les fait réussir. Consultez <a href="/fr/blog/e2-visa-denial-reasons">Les motifs de refus les plus fréquents des demandes de visa E-2</a> pour un regard sans détour sur les problèmes les plus courants.</p>
+        <p>Comprendre pourquoi des demandes échouent est tout aussi important que comprendre ce qui les fait réussir. Consultez <a href="e2-visa-denial-reasons.html">Les motifs de refus les plus fréquents des demandes de visa E-2</a> pour un regard sans détour sur les problèmes les plus courants.</p>
 
         <h2>La documentation : transformer les conditions en preuves</h2>
 
@@ -256,9 +401,47 @@
 
         <p>L'origine de vos fonds d'investissement doit également être documentée. Vous devez montrer non seulement que vous disposez de l'argent, mais aussi d'où il provient. Des dépôts importants inexpliqués, des fonds provenant de tiers sans lien avec le projet ou des capitaux sans origine claire peuvent tous éveiller des soupçons au stade de l'entretien.</p>
 
+        <h2>Où le prouver : au consulat ou auprès de l'USCIS</h2>
+
+        <p>Les cinq conditions ne changent jamais, mais il existe deux voies procédurales pour les démontrer.</p>
+
+        <p><strong>La procédure consulaire</strong> est la voie standard. Vous remplissez le formulaire DS-160 en ligne ainsi que le supplément investisseur DS-156E, vous soumettez votre dossier de preuves à l'ambassade ou au consulat des États-Unis et vous vous présentez à un entretien en personne. L'agent consulaire applique directement les cinq conditions lors de cet entretien, de sorte que la préparation de cette conversation compte autant que les documents : consultez <a href="e2-visa-interview.html">Comment préparer votre entretien pour le visa E-2</a>. En cas d'approbation, un visa est apposé dans votre passeport et vous permet d'entrer aux États-Unis et d'en sortir librement.</p>
+
+        <p><strong>Le changement de statut</strong> est possible si vous vous trouvez déjà aux États-Unis sous un autre statut légal. Vous déposez le formulaire Form I-129 auprès de l'USCIS, et la décision est rendue sur dossier, sans entretien. En cas d'approbation, vous détenez le statut E-2 et pouvez diriger l'entreprise, mais vous ne recevez pas de visa. Dès que vous quittez le pays, vous devez de toute façon déposer une demande auprès d'un consulat pour revenir, et l'agent consulaire n'est pas lié par l'approbation de l'USCIS. Le changement de statut convient aux personnes qui doivent démarrer rapidement leur activité et peuvent différer leurs voyages.</p>
+
         <div class="callout">
             <p><strong>À retenir :</strong> les cinq conditions doivent être remplies simultanément. Exceller sur quatre conditions sur cinq ne suffit pas. Le dossier doit raconter une histoire complète et documentée sur chaque élément, et c'est pourquoi une préparation rigoureuse compte autant.</p>
         </div>
+
+        <h2>Questions fréquentes</h2>
+
+        <h3>Puis-je être éligible au visa E-2 avec moins de 50 000 $ ?</h3>
+
+        <p>Rarement. Il n'existe pas de minimum légal, mais les critères de proportionnalité et de suffisance sont très difficiles à satisfaire à ce niveau. Un investissement inférieur à 50 000 $ suppose soit une entreprise trop petite pour être crédible, soit une entreprise nettement sous-financée. La plupart des investissements E-2 qui aboutissent se situent entre 80 000 $ et 300 000 $.</p>
+
+        <h3>L'achat d'une franchise satisfait-il les conditions ?</h3>
+
+        <p>Une franchise peut être un excellent véhicule E-2, mais elle ne satisfait automatiquement aucune condition. Le droit d'entrée de la franchise, l'aménagement des locaux et les achats d'équipements sont des dépenses « at risk » (à risque) clairement documentées, et le modèle éprouvé du franchiseur rend les projections plus crédibles. Vous restez néanmoins soumis à l'analyse complète du caractère substantiel, de la marginalité et du critère « développer et diriger », et une franchise confiée à un gérant pendant que vous restez à l'étranger échoue comme n'importe quel autre investissement passif.</p>
+
+        <h3>Mon conjoint peut-il travailler avec un visa E-2 ?</h3>
+
+        <p>Oui. Votre conjoint reçoit une autorisation de travail attachée à son statut et peut travailler pour n'importe quel employeur aux États-Unis, dans n'importe quel domaine. Les enfants de moins de 21 ans peuvent vivre aux États-Unis et y être scolarisés, mais ils ne peuvent pas travailler. Le tableau complet pour les personnes à charge est présenté dans <a href="e2-visa-family.html">Le visa E-2 pour votre famille : conjoints et enfants</a>.</p>
+
+        <h3>Quelle est la durée de validité du visa E-2 ?</h3>
+
+        <p>Elle dépend du barème de réciprocité entre les États-Unis et votre pays signataire. De nombreux pays obtiennent des visas valables jusqu'à cinq ans avec entrées multiples, d'autres des durées bien plus courtes. Chaque entrée ouvre une période de statut de deux ans, et il n'y a pas de limite au nombre de renouvellements : tant que l'entreprise fonctionne et que les conditions restent remplies, le E-2 peut être prolongé indéfiniment.</p>
+
+        <h3>Dois-je embaucher des salariés immédiatement ?</h3>
+
+        <p>Non. Une nouvelle entreprise est éligible si elle démontre sa capacité à devenir non marginale dans les cinq ans, normalement grâce à un plan d'affaires comportant des projections d'embauches réalistes. Ce que vous ne pouvez pas faire, c'est présenter un plan qui ne prévoit jamais d'embaucher qui que ce soit, et au moment du renouvellement l'agent comparera les projections à la réalité.</p>
+
+        <h3>Puis-je déposer une demande si mon pays n'est pas un pays signataire ?</h3>
+
+        <p>Pas directement. La nationalité d'un pays signataire est une condition stricte de citoyenneté, sans dérogation possible. Certains investisseurs acquièrent d'abord la citoyenneté d'un pays signataire et déposent leur demande en tant que ressortissants de ce pays. D'autres utilisent le visa L-1 de transfert intragroupe, qui ne comporte aucune restriction de nationalité mais exige une société étrangère existante qui vous transfère vers une filiale américaine.</p>
+
+        <h3>Qu'advient-il de mon E-2 si je vends l'entreprise ?</h3>
+
+        <p>Votre statut est lié à l'entreprise qualifiante spécifique : la vendre met fin au fondement de votre E-2. Les options pratiques sont de quitter le pays, de passer à un autre statut non-immigrant, ou d'investir dans une nouvelle entreprise qualifiante et de déposer une nouvelle demande. Si une vente se profile, planifiez la séquence migratoire avant de signer.</p>
 
     </div>
 </div>
