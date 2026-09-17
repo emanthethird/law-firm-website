@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMAN III · Content Foundation V2</title>
+<style>
+  :root {
+    --ebony: #FFFFFF;          /* page background, now white */
+    --ebony-2: #FFFFFF;
+    --card: #FAF8F1;           /* light cream cards */
+    --butter: #A87A16;         /* deep gold, readable on white */
+    --butter-deep: #C9A24B;
+    --cream: #1E1B14;          /* main text, near-black */
+    --muted: #6E6552;
+    --line: #E3DCC9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #F2EFE7; }
+  body {
+    font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    color: var(--cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 12px;
+  }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    background: linear-gradient(160deg, var(--ebony-2) 0%, var(--ebony) 60%);
+    border: 1px solid var(--line);
+    padding: 0.45in 0.5in;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .kicker {
+    font-size: 9px; letter-spacing: 3px; color: var(--muted);
+    text-transform: uppercase; display: flex; justify-content: space-between;
+  }
+  h1 {
+    font-size: 30px; letter-spacing: 1px; font-weight: 700; color: var(--cream);
+    line-height: 1.05; text-transform: uppercase;
+  }
+  h1 span { color: var(--butter); }
+  .throughline {
+    border: 1px solid var(--butter-deep);
+    background: linear-gradient(90deg, rgba(232,200,114,0.10), rgba(232,200,114,0.03));
+    padding: 14px 18px; text-align: center;
+  }
+  .throughline .q {
+    font-size: 16px; font-weight: 600; color: var(--butter); line-height: 1.4;
+    font-family: Georgia, "Times New Roman", serif; font-style: italic;
+  }
+  .throughline .sub { font-size: 8.5px; letter-spacing: 2.5px; color: var(--muted); text-transform: uppercase; margin-top: 6px; }
+  .label {
+    font-size: 8.5px; letter-spacing: 2.5px; color: var(--butter);
+    text-transform: uppercase; font-weight: 700; margin-bottom: 7px;
+  }
+  .grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 14px; flex: 1; }
+  .col { display: flex; flex-direction: column; gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); padding: 12px 14px; }
+  .pillar { display: flex; gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .pillar:last-child { border-bottom: none; }
+  .pillar .num { font-size: 15px; font-weight: 700; color: var(--butter); font-family: Georgia, serif; }
+  .pillar .name { font-size: 11.5px; font-weight: 700; color: var(--cream); text-transform: uppercase; letter-spacing: 0.5px; }
+  .pillar .desc { font-size: 9.5px; color: var(--muted); line-height: 1.35; display: block; margin-top: 1px; }
+  p.body { font-size: 10px; line-height: 1.45; color: var(--cream); }
+  p.body b { color: var(--butter); font-weight: 700; }
+  ul.tight { list-style: none; }
+  ul.tight li {
+    font-size: 9.8px; line-height: 1.4; color: var(--cream);
+    padding: 3px 0 3px 12px; position: relative;
+  }
+  ul.tight li::before { content: "//"; position: absolute; left: 0; color: var(--butter-deep); font-size: 8px; top: 5px; }
+  .takes { display: grid; grid-template-columns: 1fr 1fr; gap: 0 10px; font-size: 9px; }
+  .takes .h { font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; padding-bottom: 4px; border-bottom: 1px solid var(--line); margin-bottom: 5px; }
+  .takes .they { color: var(--muted); }
+  .takes .me { color: var(--butter); }
+  .takes p { line-height: 1.35; margin-bottom: 6px; }
+  .takes .they-t { color: var(--muted); font-style: italic; }
+  .takes .me-t { color: var(--cream); }
+  .positioning { border-left: 3px solid var(--butter); padding: 8px 12px; background: rgba(232,200,114,0.05); margin-top: 8px; }
+  .positioning p { font-size: 10px; line-height: 1.45; color: var(--cream); font-style: italic; }
+  .positioning .tag { font-size: 8px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; font-style: normal; display: block; margin-bottom: 3px; }
+  .voice-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    font-size: 8.5px; letter-spacing: 1px; text-transform: uppercase;
+    border: 1px solid var(--butter-deep); color: var(--butter);
+    padding: 3px 8px; border-radius: 2px;
+  }
+  .matrix-card { background: var(--card); border: 1px solid var(--line); padding: 10px 14px 8px; }
+  .matrix-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+  .matrix-head .note { font-size: 8px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+  table.matrix { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  table.matrix th, table.matrix td { border: 1px solid var(--line); text-align: center; padding: 4px 2px; }
+  table.matrix th { font-size: 7.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--butter); font-weight: 700; background: rgba(201,162,75,0.10); }
+  table.matrix th.topic { text-align: left; padding-left: 6px; width: 20%; color: var(--cream); letter-spacing: 0.5px; font-size: 8px; background: transparent; }
+  table.matrix th.topic span { display: block; font-weight: 400; color: var(--muted); font-size: 7px; text-transform: none; letter-spacing: 0; }
+  table.matrix td { font-size: 10px; font-weight: 700; color: var(--cream); font-family: Georgia, serif; }
+  table.matrix td small { display: block; font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif; font-weight: 400; font-size: 6.5px; color: var(--muted); letter-spacing: 0.5px; }
+  .footer {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid var(--line); padding-top: 8px;
+    font-size: 8px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase;
+  }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-top: 2px solid var(--butter-deep); padding: 8px 10px; text-align: center; }
+  .stat .v { font-size: 17px; font-weight: 700; color: var(--butter); font-family: Georgia, serif; line-height: 1.1; }
+  .stat .k { font-size: 7.5px; color: var(--muted); letter-spacing: 0.5px; text-transform: uppercase; margin-top: 3px; line-height: 1.35; display: block; }
+  .lang { display: grid; grid-template-columns: 1fr 1fr; gap: 0 10px; font-size: 9px; }
+  .lang .h { font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; padding-bottom: 4px; border-bottom: 1px solid var(--line); margin-bottom: 5px; }
+  .lang p { line-height: 1.45; }
+  @media print {
+    .page + .page { page-break-before: always; }
+    body { padding: 0; background: var(--ebony); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { border: none; width: 100%; min-height: auto; }
+    @page { size: letter; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="kicker"><span>EMAN III · Content Foundation · V2 The Pivot</span><span>6WK Yap Challenge · Day 2 · Aug 2026</span></div>
+
+  <h1>The Foundation, <span>Version 2.</span></h1>
+
+  <div class="throughline">
+    <div class="q">"You don't have to build your legacy from scratch.<br>You're one acquisition away from a different life, and I help you<br>find the deal, vet the deal, and actually start."</div>
+    <div class="sub">The Through-Line · Every pillar is a door into this</div>
+  </div>
+
+  <div class="matrix-card">
+    <div class="matrix-head"><div class="label" style="margin:0">The 28-Day Matrix · 7 Formats x 4 Topics</div><div class="note">Cell = posting day · every pairing once</div></div>
+    <table class="matrix">
+      <tr><th class="topic">Topic \ Format</th><th>Storytelling</th><th>Yaps</th><th>Notebook</th><th>Green Screen</th><th>Ranking</th><th>Carousel</th><th>Reactions</th></tr>
+      <tr><th class="topic">Business Acquisition Education<span>the expertise lane</span></th><td>1<small>DAY</small></td><td>9<small>DAY</small></td><td>17<small>DAY</small></td><td>25<small>DAY</small></td><td>5<small>DAY</small></td><td>13<small>DAY</small></td><td>21<small>DAY</small></td></tr>
+      <tr><th class="topic">Culture + Economics<span>the perspective lane</span></th><td>22<small>DAY</small></td><td>2<small>DAY</small></td><td>10<small>DAY</small></td><td>18<small>DAY</small></td><td>26<small>DAY</small></td><td>6<small>DAY</small></td><td>14<small>DAY</small></td></tr>
+      <tr><th class="topic">Behind the Build<span>the series lane</span></th><td>15<small>DAY</small></td><td>23<small>DAY</small></td><td>3<small>DAY</small></td><td>11<small>DAY</small></td><td>19<small>DAY</small></td><td>27<small>DAY</small></td><td>7<small>DAY</small></td></tr>
+      <tr><th class="topic">Personal Development + Mindset<span>the relatable lane</span></th><td>8<small>DAY</small></td><td>16<small>DAY</small></td><td>24<small>DAY</small></td><td>4<small>DAY</small></td><td>12<small>DAY</small></td><td>20<small>DAY</small></td><td>28<small>DAY</small></td></tr>
+    </table>
+  </div>
+
+  <div class="grid">
+    <div class="col">
+
+      <div class="card">
+        <div class="label">The 4 Topics</div>
+        <div class="pillar"><span class="num">01</span><span><span class="name">Business Acquisition Education</span><span class="desc">How to buy: find the deal, see why it's good or bad, diligence, structure, pass it down. Law as proof.</span></span></div>
+        <div class="pillar"><span class="num">02</span><span><span class="name">Culture + Economics</span><span class="desc">NBA, soccer, music, culture, and the economics underneath them, applied to ownership.</span></span></div>
+        <div class="pillar"><span class="num">03</span><span><span class="name">Behind the Build</span><span class="desc">The journey in public: deals in motion, the media platform, operator lessons.</span></span></div>
+        <div class="pillar"><span class="num">04</span><span><span class="name">Personal Development + Mindset</span><span class="desc">Becoming an owner: discipline, growth, beating analysis paralysis.</span></span></div>
+        <p class="body" style="margin-top:8px;color:var(--muted)">Faith runs as a thread through all four.</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Hot Takes</div>
+        <div class="takes">
+          <div><div class="h they">What everyone says</div></div>
+          <div><div class="h me">What I actually believe</div></div>
+          <p class="they-t">Start from scratch. That's the real entrepreneur way.</p>
+          <p class="me-t">Starting is the fastest way into the red. Buy, and you cash flow from day one.</p>
+          <p class="they-t">Buying a business is risky. Stick to index funds.</p>
+          <p class="me-t">A generation-old legacy business fails far less, and returns 30%+ instead of steady crumbs.</p>
+          <p class="they-t">You need millions and years of experience.</p>
+          <p class="me-t">Group investing, retirement rollovers, and your human capital are the buy-in. Your career years transfer.</p>
+          <p class="they-t">Leave the kids money and a paid-off house.</p>
+          <p class="me-t">A cash-flowing business is the wealth transfer that makes a difference.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="label">Story Bank</div>
+        <ul class="tight">
+          <li>The tow truck business.</li>
+          <li>The locksmith client deal (business type disguised).</li>
+          <li>The script: doctor, lawyer, engineer. High income, no asset.</li>
+          <li>"Just own a practice" and still owning no real asset.</li>
+          <li>Buyers who run on emotion and skip the financial analysis.</li>
+          <li>The non-financial factors that decide a good buy.</li>
+          <li>Starting my own business, and why it was a bad idea.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col">
+
+      <div class="card">
+        <div class="label">The Why</div>
+        <p class="body">Push the limits. Execute in <b>one direction, in public</b>, and invite people in. Build an ecosystem: a community of doers and builders, recurring revenue, a media platform, leverage. Move my family to <b>financial peace</b> in the culture and community I want to raise my kids in. Out of isolation.</p>
+      </div>
+
+      <div class="card">
+        <div class="label">My Person</div>
+        <p class="body">A <b>millennial / Gen X professional</b> with deep domain expertise, culture-forward and Black-oriented. Done well, still climbing, providing for family. Money sitting idle, <b>no time to operate</b> a new business, and ready for the next strategy: buy something real and <b>pass it down</b>. Second flank: beginners who find buying more compelling than a knowledge-work career.</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Their Inner World</div>
+        <ul class="tight">
+          <li>"I earn more than my parents ever did, and still feel one layoff away."</li>
+          <li>First in the family to get here. No playbook.</li>
+          <li>Fears the 401k-and-savings plan means they're actually behind.</li>
+          <li>Wants to be the ancestor the family story changes at.</li>
+          <li>Analysis paralysis dressed up as diligence.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="label">Voice</div>
+        <div class="voice-chips">
+          <span class="chip">Big brother</span><span class="chip">Trusted colleague</span><span class="chip">Story-first</span>
+          <span class="chip">Calm</span><span class="chip">Funny</span><span class="chip">Direct when needed</span>
+        </div>
+        <p class="body" style="margin-top:8px">Expert on law and diligence. Documenting the operator journey, never "learning on the job" where trust lives.</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Positioning</div>
+        <div class="positioning" style="margin-top:0">
+          <span class="tag">Business</span>
+          <p>I help successful professionals buy cash-flowing businesses that set up their families for generations, using the same diligence and deal skills I use as an acquisitions lawyer.</p>
+        </div>
+        <div class="positioning">
+          <span class="tag">Personal</span>
+          <p>I talk about buying businesses, faith, and personal growth through the lens of a deals lawyer who watched high income fail to become wealth, to attract professionals ready to own instead of climb.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Emmanuel Okharedia III</span>
+    <span>Counsel from entry to exit</span>
+  </div>
+
+</div>
+
+<div class="page">
+
+  <div class="kicker"><span>EMAN III · ICP Deep Profile · Research Synthesis</span><span>Sources: Fed, McKinsey, Stanford GSB, Howard Univ, Pew · Aug 2026</span></div>
+
+  <h1>The Person, <span>In Depth.</span></h1>
+
+  <div class="stats">
+    <div class="stat"><span class="v">$343K vs $1.79M</span><span class="k">Median wealth, Black vs white families at the SAME top-10% income (Federal Reserve)</span></div>
+    <div class="stat"><span class="v">52%</span><span class="k">How far Black millennials trail prior Black generations' wealth (white millennials: 5%)</span></div>
+    <div class="stat"><span class="v">2 in 3</span><span class="k">Upper-income Black adults financially supporting family. Money flows UP their tree (Pew)</span></div>
+    <div class="stat"><span class="v">$3T</span><span class="k">The window: 6M boomer businesses changing hands by 2035 (McKinsey / CNBC)</span></div>
+  </div>
+
+  <div class="grid">
+    <div class="col">
+
+      <div class="card">
+        <div class="label">Fears · The 2AM List</div>
+        <ul class="tight">
+          <li>One layoff away, even at high income: 40% of $300K+ earners live paycheck to paycheck.</li>
+          <li>AI is pulling up the ladder: hiring for $96K+ roles is at decade lows; the anxiety is concentrated at their pay grade.</li>
+          <li>Being the generation that earned the most and passed down the least.</li>
+          <li>The Black tax: their paycheck is the family's emergency fund. They don't have a safety net, they ARE the safety net.</li>
+          <li>"Googling financial terms at 2AM, feeling like an imposter in every planning meeting."</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="label">Hopes · What They Actually Want</div>
+        <ul class="tight">
+          <li>To be the ancestor: the one the family story changes at. "Cycle breaker" is the verb.</li>
+          <li>Ownership as the last leg of the movement, not just a money move.</li>
+          <li>Freedom = money + time + never code-switching again. Own the business, set the culture.</li>
+          <li>A room full of people like them: 25,000 show up to Invest Fest every August.</li>
+          <li>A boring machine, not a hustle: "a 20-year-old plumbing company with clean books."</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="label">How They Decide (And Stall)</div>
+        <ul class="tight">
+          <li>Analytical by training: they over-research to feel safe. More info deepens the stall; structure breaks it.</li>
+          <li>Loss aversion runs double: a loss has no family backstop behind it.</li>
+          <li>Time-poor: the 55-hour week taxes every big decision. Guided sprints beat stolen evenings.</li>
+          <li>Deadlines move them: cohorts complete at 64-90% vs 3-15% for self-paced courses.</li>
+          <li>Teach risk PRICING, not risk elimination: QoE, seller notes, earnouts. "I need to be sure" becomes "I need to be structured."</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="label">Blockers · And The Receipts That Break Them</div>
+        <ul class="tight">
+          <li>"Riskier than index funds." Acquired businesses survive at 70-80% over 5 years vs ~50% for startups; SBA acquisition loans default at 1.93%/yr.</li>
+          <li>"I need millions." Roughly $120-180K all-in on the average $1.18M SBA deal. Seller financing rides in ~70% of sub-$5M deals. The idle 401k can roll over.</li>
+          <li>"No time to operate." Honest answer: 10-20 hrs/week early, 5-15 with a GM installed. Sell managed, not passive.</li>
+          <li>"I can't evaluate a deal." Deal selection is where risk lives, and it's teachable.</li>
+          <li>"Nobody I know has done this." True: 3.4% of employer firms vs 14.4% of population. Community IS the intervention.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col">
+
+      <div class="card">
+        <div class="label">What Earns Their Trust</div>
+        <ul class="tight">
+          <li>They audit the educator: track record, real deal numbers, disclosed fees, admitted losses (Howard Univ, 2024).</li>
+          <li>The bar card is the moat: a license answerable to a governing body, vs gurus answerable to no one.</li>
+          <li>Someone who looks like them: only 1.9% of financial advisors are Black; representation moves engagement.</li>
+          <li>Downside talked about openly. Unqualified "passive income" is the #1 red flag they pattern-match.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="label">What Triggers Action</div>
+        <ul class="tight">
+          <li>9-ender birthdays (39, 49): people nearing a new decade over-index on major life changes by ~48%.</li>
+          <li>Layoff moments and AI headlines: preemptive-exit entrepreneurship is rising.</li>
+          <li>Peer stories: strongest for people with NO family exposure to ownership. Show buyers who left the same W-2.</li>
+          <li>Group investing as heritage: sou-sou to Liberty Bond clubs to Reginald Lewis's $985M Beatrice buyout. It's continuation, not novelty.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="label">The Language System</div>
+        <div class="lang">
+          <div><div class="h" style="color:var(--butter)">Lead With</div></div>
+          <div><div class="h" style="color:var(--muted)">Retire</div></div>
+          <p>Pass it down · be the ancestor · a seat at the table · buy back your time · group economics · blueprint · own your masters · legacy</p>
+          <p>Secure the bag · unqualified "passive income" · millionaire mindset · debunked stats (the 6-hour dollar; "78% of NFL players go broke")</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="label">The Open Lane</div>
+        <p class="body">Codie Sanchez owns "buy boring businesses" with <b>no culture and no license</b>. Earn Your Leisure owns the culture with <b>no acquisitions voice</b>. No licensed acquisitions lawyer serves this audience anywhere.</p>
+        <p class="body" style="margin-top:6px">The claimable position: <b>"the lawyer who sits on your side of the table."</b></p>
+        <p class="body" style="margin-top:6px">The origin myth is ready-made: Master P paid Michael Jackson's lawyer $25K to structure the deal that kept 100% of his masters. <b>The lawyer was the leverage.</b> That's the product.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Emmanuel Okharedia III</span>
+    <span>Counsel from entry to exit</span>
+  </div>
+
+</div>
+</body>
+</html>

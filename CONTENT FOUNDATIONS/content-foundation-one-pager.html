@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMAN III · Content Foundation</title>
+<style>
+  :root {
+    --ebony: #121212;
+    --ebony-2: #1c1c1c;
+    --card: #232323;
+    --butter: #E8C872;
+    --butter-deep: #C9A24B;
+    --cream: #F5EDD8;
+    --muted: #A69B7E;
+    --line: #3a3427;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: var(--ebony); }
+  body {
+    font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+    color: var(--cream);
+    display: flex;
+    justify-content: center;
+    padding: 24px 12px;
+  }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    background: linear-gradient(160deg, var(--ebony-2) 0%, var(--ebony) 60%);
+    border: 1px solid var(--line);
+    padding: 0.45in 0.5in;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .kicker {
+    font-size: 9px; letter-spacing: 3px; color: var(--muted);
+    text-transform: uppercase; display: flex; justify-content: space-between;
+  }
+  h1 {
+    font-size: 30px; letter-spacing: 1px; font-weight: 700; color: var(--cream);
+    line-height: 1.05; text-transform: uppercase;
+  }
+  h1 span { color: var(--butter); }
+  .throughline {
+    border: 1px solid var(--butter-deep);
+    background: linear-gradient(90deg, rgba(232,200,114,0.10), rgba(232,200,114,0.03));
+    padding: 14px 18px; text-align: center;
+  }
+  .throughline .q {
+    font-size: 17px; font-weight: 600; color: var(--butter); line-height: 1.35;
+    font-family: Georgia, "Times New Roman", serif; font-style: italic;
+  }
+  .throughline .sub { font-size: 8.5px; letter-spacing: 2.5px; color: var(--muted); text-transform: uppercase; margin-top: 6px; }
+  .label {
+    font-size: 8.5px; letter-spacing: 2.5px; color: var(--butter);
+    text-transform: uppercase; font-weight: 700; margin-bottom: 7px;
+  }
+  .grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 14px; flex: 1; }
+  .col { display: flex; flex-direction: column; gap: 14px; }
+  .card { background: var(--card); border: 1px solid var(--line); padding: 12px 14px; }
+  .pillar { display: flex; gap: 10px; align-items: baseline; padding: 5px 0; border-bottom: 1px solid var(--line); }
+  .pillar:last-child { border-bottom: none; }
+  .pillar .num { font-size: 15px; font-weight: 700; color: var(--butter); font-family: Georgia, serif; }
+  .pillar .name { font-size: 11.5px; font-weight: 700; color: var(--cream); text-transform: uppercase; letter-spacing: 0.5px; }
+  .pillar .desc { font-size: 9.5px; color: var(--muted); line-height: 1.35; display: block; margin-top: 1px; }
+  p.body { font-size: 10px; line-height: 1.45; color: var(--cream); }
+  p.body b { color: var(--butter); font-weight: 700; }
+  ul.tight { list-style: none; }
+  ul.tight li {
+    font-size: 9.8px; line-height: 1.4; color: var(--cream);
+    padding: 3px 0 3px 12px; position: relative;
+  }
+  ul.tight li::before { content: "//"; position: absolute; left: 0; color: var(--butter-deep); font-size: 8px; top: 5px; }
+  .takes { display: grid; grid-template-columns: 1fr 1fr; gap: 0 10px; font-size: 9px; }
+  .takes .h { font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; padding-bottom: 4px; border-bottom: 1px solid var(--line); margin-bottom: 5px; }
+  .takes .they { color: var(--muted); }
+  .takes .me { color: var(--butter); }
+  .takes p { line-height: 1.35; margin-bottom: 6px; }
+  .takes .they-t { color: var(--muted); font-style: italic; }
+  .takes .me-t { color: var(--cream); }
+  .positioning { border-left: 3px solid var(--butter); padding: 8px 12px; background: rgba(232,200,114,0.05); margin-top: 8px; }
+  .positioning p { font-size: 10px; line-height: 1.45; color: var(--cream); font-style: italic; }
+  .positioning .tag { font-size: 8px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; font-style: normal; display: block; margin-bottom: 3px; }
+  .voice-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    font-size: 8.5px; letter-spacing: 1px; text-transform: uppercase;
+    border: 1px solid var(--butter-deep); color: var(--butter);
+    padding: 3px 8px; border-radius: 2px;
+  }
+  .footer {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid var(--line); padding-top: 8px;
+    font-size: 8px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase;
+  }
+  @media print {
+    body { padding: 0; background: var(--ebony); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page { border: none; width: 100%; min-height: auto; }
+    @page { size: letter; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="kicker"><span>EMAN III · Content Foundation</span><span>6WK Yap Challenge · Day 2 · Aug 2026</span></div>
+
+  <h1>The <span>Foundation.</span></h1>
+
+  <div class="throughline">
+    <div class="q">"Your gift is trapped by patterns you can't see.<br>I help you see them so you can become exceptional."</div>
+    <div class="sub">The Through-Line · Every pillar is a door into this</div>
+  </div>
+
+  <div class="grid">
+    <div class="col">
+
+      <div class="card">
+        <div class="label">The 5 Pillars</div>
+        <div class="pillar"><span class="num">01</span><span><span class="name">Human Science of Business</span><span class="desc">Neurology, psychology, biology applied to building and running companies.</span></span></div>
+        <div class="pillar"><span class="num">02</span><span><span class="name">The Growth Code</span><span class="desc">How mastery actually works: deliberate practice, Outliers, Mamba Mentality.</span></span></div>
+        <div class="pillar"><span class="num">03</span><span><span class="name">Unblocking the Creator</span><span class="desc">Beating creative resistance: War of Art, Artist's Way, Steal Like an Artist.</span></span></div>
+        <div class="pillar"><span class="num">04</span><span><span class="name">Pattern Vision</span><span class="desc">Patterns from NBA, soccer, jazz, piano, and faith applied to business.</span></span></div>
+        <div class="pillar"><span class="num">05</span><span><span class="name">Counsel + The Build</span><span class="desc">The expertise lane: law, business buying, E-2 visas, entry to exit.</span></span></div>
+      </div>
+
+      <div class="card">
+        <div class="label">Hot Takes</div>
+        <div class="takes">
+          <div><div class="h they">What everyone says</div></div>
+          <div><div class="h me">What I actually believe</div></div>
+          <p class="they-t">You're born gifted, or you're not.</p>
+          <p class="me-t">Prodigies exist, but talent can be taught and learned.</p>
+          <p class="they-t">If you're stuck, you're lazy.</p>
+          <p class="me-t">If you're stuck, there is fear. Unaddressed fear keeps you trapped.</p>
+          <p class="they-t">Therapy is for broken people.</p>
+          <p class="me-t">Therapy is wisdom. Wasted only if you don't adjust.</p>
+          <p class="they-t">Don't start until you're ready.</p>
+          <p class="me-t">Learning happens when you start. Failure only happens when you quit.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="label">Story Bank</div>
+        <ul class="tight">
+          <li>Failed the bar 3x. Now barred in 2 states, the second while parenting and husbanding.</li>
+          <li>Learned keys in my 20s. Became a music director.</li>
+          <li>First company failed while honoring the mentor I lost to incarceration.</li>
+          <li>Went to therapy for grief after losing my brother.</li>
+          <li>Counseled lawyers and saw how trauma drives bad decisions.</li>
+          <li>Still thriving because God never left me.</li>
+          <li>The client whose avoidable deadline forced poor choices.</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col">
+
+      <div class="card">
+        <div class="label">The Why</div>
+        <p class="body">Brooklyn. A comfortable space. Present and engaged with my kids. Travel, and travel for mom. Sports and school centers for the community.</p>
+      </div>
+
+      <div class="card">
+        <div class="label">My Person</div>
+        <p class="body">A <b>30s-40s professional</b> raised on immigrant-parent expectations ("get an education, get a good job"). Sitting on ideas, short on time, full of mistakes and ambition. Into the arts, NBA, soccer, travel. Building, buying, and improving companies. Wondering what their <b>next momentous moment</b> will be.</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Their Inner World</div>
+        <ul class="tight">
+          <li>Career and family life feel overwhelming.</li>
+          <li>Afraid of losing themselves while setting up their kids.</li>
+          <li>Wish they could rewrite past choices, but it's permanent.</li>
+          <li>They want peaceful profits.</li>
+          <li>High achievers with no outlet for what they fear.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="label">Voice</div>
+        <div class="voice-chips">
+          <span class="chip">Story-first</span><span class="chip">Calm</span><span class="chip">Funny</span>
+          <span class="chip">Direct when needed</span><span class="chip">Laid back</span><span class="chip">Pops when excited</span>
+        </div>
+        <p class="body" style="margin-top:8px">Expert on the law. Learning out loud on everything else.</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Positioning</div>
+        <div class="positioning" style="margin-top:0">
+          <span class="tag">Business</span>
+          <p>I help stuck, high-achieving builders get out of their own way and buy, build, and exit businesses using human science and counsel from entry to exit.</p>
+        </div>
+        <div class="positioning">
+          <span class="tag">Personal</span>
+          <p>I talk about human behavior, mastery, and creativity through the lens of a lawyer, musician, and father who got unstuck, to attract overwhelmed innovators who want peaceful profits and an extraordinary life.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Emmanuel Okharedia III</span>
+    <span>Counsel from entry to exit</span>
+  </div>
+
+</div>
+</body>
+</html>

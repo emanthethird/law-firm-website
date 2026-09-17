@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Contact — EMAN Sports Management</title>
+<meta name="description" content="Make an enquiry. EMAN Sports Management accepts a small number of new clients each year. Briefs are reviewed by the founding partner." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__bar">
+    <div><span class="red-dot"></span> Vol. XI · Issue 03 · Spring MMXXVI</div>
+    <div>New York · London · Madrid · Doha</div>
+    <div>Representation since 2014</div>
+  </div>
+  <div class="masthead__main">
+    <nav class="masthead__nav masthead__nav--left">
+      <a href="index.html">Index</a>
+      <a href="roster.html">Roster</a>
+      <a href="representation.html">Representation</a>
+    </nav>
+    <a href="index.html" class="masthead__logo">
+      EMAN
+      <small>Sports Management</small>
+    </a>
+    <nav class="masthead__nav masthead__nav--right">
+      <a href="journal.html">Journal</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html">EN / ES</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Banner -->
+<section class="banner">
+  <div class="banner__grid">
+    <div>
+      <div class="banner__crumb">Index <span class="sep">/</span> Contact</div>
+      <h1 class="banner__title">Begin a<br /><em>conversation.</em></h1>
+    </div>
+    <p class="banner__lede">
+      We accept a small number of new clients each year. Briefs are reviewed
+      personally by the founding partner. Please allow up to seven working
+      days for a reply.
+    </p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact">
+  <div class="contact__grid">
+    <!-- Left: Offices & Direct -->
+    <div class="contact__col">
+      <h3>The house, <em>directly.</em></h3>
+
+      <div class="contact__line">
+        <span class="k">General</span>
+        <span><a href="mailto:office@emansports.com">office@emansports.com</a></span>
+      </div>
+      <div class="contact__line">
+        <span class="k">Press</span>
+        <span><a href="mailto:press@emansports.com">press@emansports.com</a></span>
+      </div>
+      <div class="contact__line">
+        <span class="k">New Briefs</span>
+        <span><a href="mailto:briefs@emansports.com">briefs@emansports.com</a></span>
+      </div>
+      <div class="contact__line">
+        <span class="k">Telephone</span>
+        <span>+1 (212) 555 0142</span>
+      </div>
+
+      <h3 style="margin-top:64px;">The offices.</h3>
+
+      <div class="contact__line">
+        <span class="k">New York</span>
+        <span>1140 Broadway · NoMad</span>
+      </div>
+      <div class="contact__line">
+        <span class="k">London</span>
+        <span>14 Bruton Place · Mayfair</span>
+      </div>
+      <div class="contact__line">
+        <span class="k">Madrid</span>
+        <span>Calle de Lagasca 73 · Salamanca</span>
+      </div>
+      <div class="contact__line">
+        <span class="k">Doha</span>
+        <span>Al Mirqab Tower · West Bay</span>
+      </div>
+
+      <p class="caption" style="margin-top:48px;">
+        All correspondence is treated as confidential. We will not retain
+        materials related to a brief we cannot accept.
+      </p>
+    </div>
+
+    <!-- Right: Form -->
+    <div class="contact__col">
+      <h3>Submit a <em>brief.</em></h3>
+
+      <form class="contact-form" onsubmit="event.preventDefault(); this.querySelector('.btn').textContent='Received — thank you.';">
+        <div class="field">
+          <label>Your name</label>
+          <input type="text" placeholder="Full name" required />
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" placeholder="name@domain.com" required />
+        </div>
+        <div class="field">
+          <label>Capacity</label>
+          <select>
+            <option>Athlete (self)</option>
+            <option>Agent · Representative</option>
+            <option>Federation · Club</option>
+            <option>Family office</option>
+            <option>Press · Editorial</option>
+            <option>Brand · Partnership</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Discipline</label>
+          <input type="text" placeholder="e.g. Football, Tennis, Athletics" />
+        </div>
+        <div class="field">
+          <label>The brief</label>
+          <textarea placeholder="A short paragraph. We read every word." required></textarea>
+        </div>
+        <button type="submit" class="btn">Submit brief <span class="arr"></span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Quote interlude -->
+<section class="interlude">
+  <p class="interlude__quote">
+    We are unhurried by design.
+  </p>
+  <div class="interlude__attr">House <span>·</span> Maxim</div>
+</section>
+
+<footer class="colophon">
+  <div class="colophon__grid">
+    <div>
+      <div class="colophon__logo">EMAN</div>
+      <p class="colophon__tag">
+        Sports Management. Representation for the modern athlete &mdash;
+        career, voice, and the long horizon.
+      </p>
+    </div>
+    <div>
+      <h4>House</h4>
+      <ul>
+        <li><a href="index.html">Index</a></li>
+        <li><a href="roster.html">Roster</a></li>
+        <li><a href="representation.html">Representation</a></li>
+        <li><a href="journal.html">Journal</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Offices</h4>
+      <ul>
+        <li>New York · NoMad</li>
+        <li>London · Mayfair</li>
+        <li>Madrid · Salamanca</li>
+        <li>Doha · West Bay</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Practice</h4>
+      <ul>
+        <li>Contract Negotiation</li>
+        <li>Brand &amp; Endorsements</li>
+        <li>Media &amp; Voice</li>
+        <li>Post-Career</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Direct</h4>
+      <ul>
+        <li><a href="mailto:office@emansports.com">office@emansports.com</a></li>
+        <li>+1 (212) 555 0142</li>
+        <li><a href="contact.html">Press &amp; Enquiries</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="colophon__bottom">
+    <div>© MMXXVI — EMAN Sports Management <span class="red-mark">·</span> All rights reserved.</div>
+    <div>Set in Playfair, Cormorant, Inter.</div>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
