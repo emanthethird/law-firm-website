@@ -1,19 +1,22 @@
 # Eman and Associates P.C.
 
-> Boston-based business immigration law firm specializing in E-2 Treaty Investor Visas, led by attorney Emmanuel Okharedia. The firm handles the entire E-2 process under one roof: visa filing, U.S. entity formation, business structuring, and supporting transactions. Particular focus on Canadian investors (whose E-2 visa interviews are processed exclusively at the U.S. consulate in Toronto). The full site is also available in French at https://emanlegal.com/fr/ (founder Emmanuel Okharedia speaks fluent French; France, Belgium, and Switzerland are all E-2 treaty countries).
+> Boston business law firm led by attorney Emmanuel Okharedia. The firm works in four practice areas: mergers and acquisitions, foreign investors (E-2, L-1, and EB-5 visas), outside general counsel, and asset protection. Clients include domestic buyers and sellers of owner-operated businesses as well as foreign entrepreneurs moving capital and operations into the United States. Work is quoted at flat fees set upfront rather than hourly. When a matter involves both a transaction and an immigration filing, the firm handles both, so the same documents are drafted once. The site also has a French version at https://emanlegal.com/fr/ (founder Emmanuel Okharedia speaks fluent French).
 
 Key facts:
 - Firm: Eman and Associates P.C. (EMAN & Associates)
-- Practice area: E-2 Treaty Investor Visas and business immigration
+- Practice areas: mergers and acquisitions; foreign investors (E-2 Treaty Investor, L-1 intracompany transfer, EB-5 investor green card); outside general counsel; asset protection
+- Related work: U.S. entity formation, business structuring, contracts, governance, holding structures and trusts
+- Attorney: Emmanuel Okharedia, founding attorney, New England Law | Boston (JD), licensed in Massachusetts, speaks English and French
 - Location: 1 Washington St. #1362, Boston, MA 02108, USA
 - Phone: +1-857-678-2406
 - Email: e@emanlegal.com
-- Book a free assessment: https://emanlegal.com/contact
+- Contact page: https://emanlegal.com/contact
 
 ## Main pages
 
-- [Home](https://emanlegal.com/): Firm overview, who we work with, the four factors that determine E-2 approval, client testimonials, and E-2 FAQ.
-- [Contact](https://emanlegal.com/contact): Book a free E-2 assessment call.
+- [Home](https://emanlegal.com/): Firm overview, the four practice areas, attorney bio, client reviews, and an entry point to the E-2 Visa Resource Center.
+- [Foreign Investors](https://emanlegal.com/foreign-investors): The firm's immigration practice for investors and founders, covering the E-2 Treaty Investor Visa, the L-1 intracompany transfer, and the EB-5 investor green card.
+- [Contact](https://emanlegal.com/contact): Contact form and firm contact details. An attorney reviews every submission.
 - [E-2 Visa Resource Center](https://emanlegal.com/blog/): Guides to the E-2 Treaty Investor Visa by attorney Emmanuel Okharedia.
 
 ## Articles
@@ -38,8 +41,8 @@ Key facts:
 
 ## Version française (French version)
 
-Le site complet est disponible en français. Every page above has a French counterpart under `/fr/`.
+Le site en français couvre la pratique du visa E-2 du cabinet. Chaque article du centre de ressources E-2 a une version française sous `/fr/`.
 
 - [Accueil](https://emanlegal.com/fr/): Présentation du cabinet, à qui nous nous adressons, les quatre facteurs qui déterminent l'approbation du visa E-2, témoignages clients et FAQ.
-- [Contact](https://emanlegal.com/fr/contact): Réservez un appel d'évaluation E-2 gratuit.
+- [Contact](https://emanlegal.com/fr/contact): Formulaire de contact et coordonnées du cabinet.
 - [Centre de ressources sur le visa E-2](https://emanlegal.com/fr/blog/): Guides sur le visa E-2 (Treaty Investor) rédigés par l'avocat Emmanuel Okharedia.
