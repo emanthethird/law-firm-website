@@ -135,7 +135,7 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--sage);outline-offset:3px}
 
-.d1{font-size:clamp(2.7rem,5.6vw,4.9rem);font-weight:800;line-height:1;letter-spacing:-.034em}
+.d1{font-size:clamp(2.5rem,4.4vw,4.15rem);font-weight:800;line-height:1;letter-spacing:-.034em}
 .d2{font-size:clamp(1.95rem,3.7vw,3.05rem);font-weight:800;line-height:1.07;letter-spacing:-.028em;text-wrap:balance}
 .prose{font-family:'Newsreader',Georgia,serif;font-size:1.08rem;line-height:1.68;color:var(--text-secondary)}
 .prose--dk{color:var(--mist)}
@@ -162,6 +162,7 @@ a{color:inherit;text-decoration:none}
 .nav__end{display:flex;align-items:center;gap:1.2rem}
 .nav__fr{font-size:.76rem;font-weight:600;color:var(--mist);letter-spacing:.08em}
 .burger{display:none;color:#fff;font-size:1.3rem;background:none;border:none}
+.nav__mcta{display:none}
 
 /* HERO */
 .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
@@ -170,12 +171,12 @@ a{color:inherit;text-decoration:none}
   linear-gradient(104deg,transparent 68%,rgba(107,158,133,.1) 69%,rgba(107,158,133,.1) 74%,transparent 75%),
   radial-gradient(120% 80% at 6% 0%,rgba(107,158,133,.18),transparent 62%)}
 .hero__in>*{min-width:0}
-.hero__in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem);align-items:center;padding-top:clamp(2.5rem,4vw,3.5rem);padding-bottom:clamp(2.5rem,4vw,3.5rem)}
+.hero__in{position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(2rem,4vw,3.5rem);align-items:center;padding-top:clamp(2.5rem,4vw,3.5rem);padding-bottom:clamp(2.5rem,4vw,3.5rem)}
 .hero h1{margin-bottom:1.6rem}
 .hero h1 .ac{color:var(--sage-light)}
 .hero__sub{max-width:34rem;font-size:1.12rem;margin-bottom:2.4rem}
-.hero__tracks{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--navy-line)}
-.hero__tracks a{flex:1 1 auto;min-width:9.5rem;padding:1rem 1.2rem 1rem 0;border-bottom:1px solid var(--navy-line);font-size:.83rem;font-weight:600;color:#d4dce6;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.hero__tracks{display:grid;grid-template-columns:1fr 1fr;column-gap:2rem;border-top:1px solid var(--navy-line)}
+.hero__tracks a{padding:1rem 0;border-bottom:1px solid var(--navy-line);font-size:.83rem;font-weight:600;color:#d4dce6;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .hero__tracks a:hover{color:#fff}
 .hero__tracks a::after{content:"→";color:var(--sage-light);opacity:0;transform:translateX(-4px);transition:.18s}
 .hero__tracks a:hover::after{opacity:1;transform:translateX(0)}
@@ -183,6 +184,7 @@ a{color:inherit;text-decoration:none}
 /* FORM SLOT */
 .fslot{color:var(--text-primary);background:var(--white);border-radius:3px;overflow:hidden;box-shadow:0 30px 70px -22px rgba(0,0,0,.5)}
 .fslot__head{padding:clamp(1.6rem,2.3vw,2.1rem) clamp(1.6rem,2.3vw,2.1rem) 0}
+.fslot__slot{min-height:815px}
 .fslot__embed{display:block;width:100%;border:none;min-height:815px}
 .fslot__tag{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--sage);margin-bottom:.7rem}
 .fslot__t{font-size:1.5rem;font-weight:800;letter-spacing:-.022em;line-height:1.1;margin-bottom:.45rem}
@@ -198,20 +200,16 @@ a{color:inherit;text-decoration:none}
 /* SOCIAL PROOF BAR */
 .proof{background:var(--warm-gray);border-bottom:1px solid var(--border)}
 .proof__in{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
-  gap:clamp(1.8rem,5vw,4.5rem);padding:clamp(1.5rem,2.6vw,2.1rem) 0}
-.proof__logo{display:flex;align-items:center;gap:.6rem;color:#6d6d67;line-height:1.1}
+  gap:clamp(2rem,6vw,5.5rem);padding:clamp(1.6rem,2.6vw,2.2rem) 0}
+.proof__logo{display:flex;align-items:center;justify-content:center;min-height:38px;color:#6f6f69;line-height:1.1}
 .proof__lockup{display:flex;align-items:center;gap:.6rem}
 .proof__logo img{max-height:36px;width:auto;filter:grayscale(1);opacity:.75}
-.proof__seal{width:34px;height:34px;border-radius:50%;background:#8e8e87;color:var(--warm-gray);
-  display:grid;place-items:center;font-size:.72rem;font-weight:700;flex-shrink:0}
-.proof__box{background:#3a3a36;color:var(--warm-gray);font-size:.72rem;font-weight:800;
-  letter-spacing:.04em;padding:.3rem .45rem;border-radius:1px;flex-shrink:0}
-.proof__wm{font-size:1.08rem;font-weight:600;letter-spacing:-.018em;line-height:1.05;white-space:nowrap}
+.proof__wm{font-size:1.05rem;font-weight:600;letter-spacing:-.015em;line-height:1.08;white-space:nowrap}
 .proof__wm--serif{font-family:'Newsreader',Georgia,serif;font-weight:600;font-size:1.22rem}
-.proof__sm{display:block;font-size:.56rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
-  margin-top:.18rem;color:#84847d}
-.proof__stack{font-size:.63rem;font-weight:700;line-height:1.25;letter-spacing:.01em;text-transform:none}
-.proof__rule{font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;line-height:1.2}
+.proof__sm{display:block;font-size:.6rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;
+  margin-top:.2rem;color:#8a8a82}
+.proof__stack{font-size:.78rem;font-weight:700;line-height:1.25;letter-spacing:-.005em;white-space:normal;text-align:left}
+.proof__rule{font-size:.78rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;line-height:1.3;white-space:normal;text-align:left}
 
 /* SECTION HEAD */
 .shead{margin-bottom:clamp(2rem,3.5vw,3rem);padding-bottom:1.6rem;border-bottom:1px solid var(--border)}
@@ -235,7 +233,7 @@ a{color:inherit;text-decoration:none}
 
 /* ABOUT */
 .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
-.about__img{position:relative;border-radius:2px;overflow:hidden;background:var(--warm-gray);aspect-ratio:4/5}
+.about__img{position:sticky;top:96px;border-radius:2px;overflow:hidden;background:var(--warm-gray);aspect-ratio:4/5}
 .about__img img{width:100%;height:100%;object-fit:cover;object-position:top center}
 .about__cap{position:absolute;left:0;bottom:0;right:0;background:linear-gradient(transparent,rgba(26,38,56,.94) 55%);padding:2.5rem 1.4rem 1.2rem;color:#fff}
 .about__cap strong{display:block;font-size:1.05rem;font-weight:700;letter-spacing:-.015em}
@@ -316,7 +314,14 @@ a{color:inherit;text-decoration:none}
 @media(max-width:1040px){
   .rstack{column-count:2}
   .sgrid,.rgrid{grid-template-columns:repeat(2,1fr)}
-  .nav__links{display:none}.burger{display:block}
+  .nav{position:sticky}
+  .nav__links{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;
+    align-items:stretch;gap:0;background:var(--navy);padding:.25rem clamp(1.2rem,4vw,3.5rem) 1rem;
+    border-bottom:1px solid var(--navy-line);box-shadow:0 18px 30px -18px rgba(0,0,0,.6)}
+  .nav__links.open{display:flex}
+  .nav__links a{padding:.95rem 0;border-bottom:1px solid var(--navy-line);font-size:.95rem}
+  .nav__links a:last-child{border-bottom:none}
+  .burger{display:block;cursor:pointer;padding:.3rem .2rem;line-height:1}
 }
 @media(max-width:900px){
   .blay{grid-template-columns:1fr}
@@ -329,6 +334,9 @@ a{color:inherit;text-decoration:none}
 }
 @media(max-width:560px){
   .sgrid,.rgrid,.foot__top{grid-template-columns:1fr}
+  .hero__tracks{grid-template-columns:1fr}
+  .nav__end .btn{display:none}
+  .nav__links a.nav__mcta{display:inline-flex;justify-content:center;margin-top:.9rem;padding:.9rem 1.5rem;border-bottom:none}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
@@ -340,18 +348,19 @@ a{color:inherit;text-decoration:none}
 <nav class="nav">
   <div class="wrap nav__in">
     <a href="/" class="brand">Eman &amp;<br>Associates</a>
-    <div class="nav__links">
+    <div class="nav__links" id="navLinks">
       <a href="#services">M&amp;A</a>
       <a href="#services">Foreign Investors</a>
       <a href="#services">General Counsel</a>
       <a href="#services">Asset Protection</a>
       <a href="#about">About</a>
       <a href="/blog/">Blog</a>
+      <a href="contact.html" class="btn btn--sage nav__mcta">Talk to an Attorney</a>
     </div>
     <div class="nav__end">
       <a class="nav__fr" href="/fr/">FR</a>
       <a href="contact.html" class="btn btn--sage" style="padding:.65rem 1.25rem">Talk to an Attorney</a>
-      <button class="burger" aria-label="Menu">☰</button>
+      <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
     </div>
   </div>
 </nav>
@@ -375,6 +384,7 @@ a{color:inherit;text-decoration:none}
         <div class="fslot__t">Tell us what you're building.</div>
         <p class="fslot__s">An attorney reads every submission. You'll hear back within one business day.</p>
       </div>
+      <div class="fslot__slot">
       <iframe
         src="https://app.emanlegal.com/widget/form/nwXqFcflVpaAgcvuPAAb"
         class="fslot__embed"
@@ -393,6 +403,7 @@ a{color:inherit;text-decoration:none}
         data-cookie-consent="true"
         data-cookie-consent-provider="auto"
         title="Contact Form"></iframe>
+      </div>
       <p class="fslot__note">No cost. No obligation. Confidential.</p>
     </div>
   </div>
@@ -411,25 +422,25 @@ a{color:inherit;text-decoration:none}
       <img src="logos/lexisnexis.svg" alt="LexisNexis" hidden
            onload="this.hidden=false;this.nextElementSibling.hidden=true"
            onerror="if(!this.dataset.r){this.dataset.r=1;this.src='logos/lexisnexis.png'}">
-      <span class="proof__lockup"><span class="proof__seal" aria-hidden="true">LN</span><span class="proof__wm">LexisNexis</span></span>
+      <span class="proof__lockup"><span class="proof__wm">LexisNexis</span></span>
     </div>
     <div class="proof__logo">
       <img src="logos/brandeis.svg" alt="Brandeis University" hidden
            onload="this.hidden=false;this.nextElementSibling.hidden=true"
            onerror="if(!this.dataset.r){this.dataset.r=1;this.src='logos/brandeis.png'}">
-      <span class="proof__lockup"><span class="proof__seal" aria-hidden="true">B</span><span><span class="proof__wm proof__wm--serif">Brandeis</span><span class="proof__sm">University</span></span></span>
+      <span class="proof__lockup"><span><span class="proof__wm proof__wm--serif">Brandeis</span><span class="proof__sm">University</span></span></span>
     </div>
     <div class="proof__logo">
       <img src="logos/cwe.svg" alt="Center for Women &amp; Enterprise" hidden
            onload="this.hidden=false;this.nextElementSibling.hidden=true"
            onerror="if(!this.dataset.r){this.dataset.r=1;this.src='logos/cwe.png'}">
-      <span class="proof__lockup"><span class="proof__seal" aria-hidden="true">W</span><span class="proof__wm proof__stack">Center for<br>Women &amp; Enterprise</span></span>
+      <span class="proof__lockup"><span class="proof__wm proof__stack">Center for<br>Women &amp; Enterprise</span></span>
     </div>
     <div class="proof__logo">
       <img src="logos/ali.svg" alt="The American Law Institute" hidden
            onload="this.hidden=false;this.nextElementSibling.hidden=true"
            onerror="if(!this.dataset.r){this.dataset.r=1;this.src='logos/ali.png'}">
-      <span class="proof__lockup"><span class="proof__box" aria-hidden="true">ALI</span><span class="proof__wm proof__rule">The American<br>Law Institute</span></span>
+      <span class="proof__lockup"><span class="proof__wm proof__rule">The American<br>Law Institute</span></span>
     </div>
   </div>
 </section>
@@ -668,6 +679,25 @@ a{color:inherit;text-decoration:none}
   </div>
 </footer>
 
+<script>
+  (function () {
+    var burger = document.querySelector('.burger');
+    var links = document.getElementById('navLinks');
+    if (!burger || !links) return;
+    burger.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+      burger.textContent = open ? '\u00d7' : '\u2630';
+    });
+    links.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        links.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        burger.textContent = '\u2630';
+      }
+    });
+  })();
+</script>
 <script src="https://app.emanlegal.com/js/form_embed.js"></script>
 </body>
 </html>
