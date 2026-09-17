@@ -131,6 +131,7 @@
 html{scroll-behavior:smooth;font-size:16px}
 body{font-family:'Archivo',system-ui,sans-serif;background:var(--cream);color:var(--text-primary);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{max-width:100%;display:block}
+[hidden]{display:none!important}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid var(--sage);outline-offset:3px}
 
@@ -199,6 +200,7 @@ a{color:inherit;text-decoration:none}
 .proof__in{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
   gap:clamp(1.8rem,5vw,4.5rem);padding:clamp(1.5rem,2.6vw,2.1rem) 0}
 .proof__logo{display:flex;align-items:center;gap:.6rem;color:#6d6d67;line-height:1.1}
+.proof__lockup{display:flex;align-items:center;gap:.6rem}
 .proof__logo img{max-height:36px;width:auto;filter:grayscale(1);opacity:.75}
 .proof__seal{width:34px;height:34px;border-radius:50%;background:#8e8e87;color:var(--warm-gray);
   display:grid;place-items:center;font-size:.72rem;font-weight:700;flex-shrink:0}
@@ -406,20 +408,28 @@ a{color:inherit;text-decoration:none}
 <section class="proof" aria-label="Affiliations and recognition">
   <div class="wrap proof__in">
     <div class="proof__logo">
-      <span class="proof__seal" aria-hidden="true">LN</span>
-      <span class="proof__wm">LexisNexis</span>
+      <img src="logos/lexisnexis.svg" alt="LexisNexis" hidden
+           onload="this.hidden=false;this.nextElementSibling.hidden=true"
+           onerror="if(!this.dataset.r){this.dataset.r=1;this.src='logos/lexisnexis.png'}">
+      <span class="proof__lockup"><span class="proof__seal" aria-hidden="true">LN</span><span class="proof__wm">LexisNexis</span></span>
     </div>
     <div class="proof__logo">
-      <span class="proof__seal" aria-hidden="true">B</span>
-      <span><span class="proof__wm proof__wm--serif">Brandeis</span><span class="proof__sm">University</span></span>
+      <img src="logos/brandeis.svg" alt="Brandeis University" hidden
+           onload="this.hidden=false;this.nextElementSibling.hidden=true"
+           onerror="if(!this.dataset.r){this.dataset.r=1;this.src='logos/brandeis.png'}">
+      <span class="proof__lockup"><span class="proof__seal" aria-hidden="true">B</span><span><span class="proof__wm proof__wm--serif">Brandeis</span><span class="proof__sm">University</span></span></span>
     </div>
     <div class="proof__logo">
-      <span class="proof__seal" aria-hidden="true">W</span>
-      <span class="proof__wm proof__stack">Center for<br>Women &amp;<br>Enterprise</span>
+      <img src="logos/cwe.svg" alt="Center for Women &amp; Enterprise" hidden
+           onload="this.hidden=false;this.nextElementSibling.hidden=true"
+           onerror="if(!this.dataset.r){this.dataset.r=1;this.src='logos/cwe.png'}">
+      <span class="proof__lockup"><span class="proof__seal" aria-hidden="true">W</span><span class="proof__wm proof__stack">Center for<br>Women &amp; Enterprise</span></span>
     </div>
     <div class="proof__logo">
-      <span class="proof__box" aria-hidden="true">ALI</span>
-      <span class="proof__wm proof__rule">The American<br>Law Institute</span>
+      <img src="logos/ali.svg" alt="The American Law Institute" hidden
+           onload="this.hidden=false;this.nextElementSibling.hidden=true"
+           onerror="if(!this.dataset.r){this.dataset.r=1;this.src='logos/ali.png'}">
+      <span class="proof__lockup"><span class="proof__box" aria-hidden="true">ALI</span><span class="proof__wm proof__rule">The American<br>Law Institute</span></span>
     </div>
   </div>
 </section>
