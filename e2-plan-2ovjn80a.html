@@ -262,6 +262,20 @@
             margin-bottom: 0.9rem;
         }
         .plan ul.steps li { font-size: 0.92rem; }
+        .plan-note {
+            margin-top: auto;
+            padding-top: 1.25rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .plan-note b { color: var(--navy); font-weight: 600; }
+        .plan ul.steps + .plan-note::before {
+            content: "";
+            display: block;
+            border-top: 1px solid var(--border-faint);
+            margin-bottom: 1rem;
+        }
 
         /* ─── EVERY PLAN INCLUDES ─── */
         .includes {
@@ -479,6 +493,7 @@
                 <ul class="steps">
                     <li>All ten core services below, on standard engagement terms</li>
                 </ul>
+                <div class="plan-note">Each dependent (spouse or child): <b>$1,000 per applicant</b></div>
             </div>
         </div>
 
