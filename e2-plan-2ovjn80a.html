@@ -191,7 +191,7 @@
         /* ─── PLANS ─── */
         .plans {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: clamp(1rem, 2.5vw, 2rem);
             margin-top: clamp(2rem, 5vw, 3.75rem);
         }
@@ -262,6 +262,20 @@
             margin-bottom: 0.9rem;
         }
         .plan ul.steps li { font-size: 0.92rem; }
+        .plan-note {
+            margin-top: auto;
+            padding-top: 1.25rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .plan-note b { color: var(--navy); font-weight: 600; }
+        .plan ul.steps + .plan-note::before {
+            content: "";
+            display: block;
+            border-top: 1px solid var(--border-faint);
+            margin-bottom: 1rem;
+        }
 
         /* ─── EVERY PLAN INCLUDES ─── */
         .includes {
@@ -311,7 +325,7 @@
         /* ─── SLIDE FOOTER TAGLINE ─── */
         .s-foot {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
             gap: 1rem;
             margin-top: clamp(2rem, 4vw, 3rem);
@@ -444,7 +458,6 @@
         </div>
 
         <div class="s-foot">
-            <div class="tagline serif">Some firms file. <em>We finish.</em></div>
             <div class="site">emanlegal.com</div>
         </div>
     </section>
@@ -463,23 +476,11 @@
             <!-- Premier -->
             <div class="plan">
                 <div class="plan-tier">Premier</div>
-                <div class="plan-price serif">$21,500 <em>Flat</em></div>
+                <div class="plan-price serif">$26,500 <em>Flat</em></div>
                 <div class="plan-desc">For acquisitions: the target business vetted before the money moves.</div>
-                <div class="plan-inc-label">Everything in Select, plus</div>
-                <ul class="steps">
-                    <li>Business acquisition due diligence: financial, legal, and operational review of the target business</li>
-                </ul>
-            </div>
-
-            <!-- Select (featured) -->
-            <div class="plan featured">
-                <div class="plan-badge">Most Selected</div>
-                <div class="plan-tier">Select</div>
-                <div class="plan-price serif">$11,500 <em>Flat</em></div>
-                <div class="plan-desc">The complete case, with downside fee protection.</div>
                 <div class="plan-inc-label">Everything in Standard, plus</div>
                 <ul class="steps">
-                    <li>50% legal-fee refund if the application is denied</li>
+                    <li>Business acquisition due diligence: financial, legal, and operational review of the target business</li>
                 </ul>
             </div>
 
@@ -492,6 +493,7 @@
                 <ul class="steps">
                     <li>All ten core services below, on standard engagement terms</li>
                 </ul>
+                <div class="plan-note">Each dependent (spouse or child): <b>$1,000 per applicant</b></div>
             </div>
         </div>
 
@@ -513,13 +515,12 @@
 
         <p class="fine-print">
             All fees are flat legal fees in U.S. dollars; government filing fees are additional.
-            Dependent representation is available at $1,000 per applicant. Refund terms are
-            contractual fee terms only and are not a guarantee or prediction of any outcome.
+            Dependent representation is available at $1,000 per applicant. Nothing on this page
+            is a guarantee or prediction of any outcome.
             Full terms are set out in the Engagement Agreement.
         </p>
 
         <div class="s-foot">
-            <div class="tagline serif">Some firms file. <em>We finish.</em></div>
             <div class="site">emanlegal.com</div>
         </div>
     </section>
